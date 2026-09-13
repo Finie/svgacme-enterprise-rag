@@ -1,0 +1,93 @@
+{
+  "id": "SCN-TRV-002",
+  "category": "travel",
+  "title": "A 3-night Mombasa trip mixes standard-rate and above-cap accommodation nights",
+  "description": "Esther Wanjiku Kamau (Procurement Manager) travels to Mombasa for 3 nights to conduct supplier due diligence. Two nights are booked at KES 12,000, the OPS-POL-001 cap, but the only room available for the third night costs KES 15,000.",
+  "businessContext": "OPS-POL-001 reimburses accommodation up to KES 12,000 per night unless an approved exception is recorded before commitment.",
+  "actors": [
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-PROC",
+      "name": "Procurement"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "OPS-POL-001",
+      "name": "Business Travel & Logistics Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-001",
+      "name": "Expense & Reimbursement Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "OPS-POL-001",
+    "FIN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Two nights of accommodation are booked at KES 12,000 per night, within the standard cap."
+    },
+    {
+      "sequence": 2,
+      "event": "The third night is only available at KES 15,000, above the standard cap."
+    },
+    {
+      "sequence": 3,
+      "event": "An exception request is documented and approved before the booking is committed."
+    }
+  ],
+  "expectedOutcome": "The first two nights at KES 12,000 require no exception, since they sit exactly at the OPS-POL-001 cap. The third night at KES 15,000 exceeds the cap and requires a documented exception approved before the booking is committed, not claimed afterward.",
+  "relevantFacts": [
+    "Two nights are booked at KES 12,000; one night is booked at KES 15,000.",
+    "OPS-POL-001: 'Accommodation is reimbursed up to KES 12,000 per night unless an approved exception is recorded.'",
+    "FIN-POL-001: 'Meal claims are capped at KES 3,000 per person per meal and accommodation at KES 12,000 per night unless a documented exception is approved before commitment.'"
+  ],
+  "requiredReasoning": [
+    "Compare each night's rate against the KES 12,000 cap individually.",
+    "Identify that only the night above the cap requires an exception.",
+    "Confirm the exception must be approved before commitment, not after the fact."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0004",
+      "type": "belongs_to",
+      "to": "DEPT-PROC"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "comparison",
+    "policy_lookup",
+    "exception"
+  ],
+  "tags": [
+    "travel",
+    "procurement",
+    "boundary"
+  ]
+}

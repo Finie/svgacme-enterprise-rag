@@ -1,0 +1,144 @@
+{
+  "id": "SCN-INV-007",
+  "category": "inventory",
+  "title": "Tumaini Gold Cooking Oil 5L shows very different stock positions across SVGA's four distribution centres",
+  "description": "Tumaini Gold Cooking Oil 5L is stocked at all four SVGA distribution centres, but the stock position differs sharply between sites: Nairobi Distribution Centre: quantityAvailable 1140, reorderLevel 300, status IN_STOCK; Mombasa Distribution Centre: quantityAvailable 211, reorderLevel 180, status IN_STOCK; Kisumu Distribution Centre: quantityAvailable 71, reorderLevel 140, status REORDER_REQUIRED; Nakuru Distribution Centre: quantityAvailable 0, reorderLevel 110, status OUT_OF_STOCK.",
+  "businessContext": "Comparing the same product across warehouses surfaces where a customer order should be routed and where replenishment is most urgent.",
+  "actors": [
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "product",
+      "id": "PRD-001",
+      "name": "Tumaini Gold Cooking Oil 5L"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0001",
+      "name": "PRD-001 @ WH-NRB-001"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0036",
+      "name": "PRD-001 @ WH-MSA-001"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0071",
+      "name": "PRD-001 @ WH-KSM-001"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0106",
+      "name": "PRD-001 @ WH-NKR-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-MSA-001",
+      "name": "Mombasa Distribution Centre"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-KSM-001",
+      "name": "Kisumu Distribution Centre"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NKR-001",
+      "name": "Nakuru Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "INV-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Inventory reporting is pulled for Tumaini Gold Cooking Oil 5L across all four distribution centres."
+    },
+    {
+      "sequence": 2,
+      "event": "Stock positions are compared to identify which sites are healthy and which need replenishment."
+    },
+    {
+      "sequence": 3,
+      "event": "A recommendation is made on which warehouse should fulfil the next large order for this product."
+    }
+  ],
+  "expectedOutcome": "Fulfilment of a new order for Tumaini Gold Cooking Oil 5L should be routed to the warehouse with the strongest available position, and replenishment should be prioritised at any site where quantityAvailable is at or below reorderLevel. Specifically: Nairobi Distribution Centre: quantityAvailable 1140, reorderLevel 300, status IN_STOCK; Mombasa Distribution Centre: quantityAvailable 211, reorderLevel 180, status IN_STOCK; Kisumu Distribution Centre: quantityAvailable 71, reorderLevel 140, status REORDER_REQUIRED; Nakuru Distribution Centre: quantityAvailable 0, reorderLevel 110, status OUT_OF_STOCK.",
+  "relevantFacts": [
+    "Tumaini Gold Cooking Oil 5L (PRD-001) at Nairobi Distribution Centre (WH-NRB-001): quantityOnHand 1200, quantityReserved 60, quantityAvailable 1140, reorderLevel 300, status IN_STOCK (inventory record INV-0001).",
+    "Tumaini Gold Cooking Oil 5L (PRD-001) at Mombasa Distribution Centre (WH-MSA-001): quantityOnHand 234, quantityReserved 23, quantityAvailable 211, reorderLevel 180, status IN_STOCK (inventory record INV-0036).",
+    "Tumaini Gold Cooking Oil 5L (PRD-001) at Kisumu Distribution Centre (WH-KSM-001): quantityOnHand 84, quantityReserved 13, quantityAvailable 71, reorderLevel 140, status REORDER_REQUIRED (inventory record INV-0071).",
+    "Tumaini Gold Cooking Oil 5L (PRD-001) at Nakuru Distribution Centre (WH-NKR-001): quantityOnHand 0, quantityReserved 0, quantityAvailable 0, reorderLevel 110, status OUT_OF_STOCK (inventory record INV-0106)."
+  ],
+  "requiredReasoning": [
+    "Retrieve the inventory position for this product at every warehouse.",
+    "Compare quantityAvailable against reorderLevel at each site.",
+    "Rank the warehouses by stock health.",
+    "Recommend a fulfilment source and flag any site needing replenishment."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-001",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    },
+    {
+      "from": "PRD-001",
+      "type": "stocked_at",
+      "to": "WH-MSA-001"
+    },
+    {
+      "from": "PRD-001",
+      "type": "stocked_at",
+      "to": "WH-KSM-001"
+    },
+    {
+      "from": "PRD-001",
+      "type": "stocked_at",
+      "to": "WH-NKR-001"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "comparison",
+    "multi_hop",
+    "recommendation"
+  ],
+  "tags": [
+    "inventory",
+    "cross-warehouse",
+    "comparison"
+  ]
+}

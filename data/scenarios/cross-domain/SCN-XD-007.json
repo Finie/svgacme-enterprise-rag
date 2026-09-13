@@ -1,0 +1,122 @@
+{
+  "id": "SCN-XD-007",
+  "category": "cross-domain",
+  "title": "Lucy Chebet Kiprono's Kisumu supplier-audit trip must be traced from travel authorisation to the retained expense record",
+  "description": "Lucy Chebet Kiprono (Compliance Manager) travels to Kisumu to audit Lakeside Chemicals on-site, then submits a travel expense claim covering accommodation, meals and local transport.",
+  "businessContext": "This chain runs from the travel authorisation, through the financial approval matrix, to the expense claim itself, and finally to the records-retention obligation.",
+  "actors": [
+    {
+      "employeeId": "EMP-0008",
+      "name": "Lucy Chebet Kiprono",
+      "roleId": "ROLE-COMP-MGR",
+      "departmentId": "DEPT-COMP",
+      "role": "Compliance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0008",
+      "name": "Lucy Chebet Kiprono"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-006",
+      "name": "Lakeside Chemicals"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-COMP",
+      "name": "Compliance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "OPS-POL-001",
+      "name": "Business Travel & Logistics Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-001",
+      "name": "Expense & Reimbursement Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    },
+    {
+      "type": "policy",
+      "id": "GEN-POL-001",
+      "name": "Records Retention & Document Management Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "OPS-POL-001",
+    "FIN-POL-001",
+    "FIN-POL-002",
+    "GEN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Lucy Chebet Kiprono documents the purpose, destination and estimated cost of the Kisumu audit trip."
+    },
+    {
+      "sequence": 2,
+      "event": "The trip is approved under the FIN-POL-002 matrix before booking."
+    },
+    {
+      "sequence": 3,
+      "event": "Lucy Chebet Kiprono submits the expense claim in Microsoft Dynamics 365 Finance within 10 calendar days of return."
+    },
+    {
+      "sequence": 4,
+      "event": "The travel authorisation, itinerary, claim and receipts are retained under GEN-POL-001."
+    }
+  ],
+  "expectedOutcome": "The full chain must hold together: OPS-POL-001 governs the travel authorisation and approval routing through FIN-POL-002, FIN-POL-001 governs the expense claim itself (receipts, caps, the 10-day submission window), and GEN-POL-001 requires the travel authorisation, itinerary, claim and receipts to all be retained as one traceable record.",
+  "relevantFacts": [
+    "Lucy Chebet Kiprono (EMP-0008) travelled to Kisumu to audit Lakeside Chemicals (SUP-006).",
+    "OPS-POL-001: 'Operations keeps the travel authorisation and itinerary record; Finance keeps the claim, advance and payment evidence.'",
+    "GEN-POL-001 sets a default 7-year retention for corporate control records."
+  ],
+  "requiredReasoning": [
+    "Identify which policy governs the travel authorisation versus the expense claim.",
+    "Identify the approval route for the trip cost.",
+    "Identify what must be retained and for how long."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0008",
+      "type": "belongs_to",
+      "to": "DEPT-COMP"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "multi_hop",
+    "workflow",
+    "policy_lookup"
+  ],
+  "tags": [
+    "cross-domain",
+    "travel",
+    "finance",
+    "records",
+    "compliance"
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "id": "SCN-ONB-004",
+  "category": "onboarding",
+  "title": "Kisumu Distribution Centre onboarding requires a handheld scanner and WMS access",
+  "description": "Erick Kiprotich Maiyo is a Warehouse Officer assigned to the Kisumu Distribution Centre. Onboarding requires a handheld scanning device costing approximately KES 250,000 for the site plus Microsoft Dynamics 365 Supply Chain Management access before the employee can process goods receipts.",
+  "businessContext": "Warehouse Officers record goods receipt, picking, packing and dispatch transactions directly in the warehouse management module; equipment and system access are both prerequisites for the role.",
+  "actors": [
+    {
+      "employeeId": "EMP-0037",
+      "name": "Erick Kiprotich Maiyo",
+      "roleId": "ROLE-WH-OFF",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Officer"
+    },
+    {
+      "employeeId": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu",
+      "roleId": "ROLE-WH-MGR",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0037",
+      "name": "Erick Kiprotich Maiyo"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-WH",
+      "name": "Warehouse"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-KSM-001",
+      "name": "Kisumu Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "system",
+      "id": "SYS-IAM",
+      "name": "Identity and Access Management System"
+    },
+    {
+      "type": "policy",
+      "id": "HR-POL-002",
+      "name": "Recruitment & Onboarding Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "IT Service Desk",
+    "Identity and Access Management System"
+  ],
+  "policies": [
+    "HR-POL-002",
+    "IT-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "HR completes onboarding, including equipment handover requirements, in the Employee Management System."
+    },
+    {
+      "sequence": 2,
+      "event": "The site raises an IT Service Desk ticket for the handheld scanning equipment."
+    },
+    {
+      "sequence": 3,
+      "event": "IT provisions Microsoft Dynamics 365 Supply Chain Management warehouse-module access for the Warehouse Officer role."
+    },
+    {
+      "sequence": 4,
+      "event": "The Warehouse Manager confirms the employee can record a test goods-receipt transaction before go-live."
+    }
+  ],
+  "expectedOutcome": "Equipment procurement for onboarding follows the standard IT Service Desk request path; system access follows the Warehouse Officer role profile under IT-POL-001. Both must be confirmed working before the employee is relied upon for goods-receipt transactions.",
+  "relevantFacts": [
+    "Erick Kiprotich Maiyo (EMP-0037) holds role ROLE-WH-OFF at warehouse WH-KSM-001, reporting to Nancy Wairimu Ndungu (EMP-0022).",
+    "HR-POL-002 includes equipment handover as part of onboarding.",
+    "IT-POL-001 states that Warehouse access follows the role profile and business need in the enterprise data."
+  ],
+  "requiredReasoning": [
+    "Identify the employee's warehouse and role.",
+    "Separate the equipment-provisioning step from the system-access step.",
+    "Confirm both are prerequisites before the employee can process transactions independently."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0037",
+      "type": "reports_to",
+      "to": "EMP-0022"
+    },
+    {
+      "from": "EMP-0037",
+      "type": "works_at",
+      "to": "WH-KSM-001"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "fact_lookup",
+    "workflow"
+  ],
+  "tags": [
+    "onboarding",
+    "warehouse",
+    "it-access",
+    "equipment"
+  ]
+}

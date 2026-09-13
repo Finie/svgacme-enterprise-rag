@@ -1,0 +1,725 @@
+[
+  {
+    "prefix": "Q-FACT-",
+    "question": "What is SVGA Enterprise's legal name?",
+    "category": "factual",
+    "subcategory": "company",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "SVGA Enterprise Limited",
+    "acceptableAnswerPoints": [
+      "SVGA Enterprise Limited"
+    ],
+    "requiredSources": [
+      {
+        "type": "company",
+        "id": "COMP-SVGA"
+      }
+    ],
+    "entities": [
+      "COMP-SVGA"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "company"
+    ],
+    "id": "Q-FACT-001"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "How many employees does the canonical company profile report?",
+    "category": "factual",
+    "subcategory": "company",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "428 employees are reported; employees.json is a representative sample.",
+    "acceptableAnswerPoints": [
+      "428"
+    ],
+    "requiredSources": [
+      {
+        "type": "company",
+        "id": "COMP-SVGA"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "company"
+    ],
+    "id": "Q-FACT-002"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "What is the status of Microsoft Dynamics 365 Finance?",
+    "category": "factual",
+    "subcategory": "system-status",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Microsoft Dynamics 365 Finance is ACTIVE.",
+    "acceptableAnswerPoints": [
+      "ACTIVE"
+    ],
+    "requiredSources": [
+      {
+        "type": "system",
+        "id": "SYS-D365-FIN"
+      }
+    ],
+    "entities": [
+      "SYS-D365-FIN"
+    ],
+    "systems": [
+      "SYS-D365-FIN"
+    ],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it",
+      "system"
+    ],
+    "id": "Q-FACT-003"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "What is the status of Microsoft Dynamics 365 Sales?",
+    "category": "factual",
+    "subcategory": "system-status",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Microsoft Dynamics 365 Sales is ACTIVE.",
+    "acceptableAnswerPoints": [
+      "ACTIVE"
+    ],
+    "requiredSources": [
+      {
+        "type": "system",
+        "id": "SYS-D365-SALES"
+      }
+    ],
+    "entities": [
+      "SYS-D365-SALES"
+    ],
+    "systems": [
+      "SYS-D365-SALES"
+    ],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it",
+      "system"
+    ],
+    "id": "Q-FACT-004"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "What is the status of Microsoft Dynamics 365 Supply Chain Management?",
+    "category": "factual",
+    "subcategory": "system-status",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Microsoft Dynamics 365 Supply Chain Management is ACTIVE.",
+    "acceptableAnswerPoints": [
+      "ACTIVE"
+    ],
+    "requiredSources": [
+      {
+        "type": "system",
+        "id": "SYS-D365-SCM"
+      }
+    ],
+    "entities": [
+      "SYS-D365-SCM"
+    ],
+    "systems": [
+      "SYS-D365-SCM"
+    ],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it",
+      "system"
+    ],
+    "id": "Q-FACT-005"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "What is the status of Employee Management System?",
+    "category": "factual",
+    "subcategory": "system-status",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Employee Management System is ACTIVE.",
+    "acceptableAnswerPoints": [
+      "ACTIVE"
+    ],
+    "requiredSources": [
+      {
+        "type": "system",
+        "id": "SYS-HR"
+      }
+    ],
+    "entities": [
+      "SYS-HR"
+    ],
+    "systems": [
+      "SYS-HR"
+    ],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it",
+      "system"
+    ],
+    "id": "Q-FACT-006"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "What is the status of Identity and Access Management System?",
+    "category": "factual",
+    "subcategory": "system-status",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Identity and Access Management System is ACTIVE.",
+    "acceptableAnswerPoints": [
+      "ACTIVE"
+    ],
+    "requiredSources": [
+      {
+        "type": "system",
+        "id": "SYS-IAM"
+      }
+    ],
+    "entities": [
+      "SYS-IAM"
+    ],
+    "systems": [
+      "SYS-IAM"
+    ],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it",
+      "system"
+    ],
+    "id": "Q-FACT-007"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "What is the status of IT Service Desk?",
+    "category": "factual",
+    "subcategory": "system-status",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "IT Service Desk is ACTIVE.",
+    "acceptableAnswerPoints": [
+      "ACTIVE"
+    ],
+    "requiredSources": [
+      {
+        "type": "system",
+        "id": "SYS-SD"
+      }
+    ],
+    "entities": [
+      "SYS-SD"
+    ],
+    "systems": [
+      "SYS-SD"
+    ],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it",
+      "system"
+    ],
+    "id": "Q-FACT-008"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "What is the status of Enterprise Document Management System?",
+    "category": "factual",
+    "subcategory": "system-status",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Enterprise Document Management System is ACTIVE.",
+    "acceptableAnswerPoints": [
+      "ACTIVE"
+    ],
+    "requiredSources": [
+      {
+        "type": "system",
+        "id": "SYS-DMS"
+      }
+    ],
+    "entities": [
+      "SYS-DMS"
+    ],
+    "systems": [
+      "SYS-DMS"
+    ],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it",
+      "system"
+    ],
+    "id": "Q-FACT-009"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "Which city is Nairobi Distribution Centre in?",
+    "category": "factual",
+    "subcategory": "warehouse-location",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Nairobi Distribution Centre is in Nairobi.",
+    "acceptableAnswerPoints": [
+      "Nairobi"
+    ],
+    "requiredSources": [
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      }
+    ],
+    "entities": [
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "warehouse"
+    ],
+    "id": "Q-FACT-010"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "Which city is Mombasa Distribution Centre in?",
+    "category": "factual",
+    "subcategory": "warehouse-location",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Mombasa Distribution Centre is in Mombasa.",
+    "acceptableAnswerPoints": [
+      "Mombasa"
+    ],
+    "requiredSources": [
+      {
+        "type": "warehouse",
+        "id": "WH-MSA-001"
+      }
+    ],
+    "entities": [
+      "WH-MSA-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "warehouse"
+    ],
+    "id": "Q-FACT-011"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "Which city is Kisumu Distribution Centre in?",
+    "category": "factual",
+    "subcategory": "warehouse-location",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Kisumu Distribution Centre is in Kisumu.",
+    "acceptableAnswerPoints": [
+      "Kisumu"
+    ],
+    "requiredSources": [
+      {
+        "type": "warehouse",
+        "id": "WH-KSM-001"
+      }
+    ],
+    "entities": [
+      "WH-KSM-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "warehouse"
+    ],
+    "id": "Q-FACT-012"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "Which city is Nakuru Distribution Centre in?",
+    "category": "factual",
+    "subcategory": "warehouse-location",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Nakuru Distribution Centre is in Nakuru.",
+    "acceptableAnswerPoints": [
+      "Nakuru"
+    ],
+    "requiredSources": [
+      {
+        "type": "warehouse",
+        "id": "WH-NKR-001"
+      }
+    ],
+    "entities": [
+      "WH-NKR-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "warehouse"
+    ],
+    "id": "Q-FACT-013"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "How much available stock of Tumaini Gold Cooking Oil 5L is recorded at Nairobi Distribution Centre?",
+    "category": "factual",
+    "subcategory": "inventory-availability",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "1140 units are available.",
+    "acceptableAnswerPoints": [
+      "1140"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0001"
+      },
+      {
+        "type": "product",
+        "id": "PRD-001"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      }
+    ],
+    "entities": [
+      "INV-0001",
+      "PRD-001",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability"
+    ],
+    "id": "Q-FACT-014"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "How much available stock of SVGA Value Cooking Oil 5L is recorded at Nairobi Distribution Centre?",
+    "category": "factual",
+    "subcategory": "inventory-availability",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "409 units are available.",
+    "acceptableAnswerPoints": [
+      "409"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0002"
+      },
+      {
+        "type": "product",
+        "id": "PRD-002"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      }
+    ],
+    "entities": [
+      "INV-0002",
+      "PRD-002",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability"
+    ],
+    "id": "Q-FACT-015"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "How much available stock of Tumaini Maize Flour 2Kg is recorded at Nairobi Distribution Centre?",
+    "category": "factual",
+    "subcategory": "inventory-availability",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "255 units are available.",
+    "acceptableAnswerPoints": [
+      "255"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0003"
+      },
+      {
+        "type": "product",
+        "id": "PRD-003"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      }
+    ],
+    "entities": [
+      "INV-0003",
+      "PRD-003",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability"
+    ],
+    "id": "Q-FACT-016"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "How much available stock of SVGA Value Maize Flour 2Kg is recorded at Nairobi Distribution Centre?",
+    "category": "factual",
+    "subcategory": "inventory-availability",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "0 units are available.",
+    "acceptableAnswerPoints": [
+      "0"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0004"
+      },
+      {
+        "type": "product",
+        "id": "PRD-004"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      }
+    ],
+    "entities": [
+      "INV-0004",
+      "PRD-004",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability"
+    ],
+    "id": "Q-FACT-017"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "How much available stock of Tumaini Wheat Flour 2Kg is recorded at Nairobi Distribution Centre?",
+    "category": "factual",
+    "subcategory": "inventory-availability",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "810 units are available.",
+    "acceptableAnswerPoints": [
+      "810"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0005"
+      },
+      {
+        "type": "product",
+        "id": "PRD-005"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      }
+    ],
+    "entities": [
+      "INV-0005",
+      "PRD-005",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability"
+    ],
+    "id": "Q-FACT-018"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "How much available stock of SVGA Value Wheat Flour 2Kg is recorded at Nairobi Distribution Centre?",
+    "category": "factual",
+    "subcategory": "inventory-availability",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "2090 units are available.",
+    "acceptableAnswerPoints": [
+      "2090"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0006"
+      },
+      {
+        "type": "product",
+        "id": "PRD-006"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      }
+    ],
+    "entities": [
+      "INV-0006",
+      "PRD-006",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability"
+    ],
+    "id": "Q-FACT-019"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "Which supplier provides Tumaini Gold Cooking Oil 5L?",
+    "category": "factual",
+    "subcategory": "supplier-product",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "East Africa Foods, Value Foods Kenya",
+    "acceptableAnswerPoints": [
+      "East Africa Foods",
+      "Value Foods Kenya"
+    ],
+    "requiredSources": [
+      {
+        "type": "product",
+        "id": "PRD-001"
+      }
+    ],
+    "entities": [
+      "PRD-001"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "supplier",
+      "product"
+    ],
+    "id": "Q-FACT-020"
+  },
+  {
+    "prefix": "Q-FACT-",
+    "question": "Who is the account manager for Nairobi Retail Holdings?",
+    "category": "factual",
+    "subcategory": "customer-account-manager",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Dennis Omondi Owuor",
+    "acceptableAnswerPoints": [
+      "Dennis Omondi Owuor"
+    ],
+    "requiredSources": [
+      {
+        "type": "customer",
+        "id": "CUS-001"
+      },
+      {
+        "type": "employee",
+        "id": "EMP-0017"
+      }
+    ],
+    "entities": [
+      "CUS-001",
+      "EMP-0017"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "customer",
+      "sales"
+    ],
+    "id": "Q-FACT-021"
+  }
+]

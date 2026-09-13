@@ -1,0 +1,79 @@
+[
+  {
+    "systemId": "SYS-D365-FIN",
+    "name": "Microsoft Dynamics 365 Finance",
+    "vendor": "Microsoft",
+    "category": "ERP - Finance",
+    "description": "Core financial management system used for general ledger, accounts payable, accounts receivable, budgeting, fixed assets and financial reporting.",
+    "owningDepartmentId": "DEPT-FIN",
+    "criticality": "CRITICAL",
+    "environment": "PRODUCTION",
+    "status": "ACTIVE"
+  },
+  {
+    "systemId": "SYS-D365-SALES",
+    "name": "Microsoft Dynamics 365 Sales",
+    "vendor": "Microsoft",
+    "category": "CRM - Sales",
+    "description": "Customer relationship management platform used to manage leads, opportunities, customer accounts, quotations and sales orders.",
+    "owningDepartmentId": "DEPT-SALES",
+    "criticality": "HIGH",
+    "environment": "PRODUCTION",
+    "status": "ACTIVE"
+  },
+  {
+    "systemId": "SYS-D365-SCM",
+    "name": "Microsoft Dynamics 365 Supply Chain Management",
+    "vendor": "Microsoft",
+    "category": "ERP - Supply Chain",
+    "description": "Supply chain platform covering procurement, inventory management, warehouse operations, demand planning and logistics.",
+    "owningDepartmentId": "DEPT-OPS",
+    "criticality": "CRITICAL",
+    "environment": "PRODUCTION",
+    "status": "ACTIVE"
+  },
+  {
+    "systemId": "SYS-HR",
+    "name": "Employee Management System",
+    "vendor": "SVGA Enterprise IT (hosted HRIS)",
+    "category": "Human Resources Information System",
+    "description": "Human resource information system used for employee records, leave management, payroll data, performance management and onboarding workflows.",
+    "owningDepartmentId": "DEPT-HR",
+    "criticality": "HIGH",
+    "environment": "PRODUCTION",
+    "status": "ACTIVE"
+  },
+  {
+    "systemId": "SYS-IAM",
+    "name": "Identity and Access Management System",
+    "vendor": "Microsoft Entra ID",
+    "category": "Security - Identity & Access Management",
+    "description": "Centralized identity provider used for user authentication, single sign-on, multi-factor authentication and access provisioning across enterprise systems.",
+    "owningDepartmentId": "DEPT-IT",
+    "criticality": "CRITICAL",
+    "environment": "PRODUCTION",
+    "status": "ACTIVE"
+  },
+  {
+    "systemId": "SYS-SD",
+    "name": "IT Service Desk",
+    "vendor": "Freshworks (Freshservice)",
+    "category": "IT Service Management",
+    "description": "IT service management platform used to log, track and resolve employee IT support tickets, incidents and service requests.",
+    "owningDepartmentId": "DEPT-IT",
+    "criticality": "MEDIUM",
+    "environment": "PRODUCTION",
+    "status": "ACTIVE"
+  },
+  {
+    "systemId": "SYS-DMS",
+    "name": "Enterprise Document Management System",
+    "vendor": "Microsoft SharePoint (Microsoft 365)",
+    "category": "Document & Records Management",
+    "description": "Central repository for corporate policies, contracts, compliance records and departmental documentation with version control and access permissions.",
+    "owningDepartmentId": "DEPT-IT",
+    "criticality": "MEDIUM",
+    "environment": "PRODUCTION",
+    "status": "ACTIVE"
+  }
+]

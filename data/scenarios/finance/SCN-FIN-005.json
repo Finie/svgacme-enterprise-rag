@@ -1,0 +1,105 @@
+{
+  "id": "SCN-FIN-005",
+  "category": "finance",
+  "title": "A KES 1,500,000 contract commitment exceeds the Finance Manager's own approval limit",
+  "description": "Anthony Njoroge Kariithi (Legal Manager) needs to commit KES 1,500,000 for external legal counsel on a major contract dispute.",
+  "businessContext": "FIN-POL-002's Finance Manager matrix tier runs up to KES 2,000,000, but the Finance Manager's own canonical approval limit in roles.json is lower, and the policy states the lower limit applies.",
+  "actors": [
+    {
+      "employeeId": "EMP-0009",
+      "name": "Anthony Njoroge Kariithi",
+      "roleId": "ROLE-LEGAL-MGR",
+      "departmentId": "DEPT-LEGAL",
+      "role": "Legal Manager"
+    },
+    {
+      "employeeId": "EMP-0002",
+      "name": "Grace Njeri Mwangi",
+      "roleId": "ROLE-CFO",
+      "departmentId": "DEPT-FIN",
+      "role": "Chief Financial Officer"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0009",
+      "name": "Anthony Njoroge Kariithi"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0002",
+      "name": "Grace Njeri Mwangi"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-LEGAL",
+      "name": "Legal"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Anthony Njoroge Kariithi raises a commitment request for KES 1,500,000."
+    },
+    {
+      "sequence": 2,
+      "event": "The amount is checked against the FIN-POL-002 matrix band, which nominally names Finance Manager for this range."
+    },
+    {
+      "sequence": 3,
+      "event": "The Finance Manager's own approval limit (KES 1,000,000) is found to be lower than the requested amount."
+    },
+    {
+      "sequence": 4,
+      "event": "The request escalates to the next sufficient tier."
+    }
+  ],
+  "expectedOutcome": "Although KES 1,500,000 falls within the matrix's stated Finance Manager range (KES 500,001-2,000,000), the Finance Manager's own canonical approval limit of KES 1,000,000 is lower than the requested amount. Per FIN-POL-002's rule that \"a role-specific authority may be lower and the lower limit applies,\" approval escalates to Grace Njeri Mwangi (Chief Financial Officer).",
+  "relevantFacts": [
+    "The request amount is KES 1,500,000.",
+    "FIN-POL-002 assigns the KES 500,001-2,000,000 band to the Finance Manager tier.",
+    "The Finance Manager's approvalLimitKes in data/enterprise/roles.json is KES 1,000,000, below the matrix band's own ceiling of KES 2,000,000.",
+    "FIN-POL-002: 'A role-specific authority may be lower and the lower limit applies.'"
+  ],
+  "requiredReasoning": [
+    "Identify the nominal FIN-POL-002 matrix tier for this amount.",
+    "Cross-reference the named tier's actual canonical approval limit in roles.json, not just the matrix band's ceiling.",
+    "Recognise the canonical limit is lower than the matrix band ceiling.",
+    "Escalate to the next tier whose own limit is sufficient."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0009",
+      "type": "belongs_to",
+      "to": "DEPT-LEGAL"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "calculation",
+    "multi_hop",
+    "exception"
+  ],
+  "tags": [
+    "finance",
+    "approval-matrix",
+    "boundary"
+  ]
+}

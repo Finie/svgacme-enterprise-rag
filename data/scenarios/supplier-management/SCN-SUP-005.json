@@ -1,0 +1,113 @@
+{
+  "id": "SCN-SUP-005",
+  "category": "supplier-management",
+  "title": "Savannah Home Care requests updated payment terms and bank details",
+  "description": "Savannah Home Care has requested a change to its payment terms and settlement bank account details on file.",
+  "businessContext": "PROC-POL-002 and GEN-POL-001 require supplier record changes to be controlled, versioned and evidenced, given the fraud risk associated with payment detail changes.",
+  "actors": [
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-005",
+      "name": "Savannah Home Care"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "GEN-POL-001",
+      "name": "Records Retention & Document Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-001",
+      "name": "Data Protection & Privacy Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "PROC-POL-002",
+    "GEN-POL-001",
+    "COMP-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Savannah Home Care requests a change to payment terms and bank account details."
+    },
+    {
+      "sequence": 2,
+      "event": "Finance independently verifies the new bank details before any change is applied."
+    },
+    {
+      "sequence": 3,
+      "event": "The change is recorded with the approver, effective date and superseded version."
+    },
+    {
+      "sequence": 4,
+      "event": "Supplier contact information continues to be protected under data protection controls."
+    }
+  ],
+  "expectedOutcome": "The change is not applied on the strength of the request alone: Finance must independently verify the new bank details (a common fraud vector), the update is recorded as a new version with an approver and effective date under GEN-POL-001, and the supplier's contact information remains protected under COMP-POL-001.",
+  "relevantFacts": [
+    "Savannah Home Care (SUP-005) is an existing approved supplier requesting a payment-details change.",
+    "GEN-POL-001: 'A revised policy creates a new version and records the approver, effective date and superseded version; users do not overwrite an approved record to hide history.'",
+    "PROC-POL-002: 'Supplier records are maintained in Microsoft Dynamics 365 Supply Chain Management and sensitive information is handled under COMP-POL-001.'"
+  ],
+  "requiredReasoning": [
+    "Identify the fraud risk associated with an unverified bank-details change.",
+    "Identify the independent verification step required before applying it.",
+    "Identify the records/versioning requirement for the change itself."
+  ],
+  "relationships": [
+    {
+      "from": "SUP-005",
+      "type": "record_owned_by",
+      "to": "DEPT-PROC"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "workflow",
+    "policy_lookup"
+  ],
+  "tags": [
+    "supplier-management",
+    "records"
+  ]
+}

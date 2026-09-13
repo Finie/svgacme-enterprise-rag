@@ -1,0 +1,140 @@
+{
+  "id": "SCN-PROC-003",
+  "category": "procurement",
+  "title": "A KES 3,000,000 logistics contract with a high-risk supplier escalates past Finance Manager",
+  "description": "Operations wants to commit KES 3,000,000 to a one-year distribution contract with Swift Freight Logistics, which carries a \"HIGH\" risk rating in the supplier register. Catherine Achieng Odongo raises the request.",
+  "businessContext": "Higher-risk suppliers require stronger evidence and monitoring under PROC-POL-002, in addition to the amount itself determining the required financial approver.",
+  "actors": [
+    {
+      "employeeId": "EMP-0006",
+      "name": "Catherine Achieng Odongo",
+      "roleId": "ROLE-OPS-MGR",
+      "departmentId": "DEPT-OPS",
+      "role": "Operations Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0006",
+      "name": "Catherine Achieng Odongo"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-OPS",
+      "name": "Operations"
+    },
+    {
+      "type": "costCenter",
+      "id": "CC-OPS",
+      "name": "Operations"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-013",
+      "name": "Swift Freight Logistics"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "PROC-POL-001",
+    "PROC-POL-002",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Catherine Achieng Odongo raises a purchase requisition for KES 3,000,000."
+    },
+    {
+      "sequence": 2,
+      "event": "Procurement notes Swift Freight Logistics's \"HIGH\" risk rating and applies proportionate due diligence."
+    },
+    {
+      "sequence": 3,
+      "event": "The amount is checked against the FIN-POL-002 matrix."
+    },
+    {
+      "sequence": 4,
+      "event": "Finance Manager approval alone is insufficient at this amount."
+    },
+    {
+      "sequence": 5,
+      "event": "The request escalates to the next sufficient tier."
+    }
+  ],
+  "expectedOutcome": "KES 3,000,000 falls in the matrix's CFO tier (KES 2,000,001-10,000,000) because it already exceeds the Finance Manager's own approval limit of KES 1,000,000. Grace Njeri Mwangi (Chief Financial Officer) is the required approver, and the supplier's elevated risk rating requires additional PROC-POL-002 due diligence alongside the financial approval.",
+  "relevantFacts": [
+    "The request amount is KES 3,000,000.",
+    "Swift Freight Logistics (SUP-013) has riskRating \"HIGH\" in data/master-data/suppliers.json.",
+    "FIN-POL-002: \"KES 500,001 to 2,000,000, Finance Manager; KES 2,000,001 to 10,000,000, CFO.\"",
+    "PROC-POL-002: 'Higher-risk suppliers require stronger evidence, contract controls, monitoring and renewal review.'",
+    "Finance Manager (Faith Wambui Gitau) has an approval limit of KES 1,000,000 per roles.json.",
+    "Chief Financial Officer (Grace Njeri Mwangi) has an approval limit of KES 5,000,000 per roles.json."
+  ],
+  "requiredReasoning": [
+    "Determine why KES 3,000,000 exceeds the Finance Manager's own approval limit, not just the matrix band's nominal range.",
+    "Identify CFO as the next sufficient tier.",
+    "Separately evaluate the supplier's risk rating against PROC-POL-002 due-diligence requirements.",
+    "Combine both conclusions into a single procurement decision."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0006",
+      "type": "belongs_to",
+      "to": "DEPT-OPS"
+    },
+    {
+      "from": "EMP-0006",
+      "type": "requests_from",
+      "to": "SUP-013"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "calculation",
+    "multi_hop",
+    "compliance"
+  ],
+  "tags": [
+    "procurement",
+    "approval-matrix",
+    "operations",
+    "supplier-risk",
+    "boundary"
+  ]
+}

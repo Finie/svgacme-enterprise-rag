@@ -1,0 +1,74 @@
+{
+  "id": "SCN-INC-004",
+  "category": "incidents",
+  "title": "George Otieno Oduor reports that \"something seems wrong\" without further detail",
+  "description": "George Otieno Oduor tells the service desk that \"something seems wrong with my account\" but does not identify which system is affected, what the symptoms are, when it started, or what business impact it is having.",
+  "businessContext": "IT-POL-002 requires a ticket to state the affected system, symptoms, time, location, business impact and contact details before it can be triaged and classified.",
+  "actors": [
+    {
+      "employeeId": "EMP-0028",
+      "name": "George Otieno Oduor",
+      "roleId": "ROLE-EMPLOYEE",
+      "departmentId": "DEPT-CS",
+      "role": "Employee"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0028",
+      "name": "George Otieno Oduor"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-002",
+      "name": "IT Incident Management & Service Desk Policy"
+    }
+  ],
+  "systems": [
+    "IT Service Desk"
+  ],
+  "policies": [
+    "IT-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "George Otieno Oduor contacts the service desk with a vague concern."
+    },
+    {
+      "sequence": 2,
+      "event": "No affected system, symptoms, timing or business impact is provided."
+    },
+    {
+      "sequence": 3,
+      "event": "The service desk cannot yet triage, categorise or classify the severity of the report."
+    }
+  ],
+  "expectedOutcome": "The report cannot yet be classified as P1-P4 or routed to a resolver group: IT-POL-002 requires the affected system, symptoms, time, location and business impact to triage a ticket. The correct next step is for the service desk to gather these specifics from the employee, not to guess a severity level or close the ticket.",
+  "relevantFacts": [
+    "George Otieno Oduor (EMP-0028) has not stated which system is affected, what the symptoms are, or when the issue started.",
+    "IT-POL-002: 'Employees create a ticket in the IT Service Desk with the affected system, symptoms, time, location, business impact and contact details.'"
+  ],
+  "requiredReasoning": [
+    "Identify the information IT-POL-002 requires to triage a ticket.",
+    "Confirm that information is missing from this report.",
+    "Conclude that severity cannot be classified yet, and clarification must be sought first."
+  ],
+  "relationships": [],
+  "difficulty": "medium",
+  "questionTypes": [
+    "abstention",
+    "policy_lookup"
+  ],
+  "tags": [
+    "incidents",
+    "abstention",
+    "insufficient-information"
+  ]
+}

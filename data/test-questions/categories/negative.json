@@ -1,0 +1,400 @@
+[
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can a suspended customer place a normal order?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "A suspended customer must not place a normal order until the suspension is resolved and the customer is approved for ordering.",
+    "acceptableAnswerPoints": [
+      "reject",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "SALES-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "reject",
+    "tags": [
+      "negative",
+      "reject",
+      "control"
+    ],
+    "id": "Q-NEG-001"
+  },
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can a pending supplier be treated as an approved supplier?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "No. Procurement must not use the supplier until onboarding and due diligence are complete and approval is recorded.",
+    "acceptableAnswerPoints": [
+      "reject",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "PROC-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "reject",
+    "tags": [
+      "negative",
+      "reject",
+      "control"
+    ],
+    "id": "Q-NEG-002"
+  },
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can a department manager approve a purchase above their actual approval limit?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "No. The request requires additional approval or escalation when the actual authority is insufficient.",
+    "acceptableAnswerPoints": [
+      "escalate",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "escalate",
+    "tags": [
+      "negative",
+      "escalate",
+      "control"
+    ],
+    "id": "Q-NEG-003"
+  },
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can an employee approve their own expense claim?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "No. A claimant must never approve their own claim.",
+    "acceptableAnswerPoints": [
+      "reject",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "FIN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "reject",
+    "tags": [
+      "negative",
+      "reject",
+      "control"
+    ],
+    "id": "Q-NEG-004"
+  },
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can inventory be increased without an authorised stock adjustment?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "No. An unexplained inventory adjustment is not permitted; independent review and authorisation are required.",
+    "acceptableAnswerPoints": [
+      "reject",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "WH-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "INV-POL-001",
+      "WH-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "reject",
+    "tags": [
+      "negative",
+      "reject",
+      "control"
+    ],
+    "id": "Q-NEG-005"
+  },
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can a purchase bypass the normal procurement process without emergency criteria?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "No. Emergency procurement requires material risk, a recorded reason and retrospective approvals.",
+    "acceptableAnswerPoints": [
+      "reject",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "PROC-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "reject",
+    "tags": [
+      "negative",
+      "reject",
+      "control"
+    ],
+    "id": "Q-NEG-006"
+  },
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can a user receive system access because a colleague asks informally?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "No. Access requires an authorised request and least-privilege role mapping.",
+    "acceptableAnswerPoints": [
+      "reject",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "IT-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "reject",
+    "tags": [
+      "negative",
+      "reject",
+      "control"
+    ],
+    "id": "Q-NEG-007"
+  },
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can damaged goods be moved directly into available stock?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "No. Damaged or questionable goods must be segregated and reported before disposition.",
+    "acceptableAnswerPoints": [
+      "reject",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "WH-POL-001",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "WH-POL-001",
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "reject",
+    "tags": [
+      "negative",
+      "reject",
+      "control"
+    ],
+    "id": "Q-NEG-008"
+  },
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can a travel advance remain unreconciled when another advance is requested?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "No. The previous advance must be reconciled and any unused balance returned first.",
+    "acceptableAnswerPoints": [
+      "reject",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "FIN-POL-001",
+      "OPS-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "reject",
+    "tags": [
+      "negative",
+      "reject",
+      "control"
+    ],
+    "id": "Q-NEG-009"
+  },
+  {
+    "prefix": "Q-NEG-",
+    "question": "Can an approved record be overwritten to hide its history?",
+    "category": "negative",
+    "subcategory": "control-rejection",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "No. A revised record must preserve version history and must not conceal the earlier record.",
+    "acceptableAnswerPoints": [
+      "reject",
+      "not permitted"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "GEN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the requested action.",
+      "Retrieve the relevant control.",
+      "Determine whether the action is permitted, rejected or escalated."
+    ],
+    "expectedBehavior": "reject",
+    "tags": [
+      "negative",
+      "reject",
+      "control"
+    ],
+    "id": "Q-NEG-010"
+  }
+]

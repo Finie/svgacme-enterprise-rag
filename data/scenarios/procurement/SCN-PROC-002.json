@@ -1,0 +1,127 @@
+{
+  "id": "SCN-PROC-002",
+  "category": "procurement",
+  "title": "IT hardware procurement of KES 750,000 tests the Finance Manager approval tier",
+  "description": "The IT department needs replacement server and network hardware from Techlink Systems, priced at a KES equivalent of KES 750,000 (the supplier invoices in USD). David Kiplagat Rotich raises the request against cost centre CC-IT.",
+  "businessContext": "FIN-POL-002 establishes one approval matrix for expenditure and purchase commitments regardless of requesting department, evaluated on the total expected commitment.",
+  "actors": [
+    {
+      "employeeId": "EMP-0007",
+      "name": "David Kiplagat Rotich",
+      "roleId": "ROLE-IT-MGR",
+      "departmentId": "DEPT-IT",
+      "role": "IT Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0007",
+      "name": "David Kiplagat Rotich"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-IT",
+      "name": "Information Technology"
+    },
+    {
+      "type": "costCenter",
+      "id": "CC-IT",
+      "name": "Information Technology"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-012",
+      "name": "Techlink Systems"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "PROC-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "David Kiplagat Rotich raises a purchase requisition for a KES equivalent of KES 750,000."
+    },
+    {
+      "sequence": 2,
+      "event": "Procurement checks the amount against the FIN-POL-002 approval matrix."
+    },
+    {
+      "sequence": 3,
+      "event": "The IT department head is not eligible to approve alone at this amount."
+    },
+    {
+      "sequence": 4,
+      "event": "The requisition is routed to the next sufficient tier in the matrix."
+    },
+    {
+      "sequence": 5,
+      "event": "Finance reviews the purchase before the order is released, since it exceeds KES 500,000."
+    }
+  ],
+  "expectedOutcome": "KES 750,000 exceeds the KES 500,000 ceiling of the Department Head tier, placing it in the Finance Manager tier (KES 500,001-2,000,000). Faith Wambui Gitau (Finance Manager), whose own approval limit is KES 1,000,000, is the required approver. PROC-POL-001 additionally requires Finance review before the purchase order is released, since the amount exceeds KES 500,000.',",
+  "relevantFacts": [
+    "The request amount is KES 750,000, requested by the DEPT-IT department.",
+    "Techlink Systems (SUP-012) is an approved supplier invoicing in USD.",
+    "FIN-POL-002: \"KES 50,001 to 500,000, Department Head; KES 500,001 to 2,000,000, Finance Manager.\"",
+    "PROC-POL-001: \"Purchases above KES 500,000 require Finance review before a purchase order is released.\"",
+    "IT Manager (David Kiplagat Rotich) has an approval limit of KES 1,000,000 per roles.json.",
+    "Finance Manager (Faith Wambui Gitau) has an approval limit of KES 1,000,000 per roles.json."
+  ],
+  "requiredReasoning": [
+    "Determine the FIN-POL-002 matrix tier for KES 750,000.",
+    "Recognise that this exceeds the Department Head ceiling regardless of which department requested it.",
+    "Confirm the Finance Manager's own approval limit covers this amount.",
+    "Identify the additional Finance-review requirement from PROC-POL-001 for amounts above KES 500,000."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0007",
+      "type": "belongs_to",
+      "to": "DEPT-IT"
+    },
+    {
+      "from": "CC-IT",
+      "type": "belongs_to",
+      "to": "DEPT-IT"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "calculation",
+    "policy_lookup",
+    "multi_hop"
+  ],
+  "tags": [
+    "procurement",
+    "approval-matrix",
+    "it",
+    "boundary"
+  ]
+}

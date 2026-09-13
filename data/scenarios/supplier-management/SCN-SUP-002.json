@@ -1,0 +1,96 @@
+{
+  "id": "SCN-SUP-002",
+  "category": "supplier-management",
+  "title": "Swift Freight Logistics's delivery performance has deteriorated over three consecutive months",
+  "description": "Swift Freight Logistics, already rated \"HIGH\" risk, has missed agreed delivery windows for three consecutive months, affecting warehouse dispatch schedules.",
+  "businessContext": "PROC-POL-002 requires Procurement to review supplier performance against delivery, quality, fulfilment and responsiveness, with a corrective action plan for material failures.",
+  "actors": [
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-013",
+      "name": "Swift Freight Logistics"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "PROC-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Delivery performance data for Swift Freight Logistics is reviewed over three consecutive months."
+    },
+    {
+      "sequence": 2,
+      "event": "Repeated missed delivery windows are identified as a material failure."
+    },
+    {
+      "sequence": 3,
+      "event": "Esther Wanjiku Kamau (Procurement Manager) determines a corrective action plan is required."
+    },
+    {
+      "sequence": 4,
+      "event": "An owner and due date are assigned to the corrective action plan."
+    }
+  ],
+  "expectedOutcome": "A material failure has been identified for Swift Freight Logistics, which already carries a \"HIGH\" risk rating. PROC-POL-002 requires a corrective action plan with an owner and due date; continued non-performance after that plan would support suspension, which blocks new purchase orders until the Procurement Manager records reinstatement or termination.",
+  "relevantFacts": [
+    "Swift Freight Logistics (SUP-013) has riskRating \"HIGH\" in data/master-data/suppliers.json.",
+    "Delivery windows were missed for three consecutive months.",
+    "PROC-POL-002: 'Procurement reviews performance against delivery, quality, fulfilment, responsiveness, invoice accuracy and policy compliance. A material failure receives a corrective action plan with an owner and due date.'"
+  ],
+  "requiredReasoning": [
+    "Assess whether repeated missed deliveries constitute a material failure under the policy.",
+    "Identify the required response (corrective action plan) versus an immediate suspension.",
+    "Identify what would escalate this from a corrective action plan to suspension."
+  ],
+  "relationships": [
+    {
+      "from": "SUP-013",
+      "type": "reviewed_by",
+      "to": "EMP-0004"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "workflow",
+    "recommendation",
+    "policy_lookup"
+  ],
+  "tags": [
+    "supplier-management",
+    "performance"
+  ]
+}

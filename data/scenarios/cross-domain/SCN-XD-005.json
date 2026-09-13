@@ -1,0 +1,116 @@
+{
+  "id": "SCN-XD-005",
+  "category": "cross-domain",
+  "title": "A contract renewal with Nyati Consumer Products surfaces a second, separate conflict-of-interest question",
+  "description": "While preparing Nyati Consumer Products's contract renewal, Esther Wanjiku Kamau (Procurement Manager) discloses that her spouse recently joined Nyati Consumer Products's board in a non-executive capacity.",
+  "businessContext": "This chain runs from the supplier relationship, through the procurement approval role, to the disclosed conflict, and into the Compliance decision process.",
+  "actors": [
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    },
+    {
+      "employeeId": "EMP-0008",
+      "name": "Lucy Chebet Kiprono",
+      "roleId": "ROLE-COMP-MGR",
+      "departmentId": "DEPT-COMP",
+      "role": "Compliance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0008",
+      "name": "Lucy Chebet Kiprono"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-008",
+      "name": "Nyati Consumer Products"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-002",
+      "name": "Anti-Bribery & Conflict of Interest Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "PROC-POL-002",
+    "COMP-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Nyati Consumer Products's contract renewal is due for review."
+    },
+    {
+      "sequence": 2,
+      "event": "Esther Wanjiku Kamau proactively discloses her spouse's non-executive board role at the supplier."
+    },
+    {
+      "sequence": 3,
+      "event": "Lucy Chebet Kiprono (Compliance Manager) and her manager assess the disclosure."
+    },
+    {
+      "sequence": 4,
+      "event": "A decision is made on withdrawal, independent review, or continuation with controls."
+    }
+  ],
+  "expectedOutcome": "Because the disclosure was proactive, Esther Wanjiku Kamau has met her COMP-POL-002 obligation; she must still withdraw from approving this specific supplier's renewal, and the manager and Compliance Manager decide whether an independent reviewer approves it instead or further controls are needed, per PROC-POL-002's requirement that a conflicted employee withdraw from evaluation or approval.",
+  "relevantFacts": [
+    "Esther Wanjiku Kamau (EMP-0004) is the Procurement Manager who would normally approve Nyati Consumer Products's (SUP-008) renewal.",
+    "The relationship (spouse on the board) was proactively disclosed before any decision was made.",
+    "COMP-POL-002: 'The manager and Compliance Manager decide whether the employee must withdraw, whether an independent review is required or whether the activity must stop.'"
+  ],
+  "requiredReasoning": [
+    "Identify who would normally approve this supplier relationship.",
+    "Recognise that proactive disclosure changes the response from investigation to controlled continuation.",
+    "Identify who takes over the approval decision."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0004",
+      "type": "disclosed_relationship_with",
+      "to": "SUP-008"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "compliance",
+    "exception"
+  ],
+  "tags": [
+    "cross-domain",
+    "supplier-management",
+    "conflict-of-interest",
+    "compliance"
+  ]
+}

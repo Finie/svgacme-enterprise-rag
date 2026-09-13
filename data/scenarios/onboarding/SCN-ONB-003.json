@@ -1,0 +1,146 @@
+{
+  "id": "SCN-ONB-003",
+  "category": "onboarding",
+  "title": "A separated employee is found to still have active system access",
+  "description": "Joseph Mutiso Kyalo, the Administration department head, notified HR that Vincent Kiprop Sang's employment ended two weeks ago. During a routine access review, IT found the employee's Identity and Access Management System account and Enterprise Document Management System access are still enabled.",
+  "businessContext": "HR-POL-002 requires HR to notify IT before an employee's effective end date so access can be disabled promptly; IT-POL-001 requires IT to disable access when HR records a termination.",
+  "actors": [
+    {
+      "employeeId": "EMP-0030",
+      "name": "Vincent Kiprop Sang",
+      "roleId": "ROLE-EMPLOYEE",
+      "departmentId": "DEPT-ADMIN",
+      "role": "Employee"
+    },
+    {
+      "employeeId": "EMP-0011",
+      "name": "Joseph Mutiso Kyalo",
+      "roleId": "ROLE-DEPT-MGR",
+      "departmentId": "DEPT-ADMIN",
+      "role": "Department Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0030",
+      "name": "Vincent Kiprop Sang"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0011",
+      "name": "Joseph Mutiso Kyalo"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-ADMIN",
+      "name": "Administration"
+    },
+    {
+      "type": "system",
+      "id": "SYS-IAM",
+      "name": "Identity and Access Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "policy",
+      "id": "HR-POL-002",
+      "name": "Recruitment & Onboarding Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-002",
+      "name": "IT Incident Management & Service Desk Policy"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-001",
+      "name": "Data Protection & Privacy Policy"
+    }
+  ],
+  "systems": [
+    "Identity and Access Management System",
+    "Enterprise Document Management System",
+    "IT Service Desk"
+  ],
+  "policies": [
+    "HR-POL-002",
+    "IT-POL-001",
+    "IT-POL-002",
+    "COMP-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "The manager confirms to HR that the employee's last working day has passed."
+    },
+    {
+      "sequence": 2,
+      "event": "A scheduled IT-POL-001 access review is run across active accounts."
+    },
+    {
+      "sequence": 3,
+      "event": "The review finds the employee's Identity and Access Management System account is still enabled."
+    },
+    {
+      "sequence": 4,
+      "event": "The review finds the employee's Enterprise Document Management System access has not been revoked."
+    },
+    {
+      "sequence": 5,
+      "event": "The reviewer must decide whether this is a routine correction or a reportable control failure."
+    }
+  ],
+  "expectedOutcome": "This is a control failure, not a routine ticket: HR-POL-002 required IT to be notified before the effective end date and IT-POL-001 required prompt disablement. The account must be disabled immediately, the gap window investigated as a possible unauthorised-access exposure under COMP-POL-001, and the failure logged for root-cause review rather than silently closed.",
+  "relevantFacts": [
+    "Vincent Kiprop Sang (EMP-0030) belongs to department DEPT-ADMIN; the canonical enterprise record in data/enterprise/employees.json currently shows this employee as ACTIVE, and the scenario tests the actions required once HR confirms separation.",
+    "HR-POL-002 states: 'When employment ends... HR notifies IT before the effective time where practicable. IT disables or changes access through the Identity and Access Management System, recovers equipment and preserves records.'",
+    "IT-POL-001 states: 'When HR records termination or transfer, IT disables, changes or recertifies access promptly.'",
+    "IT-POL-002 requires a suspected unauthorised-access exposure to be escalated and investigated, with COMP-POL-001 governing any personal-data exposure risk during the gap window."
+  ],
+  "requiredReasoning": [
+    "Identify which policy obligates HR to notify IT of a separation, and by when.",
+    "Identify which policy obligates IT to act on that notification.",
+    "Determine whether continued access after notification represents normal processing time or a control failure.",
+    "Identify the escalation path for a suspected unauthorised-access exposure."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0030",
+      "type": "reports_to",
+      "to": "EMP-0011"
+    },
+    {
+      "from": "EMP-0030",
+      "type": "belongs_to",
+      "to": "DEPT-ADMIN"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "exception",
+    "compliance",
+    "multi_hop"
+  ],
+  "tags": [
+    "onboarding",
+    "offboarding",
+    "it-access",
+    "negative",
+    "compliance"
+  ]
+}

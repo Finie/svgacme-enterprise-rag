@@ -1,0 +1,138 @@
+{
+  "id": "SCN-XD-004",
+  "category": "cross-domain",
+  "title": "A KES 10,000,000 warehouse automation project sits exactly at the matrix's CFO ceiling",
+  "description": "Nancy Wairimu Ndungu (Warehouse Manager) proposes a KES 10,000,000 project with Techlink Systems to upgrade warehouse automation systems across all four distribution centres, against cost centre CC-WH.",
+  "businessContext": "This amount sits exactly at the FIN-POL-002 matrix's stated CFO ceiling (KES 10,000,000), but the CFO's own canonical approval limit is lower, so the correct approver depends on cross-referencing two sources, not the matrix text alone.",
+  "actors": [
+    {
+      "employeeId": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu",
+      "roleId": "ROLE-WH-MGR",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Manager"
+    },
+    {
+      "employeeId": "EMP-0001",
+      "name": "Samuel Kariuki",
+      "roleId": "ROLE-CEO",
+      "departmentId": "DEPT-EXEC",
+      "role": "Chief Executive Officer"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0001",
+      "name": "Samuel Kariuki"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-WH",
+      "name": "Warehouse"
+    },
+    {
+      "type": "costCenter",
+      "id": "CC-WH",
+      "name": "Warehouse"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-012",
+      "name": "Techlink Systems"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "PROC-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Nancy Wairimu Ndungu raises a requisition for KES 10,000,000 against cost centre CC-WH."
+    },
+    {
+      "sequence": 2,
+      "event": "The amount is checked against the FIN-POL-002 matrix, which nominally caps the CFO tier at exactly this amount."
+    },
+    {
+      "sequence": 3,
+      "event": "The CFO's own canonical approval limit (KES 5,000,000) is found to be lower."
+    },
+    {
+      "sequence": 4,
+      "event": "The request escalates to the CEO."
+    },
+    {
+      "sequence": 5,
+      "event": "Finance review is triggered given the amount exceeds KES 500,000."
+    }
+  ],
+  "expectedOutcome": "KES 10,000,000 sits exactly at the matrix's stated CFO ceiling, but the CFO's own approval limit of KES 5,000,000 is lower, so Samuel Kariuki (Chief Executive Officer) is the required approver, not the CFO. Finance review under PROC-POL-001 also applies given the amount exceeds KES 500,000.",
+  "relevantFacts": [
+    "The request amount is KES 10,000,000, exactly at the FIN-POL-002 matrix's stated CFO tier ceiling.",
+    "The CFO's approvalLimitKes in data/enterprise/roles.json is KES 5,000,000.",
+    "Techlink Systems (SUP-012) is the proposed supplier."
+  ],
+  "requiredReasoning": [
+    "Determine the matrix tier from the amount alone.",
+    "Cross-reference the CFO's actual canonical approval limit rather than relying on the matrix ceiling text.",
+    "Recognise the canonical limit is lower, forcing escalation to the CEO.",
+    "Separately identify the Finance-review requirement for amounts above KES 500,000."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0022",
+      "type": "belongs_to",
+      "to": "DEPT-WH"
+    },
+    {
+      "from": "CC-WH",
+      "type": "belongs_to",
+      "to": "DEPT-WH"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "calculation",
+    "exception"
+  ],
+  "tags": [
+    "cross-domain",
+    "procurement",
+    "finance",
+    "approval-matrix",
+    "warehouse",
+    "boundary"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "id": "SCN-FIN-001",
+  "category": "finance",
+  "title": "Timothy Mwendwa Musyoka submits a KES 8,500 local transport expense claim with a receipt",
+  "description": "Timothy Mwendwa Musyoka submits a claim for KES 8,500 of local transport incurred while performing an authorised duty, with a receipt attached.",
+  "businessContext": "FIN-POL-001 requires a receipt for each expense of KES 2,000 or more, submitted within 10 calendar days, with the line manager confirming business purpose and Finance checking arithmetic and approval authority.",
+  "actors": [
+    {
+      "employeeId": "EMP-0032",
+      "name": "Timothy Mwendwa Musyoka",
+      "roleId": "ROLE-FIN-ANALYST",
+      "departmentId": "DEPT-FIN",
+      "role": "Finance Analyst"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0032",
+      "name": "Timothy Mwendwa Musyoka"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-FIN",
+      "name": "Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-001",
+      "name": "Expense & Reimbursement Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "FIN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Timothy Mwendwa Musyoka submits a KES 8,500 expense claim with a receipt in Microsoft Dynamics 365 Finance."
+    },
+    {
+      "sequence": 2,
+      "event": "The line manager confirms business purpose and budget."
+    },
+    {
+      "sequence": 3,
+      "event": "Finance checks arithmetic, duplicates, tax treatment, receipts and approval authority."
+    }
+  ],
+  "expectedOutcome": "The claim is eligible for standard processing: KES 8,500 exceeds the KES 2,000 receipt threshold and a receipt is attached, so the claim proceeds to manager confirmation and Finance review without an exception.",
+  "relevantFacts": [
+    "Timothy Mwendwa Musyoka (EMP-0032) submitted a claim of KES 8,500 with a receipt attached.",
+    "FIN-POL-001: 'A receipt is required for each expense of KES 2,000 or more and should be attached to the claim... The employee submits the claim in Microsoft Dynamics 365 Finance within 10 calendar days.'"
+  ],
+  "requiredReasoning": [
+    "Check whether the amount requires a receipt under the KES 2,000 threshold.",
+    "Confirm a receipt is attached.",
+    "Confirm no exception handling is triggered."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0032",
+      "type": "belongs_to",
+      "to": "DEPT-FIN"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "fact_lookup",
+    "policy_lookup"
+  ],
+  "tags": [
+    "finance",
+    "expense-claim"
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "SCN-ONB-006",
+  "category": "onboarding",
+  "title": "Procurement Officer onboarding must respect segregation of duties from day one",
+  "description": "Martin Njue Kariuki has completed onboarding as a Procurement Officer. The role profile requires Microsoft Dynamics 365 Supply Chain Management access to raise purchase requisitions and orders, but the access design must not allow the same person to also approve or receive goods against their own purchase orders.",
+  "businessContext": "PROC-POL-001 requires that the requester, approver and receiver of a purchase are not the same person; access provisioning must reflect this from the outset rather than being corrected after an incident.",
+  "actors": [
+    {
+      "employeeId": "EMP-0015",
+      "name": "Martin Njue Kariuki",
+      "roleId": "ROLE-PROC-OFF",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Officer"
+    },
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0015",
+      "name": "Martin Njue Kariuki"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-PROC",
+      "name": "Procurement"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-HR",
+      "name": "Employee Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-IAM",
+      "name": "Identity and Access Management System"
+    },
+    {
+      "type": "policy",
+      "id": "HR-POL-002",
+      "name": "Recruitment & Onboarding Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Employee Management System",
+    "Identity and Access Management System"
+  ],
+  "policies": [
+    "HR-POL-002",
+    "IT-POL-001",
+    "PROC-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "HR completes the onboarding record for the new Procurement Officer."
+    },
+    {
+      "sequence": 2,
+      "event": "IT provisions Microsoft Dynamics 365 Supply Chain Management access scoped to requisitions and purchase orders."
+    },
+    {
+      "sequence": 3,
+      "event": "The Procurement Manager confirms the access profile does not include approval or goods-receipt permissions."
+    },
+    {
+      "sequence": 4,
+      "event": "The employee begins raising purchase requisitions under supervision."
+    }
+  ],
+  "expectedOutcome": "The access profile granted to the Procurement Officer role must exclude approval and goods-receipt permissions, since PROC-POL-001 requires the requester, approver and receiver of a purchase to be separated. Approval remains with the Procurement Manager or the Finance approval matrix, and receiving remains with Warehouse.",
+  "relevantFacts": [
+    "Martin Njue Kariuki (EMP-0015) holds role ROLE-PROC-OFF (Procurement Officer) in department DEPT-PROC, reporting to Esther Wanjiku Kamau.",
+    "PROC-POL-001 states: 'The requester must not select, receive and approve the same purchase.'",
+    "IT-POL-001 requires access profiles to be scoped to the canonical role, which for Procurement Officer covers creating and editing purchase requisitions and purchase orders only."
+  ],
+  "requiredReasoning": [
+    "Identify the Procurement Officer role's canonical system access profile.",
+    "Identify the segregation-of-duties requirement in PROC-POL-001.",
+    "Determine which permissions must be excluded from this role to satisfy that requirement."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0015",
+      "type": "reports_to",
+      "to": "EMP-0004"
+    },
+    {
+      "from": "EMP-0015",
+      "type": "belongs_to",
+      "to": "DEPT-PROC"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "policy_lookup",
+    "workflow",
+    "compliance"
+  ],
+  "tags": [
+    "onboarding",
+    "procurement",
+    "segregation-of-duties"
+  ]
+}

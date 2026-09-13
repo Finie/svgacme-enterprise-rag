@@ -1,0 +1,107 @@
+{
+  "id": "SCN-TRV-004",
+  "category": "travel",
+  "title": "David Kiplagat Rotich is dispatched to Mombasa on short notice to resolve a critical system issue",
+  "description": "Following a critical system disruption affecting the Mombasa Distribution Centre, David Kiplagat Rotich (IT Manager) travels there same-day without the usual advance booking process, since resolving the issue on-site could not wait for standard travel authorisation.",
+  "businessContext": "OPS-POL-001 permits emergency travel to be recorded as soon as practicable and regularised after the event, rather than blocking urgent business-critical travel on process grounds.",
+  "actors": [
+    {
+      "employeeId": "EMP-0007",
+      "name": "David Kiplagat Rotich",
+      "roleId": "ROLE-IT-MGR",
+      "departmentId": "DEPT-IT",
+      "role": "IT Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0007",
+      "name": "David Kiplagat Rotich"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-IT",
+      "name": "Information Technology"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-MSA-001",
+      "name": "Mombasa Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "policy",
+      "id": "OPS-POL-001",
+      "name": "Business Travel & Logistics Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance",
+    "IT Service Desk"
+  ],
+  "policies": [
+    "OPS-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "A critical system issue affecting Mombasa operations is identified."
+    },
+    {
+      "sequence": 2,
+      "event": "David Kiplagat Rotich travels same-day without advance booking."
+    },
+    {
+      "sequence": 3,
+      "event": "The trip purpose, dates and cost are recorded as soon as practicable after departure."
+    },
+    {
+      "sequence": 4,
+      "event": "The travel is regularised and approved retrospectively under the financial matrix."
+    }
+  ],
+  "expectedOutcome": "The same-day travel is permitted as an emergency trip under OPS-POL-001, but it is not exempt from records: the purpose, dates and cost must still be documented as soon as practicable and the trip regularised and approved retrospectively under the FIN-POL-002 matrix.",
+  "relevantFacts": [
+    "David Kiplagat Rotich (EMP-0007) travelled to Mombasa same-day to address a critical system issue.",
+    "OPS-POL-001: 'Emergency travel is recorded as soon as practicable and regularised after the event.'"
+  ],
+  "requiredReasoning": [
+    "Confirm the urgency justifies bypassing the standard advance-booking sequence.",
+    "Identify what documentation is still required despite the emergency.",
+    "Identify when and how retrospective approval occurs."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0007",
+      "type": "belongs_to",
+      "to": "DEPT-IT"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "workflow",
+    "exception",
+    "policy_lookup"
+  ],
+  "tags": [
+    "travel",
+    "emergency",
+    "it"
+  ]
+}

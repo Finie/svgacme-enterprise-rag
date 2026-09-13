@@ -1,0 +1,104 @@
+{
+  "id": "SCN-PROC-007",
+  "category": "procurement",
+  "title": "A Procurement Officer attempts to approve their own KES 50,001 purchase request",
+  "description": "Martin Njue Kariuki, a Procurement Officer, raised a purchase requisition for KES 50,001 and then marked it as approved themselves in Microsoft Dynamics 365 Supply Chain Management, without routing it to an authorised approver.",
+  "businessContext": "Procurement Officer is an operational role with no approval authority in roles.json; FIN-POL-002 and PROC-POL-001 both prohibit self-approval regardless of amount.",
+  "actors": [
+    {
+      "employeeId": "EMP-0015",
+      "name": "Martin Njue Kariuki",
+      "roleId": "ROLE-PROC-OFF",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Officer"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0015",
+      "name": "Martin Njue Kariuki"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-PROC",
+      "name": "Procurement"
+    },
+    {
+      "type": "role",
+      "id": "ROLE-PROC-OFF",
+      "name": "Procurement Officer"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "PROC-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Martin Njue Kariuki raises a purchase requisition for KES 50,001."
+    },
+    {
+      "sequence": 2,
+      "event": "The same employee marks the requisition as approved in the system."
+    },
+    {
+      "sequence": 3,
+      "event": "A review identifies that the requester and approver are the same person."
+    }
+  ],
+  "expectedOutcome": "The approval is invalid and must be reversed. The Procurement Officer role carries no approval authority at all (approvalLimitKes is null in roles.json), and both FIN-POL-002 (\"No employee may approve their own request\") and PROC-POL-001 (\"The requester must not select, receive and approve the same purchase\") prohibit self-approval regardless of amount. The request must be routed to an authorised approver.",
+  "relevantFacts": [
+    "Martin Njue Kariuki (EMP-0015) holds role ROLE-PROC-OFF (Procurement Officer), which has approvalAuthority: null in data/enterprise/roles.json.",
+    "FIN-POL-002: 'No employee may approve their own request, expense, access, supplier relationship or exception.'",
+    "PROC-POL-001: 'The requester must not select, receive and approve the same purchase.'"
+  ],
+  "requiredReasoning": [
+    "Check the Procurement Officer role's approval authority in the canonical role register.",
+    "Identify that self-approval is prohibited independent of the amount involved.",
+    "Determine the corrective action required."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0015",
+      "type": "holds_role",
+      "to": "ROLE-PROC-OFF"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "exception",
+    "policy_lookup",
+    "compliance"
+  ],
+  "tags": [
+    "procurement",
+    "segregation-of-duties",
+    "negative"
+  ]
+}

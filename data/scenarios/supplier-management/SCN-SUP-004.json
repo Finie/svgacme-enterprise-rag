@@ -1,0 +1,102 @@
+{
+  "id": "SCN-SUP-004",
+  "category": "supplier-management",
+  "title": "Highland Bottlers is suspended after a quality failure is confirmed",
+  "description": "A batch of goods from Highland Bottlers failed incoming quality inspection at the warehouse, and the issue is confirmed as a recurring quality problem rather than an isolated incident.",
+  "businessContext": "PROC-POL-002 permits suspension for quality failure, blocking new purchase orders until the Procurement Manager records reinstatement or termination.",
+  "actors": [
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-004",
+      "name": "Highland Bottlers"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "WH-POL-001",
+      "name": "Warehouse Operations & Receiving Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "PROC-POL-002",
+    "WH-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Goods from Highland Bottlers fail incoming quality inspection."
+    },
+    {
+      "sequence": 2,
+      "event": "The failure is confirmed as recurring rather than isolated."
+    },
+    {
+      "sequence": 3,
+      "event": "Esther Wanjiku Kamau (Procurement Manager) records the supplier as suspended."
+    },
+    {
+      "sequence": 4,
+      "event": "New purchase orders to this supplier are blocked."
+    }
+  ],
+  "expectedOutcome": "Highland Bottlers is suspended: no new purchase orders may be issued to them until the Procurement Manager records reinstatement or termination. Existing open commitments are reviewed separately; the suspension itself does not retroactively cancel confirmed deliveries already in transit.",
+  "relevantFacts": [
+    "Highland Bottlers (SUP-004) has a confirmed recurring quality failure.",
+    "PROC-POL-002: 'A supplier may be suspended for quality failure, suspected fraud, conflict, sanctions concern, data incident or repeated non-performance; suspension blocks new purchase orders until the Procurement Manager records reinstatement or termination.'"
+  ],
+  "requiredReasoning": [
+    "Determine whether a recurring quality failure meets the suspension criteria.",
+    "Identify who has authority to record a supplier suspension.",
+    "Identify what a suspension does and does not affect."
+  ],
+  "relationships": [
+    {
+      "from": "SUP-004",
+      "type": "suspended_by",
+      "to": "EMP-0004"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "exception",
+    "workflow",
+    "policy_lookup"
+  ],
+  "tags": [
+    "supplier-management",
+    "suspension",
+    "negative"
+  ]
+}

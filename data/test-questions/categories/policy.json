@@ -1,0 +1,704 @@
+[
+  {
+    "prefix": "Q-POL-",
+    "question": "How many working days of annual leave are employees entitled to?",
+    "category": "policy",
+    "subcategory": "leave",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Employees accrue 24 working days of annual leave for each completed leave year.",
+    "acceptableAnswerPoints": [
+      "24 working days",
+      "annual leave"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "HR-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "HR-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "leave"
+    ],
+    "id": "Q-POL-001"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "How much notice should normally be given for annual leave?",
+    "category": "policy",
+    "subcategory": "leave",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Annual leave should normally be requested at least 5 working days before the first day away.",
+    "acceptableAnswerPoints": [
+      "5 working days"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "HR-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "HR-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "leave"
+    ],
+    "id": "Q-POL-002"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What is the receipt threshold for an expense claim?",
+    "category": "policy",
+    "subcategory": "expenses",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "A receipt is required for each expense of KES 2,000 or more.",
+    "acceptableAnswerPoints": [
+      "KES 2,000",
+      "receipt"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "FIN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "expenses"
+    ],
+    "id": "Q-POL-003"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What is the meal reimbursement limit?",
+    "category": "policy",
+    "subcategory": "expenses",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Meal claims are capped at KES 3,000 per person per meal unless an approved exception exists.",
+    "acceptableAnswerPoints": [
+      "KES 3,000"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "FIN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "expenses"
+    ],
+    "id": "Q-POL-004"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What is the accommodation reimbursement limit?",
+    "category": "policy",
+    "subcategory": "travel",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Accommodation is reimbursed up to KES 12,000 per night unless an approved exception exists.",
+    "acceptableAnswerPoints": [
+      "KES 12,000"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "OPS-POL-001",
+      "FIN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "travel"
+    ],
+    "id": "Q-POL-005"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What is the approved mileage rate for a personal vehicle?",
+    "category": "policy",
+    "subcategory": "travel",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Approved personal-vehicle mileage is reimbursed at KES 45 per kilometre with route evidence.",
+    "acceptableAnswerPoints": [
+      "KES 45 per kilometre"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "FIN-POL-001",
+      "OPS-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "travel"
+    ],
+    "id": "Q-POL-006"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What documents are needed for an expense reimbursement?",
+    "category": "policy",
+    "subcategory": "expenses",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The claim needs its cost centre, business purpose and supporting attachments; receipts are required at or above KES 2,000.",
+    "acceptableAnswerPoints": [
+      "cost centre",
+      "business purpose",
+      "receipts"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "FIN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "expenses"
+    ],
+    "id": "Q-POL-007"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What happens after a purchase request is approved?",
+    "category": "policy",
+    "subcategory": "procurement",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The lifecycle proceeds through supplier selection, quotation, purchase order, delivery, goods receipt, invoice and Finance payment.",
+    "acceptableAnswerPoints": [
+      "supplier selection",
+      "purchase order",
+      "goods receipt"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "PROC-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "procurement"
+    ],
+    "id": "Q-POL-008"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What happens when received goods do not match the purchase order?",
+    "category": "policy",
+    "subcategory": "receiving",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Shortages, damage and price differences are held for resolution; the warehouse records the discrepancy and Finance uses the goods receipt for matching.",
+    "acceptableAnswerPoints": [
+      "held for resolution",
+      "goods receipt"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "WH-POL-001",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "WH-POL-001",
+      "PROC-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "receiving"
+    ],
+    "id": "Q-POL-009"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "How is a new supplier approved?",
+    "category": "policy",
+    "subcategory": "supplier-management",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Procurement must complete onboarding and due diligence before using a supplier, and the supplier must be approved.",
+    "acceptableAnswerPoints": [
+      "onboarding",
+      "due diligence"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "PROC-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "supplier-management"
+    ],
+    "id": "Q-POL-010"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What happens when a supplier fails due diligence?",
+    "category": "policy",
+    "subcategory": "supplier-management",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The supplier relationship must not proceed until the issue is resolved or an authorised exception is recorded.",
+    "acceptableAnswerPoints": [
+      "due diligence",
+      "authorised exception"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "PROC-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "supplier-management"
+    ],
+    "id": "Q-POL-011"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What should an employee do if they cannot access Microsoft Dynamics 365 Finance?",
+    "category": "policy",
+    "subcategory": "access",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The employee should raise a ticket in the IT Service Desk; the service desk verifies onboarding and routes an access correction.",
+    "acceptableAnswerPoints": [
+      "IT Service Desk",
+      "access correction"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "HR-POL-002",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "access"
+    ],
+    "id": "Q-POL-012"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What should happen when an employee leaves and still has system access?",
+    "category": "policy",
+    "subcategory": "access",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "HR notifies IT and IT disables, changes or recertifies access promptly through the Identity and Access Management System.",
+    "acceptableAnswerPoints": [
+      "disable access",
+      "Identity and Access Management System"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "HR-POL-002",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "access"
+    ],
+    "id": "Q-POL-013"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "How quickly should a P1 incident be acknowledged?",
+    "category": "policy",
+    "subcategory": "incident",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "A P1 incident should be acknowledged within 15 minutes and escalated immediately.",
+    "acceptableAnswerPoints": [
+      "P1",
+      "15 minutes"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "IT-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "incident"
+    ],
+    "id": "Q-POL-014"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What information must be included when reporting an incident?",
+    "category": "policy",
+    "subcategory": "incident",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The ticket should include the affected system, symptoms, time, location, business impact and contact details.",
+    "acceptableAnswerPoints": [
+      "affected system",
+      "business impact"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "IT-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "incident"
+    ],
+    "id": "Q-POL-015"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What information about customers must be protected?",
+    "category": "policy",
+    "subcategory": "privacy",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Customer contacts and account history are personal data and must be protected in Microsoft Dynamics 365 Sales with least-privilege access.",
+    "acceptableAnswerPoints": [
+      "customer contacts",
+      "least privilege"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "COMP-POL-001",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "COMP-POL-001",
+      "IT-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "privacy"
+    ],
+    "id": "Q-POL-016"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What is the process for reporting a conflict of interest?",
+    "category": "policy",
+    "subcategory": "compliance",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The concern should be disclosed and handled under the Anti-Bribery & Conflict of Interest Policy before the affected transaction proceeds.",
+    "acceptableAnswerPoints": [
+      "conflict of interest",
+      "disclosure"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "COMP-POL-002",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "COMP-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "compliance"
+    ],
+    "id": "Q-POL-017"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "How should business travel expenses be documented?",
+    "category": "policy",
+    "subcategory": "travel",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Travel requires documented purpose, traveller, destination, dates and estimated cost; claims require receipts or a documented receipt exception.",
+    "acceptableAnswerPoints": [
+      "travel authorisation",
+      "receipts"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Procedures and Requirements"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "OPS-POL-001",
+      "FIN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "travel"
+    ],
+    "id": "Q-POL-018"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "How are company records retained and disposed of?",
+    "category": "policy",
+    "subcategory": "records",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Records follow the approved schedule, normally have a 7-year review point for corporate control records, and are securely disposed of only when no hold applies.",
+    "acceptableAnswerPoints": [
+      "7 years",
+      "legal hold"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "GEN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "records"
+    ],
+    "id": "Q-POL-019"
+  },
+  {
+    "prefix": "Q-POL-",
+    "question": "What are the four incident severity levels and response targets?",
+    "category": "policy",
+    "subcategory": "incident",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The levels are P1 15 minutes, P2 60 minutes, P3 240 minutes and P4 1,440 minutes.",
+    "acceptableAnswerPoints": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [],
+    "systems": [],
+    "policies": [
+      "IT-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "policy",
+      "incident"
+    ],
+    "id": "Q-POL-020"
+  }
+]

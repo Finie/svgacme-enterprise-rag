@@ -1,0 +1,102 @@
+{
+  "id": "SCN-COMP-004",
+  "category": "compliance",
+  "title": "East Africa Foods offers Michael Odhiambo Owino a gift valued at exactly the disclosure threshold",
+  "description": "East Africa Foods offers Michael Odhiambo Owino (Inventory Manager) a corporate gift valued at exactly KES 5,000 at the end of a supplier review meeting.",
+  "businessContext": "COMP-POL-002 requires gifts or hospitality of KES 5,000 or more per person to be disclosed to the Compliance Manager before acceptance and recorded in the gifts register.",
+  "actors": [
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    },
+    {
+      "employeeId": "EMP-0008",
+      "name": "Lucy Chebet Kiprono",
+      "roleId": "ROLE-COMP-MGR",
+      "departmentId": "DEPT-COMP",
+      "role": "Compliance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0008",
+      "name": "Lucy Chebet Kiprono"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-001",
+      "name": "East Africa Foods"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-002",
+      "name": "Anti-Bribery & Conflict of Interest Policy"
+    }
+  ],
+  "systems": [
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "COMP-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "East Africa Foods offers a gift valued at exactly KES 5,000."
+    },
+    {
+      "sequence": 2,
+      "event": "Michael Odhiambo Owino assesses the value against the COMP-POL-002 disclosure threshold."
+    },
+    {
+      "sequence": 3,
+      "event": "The gift is disclosed to Lucy Chebet Kiprono (Compliance Manager) before acceptance."
+    },
+    {
+      "sequence": 4,
+      "event": "The disclosure is recorded in the gifts register."
+    }
+  ],
+  "expectedOutcome": "At exactly KES 5,000, the gift meets the \"KES 5,000 or more\" disclosure threshold and must be disclosed to the Compliance Manager before acceptance and recorded in the gifts register; it is not automatically prohibited, since it remains below the KES 20,000 prohibition threshold.",
+  "relevantFacts": [
+    "East Africa Foods (SUP-001) offered a gift valued at exactly KES 5,000.",
+    "COMP-POL-002: 'Gifts or hospitality valued at KES 5,000 or more per person must be disclosed to the Compliance Manager before acceptance where practicable and recorded in the gifts register.'"
+  ],
+  "requiredReasoning": [
+    "Compare the exact gift value against the KES 5,000 disclosure threshold.",
+    "Compare it separately against the KES 20,000 prohibition threshold.",
+    "Conclude disclosure is required but the gift is not outright prohibited."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0021",
+      "type": "offered_gift_by",
+      "to": "SUP-001"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "comparison",
+    "policy_lookup",
+    "compliance"
+  ],
+  "tags": [
+    "compliance",
+    "gifts-and-hospitality",
+    "boundary"
+  ]
+}

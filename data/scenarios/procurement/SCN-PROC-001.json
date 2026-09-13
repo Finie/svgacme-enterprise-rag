@@ -1,0 +1,137 @@
+{
+  "id": "SCN-PROC-001",
+  "category": "procurement",
+  "title": "Routine office-supplies purchase of KES 25,000 from an approved supplier",
+  "description": "The Administration department needs stationery and printing consumables costing KES 25,000 from Nairobi Office Solutions, an approved office-supplies vendor. Joseph Mutiso Kyalo raises the purchase request against cost centre CC-ADMIN.",
+  "businessContext": "PROC-POL-001 requires a purchase requisition stating specification, quantity, required date, cost centre and business reason, approved under the FIN-POL-002 matrix before a purchase order is issued.",
+  "actors": [
+    {
+      "employeeId": "EMP-0011",
+      "name": "Joseph Mutiso Kyalo",
+      "roleId": "ROLE-DEPT-MGR",
+      "departmentId": "DEPT-ADMIN",
+      "role": "Department Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0011",
+      "name": "Joseph Mutiso Kyalo"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-ADMIN",
+      "name": "Administration"
+    },
+    {
+      "type": "costCenter",
+      "id": "CC-ADMIN",
+      "name": "Administration"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-011",
+      "name": "Nairobi Office Solutions"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "PROC-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Joseph Mutiso Kyalo raises a purchase requisition for KES 25,000 against cost centre CC-ADMIN."
+    },
+    {
+      "sequence": 2,
+      "event": "The system checks whether the item is already available from stock or an approved supplier before sourcing."
+    },
+    {
+      "sequence": 3,
+      "event": "Nairobi Office Solutions is confirmed as an approved supplier for this category."
+    },
+    {
+      "sequence": 4,
+      "event": "The requisition is approved within the requesting department."
+    },
+    {
+      "sequence": 5,
+      "event": "A purchase order is issued and goods receipt is recorded on delivery."
+    }
+  ],
+  "expectedOutcome": "At KES 25,000, the amount falls within the Department Manager tier of the FIN-POL-002 matrix (up to and including KES 50,000). Department Manager (Joseph Mutiso Kyalo) can approve this request within their own approval limit of KES 200,000 without escalation.",
+  "relevantFacts": [
+    "The request amount is KES 25,000.",
+    "Nairobi Office Solutions (SUP-011) has approvalStatus \"APPROVED\" in data/master-data/suppliers.json.",
+    "Cost centre CC-ADMIN belongs to department DEPT-ADMIN, headed by Joseph Mutiso Kyalo.",
+    "FIN-POL-002 sets the Department Manager/Department Head tier at up to and including KES 50,000.",
+    "Department Manager (Joseph Mutiso Kyalo) has an approval limit of KES 200,000 per roles.json."
+  ],
+  "requiredReasoning": [
+    "Confirm the supplier is on the approved supplier list.",
+    "Determine which FIN-POL-002 matrix tier the amount falls into.",
+    "Compare that tier's matrix ceiling against the department head's own canonical approval limit.",
+    "Conclude whether escalation beyond the department head is required."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0011",
+      "type": "belongs_to",
+      "to": "DEPT-ADMIN"
+    },
+    {
+      "from": "CC-ADMIN",
+      "type": "belongs_to",
+      "to": "DEPT-ADMIN"
+    },
+    {
+      "from": "SUP-011",
+      "type": "proposed_for",
+      "to": "CC-ADMIN"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "calculation",
+    "policy_lookup",
+    "workflow"
+  ],
+  "tags": [
+    "procurement",
+    "approval-matrix",
+    "administration",
+    "boundary"
+  ]
+}

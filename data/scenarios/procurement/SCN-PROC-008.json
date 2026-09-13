@@ -1,0 +1,111 @@
+{
+  "id": "SCN-PROC-008",
+  "category": "procurement",
+  "title": "Two KES 300,000 purchase orders to the same supplier total KES 600,000",
+  "description": "Brian Wafula Simiyu needs KES 600,000 of promotional point-of-sale materials from Prime Pack. Two separate purchase orders of KES 300,000 each are raised on the same day for the same business need, rather than one KES 600,000 order.",
+  "businessContext": "FIN-POL-002 evaluates the total expected commitment, not individual line items, specifically to prevent splitting a purchase to stay under a lower approval tier.",
+  "actors": [
+    {
+      "employeeId": "EMP-0005",
+      "name": "Brian Wafula Simiyu",
+      "roleId": "ROLE-SALES-MGR",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0005",
+      "name": "Brian Wafula Simiyu"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-010",
+      "name": "Prime Pack"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-SALES",
+      "name": "Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "FIN-POL-002",
+    "PROC-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Brian Wafula Simiyu identifies a single business need costing KES 600,000."
+    },
+    {
+      "sequence": 2,
+      "event": "Two purchase orders of KES 300,000 each are raised to the same supplier on the same day."
+    },
+    {
+      "sequence": 3,
+      "event": "Each individual order falls under the Department Head approval tier on its own."
+    },
+    {
+      "sequence": 4,
+      "event": "A review identifies that both orders serve the same business need and were raised together."
+    }
+  ],
+  "expectedOutcome": "This is prohibited order-splitting. FIN-POL-002 states amounts are evaluated on the total expected commitment \"rather than being split to avoid a higher approval level,\" and PROC-POL-001 states \"a purchase order may not be split.\" The two orders must be treated as a single KES 600,000 commitment, placing it in the Finance Manager tier, not the Department Head tier.",
+  "relevantFacts": [
+    "Two purchase orders of KES 300,000 were raised to Prime Pack (SUP-010) on the same day for the same business need, totalling KES 600,000.",
+    "KES 300,000 alone falls under the KES 500,000 Department Head ceiling; KES 600,000 exceeds it and falls in the Finance Manager tier (KES 500,001-2,000,000).",
+    "FIN-POL-002: 'Amounts are evaluated on the total expected commitment... rather than being split to avoid a higher approval level.'",
+    "PROC-POL-001: 'A purchase order may not be split, backdated, issued to an employee for personal use, or used to conceal a gift, conflict or unauthorised commitment.'"
+  ],
+  "requiredReasoning": [
+    "Recognise that the two orders serve one underlying business need.",
+    "Sum the total expected commitment rather than evaluating each order in isolation.",
+    "Re-determine the correct FIN-POL-002 tier using the combined total.",
+    "Identify this pattern as a policy violation, not a coincidence."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0005",
+      "type": "belongs_to",
+      "to": "DEPT-SALES"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "exception",
+    "calculation",
+    "compliance"
+  ],
+  "tags": [
+    "procurement",
+    "approval-matrix",
+    "negative",
+    "boundary"
+  ]
+}

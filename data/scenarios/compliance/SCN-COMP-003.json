@@ -1,0 +1,121 @@
+{
+  "id": "SCN-COMP-003",
+  "category": "compliance",
+  "title": "Compliance investigates whether the Procurement Manager has an undisclosed interest in Amani Personal Care",
+  "description": "An anonymous concern is raised with Compliance suggesting Esther Wanjiku Kamau (Procurement Manager) may have a financial interest in Amani Personal Care, a supplier whose contracts she personally approves.",
+  "businessContext": "COMP-POL-002 requires Compliance to determine investigation scope and preserve relevant records, and prohibits the subject of the concern from investigating themselves.",
+  "actors": [
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    },
+    {
+      "employeeId": "EMP-0008",
+      "name": "Lucy Chebet Kiprono",
+      "roleId": "ROLE-COMP-MGR",
+      "departmentId": "DEPT-COMP",
+      "role": "Compliance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0008",
+      "name": "Lucy Chebet Kiprono"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-007",
+      "name": "Amani Personal Care"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-002",
+      "name": "Anti-Bribery & Conflict of Interest Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "GEN-POL-001",
+      "name": "Records Retention & Document Management Policy"
+    }
+  ],
+  "systems": [
+    "Enterprise Document Management System",
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "COMP-POL-002",
+    "PROC-POL-002",
+    "GEN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "An anonymous concern is reported to Compliance about a possible undisclosed financial interest."
+    },
+    {
+      "sequence": 2,
+      "event": "Lucy Chebet Kiprono (Compliance Manager) determines the investigation scope."
+    },
+    {
+      "sequence": 3,
+      "event": "Esther Wanjiku Kamau is not permitted to review or approve further contracts with Amani Personal Care while the concern is investigated."
+    },
+    {
+      "sequence": 4,
+      "event": "Relevant records are preserved under GEN-POL-001 pending the outcome."
+    }
+  ],
+  "expectedOutcome": "Esther Wanjiku Kamau must be withdrawn from any decision involving Amani Personal Care while Compliance investigates; PROC-POL-002 approvals for that supplier require an alternative approver during this period, and the employee \"cooperate[s] and does not investigate a subject they are connected to\" per COMP-POL-002.",
+  "relevantFacts": [
+    "Esther Wanjiku Kamau (EMP-0004) holds role ROLE-PROC-MGR (Procurement Manager), which approves inclusion of suppliers such as Amani Personal Care (SUP-007) on the approved list.",
+    "COMP-POL-002: 'Compliance determines investigation scope, preserves relevant records under GEN-POL-001 and coordinates with Legal or HR when needed. Employees cooperate and do not investigate a subject they are connected to.'"
+  ],
+  "requiredReasoning": [
+    "Identify the conflict between the role that approves this supplier and the person under investigation.",
+    "Determine who takes over approval authority for this supplier during the investigation.",
+    "Identify the records-preservation obligation that applies regardless of outcome."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0004",
+      "type": "investigated_regarding",
+      "to": "SUP-007"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "compliance",
+    "exception",
+    "multi_hop"
+  ],
+  "tags": [
+    "compliance",
+    "conflict-of-interest",
+    "negative",
+    "procurement"
+  ]
+}

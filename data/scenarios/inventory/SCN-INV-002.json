@@ -1,0 +1,94 @@
+{
+  "id": "SCN-INV-002",
+  "category": "inventory",
+  "title": "Tumaini White Sugar 2Kg is completely out of stock at Nairobi Distribution Centre",
+  "description": "Tumaini White Sugar 2Kg shows quantityAvailable of zero at Nairobi Distribution Centre. Any sales order for this product at this warehouse cannot currently be fulfilled.",
+  "businessContext": "INV-POL-001 defines quantityAvailable as quantityOnHand less quantityReserved and any controlled hold.",
+  "actors": [
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "product",
+      "id": "PRD-009",
+      "name": "Tumaini White Sugar 2Kg"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0009",
+      "name": "PRD-009 @ WH-NRB-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "INV-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Inventory reporting shows quantityOnHand of 0 and quantityAvailable of 0 for Tumaini White Sugar 2Kg at Nairobi Distribution Centre."
+    },
+    {
+      "sequence": 2,
+      "event": "No stock is available to reserve against a new sales order at this warehouse."
+    },
+    {
+      "sequence": 3,
+      "event": "The Inventory Manager reviews replenishment options, including stock at other warehouses."
+    }
+  ],
+  "expectedOutcome": "Tumaini White Sugar 2Kg cannot be sold from Nairobi Distribution Centre until stock is replenished or transferred in; quantityAvailable is exactly 0 (quantityOnHand 0 minus quantityReserved 0). Sales must check other warehouses or trigger a reorder through Inventory before promising this product to a customer from this site.",
+  "relevantFacts": [
+    "Tumaini White Sugar 2Kg (PRD-009) at Nairobi Distribution Centre has quantityOnHand 0, quantityReserved 0, quantityAvailable 0 (inventory record INV-0009).",
+    "INV-POL-001: 'quantityAvailable is quantityOnHand less quantityReserved and any controlled hold.'"
+  ],
+  "requiredReasoning": [
+    "Confirm quantityAvailable is zero by subtracting quantityReserved from quantityOnHand.",
+    "Determine that no reservation against a new order is possible at this site.",
+    "Identify the next step: check other warehouses or trigger replenishment."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-009",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "fact_lookup",
+    "calculation"
+  ],
+  "tags": [
+    "inventory",
+    "out-of-stock"
+  ]
+}

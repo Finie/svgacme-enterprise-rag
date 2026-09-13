@@ -1,0 +1,109 @@
+{
+  "id": "SCN-INC-001",
+  "category": "incidents",
+  "title": "Caroline Nasimiyu Wafula cannot log in to Microsoft Dynamics 365 Finance",
+  "description": "Caroline Nasimiyu Wafula, a Finance Analyst, reports being unable to log in to Microsoft Dynamics 365 Finance this morning, blocking reconciliation work for one user.",
+  "businessContext": "IT-POL-002 classifies incidents by business impact; a single-user login failure to one system is a limited-service impact, not a widespread outage.",
+  "actors": [
+    {
+      "employeeId": "EMP-0033",
+      "name": "Caroline Nasimiyu Wafula",
+      "roleId": "ROLE-FIN-ANALYST",
+      "departmentId": "DEPT-FIN",
+      "role": "Finance Analyst"
+    },
+    {
+      "employeeId": "EMP-0007",
+      "name": "David Kiplagat Rotich",
+      "roleId": "ROLE-IT-MGR",
+      "departmentId": "DEPT-IT",
+      "role": "IT Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0033",
+      "name": "Caroline Nasimiyu Wafula"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0007",
+      "name": "David Kiplagat Rotich"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-002",
+      "name": "IT Incident Management & Service Desk Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance",
+    "IT Service Desk"
+  ],
+  "policies": [
+    "IT-POL-002",
+    "IT-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Caroline Nasimiyu Wafula creates a ticket in the IT Service Desk describing the affected system, symptoms, time and business impact."
+    },
+    {
+      "sequence": 2,
+      "event": "The service desk triages and categorises the ticket."
+    },
+    {
+      "sequence": 3,
+      "event": "The impact is assessed as limited to one user and one system."
+    },
+    {
+      "sequence": 4,
+      "event": "The ticket is assigned a response target based on its severity classification."
+    }
+  ],
+  "expectedOutcome": "This is a P3 Medium incident under IT-POL-002 (\"P3 Medium incidents affect a limited service\") with a 240-minute response target, since it affects one user and one system rather than a critical system or widespread operations. The service desk triages, categorises and assigns it accordingly.",
+  "relevantFacts": [
+    "Caroline Nasimiyu Wafula (EMP-0033) cannot access Microsoft Dynamics 365 Finance (Microsoft Dynamics 365 Finance).",
+    "The impact is limited to one user; no other users or systems are reported affected.",
+    "IT-POL-002: 'P1 Critical incidents threaten a critical system, widespread operations, safety or confirmed serious security exposure... P3 Medium incidents affect a limited service with a 240-minute target.'"
+  ],
+  "requiredReasoning": [
+    "Assess the scope of impact: one user versus widespread operations.",
+    "Match that scope to the correct P1-P4 severity definition.",
+    "State the corresponding response target."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0033",
+      "type": "affected_by",
+      "to": "SYS-D365-FIN"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "comparison",
+    "policy_lookup"
+  ],
+  "tags": [
+    "incidents",
+    "it-access",
+    "severity"
+  ]
+}

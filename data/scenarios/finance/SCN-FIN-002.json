@@ -1,0 +1,110 @@
+{
+  "id": "SCN-FIN-002",
+  "category": "finance",
+  "title": "Collins Wekesa Masinde claims travel reimbursement for a Nairobi head-office visit",
+  "description": "Collins Wekesa Masinde, based in Kisumu, travelled to Nairobi Head Office for 2 nights for a sales planning meeting, claiming accommodation at KES 12,000 per night plus meals and local transport.",
+  "businessContext": "OPS-POL-001 sets the travel logistics rules and defers approval to FIN-POL-002; FIN-POL-001 caps accommodation at KES 12,000 per night and meals at KES 3,000 per person per meal unless an approved exception is recorded.",
+  "actors": [
+    {
+      "employeeId": "EMP-0019",
+      "name": "Collins Wekesa Masinde",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0019",
+      "name": "Collins Wekesa Masinde"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-SALES",
+      "name": "Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "OPS-POL-001",
+      "name": "Business Travel & Logistics Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-001",
+      "name": "Expense & Reimbursement Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "OPS-POL-001",
+    "FIN-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Collins Wekesa Masinde books travel from Kisumu to Nairobi for a 2-night business trip."
+    },
+    {
+      "sequence": 2,
+      "event": "Accommodation is booked at KES 12,000 per night."
+    },
+    {
+      "sequence": 3,
+      "event": "Meal and local transport costs are incurred within policy limits."
+    },
+    {
+      "sequence": 4,
+      "event": "The claim is submitted in Microsoft Dynamics 365 Finance with the cost centre and business purpose."
+    }
+  ],
+  "expectedOutcome": "The accommodation claim of KES 12,000 per night is exactly at the FIN-POL-001 cap and requires no exception; meal claims remain reimbursable up to KES 3,000 per person per meal. The travel itself was authorised under OPS-POL-001, with financial approval following the FIN-POL-002 matrix.",
+  "relevantFacts": [
+    "Collins Wekesa Masinde (EMP-0019) travelled from Kisumu to Nairobi for 2 nights.",
+    "Accommodation was claimed at KES 12,000 per night.",
+    "FIN-POL-001: 'Meal claims are capped at KES 3,000 per person per meal and accommodation at KES 12,000 per night unless a documented exception is approved before commitment.'",
+    "OPS-POL-001: 'Accommodation is reimbursed up to KES 12,000 per night unless an approved exception is recorded... approval follows FIN-POL-002.'"
+  ],
+  "requiredReasoning": [
+    "Compare the claimed accommodation rate against the FIN-POL-001/OPS-POL-001 cap.",
+    "Determine whether an exception is required at this rate.",
+    "Identify which policy governs the travel authorisation versus the expense claim itself."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0019",
+      "type": "belongs_to",
+      "to": "DEPT-SALES"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "comparison",
+    "policy_lookup",
+    "calculation"
+  ],
+  "tags": [
+    "finance",
+    "travel",
+    "boundary"
+  ]
+}

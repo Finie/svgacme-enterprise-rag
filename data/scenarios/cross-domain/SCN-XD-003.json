@@ -1,0 +1,145 @@
+{
+  "id": "SCN-XD-003",
+  "category": "cross-domain",
+  "title": "Replenishing SVGA Value Cooking Oil 5L at Mombasa Distribution Centre means resolving a supplier, a cost, and an approver",
+  "description": "SVGA Value Cooking Oil 5L at Mombasa Distribution Centre has fallen below its reorder level. Raising the standard reorderQuantity of 720 units from Value Foods Kenya at unit cost KES 700 would commit approximately KES 504,000.",
+  "businessContext": "This chain connects the inventory trigger to the product, to its supplier, to the resulting procurement commitment, and finally to the FIN-POL-002 approval matrix for that amount.",
+  "actors": [
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    },
+    {
+      "employeeId": "EMP-0012",
+      "name": "Faith Wambui Gitau",
+      "roleId": "ROLE-FIN-MGR",
+      "departmentId": "DEPT-FIN",
+      "role": "Finance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0012",
+      "name": "Faith Wambui Gitau"
+    },
+    {
+      "type": "product",
+      "id": "PRD-002",
+      "name": "SVGA Value Cooking Oil 5L"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0037",
+      "name": "PRD-002 @ WH-MSA-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-MSA-001",
+      "name": "Mombasa Distribution Centre"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-009",
+      "name": "Value Foods Kenya"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "INV-POL-001",
+    "PROC-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Inventory identifies SVGA Value Cooking Oil 5L at Mombasa Distribution Centre as below its reorder level."
+    },
+    {
+      "sequence": 2,
+      "event": "The standard reorderQuantity of 720 units is priced at KES 700 each."
+    },
+    {
+      "sequence": 3,
+      "event": "The resulting commitment of approximately KES 504,000 is checked against the FIN-POL-002 matrix."
+    },
+    {
+      "sequence": 4,
+      "event": "A purchase requisition is raised to the resolved approver."
+    }
+  ],
+  "expectedOutcome": "Reordering the standard quantity (720 units at KES 700 each) commits approximately KES 504,000, which requires Faith Wambui Gitau (Finance Manager) as approver under the FIN-POL-002 matrix, in addition to the Inventory Manager's replenishment review under INV-POL-001.",
+  "relevantFacts": [
+    "SVGA Value Cooking Oil 5L (PRD-002) at Mombasa Distribution Centre has quantityAvailable 107, below reorderLevel 210, with a standard reorderQuantity of 720 (inventory record INV-0037).",
+    "SVGA Value Cooking Oil 5L has unitCost KES 700 and is supplied by Value Foods Kenya (SUP-009).",
+    "Inventory Manager (Michael Odhiambo Owino) has an approval limit of KES 500,000 per roles.json.",
+    "Finance Manager (Faith Wambui Gitau) has an approval limit of KES 1,000,000 per roles.json."
+  ],
+  "requiredReasoning": [
+    "Confirm the product is below its reorder level.",
+    "Identify the supplier and the standard reorder quantity and unit cost.",
+    "Calculate the total commitment (reorderQuantity x unitCost).",
+    "Resolve the FIN-POL-002 approver for that commitment amount."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-002",
+      "type": "stocked_at",
+      "to": "WH-MSA-001"
+    },
+    {
+      "from": "PRD-002",
+      "type": "supplied_by",
+      "to": "SUP-009"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "calculation",
+    "policy_lookup"
+  ],
+  "tags": [
+    "cross-domain",
+    "inventory",
+    "procurement",
+    "finance",
+    "approval-matrix"
+  ]
+}

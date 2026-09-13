@@ -1,0 +1,119 @@
+{
+  "id": "SCN-SALES-005",
+  "category": "sales",
+  "title": "Furaha Provision Store requests a credit limit increase to KES 350,000",
+  "description": "Furaha Provision Store, rated \"HIGH\" risk with a current credit limit of KES 200,000, requests an increase to KES 350,000 ahead of the festive season.",
+  "businessContext": "SALES-POL-001 requires the Sales Manager to approve credit terms within authority and Finance to perform the required credit checks; a higher-risk customer warrants closer verification.",
+  "actors": [
+    {
+      "employeeId": "EMP-0019",
+      "name": "Collins Wekesa Masinde",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    },
+    {
+      "employeeId": "EMP-0005",
+      "name": "Brian Wafula Simiyu",
+      "roleId": "ROLE-SALES-MGR",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0019",
+      "name": "Collins Wekesa Masinde"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0005",
+      "name": "Brian Wafula Simiyu"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-007",
+      "name": "Furaha Provision Store"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Furaha Provision Store requests a credit limit increase from KES 200,000 to KES 350,000."
+    },
+    {
+      "sequence": 2,
+      "event": "Collins Wekesa Masinde forwards the request with account history."
+    },
+    {
+      "sequence": 3,
+      "event": "Finance performs the required credit and account checks."
+    },
+    {
+      "sequence": 4,
+      "event": "Brian Wafula Simiyu (Sales Manager) reviews the request given the customer's risk rating."
+    }
+  ],
+  "expectedOutcome": "Given the customer's \"HIGH\" risk rating, the increase requires renewed verification rather than routine approval: Finance must complete its credit checks and the Sales Manager must confirm the new limit is within their approval authority before it is applied in Microsoft Dynamics 365 Sales.",
+  "relevantFacts": [
+    "Furaha Provision Store (CUS-007) currently has creditLimit KES 200,000 and riskRating \"HIGH\" in data/master-data/customers.json.",
+    "The requested new limit is KES 350,000.",
+    "SALES-POL-001: 'The Sales Manager approves credit terms and material discounts within authority; Finance performs the required credit and account checks.'"
+  ],
+  "requiredReasoning": [
+    "Compare the current and requested credit limits against the customer's risk rating.",
+    "Identify who approves credit terms and who performs credit checks.",
+    "Determine that a higher-risk customer requesting a large increase warrants closer verification, not automatic approval."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-007",
+      "type": "managed_by",
+      "to": "EMP-0019"
+    },
+    {
+      "from": "CUS-007",
+      "type": "reviewed_by",
+      "to": "EMP-0005"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "policy_lookup",
+    "recommendation"
+  ],
+  "tags": [
+    "sales",
+    "credit-control",
+    "customer-verification"
+  ]
+}

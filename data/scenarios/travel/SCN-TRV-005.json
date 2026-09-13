@@ -1,0 +1,95 @@
+{
+  "id": "SCN-TRV-005",
+  "category": "travel",
+  "title": "Rift Valley Millers offers escalating hospitality during a site-visit trip",
+  "description": "During a site visit to Rift Valley Millers's facility, Susan Chepkoech Bett (Procurement Officer) is offered dinner hospitality valued at approximately KES 15,000 per person, and separately offered a weekend hospitality package valued at approximately KES 22,000 per person.",
+  "businessContext": "COMP-POL-002 requires gifts or hospitality of KES 5,000 or more per person to be disclosed before acceptance, and prohibits anything at or above KES 20,000 outright.",
+  "actors": [
+    {
+      "employeeId": "EMP-0016",
+      "name": "Susan Chepkoech Bett",
+      "roleId": "ROLE-PROC-OFF",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Officer"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0016",
+      "name": "Susan Chepkoech Bett"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-002",
+      "name": "Rift Valley Millers"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-002",
+      "name": "Anti-Bribery & Conflict of Interest Policy"
+    },
+    {
+      "type": "policy",
+      "id": "OPS-POL-001",
+      "name": "Business Travel & Logistics Policy"
+    }
+  ],
+  "systems": [
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "COMP-POL-002",
+    "OPS-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Rift Valley Millers offers dinner hospitality valued at approximately KES 15,000 per person."
+    },
+    {
+      "sequence": 2,
+      "event": "Rift Valley Millers separately offers a weekend hospitality package valued at approximately KES 22,000 per person."
+    },
+    {
+      "sequence": 3,
+      "event": "Both offers are assessed against the COMP-POL-002 gift and hospitality thresholds before any response."
+    }
+  ],
+  "expectedOutcome": "The KES 15,000 dinner is above the KES 5,000 disclosure threshold and must be disclosed to the Compliance Manager before acceptance and recorded in the gifts register, but is not automatically prohibited. The KES 22,000 weekend package is at or above the KES 20,000 threshold and must be declined outright, regardless of disclosure.",
+  "relevantFacts": [
+    "Rift Valley Millers (SUP-002) is a current supplier, and Susan Chepkoech Bett (EMP-0016) is involved in procurement decisions affecting them.",
+    "One offer is valued at approximately KES 15,000 per person; the other at approximately KES 22,000 per person.",
+    "COMP-POL-002: 'Gifts or hospitality valued at KES 5,000 or more per person must be disclosed to the Compliance Manager before acceptance where practicable and recorded in the gifts register. Gifts or hospitality at or above KES 20,000, cash or cash equivalents, and anything intended to influence a tender, approval, inspection or payment are prohibited.'"
+  ],
+  "requiredReasoning": [
+    "Compare each offer against the KES 5,000 disclosure threshold and the KES 20,000 prohibition threshold separately.",
+    "Determine that the two offers fall on different sides of the prohibition line.",
+    "Identify the correct action for each: disclose-and-may-accept versus decline outright."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0016",
+      "type": "offered_hospitality_by",
+      "to": "SUP-002"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "comparison",
+    "compliance",
+    "exception"
+  ],
+  "tags": [
+    "travel",
+    "compliance",
+    "gifts-and-hospitality",
+    "negative",
+    "boundary"
+  ]
+}

@@ -1,0 +1,1319 @@
+[
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-001: Tracing a new Finance hire from HR onboarding through to live Dynamics 365 Finance access?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Caroline Nasimiyu Wafula's access is correctly provisioned once all four links hold: a completed HR onboarding record, a canonical Finance Analyst role assignment in department DEPT-FIN, an IT-provisioned access profile matching that role under IT-POL-001, and confirmed working access in Microsoft Dynamics 365 Finance.",
+    "acceptableAnswerPoints": [
+      "Caroline Nasimiyu Wafula's access is correctly provisioned once all four links hold: a completed HR onboarding record, a canonical Finance Analyst role assignment in department DEPT-FIN, an IT-provisioned access profile matching that role under IT-POL-001, and confirmed working access in Microsoft Dynamics 365 Finance."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-001"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0033",
+      "EMP-0012",
+      "DEPT-FIN",
+      "ROLE-FIN-ANALYST",
+      "SYS-HR",
+      "SYS-IAM",
+      "SYS-D365-FIN",
+      "HR-POL-002",
+      "IT-POL-001"
+    ],
+    "systems": [
+      "Employee Management System",
+      "Identity and Access Management System",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001"
+    ],
+    "scenarios": [
+      "SCN-XD-001"
+    ],
+    "reasoningSteps": [
+      "Resolve the employee's canonical department and role.",
+      "Identify the HR-to-IT handoff required before provisioning.",
+      "Identify the specific system access profile that role entitles her to.",
+      "Confirm all four links (HR record, role, IT provisioning, system access) are satisfied."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "cross-domain",
+      "finance",
+      "it-access",
+      "multi-hop",
+      "onboarding",
+      "scenario"
+    ],
+    "id": "Q-XD-001"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-002: Western Bulk Traders's order for Tumaini Maize Flour 2Kg cannot be filled from Mombasa Distribution Centre and triggers a procurement question?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "The order cannot be confirmed from Mombasa Distribution Centre as-is, since quantityAvailable is 0 against a request for 500. Per SALES-POL-001, the account manager may offer a partial delivery, back-order or alternative product while Inventory reviews replenishment via Rift Valley Millers under INV-POL-001 and PROC-POL-001 - stock elsewhere or an expedited order are the two realistic paths forward.",
+    "acceptableAnswerPoints": [
+      "The order cannot be confirmed from Mombasa Distribution Centre as-is, since quantityAvailable is 0 against a request for 500. Per SALES-POL-001, the account manager may offer a partial delivery, back-order or alternative product while Inventory reviews replenishment via Rift Valley Millers under INV-POL-001 and PROC-POL-001 - stock elsewhere or an expedited order are the two realistic paths forward."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-002"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0019",
+      "CUS-015",
+      "PRD-003",
+      "INV-0038",
+      "WH-MSA-001",
+      "SUP-002",
+      "SYS-D365-SALES",
+      "SYS-D365-SCM",
+      "SALES-POL-001",
+      "INV-POL-001",
+      "PROC-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001",
+      "PROC-POL-001",
+      "SALES-POL-001"
+    ],
+    "scenarios": [
+      "SCN-XD-002"
+    ],
+    "reasoningSteps": [
+      "Resolve the customer to its account manager.",
+      "Resolve the product to its inventory position at the relevant warehouse.",
+      "Compare requested quantity against quantityAvailable.",
+      "Trace the product to its supplier(s) to evaluate replenishment.",
+      "Combine the Sales, Inventory and Procurement policies into one recommended course of action."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "cross-domain",
+      "inventory",
+      "multi-hop",
+      "procurement",
+      "sales",
+      "scenario"
+    ],
+    "id": "Q-XD-002"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-003: Replenishing SVGA Value Cooking Oil 5L at Mombasa Distribution Centre means resolving a supplier, a cost, and an approver?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Reordering the standard quantity (720 units at KES 700 each) commits approximately KES 504,000, which requires Faith Wambui Gitau (Finance Manager) as approver under the FIN-POL-002 matrix, in addition to the Inventory Manager's replenishment review under INV-POL-001.",
+    "acceptableAnswerPoints": [
+      "Reordering the standard quantity (720 units at KES 700 each) commits approximately KES 504,000, which requires Faith Wambui Gitau (Finance Manager) as approver under the FIN-POL-002 matrix, in addition to the Inventory Manager's replenishment review under INV-POL-001."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-003"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0021",
+      "EMP-0012",
+      "PRD-002",
+      "INV-0037",
+      "WH-MSA-001",
+      "SUP-009",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "INV-POL-001",
+      "PROC-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "INV-POL-001",
+      "PROC-POL-001"
+    ],
+    "scenarios": [
+      "SCN-XD-003"
+    ],
+    "reasoningSteps": [
+      "Confirm the product is below its reorder level.",
+      "Identify the supplier and the standard reorder quantity and unit cost.",
+      "Calculate the total commitment (reorderQuantity x unitCost).",
+      "Resolve the FIN-POL-002 approver for that commitment amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "approval-matrix",
+      "cross-domain",
+      "finance",
+      "inventory",
+      "multi-hop",
+      "procurement",
+      "scenario"
+    ],
+    "id": "Q-XD-003"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-004: A KES 10,000,000 warehouse automation project sits exactly at the matrix's CFO ceiling?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "KES 10,000,000 sits exactly at the matrix's stated CFO ceiling, but the CFO's own approval limit of KES 5,000,000 is lower, so Samuel Kariuki (Chief Executive Officer) is the required approver, not the CFO. Finance review under PROC-POL-001 also applies given the amount exceeds KES 500,000.",
+    "acceptableAnswerPoints": [
+      "KES 10,000,000 sits exactly at the matrix's stated CFO ceiling, but the CFO's own approval limit of KES 5,000,000 is lower, so Samuel Kariuki (Chief Executive Officer) is the required approver, not the CFO. Finance review under PROC-POL-001 also applies given the amount exceeds KES 500,000."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-004"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0022",
+      "EMP-0001",
+      "DEPT-WH",
+      "CC-WH",
+      "SUP-012",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "PROC-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "PROC-POL-001"
+    ],
+    "scenarios": [
+      "SCN-XD-004"
+    ],
+    "reasoningSteps": [
+      "Determine the matrix tier from the amount alone.",
+      "Cross-reference the CFO's actual canonical approval limit rather than relying on the matrix ceiling text.",
+      "Recognise the canonical limit is lower, forcing escalation to the CEO.",
+      "Separately identify the Finance-review requirement for amounts above KES 500,000."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "approval-matrix",
+      "boundary",
+      "cross-domain",
+      "finance",
+      "multi-hop",
+      "procurement",
+      "scenario",
+      "warehouse"
+    ],
+    "id": "Q-XD-004"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-005: A contract renewal with Nyati Consumer Products surfaces a second, separate conflict-of-interest question?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Because the disclosure was proactive, Esther Wanjiku Kamau has met her COMP-POL-002 obligation; she must still withdraw from approving this specific supplier's renewal, and the manager and Compliance Manager decide whether an independent reviewer approves it instead or further controls are needed, per PROC-POL-002's requirement that a conflicted employee withdraw from evaluation or approval.",
+    "acceptableAnswerPoints": [
+      "Because the disclosure was proactive, Esther Wanjiku Kamau has met her COMP-POL-002 obligation; she must still withdraw from approving this specific supplier's renewal, and the manager and Compliance Manager decide whether an independent reviewer approves it instead or further controls are needed, per PROC-POL-002's requirement that a conflicted employee withdraw from evaluation or approval."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-005"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0004",
+      "EMP-0008",
+      "SUP-008",
+      "SYS-D365-SCM",
+      "SYS-DMS",
+      "PROC-POL-002",
+      "COMP-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-002",
+      "PROC-POL-002"
+    ],
+    "scenarios": [
+      "SCN-XD-005"
+    ],
+    "reasoningSteps": [
+      "Identify who would normally approve this supplier relationship.",
+      "Recognise that proactive disclosure changes the response from investigation to controlled continuation.",
+      "Identify who takes over the approval decision."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "conflict-of-interest",
+      "cross-domain",
+      "multi-hop",
+      "scenario",
+      "supplier-management"
+    ],
+    "id": "Q-XD-005"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-006: An IT Support Officer's own credentials are used to access records outside his duties?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "This is escalated as a suspected credential compromise, not dismissed as a self-reported error: IT-POL-002 governs the incident response, IT-POL-001 governs suspending and resetting the account, COMP-POL-001 governs the fact that compliance investigation records (likely containing personal data) were accessed without business need, and GEN-POL-001 requires the evidence to be preserved rather than the logs being cleared.",
+    "acceptableAnswerPoints": [
+      "This is escalated as a suspected credential compromise, not dismissed as a self-reported error: IT-POL-002 governs the incident response, IT-POL-001 governs suspending and resetting the account, COMP-POL-001 governs the fact that compliance investigation records (likely containing personal data) were accessed without business need, and GEN-POL-001 requires the evidence to be preserved rather than the logs being cleared."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-006"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0023",
+      "EMP-0007",
+      "SYS-DMS",
+      "SYS-IAM",
+      "SYS-SD",
+      "IT-POL-002",
+      "IT-POL-001",
+      "COMP-POL-001",
+      "GEN-POL-001"
+    ],
+    "systems": [
+      "Enterprise Document Management System",
+      "Identity and Access Management System",
+      "IT Service Desk"
+    ],
+    "policies": [
+      "COMP-POL-001",
+      "GEN-POL-001",
+      "IT-POL-001",
+      "IT-POL-002"
+    ],
+    "scenarios": [
+      "SCN-XD-006"
+    ],
+    "reasoningSteps": [
+      "Identify that self-reporting does not reduce this to a routine ticket.",
+      "Determine why the specific files accessed (compliance investigation records) matter to the response.",
+      "Identify the four policies each governing a different part of the response."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "cross-domain",
+      "incidents",
+      "it-access",
+      "multi-hop",
+      "negative",
+      "scenario"
+    ],
+    "id": "Q-XD-006"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-007: Lucy Chebet Kiprono's Kisumu supplier-audit trip must be traced from travel authorisation to the retained expense record?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The full chain must hold together: OPS-POL-001 governs the travel authorisation and approval routing through FIN-POL-002, FIN-POL-001 governs the expense claim itself (receipts, caps, the 10-day submission window), and GEN-POL-001 requires the travel authorisation, itinerary, claim and receipts to all be retained as one traceable record.",
+    "acceptableAnswerPoints": [
+      "The full chain must hold together: OPS-POL-001 governs the travel authorisation and approval routing through FIN-POL-002, FIN-POL-001 governs the expense claim itself (receipts, caps, the 10-day submission window), and GEN-POL-001 requires the travel authorisation, itinerary, claim and receipts to all be retained as one traceable record."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-007"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0008",
+      "SUP-006",
+      "DEPT-COMP",
+      "SYS-D365-FIN",
+      "SYS-DMS",
+      "OPS-POL-001",
+      "FIN-POL-001",
+      "FIN-POL-002",
+      "GEN-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "FIN-POL-001",
+      "FIN-POL-002",
+      "GEN-POL-001",
+      "OPS-POL-001"
+    ],
+    "scenarios": [
+      "SCN-XD-007"
+    ],
+    "reasoningSteps": [
+      "Identify which policy governs the travel authorisation versus the expense claim.",
+      "Identify the approval route for the trip cost.",
+      "Identify what must be retained and for how long."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "cross-domain",
+      "finance",
+      "multi-hop",
+      "records",
+      "scenario",
+      "travel"
+    ],
+    "id": "Q-XD-007"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-008: A KES 45,000 write-off for water-damaged Safi Laundry Detergent 1Kg must pass through Inventory, Finance and Records?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "The KES 45,000 write-off requires the Inventory Manager's sign-off under INV-POL-001 plus Nancy Wairimu Ndungu (Warehouse Manager)'s approval under the FIN-POL-002 matrix for this amount; the warehouse cannot post the adjustment unilaterally, and the full evidence trail is retained under GEN-POL-001.",
+    "acceptableAnswerPoints": [
+      "The KES 45,000 write-off requires the Inventory Manager's sign-off under INV-POL-001 plus Nancy Wairimu Ndungu (Warehouse Manager)'s approval under the FIN-POL-002 matrix for this amount; the warehouse cannot post the adjustment unilaterally, and the full evidence trail is retained under GEN-POL-001."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-008"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "WH-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0022",
+      "EMP-0021",
+      "PRD-021",
+      "WH-NKR-001",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "SYS-DMS",
+      "WH-POL-001",
+      "INV-POL-001",
+      "FIN-POL-002",
+      "GEN-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "GEN-POL-001",
+      "INV-POL-001",
+      "WH-POL-001"
+    ],
+    "scenarios": [
+      "SCN-XD-008"
+    ],
+    "reasoningSteps": [
+      "Identify the physical control step (segregation) versus the accounting step (write-off).",
+      "Resolve the FIN-POL-002 approver for this amount.",
+      "Identify what must be retained once the write-off is approved."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "cross-domain",
+      "finance",
+      "inventory",
+      "multi-hop",
+      "records",
+      "scenario",
+      "warehouse"
+    ],
+    "id": "Q-XD-008"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-009: Mama Ashante Restaurant's return of Tumaini Baked Beans 400g must be traced from the customer complaint to the retained record?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "The return must pass through each step before a credit is issued: a logged reason and customer reference, a Warehouse condition assessment, an Inventory disposition decision under INV-POL-001, and a retained record connecting the original complaint to the final outcome under GEN-POL-001 - a credit cannot be issued from the complaint alone.",
+    "acceptableAnswerPoints": [
+      "The return must pass through each step before a credit is issued: a logged reason and customer reference, a Warehouse condition assessment, an Inventory disposition decision under INV-POL-001, and a retained record connecting the original complaint to the final outcome under GEN-POL-001 - a credit cannot be issued from the complaint alone."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-009"
+      },
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "WH-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0017",
+      "CUS-011",
+      "PRD-011",
+      "WH-NRB-001",
+      "SYS-D365-SALES",
+      "SYS-D365-SCM",
+      "SYS-DMS",
+      "SALES-POL-001",
+      "WH-POL-001",
+      "INV-POL-001",
+      "GEN-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "GEN-POL-001",
+      "INV-POL-001",
+      "SALES-POL-001",
+      "WH-POL-001"
+    ],
+    "scenarios": [
+      "SCN-XD-009"
+    ],
+    "reasoningSteps": [
+      "Identify each step the return must pass through, in order.",
+      "Identify which department performs the condition assessment.",
+      "Identify what must be retained once the return is resolved."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "cross-domain",
+      "inventory",
+      "multi-hop",
+      "records",
+      "sales",
+      "scenario",
+      "warehouse"
+    ],
+    "id": "Q-XD-009"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-010: Value Foods Kenya's suspension must block purchasing without disrupting existing commitments?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Value Foods Kenya's suspension blocks new purchase orders immediately; only Esther Wanjiku Kamau (Procurement Manager) can record reinstatement or termination, and that decision follows further Compliance input given the sanctions-screening trigger. Existing open commitments are reviewed on their own terms rather than being automatically cancelled.",
+    "acceptableAnswerPoints": [
+      "Value Foods Kenya's suspension blocks new purchase orders immediately; only Esther Wanjiku Kamau (Procurement Manager) can record reinstatement or termination, and that decision follows further Compliance input given the sanctions-screening trigger. Existing open commitments are reviewed on their own terms rather than being automatically cancelled."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-010"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0004",
+      "EMP-0008",
+      "SUP-009",
+      "SYS-D365-SCM",
+      "SYS-DMS",
+      "PROC-POL-002",
+      "COMP-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-002",
+      "PROC-POL-002"
+    ],
+    "scenarios": [
+      "SCN-XD-010"
+    ],
+    "reasoningSteps": [
+      "Identify the suspension trigger and who raised it.",
+      "Identify who has sole authority to lift the suspension.",
+      "Distinguish the effect on new orders from the effect on existing commitments."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "cross-domain",
+      "multi-hop",
+      "negative",
+      "procurement",
+      "scenario",
+      "supplier-management"
+    ],
+    "id": "Q-XD-010"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "What should happen in SCN-XD-011: Baraka General Store's KES 320,000 order exceeds its KES 250,000 credit limit?",
+    "category": "cross-domain",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "The order cannot be released as a routine transaction: it exceeds the customer's credit limit by KES 70,000. Per SALES-POL-001, this requires the Sales Manager to review and, given it is a credit exception, Finance confirmation before the order proceeds; SALES-POL-001 also requires ongoing monitoring of credit breaches as a management reporting item.",
+    "acceptableAnswerPoints": [
+      "The order cannot be released as a routine transaction: it exceeds the customer's credit limit by KES 70,000. Per SALES-POL-001, this requires the Sales Manager to review and, given it is a credit exception, Finance confirmation before the order proceeds; SALES-POL-001 also requires ongoing monitoring of credit breaches as a management reporting item."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-XD-011"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0018",
+      "EMP-0005",
+      "CUS-006",
+      "SYS-D365-SALES",
+      "SYS-D365-FIN",
+      "SALES-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "SALES-POL-001"
+    ],
+    "scenarios": [
+      "SCN-XD-011"
+    ],
+    "reasoningSteps": [
+      "Compare the order value against the customer's credit limit.",
+      "Calculate the amount by which the limit is exceeded.",
+      "Identify who must approve an exception to proceed.",
+      "Identify the ongoing monitoring obligation this breach creates."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "credit-control",
+      "cross-domain",
+      "finance",
+      "multi-hop",
+      "sales",
+      "scenario"
+    ],
+    "id": "Q-XD-011"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "A new employee in Executive Office cannot access Microsoft Dynamics 365 Finance. What should happen?",
+    "category": "cross-domain",
+    "subcategory": "onboarding-access",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "HR should confirm the onboarding record and approved role; IT should correct access through the service desk and identity controls.",
+    "acceptableAnswerPoints": [
+      "hr",
+      "it",
+      "cross-domain"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0001"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-EXEC"
+      },
+      {
+        "type": "system",
+        "id": "SYS-D365-FIN"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-002"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001"
+      }
+    ],
+    "entities": [
+      "EMP-0001",
+      "DEPT-EXEC",
+      "SYS-D365-FIN"
+    ],
+    "systems": [],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the entities and operational trigger.",
+      "Retrieve the relevant policy controls.",
+      "Connect the records across the affected domains.",
+      "State the permitted next action and any required escalation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "it",
+      "cross-domain"
+    ],
+    "id": "Q-XD-012"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "A customer requests 1141 units of Tumaini Gold Cooking Oil 5L. Can the order be fulfilled from Nairobi Distribution Centre?",
+    "category": "cross-domain",
+    "subcategory": "sales-inventory",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "No. Only 1140 units are available after reservations, so the request exceeds available stock.",
+    "acceptableAnswerPoints": [
+      "sales",
+      "inventory",
+      "cross-domain"
+    ],
+    "requiredSources": [
+      {
+        "type": "customer",
+        "id": "CUS-001"
+      },
+      {
+        "type": "product",
+        "id": "PRD-001"
+      },
+      {
+        "type": "inventory",
+        "id": "INV-0001"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001"
+      }
+    ],
+    "entities": [
+      "CUS-001",
+      "PRD-001",
+      "INV-0001",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "SALES-POL-001",
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the entities and operational trigger.",
+      "Retrieve the relevant policy controls.",
+      "Connect the records across the affected domains.",
+      "State the permitted next action and any required escalation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "sales",
+      "inventory",
+      "cross-domain"
+    ],
+    "id": "Q-XD-013"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "Tumaini Maize Flour 2Kg is below its reorder level. What process should begin?",
+    "category": "cross-domain",
+    "subcategory": "inventory-procurement",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "Inventory should review demand, open orders, stock at other warehouses and lead time, then initiate a purchase request or transfer under procurement and financial approval controls; the signal is not an automatic purchase.",
+    "acceptableAnswerPoints": [
+      "inventory",
+      "procurement",
+      "finance"
+    ],
+    "requiredSources": [
+      {
+        "type": "product",
+        "id": "PRD-003"
+      },
+      {
+        "type": "inventory",
+        "id": "INV-0003"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002"
+      }
+    ],
+    "entities": [
+      "PRD-003",
+      "INV-0003"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001",
+      "PROC-POL-001",
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the entities and operational trigger.",
+      "Retrieve the relevant policy controls.",
+      "Connect the records across the affected domains.",
+      "State the permitted next action and any required escalation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "procurement",
+      "finance",
+      "cross-domain"
+    ],
+    "id": "Q-XD-014"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "A proposed supplier for Tumaini Gold Cooking Oil 5L has a conflict-of-interest concern. What must happen before it is used?",
+    "category": "cross-domain",
+    "subcategory": "supplier-compliance",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "The concern must be disclosed and investigated; supplier onboarding and due diligence must be complete before procurement uses the supplier.",
+    "acceptableAnswerPoints": [
+      "supplier",
+      "compliance",
+      "cross-domain"
+    ],
+    "requiredSources": [
+      {
+        "type": "supplier",
+        "id": "SUP-001"
+      },
+      {
+        "type": "product",
+        "id": "PRD-001"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-002"
+      }
+    ],
+    "entities": [
+      "SUP-001",
+      "PRD-001"
+    ],
+    "systems": [],
+    "policies": [
+      "PROC-POL-002",
+      "COMP-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the entities and operational trigger.",
+      "Retrieve the relevant policy controls.",
+      "Connect the records across the affected domains.",
+      "State the permitted next action and any required escalation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "supplier",
+      "compliance",
+      "cross-domain"
+    ],
+    "id": "Q-XD-015"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "Samuel Kariuki has left the company but still has system access. Which controls apply?",
+    "category": "cross-domain",
+    "subcategory": "termination-access",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "HR must notify IT, and IT must promptly disable, change or recertify access through the identity system while preserving required records.",
+    "acceptableAnswerPoints": [
+      "hr",
+      "it",
+      "access-control"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0001"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-002"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001"
+      },
+      {
+        "type": "policy",
+        "id": "GEN-POL-001"
+      }
+    ],
+    "entities": [
+      "EMP-0001"
+    ],
+    "systems": [],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001",
+      "GEN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the entities and operational trigger.",
+      "Retrieve the relevant policy controls.",
+      "Connect the records across the affected domains.",
+      "State the permitted next action and any required escalation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "it",
+      "access-control",
+      "cross-domain"
+    ],
+    "id": "Q-XD-016"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "A warehouse receives SVGA Value Maize Flour 2Kg with a quantity different from the purchase order. What should the warehouse and Finance do?",
+    "category": "cross-domain",
+    "subcategory": "receiving-finance",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "The warehouse should record the discrepancy; Finance should hold matching until the purchase order, goods receipt and invoice are resolved.",
+    "acceptableAnswerPoints": [
+      "warehouse",
+      "procurement",
+      "finance"
+    ],
+    "requiredSources": [
+      {
+        "type": "product",
+        "id": "PRD-004"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "WH-POL-001"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001"
+      }
+    ],
+    "entities": [
+      "PRD-004",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "WH-POL-001",
+      "PROC-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the entities and operational trigger.",
+      "Retrieve the relevant policy controls.",
+      "Connect the records across the affected domains.",
+      "State the permitted next action and any required escalation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "warehouse",
+      "procurement",
+      "finance",
+      "cross-domain"
+    ],
+    "id": "Q-XD-017"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "A traveller incurs a KES 3,500 meal while visiting Nairobi. What evidence and rule determine reimbursement?",
+    "category": "cross-domain",
+    "subcategory": "travel-expense",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "The claim needs business purpose and supporting evidence; the normal meal cap is KES 3,000 per person, so the excess requires an approved exception.",
+    "acceptableAnswerPoints": [
+      "travel",
+      "finance",
+      "boundary"
+    ],
+    "requiredSources": [
+      {
+        "type": "location",
+        "id": "LOC-NRB-HQ"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-001"
+      }
+    ],
+    "entities": [
+      "LOC-NRB-HQ"
+    ],
+    "systems": [],
+    "policies": [
+      "OPS-POL-001",
+      "FIN-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the entities and operational trigger.",
+      "Retrieve the relevant policy controls.",
+      "Connect the records across the affected domains.",
+      "State the permitted next action and any required escalation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "travel",
+      "finance",
+      "boundary",
+      "cross-domain"
+    ],
+    "id": "Q-XD-018"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "A P1 incident affects Microsoft Dynamics 365 Finance and may expose customer data. How should it be handled?",
+    "category": "cross-domain",
+    "subcategory": "incident-privacy",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "The service desk should acknowledge within 15 minutes and escalate immediately; Compliance should assess the possible data incident while evidence is preserved.",
+    "acceptableAnswerPoints": [
+      "it",
+      "incident",
+      "privacy"
+    ],
+    "requiredSources": [
+      {
+        "type": "system",
+        "id": "SYS-D365-FIN"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-001"
+      }
+    ],
+    "entities": [
+      "SYS-D365-FIN"
+    ],
+    "systems": [],
+    "policies": [
+      "IT-POL-002",
+      "COMP-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the entities and operational trigger.",
+      "Retrieve the relevant policy controls.",
+      "Connect the records across the affected domains.",
+      "State the permitted next action and any required escalation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it",
+      "incident",
+      "privacy",
+      "cross-domain"
+    ],
+    "id": "Q-XD-019"
+  },
+  {
+    "prefix": "Q-XD-",
+    "question": "A customer order cannot be fulfilled because Tumaini Maize Flour 2Kg is below available stock. When can procurement become involved?",
+    "category": "cross-domain",
+    "subcategory": "sales-procurement",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "Sales should not confirm more than available stock; Inventory reviews replenishment or transfer options, and any purchase request follows Procurement and Finance approval.",
+    "acceptableAnswerPoints": [
+      "sales",
+      "inventory",
+      "procurement"
+    ],
+    "requiredSources": [
+      {
+        "type": "customer",
+        "id": "CUS-001"
+      },
+      {
+        "type": "product",
+        "id": "PRD-003"
+      },
+      {
+        "type": "inventory",
+        "id": "INV-0003"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001"
+      }
+    ],
+    "entities": [
+      "CUS-001",
+      "PRD-003",
+      "INV-0003"
+    ],
+    "systems": [],
+    "policies": [
+      "SALES-POL-001",
+      "INV-POL-001",
+      "PROC-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the entities and operational trigger.",
+      "Retrieve the relevant policy controls.",
+      "Connect the records across the affected domains.",
+      "State the permitted next action and any required escalation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "sales",
+      "inventory",
+      "procurement",
+      "cross-domain"
+    ],
+    "id": "Q-XD-020"
+  }
+]

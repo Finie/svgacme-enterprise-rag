@@ -1,0 +1,141 @@
+{
+  "id": "SCN-XD-009",
+  "category": "cross-domain",
+  "title": "Mama Ashante Restaurant's return of Tumaini Baked Beans 400g must be traced from the customer complaint to the retained record",
+  "description": "Mama Ashante Restaurant reports several tins of Tumaini Baked Beans 400g received from Nairobi Distribution Centre were past their best-before indication and requests a return and credit.",
+  "businessContext": "This chain runs from the customer complaint, through the Sales return process, into the warehouse condition assessment and inventory disposition, and finally to the retained record.",
+  "actors": [
+    {
+      "employeeId": "EMP-0017",
+      "name": "Dennis Omondi Owuor",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0017",
+      "name": "Dennis Omondi Owuor"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-011",
+      "name": "Mama Ashante Restaurant"
+    },
+    {
+      "type": "product",
+      "id": "PRD-011",
+      "name": "Tumaini Baked Beans 400g"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "WH-POL-001",
+      "name": "Warehouse Operations & Receiving Policy"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "GEN-POL-001",
+      "name": "Records Retention & Document Management Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "WH-POL-001",
+    "INV-POL-001",
+    "GEN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Mama Ashante Restaurant reports the condition issue and requests a return."
+    },
+    {
+      "sequence": 2,
+      "event": "Dennis Omondi Owuor logs the return with a reason and customer reference in Microsoft Dynamics 365 Sales."
+    },
+    {
+      "sequence": 3,
+      "event": "Nairobi Distribution Centre assesses the condition of the returned stock on arrival."
+    },
+    {
+      "sequence": 4,
+      "event": "Inventory determines the disposition (return to saleable stock, write-off, or supplier claim)."
+    },
+    {
+      "sequence": 5,
+      "event": "The complaint, return, assessment and disposition are retained as one linked record."
+    }
+  ],
+  "expectedOutcome": "The return must pass through each step before a credit is issued: a logged reason and customer reference, a Warehouse condition assessment, an Inventory disposition decision under INV-POL-001, and a retained record connecting the original complaint to the final outcome under GEN-POL-001 - a credit cannot be issued from the complaint alone.",
+  "relevantFacts": [
+    "Mama Ashante Restaurant (CUS-011) is managed by Dennis Omondi Owuor.",
+    "Tumaini Baked Beans 400g (PRD-011) was received by the customer via Nairobi Distribution Centre (WH-NRB-001).",
+    "SALES-POL-001: 'Returns require a reason, customer reference, condition assessment and approval before stock is returned or a credit is issued.'"
+  ],
+  "requiredReasoning": [
+    "Identify each step the return must pass through, in order.",
+    "Identify which department performs the condition assessment.",
+    "Identify what must be retained once the return is resolved."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-011",
+      "type": "managed_by",
+      "to": "EMP-0017"
+    },
+    {
+      "from": "PRD-011",
+      "type": "dispatched_from",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "workflow"
+  ],
+  "tags": [
+    "cross-domain",
+    "sales",
+    "warehouse",
+    "inventory",
+    "records"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "SCN-INC-003",
+  "category": "incidents",
+  "title": "Microsoft Dynamics 365 Sales is unavailable company-wide",
+  "description": "Microsoft Dynamics 365 Sales becomes unreachable for all Sales users across every location at 10:15, preventing quotations, sales orders and customer account access company-wide.",
+  "businessContext": "IT-POL-002 defines P1 Critical incidents as those threatening a critical system or widespread operations; a company-wide CRM outage during business hours is squarely in this category.",
+  "actors": [
+    {
+      "employeeId": "EMP-0007",
+      "name": "David Kiplagat Rotich",
+      "roleId": "ROLE-IT-MGR",
+      "departmentId": "DEPT-IT",
+      "role": "IT Manager"
+    },
+    {
+      "employeeId": "EMP-0005",
+      "name": "Brian Wafula Simiyu",
+      "roleId": "ROLE-SALES-MGR",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0007",
+      "name": "David Kiplagat Rotich"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0005",
+      "name": "Brian Wafula Simiyu"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-SALES",
+      "name": "Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-002",
+      "name": "IT Incident Management & Service Desk Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "IT Service Desk"
+  ],
+  "policies": [
+    "IT-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Sales users across all locations report being unable to access Microsoft Dynamics 365 Sales at the same time."
+    },
+    {
+      "sequence": 2,
+      "event": "The IT Service Desk acknowledges the incident within 15 minutes."
+    },
+    {
+      "sequence": 3,
+      "event": "David Kiplagat Rotich (IT Manager) coordinates the major incident response and assigns technical owners."
+    },
+    {
+      "sequence": 4,
+      "event": "Business updates are issued to affected departments while restoration is in progress."
+    },
+    {
+      "sequence": 5,
+      "event": "A post-incident review is scheduled once service is restored."
+    }
+  ],
+  "expectedOutcome": "This is a P1 Critical incident: it threatens a critical system and widespread operations. The service desk must acknowledge within 15 minutes and escalate immediately, the IT Manager coordinates the response and provides business updates, and a post-incident review with actions and owners follows restoration.",
+  "relevantFacts": [
+    "Microsoft Dynamics 365 Sales is unreachable for all Sales users across every location.",
+    "IT-POL-002: 'P1 Critical incidents threaten a critical system, widespread operations, safety or confirmed serious security exposure; the service desk acknowledges within 15 minutes and escalates immediately... Major incidents receive a post-incident review with actions and owners.'"
+  ],
+  "requiredReasoning": [
+    "Assess the scope of impact: company-wide versus a single user.",
+    "Match that scope to the P1 definition.",
+    "Identify the required acknowledgement time and follow-up review."
+  ],
+  "relationships": [
+    {
+      "from": "SYS-D365-SALES",
+      "type": "owned_by",
+      "to": "DEPT-SALES"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "comparison",
+    "policy_lookup",
+    "workflow"
+  ],
+  "tags": [
+    "incidents",
+    "system-outage",
+    "sales",
+    "p1"
+  ]
+}

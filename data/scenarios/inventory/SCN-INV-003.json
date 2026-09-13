@@ -1,0 +1,94 @@
+{
+  "id": "SCN-INV-003",
+  "category": "inventory",
+  "title": "A large share of Tumaini Wheat Flour 2Kg stock at Nairobi Distribution Centre is already reserved",
+  "description": "Tumaini Wheat Flour 2Kg at Nairobi Distribution Centre shows a substantial quantityReserved relative to quantityOnHand, meaning the freely sellable quantityAvailable is significantly lower than the physical stock count would suggest.",
+  "businessContext": "INV-POL-001 defines quantityReserved as stock committed to approved demand; reporting must distinguish physical, reserved and available stock rather than treating quantityOnHand as sellable.",
+  "actors": [
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "product",
+      "id": "PRD-005",
+      "name": "Tumaini Wheat Flour 2Kg"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0005",
+      "name": "PRD-005 @ WH-NRB-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "INV-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Inventory reporting shows quantityOnHand of 1350 for Tumaini Wheat Flour 2Kg at Nairobi Distribution Centre."
+    },
+    {
+      "sequence": 2,
+      "event": "Of that, 540 units are already reserved against approved demand."
+    },
+    {
+      "sequence": 3,
+      "event": "quantityAvailable is calculated as 810, materially lower than quantityOnHand."
+    }
+  ],
+  "expectedOutcome": "Only 810 units of Tumaini Wheat Flour 2Kg are actually available to promise to a new customer at Nairobi Distribution Centre, even though 1350 units are physically on hand, because 540 units are already committed to approved demand under INV-POL-001.",
+  "relevantFacts": [
+    "Tumaini Wheat Flour 2Kg (PRD-005) at Nairobi Distribution Centre has quantityOnHand 1350, quantityReserved 540, quantityAvailable 810 (inventory record INV-0005).",
+    "INV-POL-001: 'quantityReserved is stock committed to approved demand. quantityAvailable is quantityOnHand less quantityReserved and any controlled hold.'"
+  ],
+  "requiredReasoning": [
+    "Distinguish quantityOnHand from quantityAvailable.",
+    "Calculate quantityAvailable as quantityOnHand minus quantityReserved.",
+    "Recognise that physical stock alone overstates what can be sold."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-005",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "calculation",
+    "fact_lookup"
+  ],
+  "tags": [
+    "inventory",
+    "reserved-stock"
+  ]
+}

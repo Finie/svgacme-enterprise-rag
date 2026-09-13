@@ -1,0 +1,127 @@
+{
+  "id": "SCN-XD-011",
+  "category": "cross-domain",
+  "title": "Baraka General Store's KES 320,000 order exceeds its KES 250,000 credit limit",
+  "description": "Baraka General Store places an order valued at KES 320,000, above its current creditLimit of KES 250,000. The order must be resolved across Sales, Finance and Compliance before dispatch.",
+  "businessContext": "This chain runs from the sales order, through the credit-limit control, to the Sales Manager and Finance approval required to exceed it, and into Compliance monitoring of credit-limit breaches.",
+  "actors": [
+    {
+      "employeeId": "EMP-0018",
+      "name": "Sharon Atieno Onyango",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    },
+    {
+      "employeeId": "EMP-0005",
+      "name": "Brian Wafula Simiyu",
+      "roleId": "ROLE-SALES-MGR",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0018",
+      "name": "Sharon Atieno Onyango"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0005",
+      "name": "Brian Wafula Simiyu"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-006",
+      "name": "Baraka General Store"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Baraka General Store places an order valued at KES 320,000."
+    },
+    {
+      "sequence": 2,
+      "event": "The order is checked against the customer's creditLimit of KES 250,000 and found to exceed it."
+    },
+    {
+      "sequence": 3,
+      "event": "Brian Wafula Simiyu (Sales Manager) reviews whether a temporary credit exception is warranted."
+    },
+    {
+      "sequence": 4,
+      "event": "Finance confirms whether the exception is approved before the order is released to Warehouse."
+    },
+    {
+      "sequence": 5,
+      "event": "Sales Managers review credit breaches as part of ongoing monitoring."
+    }
+  ],
+  "expectedOutcome": "The order cannot be released as a routine transaction: it exceeds the customer's credit limit by KES 70,000. Per SALES-POL-001, this requires the Sales Manager to review and, given it is a credit exception, Finance confirmation before the order proceeds; SALES-POL-001 also requires ongoing monitoring of credit breaches as a management reporting item.",
+  "relevantFacts": [
+    "Baraka General Store (CUS-006) has creditLimit KES 250,000 in data/master-data/customers.json.",
+    "The new order is valued at KES 320,000, exceeding the limit by KES 70,000.",
+    "SALES-POL-001: 'The order is checked for approval, credit status and pricing before confirmation... Sales Managers review order ageing, cancelled orders, credit breaches, stock-outs, returns and unusual discounts.'"
+  ],
+  "requiredReasoning": [
+    "Compare the order value against the customer's credit limit.",
+    "Calculate the amount by which the limit is exceeded.",
+    "Identify who must approve an exception to proceed.",
+    "Identify the ongoing monitoring obligation this breach creates."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-006",
+      "type": "managed_by",
+      "to": "EMP-0018"
+    },
+    {
+      "from": "CUS-006",
+      "type": "reviewed_by",
+      "to": "EMP-0005"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "calculation",
+    "exception"
+  ],
+  "tags": [
+    "cross-domain",
+    "sales",
+    "finance",
+    "compliance",
+    "credit-control"
+  ]
+}

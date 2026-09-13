@@ -1,0 +1,130 @@
+{
+  "id": "SCN-SALES-003",
+  "category": "sales",
+  "title": "Lakeview Supermarkets requests SVGA Value Rice 5Kg, already below its reorder level",
+  "description": "Lakeview Supermarkets requests 100 units of SVGA Value Rice 5Kg from Nairobi Distribution Centre, where available stock is already below the reorder level even before this order is filled.",
+  "businessContext": "INV-POL-001 requires the Inventory Manager to review replenishment when quantityAvailable falls below reorderLevel; a further sale from an already-low position increases the urgency.",
+  "actors": [
+    {
+      "employeeId": "EMP-0019",
+      "name": "Collins Wekesa Masinde",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0019",
+      "name": "Collins Wekesa Masinde"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-003",
+      "name": "Lakeview Supermarkets"
+    },
+    {
+      "type": "product",
+      "id": "PRD-008",
+      "name": "SVGA Value Rice 5Kg"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0008",
+      "name": "PRD-008 @ WH-NRB-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "INV-POL-001",
+    "PROC-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Lakeview Supermarkets requests 100 units of SVGA Value Rice 5Kg."
+    },
+    {
+      "sequence": 2,
+      "event": "The system confirms quantityAvailable (178) is already below reorderLevel (350)."
+    },
+    {
+      "sequence": 3,
+      "event": "The order itself can be fulfilled from available stock."
+    },
+    {
+      "sequence": 4,
+      "event": "The Inventory Manager is notified that reorder review is required regardless of this individual order."
+    }
+  ],
+  "expectedOutcome": "The order for 100 units can be fulfilled since it is within quantityAvailable of 178, but the underlying reorder condition (available already below reorderLevel of 350) is unaffected by fulfilling it and independently requires the Inventory Manager's replenishment review under INV-POL-001, which may trigger PROC-POL-001.",
+  "relevantFacts": [
+    "SVGA Value Rice 5Kg (PRD-008) at Nairobi Distribution Centre has quantityAvailable 178, below reorderLevel 350 (inventory record INV-0008).",
+    "Lakeview Supermarkets (CUS-003) requested 100 units, managed by Collins Wekesa Masinde.",
+    "INV-POL-001: 'When quantityAvailable falls below reorderLevel, the Inventory Manager reviews demand, open purchase orders, stock in other warehouses and expected lead time... a reorder signal is not an automatic purchase commitment.'"
+  ],
+  "requiredReasoning": [
+    "Determine whether the requested quantity alone can be fulfilled from quantityAvailable.",
+    "Separately determine whether the current stock position already breaches the reorder level.",
+    "Identify that fulfilling the order does not resolve the reorder condition.",
+    "Connect Sales, Inventory and the reorder rule to the possible next step in Procurement."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-003",
+      "type": "managed_by",
+      "to": "EMP-0019"
+    },
+    {
+      "from": "PRD-008",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "comparison",
+    "multi_hop",
+    "recommendation"
+  ],
+  "tags": [
+    "sales",
+    "inventory",
+    "reorder"
+  ]
+}

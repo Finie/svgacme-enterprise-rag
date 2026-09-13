@@ -1,0 +1,92 @@
+{
+  "id": "SCN-SALES-007",
+  "category": "sales",
+  "title": "Sharon Atieno Onyango asks which approval level applies to a customer discount, without stating the amount",
+  "description": "Sharon Atieno Onyango asks which approval level is required to grant Coastal Supermarkets a requested discount, but does not state the discount amount, percentage, or resulting order value.",
+  "businessContext": "SALES-POL-001 and FIN-POL-002 both determine the required approver from the specific amount involved; without that figure, the tier cannot be determined.",
+  "actors": [
+    {
+      "employeeId": "EMP-0018",
+      "name": "Sharon Atieno Onyango",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0018",
+      "name": "Sharon Atieno Onyango"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-002",
+      "name": "Coastal Supermarkets"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Coastal Supermarkets requests an unspecified discount."
+    },
+    {
+      "sequence": 2,
+      "event": "Sharon Atieno Onyango asks which approval level is required."
+    },
+    {
+      "sequence": 3,
+      "event": "No discount amount, percentage or resulting order value is provided."
+    }
+  ],
+  "expectedOutcome": "There is not enough information to answer: the FIN-POL-002 approval tier depends entirely on the amount of the commitment, which has not been stated. The correct response is to request the discount amount or resulting order value before determining an approver, not to guess a tier.",
+  "relevantFacts": [
+    "Coastal Supermarkets (CUS-002) is managed by Sharon Atieno Onyango.",
+    "No discount amount, percentage or order value was provided in the request.",
+    "FIN-POL-002 determines the required approver from the total expected commitment amount."
+  ],
+  "requiredReasoning": [
+    "Identify what information the approval matrix requires as its input.",
+    "Confirm that this input (the amount) is missing from the request.",
+    "Conclude that a specific approver cannot be named without it."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-002",
+      "type": "managed_by",
+      "to": "EMP-0018"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "abstention",
+    "policy_lookup"
+  ],
+  "tags": [
+    "sales",
+    "abstention",
+    "insufficient-information"
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "id": "SCN-PROC-006",
+  "category": "procurement",
+  "title": "Goods receipt at Mombasa Distribution Centre records fewer units than the KES 50,000 purchase order",
+  "description": "Mary Akinyi Ochola receives a delivery of Chemchemi Bottled Water 500ml (24-pack) from Coastal Beverages at the Mombasa Distribution Centre against a KES 50,000 purchase order, but the delivered quantity is short of what the purchase order specifies.",
+  "businessContext": "WH-POL-001 requires the receiving officer to verify quantity against the purchase order and record accepted, rejected, short or damaged quantities; PROC-POL-001 requires three-way matching before Finance pays the invoice.",
+  "actors": [
+    {
+      "employeeId": "EMP-0036",
+      "name": "Mary Akinyi Ochola",
+      "roleId": "ROLE-WH-OFF",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Officer"
+    },
+    {
+      "employeeId": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu",
+      "roleId": "ROLE-WH-MGR",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0036",
+      "name": "Mary Akinyi Ochola"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu"
+    },
+    {
+      "type": "product",
+      "id": "PRD-013",
+      "name": "Chemchemi Bottled Water 500ml (24-pack)"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-003",
+      "name": "Coastal Beverages"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-MSA-001",
+      "name": "Mombasa Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "WH-POL-001",
+      "name": "Warehouse Operations & Receiving Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "WH-POL-001",
+    "PROC-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Mary Akinyi Ochola checks the delivery against the purchase order for Chemchemi Bottled Water 500ml (24-pack)."
+    },
+    {
+      "sequence": 2,
+      "event": "The delivered quantity is short of the ordered quantity."
+    },
+    {
+      "sequence": 3,
+      "event": "The receiving officer records a goods receipt identifying the accepted and short quantities."
+    },
+    {
+      "sequence": 4,
+      "event": "The discrepancy is reported to Nancy Wairimu Ndungu (Warehouse Manager) and to Procurement."
+    },
+    {
+      "sequence": 5,
+      "event": "Finance holds the invoice for resolution pending three-way match confirmation."
+    }
+  ],
+  "expectedOutcome": "The delivery is not accepted as if it were complete: WH-POL-001 requires the receiving officer to record the accepted and short quantities exactly, the Warehouse Manager resolves the discrepancy, Procurement follows up with the supplier, and Finance holds payment until the purchase order, goods receipt and invoice reconcile under PROC-POL-001.",
+  "relevantFacts": [
+    "Chemchemi Bottled Water 500ml (24-pack) (PRD-013) was ordered from Coastal Beverages (SUP-003) for KES 50,000, to be received at warehouse WH-MSA-001.",
+    "WH-POL-001: 'The receiver records a goods receipt... and identifies accepted, rejected, short or damaged quantities... Finance uses the goods receipt for invoice matching.'",
+    "PROC-POL-001: 'Finance performs three-way matching of purchase order, goods receipt and invoice before payment; shortages, damage and price differences are held for resolution.'"
+  ],
+  "requiredReasoning": [
+    "Identify who is responsible for recording the discrepancy at receipt.",
+    "Determine what happens to the invoice when quantities do not match.",
+    "Identify who resolves the discrepancy versus who is merely notified of it."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-013",
+      "type": "received_at",
+      "to": "WH-MSA-001"
+    },
+    {
+      "from": "PRD-013",
+      "type": "supplied_by",
+      "to": "SUP-003"
+    },
+    {
+      "from": "EMP-0036",
+      "type": "reports_to",
+      "to": "EMP-0022"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "workflow",
+    "exception",
+    "policy_lookup"
+  ],
+  "tags": [
+    "procurement",
+    "warehouse",
+    "three-way-match"
+  ]
+}

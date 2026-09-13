@@ -1,0 +1,126 @@
+{
+  "id": "SCN-INV-004",
+  "category": "inventory",
+  "title": "A cycle count of SVGA Value Wheat Flour 2Kg at Nairobi Distribution Centre finds a variance against the system balance",
+  "description": "A scheduled cycle count of SVGA Value Wheat Flour 2Kg at Nairobi Distribution Centre recorded a physical count of 2150 units, against a system quantityOnHand of 2200.",
+  "businessContext": "INV-POL-001 requires counters to record location, product, expected balance, counted balance and variance, with adjustments requiring independent review.",
+  "actors": [
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    },
+    {
+      "employeeId": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu",
+      "roleId": "ROLE-WH-MGR",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu"
+    },
+    {
+      "type": "product",
+      "id": "PRD-006",
+      "name": "SVGA Value Wheat Flour 2Kg"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0006",
+      "name": "PRD-006 @ WH-NRB-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "INV-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "A cycle count is performed for SVGA Value Wheat Flour 2Kg at Nairobi Distribution Centre."
+    },
+    {
+      "sequence": 2,
+      "event": "The system balance (quantityOnHand) is 2200; the physical count is 2150."
+    },
+    {
+      "sequence": 3,
+      "event": "A variance of 50 units is recorded with the location, product and expected balance."
+    },
+    {
+      "sequence": 4,
+      "event": "An independent reviewer, not the counter, assesses the variance before any adjustment is posted."
+    }
+  ],
+  "expectedOutcome": "The variance of 50 units must not be silently corrected. INV-POL-001 requires the count evidence (location, product, expected and counted balance, variance) to be recorded, an independent review of the adjustment, and - since this may be a write-off for loss - approval at the level set by FIN-POL-002 in addition to the Inventory Manager's sign-off. No employee may erase the transaction to hide the discrepancy.",
+  "relevantFacts": [
+    "SVGA Value Wheat Flour 2Kg (PRD-006) at Nairobi Distribution Centre has a system quantityOnHand of 2200 (inventory record INV-0006).",
+    "The physical cycle count recorded 2150 units, a variance of 50.",
+    "INV-POL-001: 'Counters record the location, product, expected balance, counted balance, variance and evidence. Adjustments require an independent review; write-offs for damage, expiry, loss or obsolescence require the Inventory Manager and the approval level in FIN-POL-002. No employee may erase a transaction to hide a discrepancy.'"
+  ],
+  "requiredReasoning": [
+    "Calculate the variance between the system balance and the physical count.",
+    "Identify the records required to document the count.",
+    "Identify who must independently review the adjustment before it is posted.",
+    "Determine whether an additional financial approval level applies to the resulting write-off."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-006",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "calculation",
+    "workflow",
+    "exception"
+  ],
+  "tags": [
+    "inventory",
+    "discrepancy",
+    "cycle-count"
+  ]
+}

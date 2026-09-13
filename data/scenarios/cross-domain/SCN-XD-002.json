@@ -1,0 +1,146 @@
+{
+  "id": "SCN-XD-002",
+  "category": "cross-domain",
+  "title": "Western Bulk Traders's order for Tumaini Maize Flour 2Kg cannot be filled from Mombasa Distribution Centre and triggers a procurement question",
+  "description": "Western Bulk Traders requests 500 units of Tumaini Maize Flour 2Kg through Collins Wekesa Masinde. Mombasa Distribution Centre shows zero available stock, raising the question of whether and how to replenish before the order can be promised.",
+  "businessContext": "This chain runs from the customer relationship through the product and its inventory position, into the warehouse holding it, and out to the supplier who could replenish it.",
+  "actors": [
+    {
+      "employeeId": "EMP-0019",
+      "name": "Collins Wekesa Masinde",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0019",
+      "name": "Collins Wekesa Masinde"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-015",
+      "name": "Western Bulk Traders"
+    },
+    {
+      "type": "product",
+      "id": "PRD-003",
+      "name": "Tumaini Maize Flour 2Kg"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0038",
+      "name": "PRD-003 @ WH-MSA-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-MSA-001",
+      "name": "Mombasa Distribution Centre"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-002",
+      "name": "Rift Valley Millers"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "INV-POL-001",
+    "PROC-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Western Bulk Traders requests 500 units of Tumaini Maize Flour 2Kg."
+    },
+    {
+      "sequence": 2,
+      "event": "Mombasa Distribution Centre reports quantityAvailable of 0."
+    },
+    {
+      "sequence": 3,
+      "event": "Sales cannot promise the order from this warehouse as it stands."
+    },
+    {
+      "sequence": 4,
+      "event": "Inventory identifies Rift Valley Millers as a supplier who could replenish the product."
+    },
+    {
+      "sequence": 5,
+      "event": "Procurement is asked whether an expedited purchase is warranted."
+    }
+  ],
+  "expectedOutcome": "The order cannot be confirmed from Mombasa Distribution Centre as-is, since quantityAvailable is 0 against a request for 500. Per SALES-POL-001, the account manager may offer a partial delivery, back-order or alternative product while Inventory reviews replenishment via Rift Valley Millers under INV-POL-001 and PROC-POL-001 - stock elsewhere or an expedited order are the two realistic paths forward.",
+  "relevantFacts": [
+    "Western Bulk Traders (CUS-015) is managed by Collins Wekesa Masinde and requested 500 units of Tumaini Maize Flour 2Kg (PRD-003).",
+    "Mombasa Distribution Centre (WH-MSA-001) has quantityAvailable 0 for this product (inventory record INV-0038).",
+    "Rift Valley Millers (SUP-002) is a supplier of this product per data/master-data/products.json."
+  ],
+  "requiredReasoning": [
+    "Resolve the customer to its account manager.",
+    "Resolve the product to its inventory position at the relevant warehouse.",
+    "Compare requested quantity against quantityAvailable.",
+    "Trace the product to its supplier(s) to evaluate replenishment.",
+    "Combine the Sales, Inventory and Procurement policies into one recommended course of action."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-015",
+      "type": "managed_by",
+      "to": "EMP-0019"
+    },
+    {
+      "from": "PRD-003",
+      "type": "stocked_at",
+      "to": "WH-MSA-001"
+    },
+    {
+      "from": "PRD-003",
+      "type": "supplied_by",
+      "to": "SUP-002"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "calculation",
+    "recommendation"
+  ],
+  "tags": [
+    "cross-domain",
+    "sales",
+    "inventory",
+    "procurement"
+  ]
+}

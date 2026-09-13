@@ -1,0 +1,113 @@
+{
+  "id": "SCN-SALES-006",
+  "category": "sales",
+  "title": "Zawadi Corporate Services places a new order while its account is suspended",
+  "description": "Zawadi Corporate Services submits a new order for Tumaini Baked Beans 400g. The customer's account status in Microsoft Dynamics 365 Sales is \"SUSPENDED\".",
+  "businessContext": "SALES-POL-001 requires a sales order to be checked for approval and credit status before confirmation; a suspended account status is a control signal that must not be bypassed by stock availability alone.",
+  "actors": [
+    {
+      "employeeId": "EMP-0005",
+      "name": "Brian Wafula Simiyu",
+      "roleId": "ROLE-SALES-MGR",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0005",
+      "name": "Brian Wafula Simiyu"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-020",
+      "name": "Zawadi Corporate Services"
+    },
+    {
+      "type": "product",
+      "id": "PRD-011",
+      "name": "Tumaini Baked Beans 400g"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Zawadi Corporate Services submits a new order for Tumaini Baked Beans 400g."
+    },
+    {
+      "sequence": 2,
+      "event": "Microsoft Dynamics 365 Sales shows the account status as \"SUSPENDED\"."
+    },
+    {
+      "sequence": 3,
+      "event": "Stock is otherwise available to fulfil the order."
+    },
+    {
+      "sequence": 4,
+      "event": "The order is checked for approval and credit status before confirmation."
+    }
+  ],
+  "expectedOutcome": "The order must not be confirmed while the account is suspended, regardless of stock availability. Zawadi Corporate Services's account status of \"SUSPENDED\" must be resolved by the Sales Manager and Finance before any new order is accepted; stock availability is irrelevant to this decision.",
+  "relevantFacts": [
+    "Zawadi Corporate Services (CUS-020) has customerStatus \"SUSPENDED\" and riskRating \"HIGH\" in data/master-data/customers.json.",
+    "Tumaini Baked Beans 400g (PRD-011) has sufficient available stock to fulfil the request.",
+    "SALES-POL-001: 'The order is checked for approval, credit status and pricing before confirmation... a sales order is not a warehouse instruction until it passes the required status and credit controls.'"
+  ],
+  "requiredReasoning": [
+    "Check the customer's account status before considering stock.",
+    "Recognise that stock availability does not override an account-level control.",
+    "Determine that the order must be escalated, not confirmed."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-020",
+      "type": "managed_by",
+      "to": "EMP-0005"
+    },
+    {
+      "from": "CUS-020",
+      "type": "attempted_order_for",
+      "to": "PRD-011"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "exception",
+    "policy_lookup",
+    "compliance"
+  ],
+  "tags": [
+    "sales",
+    "credit-control",
+    "negative"
+  ]
+}

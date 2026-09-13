@@ -1,0 +1,613 @@
+{
+  "total": 65,
+  "categories": {
+    "onboarding": 6,
+    "procurement": 8,
+    "sales": 7,
+    "inventory": 7,
+    "supplier-management": 5,
+    "finance": 6,
+    "incidents": 5,
+    "travel": 5,
+    "compliance": 5,
+    "cross-domain": 11
+  },
+  "scenarios": [
+    {
+      "id": "SCN-ONB-001",
+      "category": "onboarding",
+      "difficulty": "easy",
+      "policies": [
+        "HR-POL-002",
+        "IT-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-ONB-002",
+      "category": "onboarding",
+      "difficulty": "medium",
+      "policies": [
+        "HR-POL-002",
+        "IT-POL-001",
+        "IT-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-ONB-003",
+      "category": "onboarding",
+      "difficulty": "hard",
+      "policies": [
+        "HR-POL-002",
+        "IT-POL-001",
+        "IT-POL-002",
+        "COMP-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-ONB-004",
+      "category": "onboarding",
+      "difficulty": "easy",
+      "policies": [
+        "HR-POL-002",
+        "IT-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-ONB-005",
+      "category": "onboarding",
+      "difficulty": "medium",
+      "policies": [
+        "IT-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-ONB-006",
+      "category": "onboarding",
+      "difficulty": "medium",
+      "policies": [
+        "HR-POL-002",
+        "IT-POL-001",
+        "PROC-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-PROC-001",
+      "category": "procurement",
+      "difficulty": "easy",
+      "policies": [
+        "PROC-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-PROC-002",
+      "category": "procurement",
+      "difficulty": "medium",
+      "policies": [
+        "PROC-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-PROC-003",
+      "category": "procurement",
+      "difficulty": "hard",
+      "policies": [
+        "PROC-POL-001",
+        "PROC-POL-002",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-PROC-004",
+      "category": "procurement",
+      "difficulty": "medium",
+      "policies": [
+        "PROC-POL-001",
+        "FIN-POL-002",
+        "INV-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-PROC-005",
+      "category": "procurement",
+      "difficulty": "medium",
+      "policies": [
+        "PROC-POL-002",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-PROC-006",
+      "category": "procurement",
+      "difficulty": "medium",
+      "policies": [
+        "WH-POL-001",
+        "PROC-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-PROC-007",
+      "category": "procurement",
+      "difficulty": "medium",
+      "policies": [
+        "PROC-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-PROC-008",
+      "category": "procurement",
+      "difficulty": "hard",
+      "policies": [
+        "FIN-POL-002",
+        "PROC-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-SALES-001",
+      "category": "sales",
+      "difficulty": "easy",
+      "policies": [
+        "SALES-POL-001",
+        "INV-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-SALES-002",
+      "category": "sales",
+      "difficulty": "hard",
+      "policies": [
+        "SALES-POL-001",
+        "INV-POL-001",
+        "PROC-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-SALES-003",
+      "category": "sales",
+      "difficulty": "medium",
+      "policies": [
+        "SALES-POL-001",
+        "INV-POL-001",
+        "PROC-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-SALES-004",
+      "category": "sales",
+      "difficulty": "medium",
+      "policies": [
+        "SALES-POL-001",
+        "WH-POL-001",
+        "INV-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-SALES-005",
+      "category": "sales",
+      "difficulty": "medium",
+      "policies": [
+        "SALES-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-SALES-006",
+      "category": "sales",
+      "difficulty": "medium",
+      "policies": [
+        "SALES-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-SALES-007",
+      "category": "sales",
+      "difficulty": "medium",
+      "policies": [
+        "SALES-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-INV-001",
+      "category": "inventory",
+      "difficulty": "easy",
+      "policies": [
+        "INV-POL-001",
+        "PROC-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-INV-002",
+      "category": "inventory",
+      "difficulty": "medium",
+      "policies": [
+        "INV-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-INV-003",
+      "category": "inventory",
+      "difficulty": "medium",
+      "policies": [
+        "INV-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-INV-004",
+      "category": "inventory",
+      "difficulty": "hard",
+      "policies": [
+        "INV-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-INV-005",
+      "category": "inventory",
+      "difficulty": "medium",
+      "policies": [
+        "WH-POL-001",
+        "INV-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-INV-006",
+      "category": "inventory",
+      "difficulty": "easy",
+      "policies": [
+        "INV-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-INV-007",
+      "category": "inventory",
+      "difficulty": "medium",
+      "policies": [
+        "INV-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-SUP-001",
+      "category": "supplier-management",
+      "difficulty": "medium",
+      "policies": [
+        "PROC-POL-002",
+        "COMP-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-SUP-002",
+      "category": "supplier-management",
+      "difficulty": "medium",
+      "policies": [
+        "PROC-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-SUP-003",
+      "category": "supplier-management",
+      "difficulty": "hard",
+      "policies": [
+        "COMP-POL-002",
+        "PROC-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-SUP-004",
+      "category": "supplier-management",
+      "difficulty": "hard",
+      "policies": [
+        "PROC-POL-002",
+        "WH-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-SUP-005",
+      "category": "supplier-management",
+      "difficulty": "easy",
+      "policies": [
+        "PROC-POL-002",
+        "GEN-POL-001",
+        "COMP-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-FIN-001",
+      "category": "finance",
+      "difficulty": "easy",
+      "policies": [
+        "FIN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-FIN-002",
+      "category": "finance",
+      "difficulty": "medium",
+      "policies": [
+        "OPS-POL-001",
+        "FIN-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-FIN-003",
+      "category": "finance",
+      "difficulty": "medium",
+      "policies": [
+        "FIN-POL-002",
+        "HR-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-FIN-004",
+      "category": "finance",
+      "difficulty": "easy",
+      "policies": [
+        "FIN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-FIN-005",
+      "category": "finance",
+      "difficulty": "hard",
+      "policies": [
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-FIN-006",
+      "category": "finance",
+      "difficulty": "hard",
+      "policies": [
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-INC-001",
+      "category": "incidents",
+      "difficulty": "medium",
+      "policies": [
+        "IT-POL-002",
+        "IT-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-INC-002",
+      "category": "incidents",
+      "difficulty": "hard",
+      "policies": [
+        "IT-POL-002",
+        "IT-POL-001",
+        "COMP-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-INC-003",
+      "category": "incidents",
+      "difficulty": "hard",
+      "policies": [
+        "IT-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-INC-004",
+      "category": "incidents",
+      "difficulty": "medium",
+      "policies": [
+        "IT-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-INC-005",
+      "category": "incidents",
+      "difficulty": "hard",
+      "policies": [
+        "IT-POL-001",
+        "HR-POL-002",
+        "IT-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-TRV-001",
+      "category": "travel",
+      "difficulty": "easy",
+      "policies": [
+        "OPS-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-TRV-002",
+      "category": "travel",
+      "difficulty": "medium",
+      "policies": [
+        "OPS-POL-001",
+        "FIN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-TRV-003",
+      "category": "travel",
+      "difficulty": "medium",
+      "policies": [
+        "OPS-POL-001",
+        "FIN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-TRV-004",
+      "category": "travel",
+      "difficulty": "medium",
+      "policies": [
+        "OPS-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-TRV-005",
+      "category": "travel",
+      "difficulty": "hard",
+      "policies": [
+        "COMP-POL-002",
+        "OPS-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-COMP-001",
+      "category": "compliance",
+      "difficulty": "medium",
+      "policies": [
+        "COMP-POL-001",
+        "GEN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-COMP-002",
+      "category": "compliance",
+      "difficulty": "hard",
+      "policies": [
+        "COMP-POL-001",
+        "IT-POL-002",
+        "GEN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-COMP-003",
+      "category": "compliance",
+      "difficulty": "hard",
+      "policies": [
+        "COMP-POL-002",
+        "PROC-POL-002",
+        "GEN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-COMP-004",
+      "category": "compliance",
+      "difficulty": "medium",
+      "policies": [
+        "COMP-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-COMP-005",
+      "category": "compliance",
+      "difficulty": "hard",
+      "policies": [
+        "COMP-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-XD-001",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "HR-POL-002",
+        "IT-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-XD-002",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "SALES-POL-001",
+        "INV-POL-001",
+        "PROC-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-XD-003",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "INV-POL-001",
+        "PROC-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-XD-004",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "PROC-POL-001",
+        "FIN-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-XD-005",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "PROC-POL-002",
+        "COMP-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-XD-006",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "IT-POL-002",
+        "IT-POL-001",
+        "COMP-POL-001",
+        "GEN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-XD-007",
+      "category": "cross-domain",
+      "difficulty": "medium",
+      "policies": [
+        "OPS-POL-001",
+        "FIN-POL-001",
+        "FIN-POL-002",
+        "GEN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-XD-008",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "WH-POL-001",
+        "INV-POL-001",
+        "FIN-POL-002",
+        "GEN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-XD-009",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "SALES-POL-001",
+        "WH-POL-001",
+        "INV-POL-001",
+        "GEN-POL-001"
+      ]
+    },
+    {
+      "id": "SCN-XD-010",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "PROC-POL-002",
+        "COMP-POL-002"
+      ]
+    },
+    {
+      "id": "SCN-XD-011",
+      "category": "cross-domain",
+      "difficulty": "hard",
+      "policies": [
+        "SALES-POL-001",
+        "FIN-POL-002"
+      ]
+    }
+  ]
+}

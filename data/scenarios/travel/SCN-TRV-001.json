@@ -1,0 +1,107 @@
+{
+  "id": "SCN-TRV-001",
+  "category": "travel",
+  "title": "Dennis Omondi Owuor requests domestic travel from Nairobi to Kisumu for a customer visit",
+  "description": "Dennis Omondi Owuor requests approval to travel from Nairobi to Kisumu for a one-day customer visit, with the purpose, dates, destination and estimated cost documented before booking.",
+  "businessContext": "OPS-POL-001 requires a documented purpose, traveller, destination, dates, estimated cost and business owner before booking, with the line manager confirming need and budget.",
+  "actors": [
+    {
+      "employeeId": "EMP-0017",
+      "name": "Dennis Omondi Owuor",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    },
+    {
+      "employeeId": "EMP-0005",
+      "name": "Brian Wafula Simiyu",
+      "roleId": "ROLE-SALES-MGR",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0017",
+      "name": "Dennis Omondi Owuor"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0005",
+      "name": "Brian Wafula Simiyu"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-SALES",
+      "name": "Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "OPS-POL-001",
+      "name": "Business Travel & Logistics Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "OPS-POL-001",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Dennis Omondi Owuor documents the purpose, destination, dates and estimated cost of the trip."
+    },
+    {
+      "sequence": 2,
+      "event": "Brian Wafula Simiyu (Sales Manager) confirms business need and budget."
+    },
+    {
+      "sequence": 3,
+      "event": "The request is approved under the FIN-POL-002 matrix before booking."
+    }
+  ],
+  "expectedOutcome": "The trip can proceed once the line manager confirms business need and budget and the estimated cost is approved under FIN-POL-002; OPS-POL-001 requires this documentation to exist before booking, not after.",
+  "relevantFacts": [
+    "Dennis Omondi Owuor (EMP-0017) requests travel from Nairobi to Kisumu for a customer visit, reporting to Brian Wafula Simiyu.",
+    "OPS-POL-001: 'Business travel requires a documented purpose, traveller, destination, dates, estimated cost and business owner before booking. The line manager confirms need and budget; approval follows FIN-POL-002.'"
+  ],
+  "requiredReasoning": [
+    "Identify the information that must be documented before booking.",
+    "Identify who confirms business need versus who approves the cost."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0017",
+      "type": "reports_to",
+      "to": "EMP-0005"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "workflow",
+    "policy_lookup"
+  ],
+  "tags": [
+    "travel",
+    "sales"
+  ]
+}

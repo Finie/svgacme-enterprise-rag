@@ -1,0 +1,705 @@
+[
+  {
+    "employeeId": "EMP-0001",
+    "employeeNumber": "SVGA-PN-0001",
+    "firstName": "Samuel",
+    "lastName": "Kariuki",
+    "email": "samuel.kariuki@svga-enterprise.co.ke",
+    "phone": "+254-700-000-001",
+    "roleId": "ROLE-CEO",
+    "departmentId": "DEPT-EXEC",
+    "managerEmployeeId": null,
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2004-01-05",
+    "businessProcesses": [
+      "finance_approvals",
+      "compliance"
+    ]
+  },
+  {
+    "employeeId": "EMP-0002",
+    "employeeNumber": "SVGA-PN-0002",
+    "firstName": "Grace",
+    "lastName": "Njeri Mwangi",
+    "email": "grace.njerimwangi@svga-enterprise.co.ke",
+    "phone": "+254-700-000-002",
+    "roleId": "ROLE-CFO",
+    "departmentId": "DEPT-FIN",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2005-03-14",
+    "businessProcesses": [
+      "finance_approvals"
+    ]
+  },
+  {
+    "employeeId": "EMP-0003",
+    "employeeNumber": "SVGA-PN-0003",
+    "firstName": "Peter",
+    "lastName": "Otieno Ochieng",
+    "email": "peter.otienoochieng@svga-enterprise.co.ke",
+    "phone": "+254-700-000-003",
+    "roleId": "ROLE-HR-MGR",
+    "departmentId": "DEPT-HR",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2006-06-01",
+    "businessProcesses": [
+      "onboarding"
+    ]
+  },
+  {
+    "employeeId": "EMP-0004",
+    "employeeNumber": "SVGA-PN-0004",
+    "firstName": "Esther",
+    "lastName": "Wanjiku Kamau",
+    "email": "esther.wanjikukamau@svga-enterprise.co.ke",
+    "phone": "+254-700-000-004",
+    "roleId": "ROLE-PROC-MGR",
+    "departmentId": "DEPT-PROC",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2007-02-19",
+    "businessProcesses": [
+      "procurement"
+    ]
+  },
+  {
+    "employeeId": "EMP-0005",
+    "employeeNumber": "SVGA-PN-0005",
+    "firstName": "Brian",
+    "lastName": "Wafula Simiyu",
+    "email": "brian.wafulasimiyu@svga-enterprise.co.ke",
+    "phone": "+254-700-000-005",
+    "roleId": "ROLE-SALES-MGR",
+    "departmentId": "DEPT-SALES",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2008-04-11",
+    "businessProcesses": [
+      "sales"
+    ]
+  },
+  {
+    "employeeId": "EMP-0006",
+    "employeeNumber": "SVGA-PN-0006",
+    "firstName": "Catherine",
+    "lastName": "Achieng Odongo",
+    "email": "catherine.achiengodongo@svga-enterprise.co.ke",
+    "phone": "+254-700-000-006",
+    "roleId": "ROLE-OPS-MGR",
+    "departmentId": "DEPT-OPS",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2007-09-03",
+    "businessProcesses": [
+      "warehouse_operations"
+    ]
+  },
+  {
+    "employeeId": "EMP-0007",
+    "employeeNumber": "SVGA-PN-0007",
+    "firstName": "David",
+    "lastName": "Kiplagat Rotich",
+    "email": "david.kiplagatrotich@svga-enterprise.co.ke",
+    "phone": "+254-700-000-007",
+    "roleId": "ROLE-IT-MGR",
+    "departmentId": "DEPT-IT",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2009-01-20",
+    "businessProcesses": [
+      "it_support"
+    ]
+  },
+  {
+    "employeeId": "EMP-0008",
+    "employeeNumber": "SVGA-PN-0008",
+    "firstName": "Lucy",
+    "lastName": "Chebet Kiprono",
+    "email": "lucy.chebetkiprono@svga-enterprise.co.ke",
+    "phone": "+254-700-000-008",
+    "roleId": "ROLE-COMP-MGR",
+    "departmentId": "DEPT-COMP",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2010-05-17",
+    "businessProcesses": [
+      "compliance"
+    ]
+  },
+  {
+    "employeeId": "EMP-0009",
+    "employeeNumber": "SVGA-PN-0009",
+    "firstName": "Anthony",
+    "lastName": "Njoroge Kariithi",
+    "email": "anthony.njorogekariithi@svga-enterprise.co.ke",
+    "phone": "+254-700-000-009",
+    "roleId": "ROLE-LEGAL-MGR",
+    "departmentId": "DEPT-LEGAL",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2011-08-08",
+    "businessProcesses": [
+      "legal"
+    ]
+  },
+  {
+    "employeeId": "EMP-0010",
+    "employeeNumber": "SVGA-PN-0010",
+    "firstName": "Mercy",
+    "lastName": "Nekesa Wanyama",
+    "email": "mercy.nekesawanyama@svga-enterprise.co.ke",
+    "phone": "+254-700-000-010",
+    "roleId": "ROLE-CS-MGR",
+    "departmentId": "DEPT-CS",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2012-03-26",
+    "businessProcesses": [
+      "customer_service"
+    ]
+  },
+  {
+    "employeeId": "EMP-0011",
+    "employeeNumber": "SVGA-PN-0011",
+    "firstName": "Joseph",
+    "lastName": "Mutiso Kyalo",
+    "email": "joseph.mutisokyalo@svga-enterprise.co.ke",
+    "phone": "+254-700-000-011",
+    "roleId": "ROLE-DEPT-MGR",
+    "departmentId": "DEPT-ADMIN",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2008-11-14",
+    "businessProcesses": [
+      "administration"
+    ]
+  },
+  {
+    "employeeId": "EMP-0012",
+    "employeeNumber": "SVGA-PN-0012",
+    "firstName": "Faith",
+    "lastName": "Wambui Gitau",
+    "email": "faith.wambuigitau@svga-enterprise.co.ke",
+    "phone": "+254-700-000-012",
+    "roleId": "ROLE-FIN-MGR",
+    "departmentId": "DEPT-FIN",
+    "managerEmployeeId": "EMP-0002",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2009-06-09",
+    "businessProcesses": [
+      "finance_approvals"
+    ]
+  },
+  {
+    "employeeId": "EMP-0013",
+    "employeeNumber": "SVGA-PN-0013",
+    "firstName": "Kevin",
+    "lastName": "Barasa Wekesa",
+    "email": "kevin.barasawekesa@svga-enterprise.co.ke",
+    "phone": "+254-700-000-013",
+    "roleId": "ROLE-HR-OFF",
+    "departmentId": "DEPT-HR",
+    "managerEmployeeId": "EMP-0003",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2015-02-02",
+    "businessProcesses": [
+      "onboarding"
+    ]
+  },
+  {
+    "employeeId": "EMP-0014",
+    "employeeNumber": "SVGA-PN-0014",
+    "firstName": "Diana",
+    "lastName": "Auma Owino",
+    "email": "diana.aumaowino@svga-enterprise.co.ke",
+    "phone": "+254-700-000-014",
+    "roleId": "ROLE-HR-OFF",
+    "departmentId": "DEPT-HR",
+    "managerEmployeeId": "EMP-0003",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2017-07-19",
+    "businessProcesses": [
+      "onboarding"
+    ]
+  },
+  {
+    "employeeId": "EMP-0015",
+    "employeeNumber": "SVGA-PN-0015",
+    "firstName": "Martin",
+    "lastName": "Njue Kariuki",
+    "email": "martin.njuekariuki@svga-enterprise.co.ke",
+    "phone": "+254-700-000-015",
+    "roleId": "ROLE-PROC-OFF",
+    "departmentId": "DEPT-PROC",
+    "managerEmployeeId": "EMP-0004",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2013-09-23",
+    "businessProcesses": [
+      "procurement"
+    ]
+  },
+  {
+    "employeeId": "EMP-0016",
+    "employeeNumber": "SVGA-PN-0016",
+    "firstName": "Susan",
+    "lastName": "Chepkoech Bett",
+    "email": "susan.chepkoechbett@svga-enterprise.co.ke",
+    "phone": "+254-700-000-016",
+    "roleId": "ROLE-PROC-OFF",
+    "departmentId": "DEPT-PROC",
+    "managerEmployeeId": "EMP-0004",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2016-04-05",
+    "businessProcesses": [
+      "procurement"
+    ]
+  },
+  {
+    "employeeId": "EMP-0017",
+    "employeeNumber": "SVGA-PN-0017",
+    "firstName": "Dennis",
+    "lastName": "Omondi Owuor",
+    "email": "dennis.omondiowuor@svga-enterprise.co.ke",
+    "phone": "+254-700-000-017",
+    "roleId": "ROLE-SALES-REP",
+    "departmentId": "DEPT-SALES",
+    "managerEmployeeId": "EMP-0005",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2014-01-13",
+    "businessProcesses": [
+      "sales"
+    ]
+  },
+  {
+    "employeeId": "EMP-0018",
+    "employeeNumber": "SVGA-PN-0018",
+    "firstName": "Sharon",
+    "lastName": "Atieno Onyango",
+    "email": "sharon.atienoonyango@svga-enterprise.co.ke",
+    "phone": "+254-700-000-018",
+    "roleId": "ROLE-SALES-REP",
+    "departmentId": "DEPT-SALES",
+    "managerEmployeeId": "EMP-0005",
+    "locationId": "LOC-MSA-01",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2016-10-17",
+    "businessProcesses": [
+      "sales"
+    ]
+  },
+  {
+    "employeeId": "EMP-0019",
+    "employeeNumber": "SVGA-PN-0019",
+    "firstName": "Collins",
+    "lastName": "Wekesa Masinde",
+    "email": "collins.wekesamasinde@svga-enterprise.co.ke",
+    "phone": "+254-700-000-019",
+    "roleId": "ROLE-SALES-REP",
+    "departmentId": "DEPT-SALES",
+    "managerEmployeeId": "EMP-0005",
+    "locationId": "LOC-KSM-01",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2018-03-21",
+    "businessProcesses": [
+      "sales"
+    ]
+  },
+  {
+    "employeeId": "EMP-0020",
+    "employeeNumber": "SVGA-PN-0020",
+    "firstName": "Purity",
+    "lastName": "Jepkorir Rono",
+    "email": "purity.jepkorirrono@svga-enterprise.co.ke",
+    "phone": "+254-700-000-020",
+    "roleId": "ROLE-SALES-REP",
+    "departmentId": "DEPT-SALES",
+    "managerEmployeeId": "EMP-0005",
+    "locationId": "LOC-NKR-01",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2019-11-04",
+    "businessProcesses": [
+      "sales"
+    ]
+  },
+  {
+    "employeeId": "EMP-0021",
+    "employeeNumber": "SVGA-PN-0021",
+    "firstName": "Michael",
+    "lastName": "Odhiambo Owino",
+    "email": "michael.odhiamboowino@svga-enterprise.co.ke",
+    "phone": "+254-700-000-021",
+    "roleId": "ROLE-INV-MGR",
+    "departmentId": "DEPT-INV",
+    "managerEmployeeId": "EMP-0006",
+    "locationId": "LOC-NRB-WH",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2010-02-15",
+    "businessProcesses": [
+      "warehouse_operations"
+    ]
+  },
+  {
+    "employeeId": "EMP-0022",
+    "employeeNumber": "SVGA-PN-0022",
+    "firstName": "Nancy",
+    "lastName": "Wairimu Ndungu",
+    "email": "nancy.wairimundungu@svga-enterprise.co.ke",
+    "phone": "+254-700-000-022",
+    "roleId": "ROLE-WH-MGR",
+    "departmentId": "DEPT-WH",
+    "managerEmployeeId": "EMP-0006",
+    "locationId": "LOC-NRB-WH",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2011-06-28",
+    "businessProcesses": [
+      "warehouse_operations"
+    ]
+  },
+  {
+    "employeeId": "EMP-0023",
+    "employeeNumber": "SVGA-PN-0023",
+    "firstName": "Felix",
+    "lastName": "Kiptoo Langat",
+    "email": "felix.kiptoolangat@svga-enterprise.co.ke",
+    "phone": "+254-700-000-023",
+    "roleId": "ROLE-IT-SUPPORT",
+    "departmentId": "DEPT-IT",
+    "managerEmployeeId": "EMP-0007",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2017-01-09",
+    "businessProcesses": [
+      "it_support"
+    ]
+  },
+  {
+    "employeeId": "EMP-0024",
+    "employeeNumber": "SVGA-PN-0024",
+    "firstName": "Winnie",
+    "lastName": "Adhiambo Ouma",
+    "email": "winnie.adhiamboouma@svga-enterprise.co.ke",
+    "phone": "+254-700-000-024",
+    "roleId": "ROLE-IT-SUPPORT",
+    "departmentId": "DEPT-IT",
+    "managerEmployeeId": "EMP-0007",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2019-05-27",
+    "businessProcesses": [
+      "it_support"
+    ]
+  },
+  {
+    "employeeId": "EMP-0025",
+    "employeeNumber": "SVGA-PN-0025",
+    "firstName": "Stephen",
+    "lastName": "Mwangi Ndirangu",
+    "email": "stephen.mwangindirangu@svga-enterprise.co.ke",
+    "phone": "+254-700-000-025",
+    "roleId": "ROLE-COMP-OFF",
+    "departmentId": "DEPT-COMP",
+    "managerEmployeeId": "EMP-0008",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2014-08-18",
+    "businessProcesses": [
+      "compliance"
+    ]
+  },
+  {
+    "employeeId": "EMP-0026",
+    "employeeNumber": "SVGA-PN-0026",
+    "firstName": "Rael",
+    "lastName": "Chepchirchir Kigen",
+    "email": "rael.chepchirchirkigen@svga-enterprise.co.ke",
+    "phone": "+254-700-000-026",
+    "roleId": "ROLE-COMP-OFF",
+    "departmentId": "DEPT-COMP",
+    "managerEmployeeId": "EMP-0008",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2018-09-10",
+    "businessProcesses": [
+      "compliance"
+    ]
+  },
+  {
+    "employeeId": "EMP-0027",
+    "employeeNumber": "SVGA-PN-0027",
+    "firstName": "Brenda",
+    "lastName": "Nyokabi Maina",
+    "email": "brenda.nyokabimaina@svga-enterprise.co.ke",
+    "phone": "+254-700-000-027",
+    "roleId": "ROLE-EMPLOYEE",
+    "departmentId": "DEPT-LEGAL",
+    "managerEmployeeId": "EMP-0009",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2019-02-25",
+    "businessProcesses": [
+      "legal"
+    ]
+  },
+  {
+    "employeeId": "EMP-0028",
+    "employeeNumber": "SVGA-PN-0028",
+    "firstName": "George",
+    "lastName": "Otieno Oduor",
+    "email": "george.otienooduor@svga-enterprise.co.ke",
+    "phone": "+254-700-000-028",
+    "roleId": "ROLE-EMPLOYEE",
+    "departmentId": "DEPT-CS",
+    "managerEmployeeId": "EMP-0010",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2018-06-12",
+    "businessProcesses": [
+      "customer_service"
+    ]
+  },
+  {
+    "employeeId": "EMP-0029",
+    "employeeNumber": "SVGA-PN-0029",
+    "firstName": "Agnes",
+    "lastName": "Wanjiru Thuo",
+    "email": "agnes.wanjiruthuo@svga-enterprise.co.ke",
+    "phone": "+254-700-000-029",
+    "roleId": "ROLE-EMPLOYEE",
+    "departmentId": "DEPT-CS",
+    "managerEmployeeId": "EMP-0010",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "PART_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2020-10-05",
+    "businessProcesses": [
+      "customer_service"
+    ]
+  },
+  {
+    "employeeId": "EMP-0030",
+    "employeeNumber": "SVGA-PN-0030",
+    "firstName": "Vincent",
+    "lastName": "Kiprop Sang",
+    "email": "vincent.kipropsang@svga-enterprise.co.ke",
+    "phone": "+254-700-000-030",
+    "roleId": "ROLE-EMPLOYEE",
+    "departmentId": "DEPT-ADMIN",
+    "managerEmployeeId": "EMP-0011",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2015-04-20",
+    "businessProcesses": [
+      "administration"
+    ]
+  },
+  {
+    "employeeId": "EMP-0031",
+    "employeeNumber": "SVGA-PN-0031",
+    "firstName": "Josephine",
+    "lastName": "Achieng Otieno",
+    "email": "josephine.achiengotieno@svga-enterprise.co.ke",
+    "phone": "+254-700-000-031",
+    "roleId": "ROLE-EMPLOYEE",
+    "departmentId": "DEPT-ADMIN",
+    "managerEmployeeId": "EMP-0011",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2021-01-11",
+    "businessProcesses": [
+      "administration"
+    ]
+  },
+  {
+    "employeeId": "EMP-0032",
+    "employeeNumber": "SVGA-PN-0032",
+    "firstName": "Timothy",
+    "lastName": "Mwendwa Musyoka",
+    "email": "timothy.mwendwamusyoka@svga-enterprise.co.ke",
+    "phone": "+254-700-000-032",
+    "roleId": "ROLE-FIN-ANALYST",
+    "departmentId": "DEPT-FIN",
+    "managerEmployeeId": "EMP-0012",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2016-09-14",
+    "businessProcesses": [
+      "finance_approvals"
+    ]
+  },
+  {
+    "employeeId": "EMP-0033",
+    "employeeNumber": "SVGA-PN-0033",
+    "firstName": "Caroline",
+    "lastName": "Nasimiyu Wafula",
+    "email": "caroline.nasimiyuwafula@svga-enterprise.co.ke",
+    "phone": "+254-700-000-033",
+    "roleId": "ROLE-FIN-ANALYST",
+    "departmentId": "DEPT-FIN",
+    "managerEmployeeId": "EMP-0012",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2018-11-02",
+    "businessProcesses": [
+      "finance_approvals"
+    ]
+  },
+  {
+    "employeeId": "EMP-0034",
+    "employeeNumber": "SVGA-PN-0034",
+    "firstName": "Hassan",
+    "lastName": "Abdi Noor",
+    "email": "hassan.abdinoor@svga-enterprise.co.ke",
+    "phone": "+254-700-000-034",
+    "roleId": "ROLE-FIN-ANALYST",
+    "departmentId": "DEPT-FIN",
+    "managerEmployeeId": "EMP-0012",
+    "locationId": "LOC-NRB-HQ",
+    "employmentType": "CONTRACT",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2022-02-07",
+    "businessProcesses": [
+      "finance_approvals"
+    ]
+  },
+  {
+    "employeeId": "EMP-0035",
+    "employeeNumber": "SVGA-PN-0035",
+    "firstName": "Paul",
+    "lastName": "Kimutai Bett",
+    "email": "paul.kimutaibett@svga-enterprise.co.ke",
+    "phone": "+254-700-000-035",
+    "roleId": "ROLE-WH-OFF",
+    "departmentId": "DEPT-WH",
+    "managerEmployeeId": "EMP-0022",
+    "locationId": "LOC-NRB-WH",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2015-07-30",
+    "businessProcesses": [
+      "warehouse_operations"
+    ]
+  },
+  {
+    "employeeId": "EMP-0036",
+    "employeeNumber": "SVGA-PN-0036",
+    "firstName": "Mary",
+    "lastName": "Akinyi Ochola",
+    "email": "mary.akinyiochola@svga-enterprise.co.ke",
+    "phone": "+254-700-000-036",
+    "roleId": "ROLE-WH-OFF",
+    "departmentId": "DEPT-WH",
+    "managerEmployeeId": "EMP-0022",
+    "locationId": "LOC-MSA-01",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2017-03-16",
+    "businessProcesses": [
+      "warehouse_operations"
+    ]
+  },
+  {
+    "employeeId": "EMP-0037",
+    "employeeNumber": "SVGA-PN-0037",
+    "firstName": "Erick",
+    "lastName": "Kiprotich Maiyo",
+    "email": "erick.kiprotichmaiyo@svga-enterprise.co.ke",
+    "phone": "+254-700-000-037",
+    "roleId": "ROLE-WH-OFF",
+    "departmentId": "DEPT-WH",
+    "managerEmployeeId": "EMP-0022",
+    "locationId": "LOC-KSM-01",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2019-08-22",
+    "businessProcesses": [
+      "warehouse_operations"
+    ]
+  },
+  {
+    "employeeId": "EMP-0038",
+    "employeeNumber": "SVGA-PN-0038",
+    "firstName": "Beatrice",
+    "lastName": "Wangari Kamau",
+    "email": "beatrice.wangarikamau@svga-enterprise.co.ke",
+    "phone": "+254-700-000-038",
+    "roleId": "ROLE-EMPLOYEE",
+    "departmentId": "DEPT-INV",
+    "managerEmployeeId": "EMP-0021",
+    "locationId": "LOC-NRB-WH",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ACTIVE",
+    "hireDate": "2016-12-05",
+    "businessProcesses": [
+      "warehouse_operations"
+    ]
+  },
+  {
+    "employeeId": "EMP-0039",
+    "employeeNumber": "SVGA-PN-0039",
+    "firstName": "Robert",
+    "lastName": "Otieno Ochola",
+    "email": "robert.otienoochola@svga-enterprise.co.ke",
+    "phone": "+254-700-000-039",
+    "roleId": "ROLE-EMPLOYEE",
+    "departmentId": "DEPT-INV",
+    "managerEmployeeId": "EMP-0021",
+    "locationId": "LOC-NRB-WH",
+    "employmentType": "FULL_TIME",
+    "employmentStatus": "ON_LEAVE",
+    "hireDate": "2020-06-29",
+    "businessProcesses": [
+      "warehouse_operations"
+    ]
+  }
+]

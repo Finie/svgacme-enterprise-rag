@@ -1,0 +1,115 @@
+{
+  "id": "SCN-PROC-005",
+  "category": "procurement",
+  "title": "A requester wants to use a supplier that is not on the approved supplier list",
+  "description": "Susan Chepkoech Bett has been offered a lower price by a prospective vendor, \"Greenline Packaging Solutions\", for packaging materials, and wants to raise a purchase order directly with them because the current approved suppliers are more expensive.",
+  "businessContext": "PROC-POL-002 requires supplier onboarding, due diligence and Procurement Manager approval before any supplier can receive a purchase order; a lower quoted price does not bypass this requirement.",
+  "actors": [
+    {
+      "employeeId": "EMP-0016",
+      "name": "Susan Chepkoech Bett",
+      "roleId": "ROLE-PROC-OFF",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Officer"
+    },
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0016",
+      "name": "Susan Chepkoech Bett"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-PROC",
+      "name": "Procurement"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "PROC-POL-002",
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Susan Chepkoech Bett identifies a prospective vendor not present in the approved supplier list."
+    },
+    {
+      "sequence": 2,
+      "event": "The requester proposes issuing a purchase order directly to the prospective vendor on price grounds."
+    },
+    {
+      "sequence": 3,
+      "event": "The proposal is checked against the approved supplier list in data/master-data/suppliers.json."
+    },
+    {
+      "sequence": 4,
+      "event": "The Procurement Manager is consulted before any commitment is made."
+    }
+  ],
+  "expectedOutcome": "The purchase order cannot be issued to the prospective vendor. PROC-POL-002 requires a completed supplier profile, Finance validation of payment and tax details, proportionate Compliance due diligence, and Procurement Manager approval before inclusion on the approved supplier list - a lower quoted price is not a substitute for this process.",
+  "relevantFacts": [
+    "The proposed vendor, \"Greenline Packaging Solutions\", does not appear in data/master-data/suppliers.json.",
+    "PROC-POL-002: 'A new supplier cannot be selected merely because a requester prefers it; the approved list, documented exception and FIN-POL-002 authority are required.'",
+    "PROC-POL-002: 'Procurement collects legal identity, contacts, ownership information, payment details, tax information, service category, references and the proposed risk classification... Finance validates payment and tax details; Compliance performs proportionate due diligence; the Procurement Manager approves inclusion.'"
+  ],
+  "requiredReasoning": [
+    "Check whether the proposed vendor exists in the canonical supplier register.",
+    "Identify the onboarding and due-diligence steps required before a new supplier can be used.",
+    "Conclude that price alone does not justify bypassing the approved supplier list."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0016",
+      "type": "belongs_to",
+      "to": "DEPT-PROC"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "exception",
+    "policy_lookup",
+    "recommendation"
+  ],
+  "tags": [
+    "procurement",
+    "supplier-management",
+    "negative"
+  ]
+}

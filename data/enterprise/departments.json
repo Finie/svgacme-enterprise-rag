@@ -1,0 +1,106 @@
+[
+  {
+    "departmentId": "DEPT-EXEC",
+    "name": "Executive Office",
+    "description": "Office of the Chief Executive Officer; sets company strategy and holds ultimate accountability.",
+    "departmentHeadRoleId": "ROLE-CEO",
+    "costCenterCode": "CC-EXEC",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-FIN",
+    "name": "Finance",
+    "description": "Manages financial planning, accounting, treasury, payments and statutory reporting.",
+    "departmentHeadRoleId": "ROLE-CFO",
+    "costCenterCode": "CC-FIN",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-HR",
+    "name": "Human Resources",
+    "description": "Manages recruitment, onboarding, employee relations, payroll administration and performance management.",
+    "departmentHeadRoleId": "ROLE-HR-MGR",
+    "costCenterCode": "CC-HR",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-PROC",
+    "name": "Procurement",
+    "description": "Manages supplier sourcing, purchase requisitions, purchase orders and vendor contracts.",
+    "departmentHeadRoleId": "ROLE-PROC-MGR",
+    "costCenterCode": "CC-PROC",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-SALES",
+    "name": "Sales",
+    "description": "Manages customer accounts, sales orders, pricing and revenue generation.",
+    "departmentHeadRoleId": "ROLE-SALES-MGR",
+    "costCenterCode": "CC-SALES",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-INV",
+    "name": "Inventory",
+    "description": "Manages stock levels, stock counts, replenishment planning and inventory accuracy.",
+    "departmentHeadRoleId": "ROLE-INV-MGR",
+    "costCenterCode": "CC-INV",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-WH",
+    "name": "Warehouse",
+    "description": "Manages goods receiving, storage, order picking, packing and dispatch across all sites.",
+    "departmentHeadRoleId": "ROLE-WH-MGR",
+    "costCenterCode": "CC-WH",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-IT",
+    "name": "Information Technology",
+    "description": "Manages enterprise systems, infrastructure, identity and access, and end-user IT support.",
+    "departmentHeadRoleId": "ROLE-IT-MGR",
+    "costCenterCode": "CC-IT",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-COMP",
+    "name": "Compliance",
+    "description": "Manages regulatory compliance, internal policy adherence, audits and risk reviews.",
+    "departmentHeadRoleId": "ROLE-COMP-MGR",
+    "costCenterCode": "CC-COMP",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-OPS",
+    "name": "Operations",
+    "description": "Oversees cross-functional supply chain operations, coordinating Inventory and Warehouse activity.",
+    "departmentHeadRoleId": "ROLE-OPS-MGR",
+    "costCenterCode": "CC-OPS",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-LEGAL",
+    "name": "Legal",
+    "description": "Manages contracts, corporate legal matters, dispute resolution and regulatory filings.",
+    "departmentHeadRoleId": "ROLE-LEGAL-MGR",
+    "costCenterCode": "CC-LEGAL",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-CS",
+    "name": "Customer Service",
+    "description": "Manages customer inquiries, complaints, order support and after-sales service.",
+    "departmentHeadRoleId": "ROLE-CS-MGR",
+    "costCenterCode": "CC-CS",
+    "status": "ACTIVE"
+  },
+  {
+    "departmentId": "DEPT-ADMIN",
+    "name": "Administration",
+    "description": "Manages facilities, office administration, records and general support services.",
+    "departmentHeadRoleId": "ROLE-DEPT-MGR",
+    "costCenterCode": "CC-ADMIN",
+    "status": "ACTIVE"
+  }
+]

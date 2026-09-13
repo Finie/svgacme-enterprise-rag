@@ -1,0 +1,110 @@
+{
+  "id": "SCN-ONB-005",
+  "category": "onboarding",
+  "title": "IT Manager requests elevated Finance approval rights for an IT Support Officer without justification",
+  "description": "David Kiplagat Rotich (IT Manager) submitted a request to grant Winnie Adhiambo Ouma, an IT Support Officer, Finance Manager-level approval rights in Microsoft Dynamics 365 Finance \"to help cover Finance during a busy period\". No business need, role change or Finance Manager sign-off accompanies the request.",
+  "businessContext": "IT-POL-001 requires access to be mapped to canonical role duties on a least-privilege basis; access is not granted because a colleague, even a manager, requests it informally.",
+  "actors": [
+    {
+      "employeeId": "EMP-0007",
+      "name": "David Kiplagat Rotich",
+      "roleId": "ROLE-IT-MGR",
+      "departmentId": "DEPT-IT",
+      "role": "IT Manager"
+    },
+    {
+      "employeeId": "EMP-0024",
+      "name": "Winnie Adhiambo Ouma",
+      "roleId": "ROLE-IT-SUPPORT",
+      "departmentId": "DEPT-IT",
+      "role": "IT Support Officer"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0007",
+      "name": "David Kiplagat Rotich"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0024",
+      "name": "Winnie Adhiambo Ouma"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-IT",
+      "name": "Information Technology"
+    },
+    {
+      "type": "system",
+      "id": "SYS-IAM",
+      "name": "Identity and Access Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    }
+  ],
+  "systems": [
+    "Identity and Access Management System",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "IT-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "The IT Manager submits an access-change request for the IT Support Officer."
+    },
+    {
+      "sequence": 2,
+      "event": "The request asks for Finance Manager-level approval rights in Microsoft Dynamics 365 Finance."
+    },
+    {
+      "sequence": 3,
+      "event": "No change to the employee's canonical role or department accompanies the request."
+    },
+    {
+      "sequence": 4,
+      "event": "IT reviews the request against the role-based access policy before acting."
+    }
+  ],
+  "expectedOutcome": "The request should be rejected as submitted. IT-POL-001 maps access to canonical role duties on a least-privilege basis; an IT Support Officer's role profile does not include Finance approval rights, and a manager's informal request is explicitly insufficient grounds to grant them. A formal role change and Finance Manager sign-off would be required first.",
+  "relevantFacts": [
+    "Winnie Adhiambo Ouma (EMP-0024) holds role ROLE-IT-SUPPORT (IT Support Officer) in department DEPT-IT.",
+    "David Kiplagat Rotich (EMP-0007) holds role ROLE-IT-MGR (IT Manager) and is the requester.",
+    "IT-POL-001 states: 'IT maps role duties to least-privilege access; access is not granted because a colleague requests it informally,' and role-based profiles align with canonical roles."
+  ],
+  "requiredReasoning": [
+    "Compare the requested access against the employee's canonical role profile.",
+    "Determine whether an informal request from a manager, without a role change, satisfies the access-control policy.",
+    "Identify what would be required to legitimately grant the requested access."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0024",
+      "type": "belongs_to",
+      "to": "DEPT-IT"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "exception",
+    "policy_lookup",
+    "recommendation"
+  ],
+  "tags": [
+    "onboarding",
+    "it-access",
+    "negative",
+    "least-privilege"
+  ]
+}

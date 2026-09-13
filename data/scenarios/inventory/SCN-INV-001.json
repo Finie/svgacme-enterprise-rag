@@ -1,0 +1,101 @@
+{
+  "id": "SCN-INV-001",
+  "category": "inventory",
+  "title": "Chemchemi Bottled Water 500ml (24-pack) at Nairobi Distribution Centre has fallen below its reorder level",
+  "description": "Available stock of Chemchemi Bottled Water 500ml (24-pack) at Nairobi Distribution Centre has dropped below the reorder level, triggering a replenishment review.",
+  "businessContext": "INV-POL-001 requires the Inventory Manager to review demand, open purchase orders, other warehouses and lead time whenever quantityAvailable falls below reorderLevel.",
+  "actors": [
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "product",
+      "id": "PRD-013",
+      "name": "Chemchemi Bottled Water 500ml (24-pack)"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0013",
+      "name": "PRD-013 @ WH-NRB-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "INV-POL-001",
+    "PROC-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "A cycle review finds quantityAvailable (102) below reorderLevel (200) for Chemchemi Bottled Water 500ml (24-pack) at Nairobi Distribution Centre."
+    },
+    {
+      "sequence": 2,
+      "event": "Michael Odhiambo Owino reviews demand, open purchase orders and stock at other warehouses."
+    },
+    {
+      "sequence": 3,
+      "event": "A purchase request or transfer is considered, but is not an automatic commitment."
+    }
+  ],
+  "expectedOutcome": "Per INV-POL-001, the Inventory Manager (Michael Odhiambo Owino) reviews demand, open purchase orders, stock in other warehouses and expected lead time before a purchase request or transfer is raised; reaching the reorder level is a review trigger, not an automatic purchase commitment, and the resulting request would still follow PROC-POL-001 and FIN-POL-002.",
+  "relevantFacts": [
+    "Chemchemi Bottled Water 500ml (24-pack) (PRD-013) at Nairobi Distribution Centre (WH-NRB-001) has quantityOnHand 120, quantityReserved 18, quantityAvailable 102, reorderLevel 200 (inventory record INV-0013).",
+    "INV-POL-001: 'When quantityAvailable falls below reorderLevel, the Inventory Manager reviews demand, open purchase orders, stock in other warehouses and expected lead time. The resulting purchase request or transfer follows PROC-POL-001 and FIN-POL-002; a reorder signal is not an automatic purchase commitment.'"
+  ],
+  "requiredReasoning": [
+    "Compare quantityAvailable against reorderLevel.",
+    "Identify who is responsible for the replenishment review.",
+    "Recognise that crossing the reorder level does not itself authorise a purchase."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-013",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "fact_lookup",
+    "policy_lookup",
+    "workflow"
+  ],
+  "tags": [
+    "inventory",
+    "reorder"
+  ]
+}

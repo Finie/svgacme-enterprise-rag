@@ -1,0 +1,97 @@
+{
+  "id": "SCN-TRV-003",
+  "category": "travel",
+  "title": "Anthony Njoroge Kariithi claims mileage and meals for a personal-vehicle business trip",
+  "description": "Anthony Njoroge Kariithi (Legal Manager) drove 220 km in a personal vehicle for an authorised business trip and claims mileage plus a KES 3,000 per-person meal expense, with route and receipt evidence attached.",
+  "businessContext": "OPS-POL-001 and FIN-POL-001 set mileage at KES 45 per kilometre with route evidence, and cap meal claims at KES 3,000 per person per meal.",
+  "actors": [
+    {
+      "employeeId": "EMP-0009",
+      "name": "Anthony Njoroge Kariithi",
+      "roleId": "ROLE-LEGAL-MGR",
+      "departmentId": "DEPT-LEGAL",
+      "role": "Legal Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0009",
+      "name": "Anthony Njoroge Kariithi"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-LEGAL",
+      "name": "Legal"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "OPS-POL-001",
+      "name": "Business Travel & Logistics Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-001",
+      "name": "Expense & Reimbursement Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "OPS-POL-001",
+    "FIN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Anthony Njoroge Kariithi records the route, date, purpose and distance (220 km) for the journey."
+    },
+    {
+      "sequence": 2,
+      "event": "Mileage is calculated at KES 45 per kilometre."
+    },
+    {
+      "sequence": 3,
+      "event": "A meal expense of KES 3,000 per person is claimed with a receipt."
+    },
+    {
+      "sequence": 4,
+      "event": "The claim is submitted in Microsoft Dynamics 365 Finance within 10 calendar days."
+    }
+  ],
+  "expectedOutcome": "The mileage claim totals KES 9,900 (220 km at KES 45 per km), fully reimbursable with route evidence. The KES 3,000 meal claim is exactly at the KES 3,000 per-person cap and requires no exception.",
+  "relevantFacts": [
+    "Anthony Njoroge Kariithi (EMP-0009) drove 220 km with route evidence recorded.",
+    "A meal expense of KES 3,000 per person was claimed.",
+    "OPS-POL-001: 'Approved personal-vehicle mileage is KES 45 per kilometre with route evidence.'",
+    "FIN-POL-001: 'Meal claims are capped at KES 3,000 per person per meal.'"
+  ],
+  "requiredReasoning": [
+    "Calculate the mileage reimbursement from distance and rate.",
+    "Compare the meal claim against the per-person cap.",
+    "Confirm both are within policy without requiring an exception."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0009",
+      "type": "belongs_to",
+      "to": "DEPT-LEGAL"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "calculation",
+    "policy_lookup"
+  ],
+  "tags": [
+    "travel",
+    "expense-claim",
+    "legal"
+  ]
+}

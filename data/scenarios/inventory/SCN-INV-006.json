@@ -1,0 +1,92 @@
+{
+  "id": "SCN-INV-006",
+  "category": "inventory",
+  "title": "SVGA Value Soft Drink 300ml (24-pack) at Nairobi Distribution Centre is well stocked with no reorder concern",
+  "description": "SVGA Value Soft Drink 300ml (24-pack) at Nairobi Distribution Centre shows healthy stock, comfortably above its reorder level, with no replenishment action needed.",
+  "businessContext": "A baseline healthy stock position, for contrast against the reorder and out-of-stock scenarios in this same product line.",
+  "actors": [
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "product",
+      "id": "PRD-016",
+      "name": "SVGA Value Soft Drink 300ml (24-pack)"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0016",
+      "name": "PRD-016 @ WH-NRB-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "INV-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Routine inventory reporting shows quantityAvailable of 988 for SVGA Value Soft Drink 300ml (24-pack) at Nairobi Distribution Centre."
+    },
+    {
+      "sequence": 2,
+      "event": "This is well above the reorderLevel of 260."
+    },
+    {
+      "sequence": 3,
+      "event": "No replenishment review is triggered."
+    }
+  ],
+  "expectedOutcome": "No action is required: quantityAvailable (988) is comfortably above reorderLevel (260) for SVGA Value Soft Drink 300ml (24-pack) at Nairobi Distribution Centre.",
+  "relevantFacts": [
+    "SVGA Value Soft Drink 300ml (24-pack) (PRD-016) at Nairobi Distribution Centre has quantityOnHand 1040, quantityReserved 52, quantityAvailable 988, reorderLevel 260 (inventory record INV-0016)."
+  ],
+  "requiredReasoning": [
+    "Compare quantityAvailable against reorderLevel.",
+    "Confirm no replenishment trigger applies."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-016",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "fact_lookup",
+    "comparison"
+  ],
+  "tags": [
+    "inventory",
+    "baseline"
+  ]
+}

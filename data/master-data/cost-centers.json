@@ -1,0 +1,119 @@
+[
+  {
+    "costCenterId": "CC-EXEC",
+    "code": "CC-100",
+    "name": "Executive Office",
+    "departmentId": "DEPT-EXEC",
+    "managerEmployeeId": "EMP-0001",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-FIN",
+    "code": "CC-110",
+    "name": "Finance",
+    "departmentId": "DEPT-FIN",
+    "managerEmployeeId": "EMP-0002",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-HR",
+    "code": "CC-120",
+    "name": "Human Resources",
+    "departmentId": "DEPT-HR",
+    "managerEmployeeId": "EMP-0003",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-PROC",
+    "code": "CC-130",
+    "name": "Procurement",
+    "departmentId": "DEPT-PROC",
+    "managerEmployeeId": "EMP-0004",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-SALES",
+    "code": "CC-140",
+    "name": "Sales",
+    "departmentId": "DEPT-SALES",
+    "managerEmployeeId": "EMP-0005",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-INV",
+    "code": "CC-150",
+    "name": "Inventory",
+    "departmentId": "DEPT-INV",
+    "managerEmployeeId": "EMP-0021",
+    "locationId": "LOC-NRB-WH",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-WH",
+    "code": "CC-160",
+    "name": "Warehouse",
+    "departmentId": "DEPT-WH",
+    "managerEmployeeId": "EMP-0022",
+    "locationId": "LOC-NRB-WH",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-IT",
+    "code": "CC-170",
+    "name": "Information Technology",
+    "departmentId": "DEPT-IT",
+    "managerEmployeeId": "EMP-0007",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-COMP",
+    "code": "CC-180",
+    "name": "Compliance",
+    "departmentId": "DEPT-COMP",
+    "managerEmployeeId": "EMP-0008",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-OPS",
+    "code": "CC-190",
+    "name": "Operations",
+    "departmentId": "DEPT-OPS",
+    "managerEmployeeId": "EMP-0006",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-LEGAL",
+    "code": "CC-200",
+    "name": "Legal",
+    "departmentId": "DEPT-LEGAL",
+    "managerEmployeeId": "EMP-0009",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-CS",
+    "code": "CC-210",
+    "name": "Customer Service",
+    "departmentId": "DEPT-CS",
+    "managerEmployeeId": "EMP-0010",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  },
+  {
+    "costCenterId": "CC-ADMIN",
+    "code": "CC-220",
+    "name": "Administration",
+    "departmentId": "DEPT-ADMIN",
+    "managerEmployeeId": "EMP-0011",
+    "locationId": "LOC-NRB-HQ",
+    "status": "ACTIVE"
+  }
+]

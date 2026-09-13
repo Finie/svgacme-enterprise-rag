@@ -1,0 +1,123 @@
+{
+  "id": "SCN-COMP-001",
+  "category": "compliance",
+  "title": "Beatrice Wangari Kamau requests a copy of their own personal data held by HR",
+  "description": "Beatrice Wangari Kamau asks Human Resources for a copy of the personal data SVGA holds about them in the Employee Management System.",
+  "businessContext": "COMP-POL-001 requires data subject requests to be logged with Compliance, which coordinates with the record owner while preserving any applicable legal or investigation hold.",
+  "actors": [
+    {
+      "employeeId": "EMP-0038",
+      "name": "Beatrice Wangari Kamau",
+      "roleId": "ROLE-EMPLOYEE",
+      "departmentId": "DEPT-INV",
+      "role": "Employee"
+    },
+    {
+      "employeeId": "EMP-0003",
+      "name": "Peter Otieno Ochieng",
+      "roleId": "ROLE-HR-MGR",
+      "departmentId": "DEPT-HR",
+      "role": "HR Manager"
+    },
+    {
+      "employeeId": "EMP-0008",
+      "name": "Lucy Chebet Kiprono",
+      "roleId": "ROLE-COMP-MGR",
+      "departmentId": "DEPT-COMP",
+      "role": "Compliance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0038",
+      "name": "Beatrice Wangari Kamau"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0003",
+      "name": "Peter Otieno Ochieng"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0008",
+      "name": "Lucy Chebet Kiprono"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-HR",
+      "name": "Human Resources"
+    },
+    {
+      "type": "system",
+      "id": "SYS-HR",
+      "name": "Employee Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-001",
+      "name": "Data Protection & Privacy Policy"
+    },
+    {
+      "type": "policy",
+      "id": "GEN-POL-001",
+      "name": "Records Retention & Document Management Policy"
+    }
+  ],
+  "systems": [
+    "Employee Management System",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "COMP-POL-001",
+    "GEN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Beatrice Wangari Kamau submits a request for their own personal data held in the Employee Management System."
+    },
+    {
+      "sequence": 2,
+      "event": "Lucy Chebet Kiprono (Compliance Manager) logs the request."
+    },
+    {
+      "sequence": 3,
+      "event": "Peter Otieno Ochieng (HR Manager), as record owner, coordinates the response."
+    },
+    {
+      "sequence": 4,
+      "event": "The response is provided unless an active legal hold, investigation or dispute requires preservation instead."
+    }
+  ],
+  "expectedOutcome": "The request should be logged with Compliance and coordinated with HR as the record owner; the employee is entitled to their own personal data absent an active legal hold, investigation or unresolved dispute, which would be identified and explained rather than silently withholding the data.",
+  "relevantFacts": [
+    "Beatrice Wangari Kamau (EMP-0038) requested their own personal data from department DEPT-HR.",
+    "COMP-POL-001: 'Data subject requests, corrections, access questions and deletion or retention concerns are logged with Compliance, which coordinates with the record owner and preserves applicable legal or investigation holds.'"
+  ],
+  "requiredReasoning": [
+    "Identify who logs and coordinates a data subject request.",
+    "Identify the only grounds on which the data could be withheld."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0038",
+      "type": "belongs_to",
+      "to": "DEPT-HR"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "policy_lookup",
+    "workflow"
+  ],
+  "tags": [
+    "compliance",
+    "data-protection"
+  ]
+}

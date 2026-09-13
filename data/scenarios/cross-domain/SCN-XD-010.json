@@ -1,0 +1,116 @@
+{
+  "id": "SCN-XD-010",
+  "category": "cross-domain",
+  "title": "Value Foods Kenya's suspension must block purchasing without disrupting existing commitments",
+  "description": "Value Foods Kenya is suspended following a sanctions-screening concern raised by Compliance. Procurement must determine what this means for open and future purchase orders.",
+  "businessContext": "This chain runs from the supplier record, through supplier-management suspension rules, into the Procurement Manager's authority, Compliance's ongoing role, and the effect on active purchasing.",
+  "actors": [
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    },
+    {
+      "employeeId": "EMP-0008",
+      "name": "Lucy Chebet Kiprono",
+      "roleId": "ROLE-COMP-MGR",
+      "departmentId": "DEPT-COMP",
+      "role": "Compliance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0008",
+      "name": "Lucy Chebet Kiprono"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-009",
+      "name": "Value Foods Kenya"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-002",
+      "name": "Anti-Bribery & Conflict of Interest Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "PROC-POL-002",
+    "COMP-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Lucy Chebet Kiprono (Compliance Manager) raises a sanctions-screening concern about Value Foods Kenya."
+    },
+    {
+      "sequence": 2,
+      "event": "Esther Wanjiku Kamau (Procurement Manager) records the supplier as suspended."
+    },
+    {
+      "sequence": 3,
+      "event": "New purchase orders to this supplier are blocked in Microsoft Dynamics 365 Supply Chain Management."
+    },
+    {
+      "sequence": 4,
+      "event": "Existing open commitments are reviewed separately for closure or continuation."
+    }
+  ],
+  "expectedOutcome": "Value Foods Kenya's suspension blocks new purchase orders immediately; only Esther Wanjiku Kamau (Procurement Manager) can record reinstatement or termination, and that decision follows further Compliance input given the sanctions-screening trigger. Existing open commitments are reviewed on their own terms rather than being automatically cancelled.",
+  "relevantFacts": [
+    "Value Foods Kenya (SUP-009) is suspended following a sanctions-screening concern.",
+    "PROC-POL-002: 'A supplier may be suspended for quality failure, suspected fraud, conflict, sanctions concern, data incident or repeated non-performance; suspension blocks new purchase orders until the Procurement Manager records reinstatement or termination.'"
+  ],
+  "requiredReasoning": [
+    "Identify the suspension trigger and who raised it.",
+    "Identify who has sole authority to lift the suspension.",
+    "Distinguish the effect on new orders from the effect on existing commitments."
+  ],
+  "relationships": [
+    {
+      "from": "SUP-009",
+      "type": "suspended_by",
+      "to": "EMP-0004"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "exception",
+    "compliance"
+  ],
+  "tags": [
+    "cross-domain",
+    "supplier-management",
+    "procurement",
+    "compliance",
+    "negative"
+  ]
+}

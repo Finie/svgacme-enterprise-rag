@@ -1,0 +1,130 @@
+{
+  "id": "SCN-INV-005",
+  "category": "inventory",
+  "title": "Erick Kiprotich Maiyo finds water-damaged cartons of Safi Tissue Paper (10-roll pack) at Kisumu Distribution Centre",
+  "description": "While putting away a delivery, Erick Kiprotich Maiyo identifies several cartons of Safi Tissue Paper (10-roll pack) at Kisumu Distribution Centre with visible water damage.",
+  "businessContext": "WH-POL-001 requires damaged goods to be segregated and reported to Procurement and Inventory before disposition; INV-POL-001 requires damaged stock to be held from sale.",
+  "actors": [
+    {
+      "employeeId": "EMP-0037",
+      "name": "Erick Kiprotich Maiyo",
+      "roleId": "ROLE-WH-OFF",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Officer"
+    },
+    {
+      "employeeId": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu",
+      "roleId": "ROLE-WH-MGR",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Manager"
+    },
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0037",
+      "name": "Erick Kiprotich Maiyo"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "product",
+      "id": "PRD-025",
+      "name": "Safi Tissue Paper (10-roll pack)"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-KSM-001",
+      "name": "Kisumu Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "WH-POL-001",
+      "name": "Warehouse Operations & Receiving Policy"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "WH-POL-001",
+    "INV-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Erick Kiprotich Maiyo identifies water damage on cartons of Safi Tissue Paper (10-roll pack)."
+    },
+    {
+      "sequence": 2,
+      "event": "The damaged stock is segregated, labelled and held from sale."
+    },
+    {
+      "sequence": 3,
+      "event": "Nancy Wairimu Ndungu (Warehouse Manager) and Michael Odhiambo Owino (Inventory Manager) are notified before disposition."
+    },
+    {
+      "sequence": 4,
+      "event": "A decision on write-off, supplier claim or disposal is made once the accounting treatment is approved."
+    }
+  ],
+  "expectedOutcome": "The damaged cartons must be segregated, labelled and held from sale immediately, and reported to both the Warehouse Manager and Inventory Manager before any disposition decision. The warehouse may not create an unexplained adjustment; Inventory approves the accounting treatment under INV-POL-001 and Procurement resolves any supplier claim.",
+  "relevantFacts": [
+    "Safi Tissue Paper (10-roll pack) (PRD-025) is stocked at Kisumu Distribution Centre (WH-KSM-001).",
+    "WH-POL-001: 'Damaged or questionable goods are segregated and reported to Procurement and Inventory before disposition... The warehouse may not create an unexplained adjustment.'",
+    "INV-POL-001: 'Damaged or expired stock is segregated, labelled and held from sale. Warehouse confirms movement and condition under WH-POL-001; Finance receives valuation-impacting adjustments.'"
+  ],
+  "requiredReasoning": [
+    "Identify the immediate physical control required for damaged stock.",
+    "Identify who must be notified before any disposition decision.",
+    "Recognise that the warehouse cannot unilaterally write off the stock."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-025",
+      "type": "stocked_at",
+      "to": "WH-KSM-001"
+    },
+    {
+      "from": "EMP-0037",
+      "type": "reports_to",
+      "to": "EMP-0022"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "workflow",
+    "policy_lookup"
+  ],
+  "tags": [
+    "inventory",
+    "warehouse",
+    "damaged-stock"
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "id": "SCN-INC-005",
+  "category": "incidents",
+  "title": "A quarterly access review finds a departed employee's account still enabled",
+  "description": "During a scheduled IT-POL-001 access review, IT finds that Josephine Achieng Otieno's Identity and Access Management System account is still active, even though HR's records show the employee's manager, Joseph Mutiso Kyalo, confirmed the employment relationship ended a month earlier.",
+  "businessContext": "IT-POL-001 requires managers to review access when duties change and IT to remove access promptly on termination; a month-long gap discovered only by a scheduled review indicates the original handoff failed.",
+  "actors": [
+    {
+      "employeeId": "EMP-0031",
+      "name": "Josephine Achieng Otieno",
+      "roleId": "ROLE-EMPLOYEE",
+      "departmentId": "DEPT-ADMIN",
+      "role": "Employee"
+    },
+    {
+      "employeeId": "EMP-0011",
+      "name": "Joseph Mutiso Kyalo",
+      "roleId": "ROLE-DEPT-MGR",
+      "departmentId": "DEPT-ADMIN",
+      "role": "Department Manager"
+    },
+    {
+      "employeeId": "EMP-0007",
+      "name": "David Kiplagat Rotich",
+      "roleId": "ROLE-IT-MGR",
+      "departmentId": "DEPT-IT",
+      "role": "IT Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0031",
+      "name": "Josephine Achieng Otieno"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0011",
+      "name": "Joseph Mutiso Kyalo"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0007",
+      "name": "David Kiplagat Rotich"
+    },
+    {
+      "type": "system",
+      "id": "SYS-IAM",
+      "name": "Identity and Access Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "HR-POL-002",
+      "name": "Recruitment & Onboarding Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-002",
+      "name": "IT Incident Management & Service Desk Policy"
+    }
+  ],
+  "systems": [
+    "Identity and Access Management System",
+    "IT Service Desk"
+  ],
+  "policies": [
+    "IT-POL-001",
+    "HR-POL-002",
+    "IT-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "David Kiplagat Rotich runs the scheduled quarterly access review under IT-POL-001."
+    },
+    {
+      "sequence": 2,
+      "event": "The review finds Josephine Achieng Otieno's account is still enabled."
+    },
+    {
+      "sequence": 3,
+      "event": "HR records confirm the employment relationship ended approximately one month earlier."
+    },
+    {
+      "sequence": 4,
+      "event": "The account is disabled immediately and the gap is logged for root-cause review."
+    }
+  ],
+  "expectedOutcome": "This is a control failure that must be logged and investigated, not just quietly corrected: the account should have been disabled at or near the termination date under HR-POL-002 and IT-POL-001, and a month-long gap discovered only by a scheduled review is treated as an incident requiring root-cause analysis, not a routine finding.",
+  "relevantFacts": [
+    "Josephine Achieng Otieno (EMP-0031) belongs to department DEPT-ADMIN; the canonical enterprise record currently shows this employee as ACTIVE, and the scenario tests the discovery of a control gap once separation is confirmed.",
+    "IT-POL-001: 'Managers review access when duties change and at the scheduled review interval. IT removes dormant, excessive or unsupported access.'",
+    "HR-POL-002: 'When employment ends... HR notifies IT before the effective time where practicable.'"
+  ],
+  "requiredReasoning": [
+    "Determine how long the account remained active after the employment relationship ended.",
+    "Identify which policy required the account to be disabled promptly.",
+    "Determine whether discovery via a scheduled review, rather than the original handoff, indicates a control failure."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0031",
+      "type": "reports_to",
+      "to": "EMP-0011"
+    },
+    {
+      "from": "EMP-0031",
+      "type": "flagged_on",
+      "to": "SYS-IAM"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "exception",
+    "compliance",
+    "multi_hop"
+  ],
+  "tags": [
+    "incidents",
+    "offboarding",
+    "it-access",
+    "negative"
+  ]
+}

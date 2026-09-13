@@ -1,0 +1,81 @@
+{
+  "id": "SCN-FIN-004",
+  "category": "finance",
+  "title": "George Otieno Oduor asks whether \"an expense\" is reimbursable without saying what it is",
+  "description": "George Otieno Oduor asks Finance whether an expense they incurred is reimbursable, but does not state the expense category, the amount, or whether a receipt was obtained.",
+  "businessContext": "FIN-POL-001's eligibility rules and receipt requirements both depend on the expense category and amount; neither is known here.",
+  "actors": [
+    {
+      "employeeId": "EMP-0028",
+      "name": "George Otieno Oduor",
+      "roleId": "ROLE-EMPLOYEE",
+      "departmentId": "DEPT-CS",
+      "role": "Employee"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0028",
+      "name": "George Otieno Oduor"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-CS",
+      "name": "Customer Service"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-001",
+      "name": "Expense & Reimbursement Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "FIN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "George Otieno Oduor asks whether \"an expense\" they incurred is reimbursable."
+    },
+    {
+      "sequence": 2,
+      "event": "No expense category, amount or receipt status is provided."
+    }
+  ],
+  "expectedOutcome": "There is not enough information to answer. FIN-POL-001 eligibility depends on the expense category (some categories, like alcohol or personal purchases, are never reimbursable) and the amount determines whether a receipt is mandatory. The correct response is to ask what the expense was, its amount, and whether a receipt exists - not to assume it is reimbursable.",
+  "relevantFacts": [
+    "George Otieno Oduor (EMP-0028) has not specified the expense category, amount, or receipt status.",
+    "FIN-POL-001 lists both reimbursable categories (travel, accommodation, meals, local transport, mileage, modest communication costs) and categories that are never reimbursable (personal purchases, fines, entertainment without business purpose, alcohol, convenience upgrades)."
+  ],
+  "requiredReasoning": [
+    "Identify what information FIN-POL-001 requires to determine reimbursability.",
+    "Confirm that category and amount are both missing from the request.",
+    "Conclude that a definitive answer cannot be given without that information."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0028",
+      "type": "belongs_to",
+      "to": "DEPT-CS"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "abstention",
+    "policy_lookup"
+  ],
+  "tags": [
+    "finance",
+    "abstention",
+    "insufficient-information"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "SCN-SUP-003",
+  "category": "supplier-management",
+  "title": "A Procurement Officer's family member works at a supplier they are currently evaluating",
+  "description": "Susan Chepkoech Bett is evaluating renewal terms for Lakeside Chemicals. During the review, it emerges that a close family member of Susan Chepkoech Bett is employed by Lakeside Chemicals in a sales role. This relationship has not been disclosed.",
+  "businessContext": "COMP-POL-002 requires disclosure of actual, potential or perceived conflicts involving suppliers, with withdrawal from evaluation pending a decision by the manager and Compliance Manager.",
+  "actors": [
+    {
+      "employeeId": "EMP-0016",
+      "name": "Susan Chepkoech Bett",
+      "roleId": "ROLE-PROC-OFF",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Officer"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0016",
+      "name": "Susan Chepkoech Bett"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-006",
+      "name": "Lakeside Chemicals"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-002",
+      "name": "Anti-Bribery & Conflict of Interest Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "COMP-POL-002",
+    "PROC-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Susan Chepkoech Bett is assigned to evaluate renewal terms for Lakeside Chemicals."
+    },
+    {
+      "sequence": 2,
+      "event": "A family relationship between the officer and the supplier's sales contact is identified."
+    },
+    {
+      "sequence": 3,
+      "event": "The relationship has not been disclosed to a manager or Compliance."
+    },
+    {
+      "sequence": 4,
+      "event": "The evaluation is paused pending disclosure and review."
+    }
+  ],
+  "expectedOutcome": "Susan Chepkoech Bett must disclose the relationship to their manager and the Compliance Manager and withdraw from evaluating or approving this supplier. Undisclosed, this is a conflict-of-interest breach under COMP-POL-002; PROC-POL-002 separately requires evaluators with an undisclosed relationship to be removed from the process.",
+  "relevantFacts": [
+    "Susan Chepkoech Bett (EMP-0016) holds role ROLE-PROC-OFF in department DEPT-PROC.",
+    "Lakeside Chemicals (SUP-006) is the supplier under evaluation.",
+    "COMP-POL-002: 'Employees disclose actual, potential or perceived conflicts involving suppliers... The manager and Compliance Manager decide whether the employee must withdraw, whether an independent review is required or whether the activity must stop.'",
+    "PROC-POL-002: 'Employees disclose personal, family or financial relationships with a supplier under COMP-POL-002 and withdraw from evaluation or approval.'"
+  ],
+  "requiredReasoning": [
+    "Identify that a family relationship with a supplier contact exists.",
+    "Determine that this relationship was not disclosed as required.",
+    "Identify the required corrective action: disclosure and withdrawal from evaluation."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0016",
+      "type": "undisclosed_relationship_with",
+      "to": "SUP-006"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "compliance",
+    "exception",
+    "policy_lookup"
+  ],
+  "tags": [
+    "supplier-management",
+    "conflict-of-interest",
+    "negative",
+    "compliance"
+  ]
+}

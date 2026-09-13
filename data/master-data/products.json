@@ -1,0 +1,671 @@
+[
+  {
+    "productId": "PRD-001",
+    "sku": "FOOD-OIL-001",
+    "name": "Tumaini Gold Cooking Oil 5L",
+    "description": "Fortified vegetable cooking oil, 5 litre bottle, branded line.",
+    "category": "Food",
+    "subcategory": "Cooking Oil",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 850,
+    "sellingPrice": 980,
+    "reorderLevel": 300,
+    "reorderQuantity": 1000,
+    "supplierIds": [
+      "SUP-001",
+      "SUP-009"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-002",
+    "sku": "FOOD-OIL-002",
+    "name": "SVGA Value Cooking Oil 5L",
+    "description": "Fortified vegetable cooking oil, 5 litre bottle, economy private-label line.",
+    "category": "Food",
+    "subcategory": "Cooking Oil",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 700,
+    "sellingPrice": 810,
+    "reorderLevel": 350,
+    "reorderQuantity": 1200,
+    "supplierIds": [
+      "SUP-009",
+      "SUP-001"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-003",
+    "sku": "FOOD-MFLR-001",
+    "name": "Tumaini Maize Flour 2Kg",
+    "description": "Sifted maize meal, 2 kilogram bag, branded line.",
+    "category": "Food",
+    "subcategory": "Maize Flour",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 120,
+    "sellingPrice": 145,
+    "reorderLevel": 500,
+    "reorderQuantity": 2000,
+    "supplierIds": [
+      "SUP-002",
+      "SUP-001"
+    ],
+    "taxCategory": "ZERO_RATED",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-004",
+    "sku": "FOOD-MFLR-002",
+    "name": "SVGA Value Maize Flour 2Kg",
+    "description": "Sifted maize meal, 2 kilogram bag, economy private-label line.",
+    "category": "Food",
+    "subcategory": "Maize Flour",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 95,
+    "sellingPrice": 115,
+    "reorderLevel": 600,
+    "reorderQuantity": 2500,
+    "supplierIds": [
+      "SUP-002",
+      "SUP-009"
+    ],
+    "taxCategory": "ZERO_RATED",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-005",
+    "sku": "FOOD-WFLR-001",
+    "name": "Tumaini Wheat Flour 2Kg",
+    "description": "All-purpose wheat flour, 2 kilogram bag, branded line.",
+    "category": "Food",
+    "subcategory": "Wheat Flour",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 130,
+    "sellingPrice": 155,
+    "reorderLevel": 450,
+    "reorderQuantity": 1800,
+    "supplierIds": [
+      "SUP-002",
+      "SUP-001"
+    ],
+    "taxCategory": "ZERO_RATED",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-006",
+    "sku": "FOOD-WFLR-002",
+    "name": "SVGA Value Wheat Flour 2Kg",
+    "description": "All-purpose wheat flour, 2 kilogram bag, economy private-label line.",
+    "category": "Food",
+    "subcategory": "Wheat Flour",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 105,
+    "sellingPrice": 125,
+    "reorderLevel": 550,
+    "reorderQuantity": 2200,
+    "supplierIds": [
+      "SUP-002",
+      "SUP-009"
+    ],
+    "taxCategory": "ZERO_RATED",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-007",
+    "sku": "FOOD-RICE-001",
+    "name": "Tumaini Pishori Rice 5Kg",
+    "description": "Aromatic pishori rice, 5 kilogram bag, branded line.",
+    "category": "Food",
+    "subcategory": "Rice",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 680,
+    "sellingPrice": 790,
+    "reorderLevel": 300,
+    "reorderQuantity": 1000,
+    "supplierIds": [
+      "SUP-001",
+      "SUP-002"
+    ],
+    "taxCategory": "ZERO_RATED",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-008",
+    "sku": "FOOD-RICE-002",
+    "name": "SVGA Value Rice 5Kg",
+    "description": "Long-grain white rice, 5 kilogram bag, economy private-label line.",
+    "category": "Food",
+    "subcategory": "Rice",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 560,
+    "sellingPrice": 650,
+    "reorderLevel": 350,
+    "reorderQuantity": 1200,
+    "supplierIds": [
+      "SUP-009",
+      "SUP-002"
+    ],
+    "taxCategory": "ZERO_RATED",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-009",
+    "sku": "FOOD-SUGR-001",
+    "name": "Tumaini White Sugar 2Kg",
+    "description": "Refined white sugar, 2 kilogram bag, branded line.",
+    "category": "Food",
+    "subcategory": "Sugar",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 220,
+    "sellingPrice": 255,
+    "reorderLevel": 400,
+    "reorderQuantity": 1500,
+    "supplierIds": [
+      "SUP-002",
+      "SUP-001"
+    ],
+    "taxCategory": "ZERO_RATED",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-010",
+    "sku": "FOOD-SUGR-002",
+    "name": "SVGA Value White Sugar 2Kg",
+    "description": "Refined white sugar, 2 kilogram bag, economy private-label line.",
+    "category": "Food",
+    "subcategory": "Sugar",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 200,
+    "sellingPrice": 230,
+    "reorderLevel": 450,
+    "reorderQuantity": 1800,
+    "supplierIds": [
+      "SUP-002",
+      "SUP-009"
+    ],
+    "taxCategory": "ZERO_RATED",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-011",
+    "sku": "FOOD-CANS-001",
+    "name": "Tumaini Baked Beans 400g",
+    "description": "Canned baked beans in tomato sauce, 400 gram tin, branded line.",
+    "category": "Food",
+    "subcategory": "Canned Foods",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 85,
+    "sellingPrice": 105,
+    "reorderLevel": 250,
+    "reorderQuantity": 900,
+    "supplierIds": [
+      "SUP-001"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-012",
+    "sku": "FOOD-CANS-002",
+    "name": "SVGA Value Baked Beans 400g",
+    "description": "Canned baked beans in tomato sauce, 400 gram tin, economy private-label line.",
+    "category": "Food",
+    "subcategory": "Canned Foods",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 65,
+    "sellingPrice": 80,
+    "reorderLevel": 300,
+    "reorderQuantity": 1000,
+    "supplierIds": [
+      "SUP-009",
+      "SUP-001"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-013",
+    "sku": "BEV-WATR-001",
+    "name": "Chemchemi Bottled Water 500ml (24-pack)",
+    "description": "Purified bottled water, 500ml x 24 pack, branded line.",
+    "category": "Beverages",
+    "subcategory": "Bottled Water",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 480,
+    "sellingPrice": 560,
+    "reorderLevel": 200,
+    "reorderQuantity": 800,
+    "supplierIds": [
+      "SUP-003",
+      "SUP-004"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-014",
+    "sku": "BEV-WATR-002",
+    "name": "SVGA Value Bottled Water 500ml (24-pack)",
+    "description": "Purified bottled water, 500ml x 24 pack, economy private-label line.",
+    "category": "Beverages",
+    "subcategory": "Bottled Water",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 400,
+    "sellingPrice": 470,
+    "reorderLevel": 250,
+    "reorderQuantity": 1000,
+    "supplierIds": [
+      "SUP-004"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-015",
+    "sku": "BEV-SOFT-001",
+    "name": "Chemchemi Soft Drink 300ml (24-pack)",
+    "description": "Carbonated soft drink, 300ml x 24 pack, branded line.",
+    "category": "Beverages",
+    "subcategory": "Soft Drinks",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 620,
+    "sellingPrice": 720,
+    "reorderLevel": 220,
+    "reorderQuantity": 900,
+    "supplierIds": [
+      "SUP-003",
+      "SUP-004"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-016",
+    "sku": "BEV-SOFT-002",
+    "name": "SVGA Value Soft Drink 300ml (24-pack)",
+    "description": "Carbonated soft drink, 300ml x 24 pack, economy private-label line.",
+    "category": "Beverages",
+    "subcategory": "Soft Drinks",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 540,
+    "sellingPrice": 630,
+    "reorderLevel": 260,
+    "reorderQuantity": 1000,
+    "supplierIds": [
+      "SUP-004"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-017",
+    "sku": "BEV-JUICE-001",
+    "name": "Chemchemi Fruit Juice 1L",
+    "description": "Mixed-fruit juice blend, 1 litre carton, branded line.",
+    "category": "Beverages",
+    "subcategory": "Juice",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 150,
+    "sellingPrice": 180,
+    "reorderLevel": 300,
+    "reorderQuantity": 1200,
+    "supplierIds": [
+      "SUP-003"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-018",
+    "sku": "BEV-JUICE-002",
+    "name": "SVGA Value Fruit Juice 1L",
+    "description": "Mixed-fruit juice blend, 1 litre carton, economy private-label line.",
+    "category": "Beverages",
+    "subcategory": "Juice",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 120,
+    "sellingPrice": 145,
+    "reorderLevel": 350,
+    "reorderQuantity": 1400,
+    "supplierIds": [
+      "SUP-004",
+      "SUP-003"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-019",
+    "sku": "BEV-ENGY-001",
+    "name": "Chemchemi Energy Drink 250ml (24-pack)",
+    "description": "Caffeinated energy drink, 250ml x 24 pack, branded line.",
+    "category": "Beverages",
+    "subcategory": "Energy Drinks",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 1450,
+    "sellingPrice": 1680,
+    "reorderLevel": 150,
+    "reorderQuantity": 600,
+    "supplierIds": [
+      "SUP-003"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-020",
+    "sku": "BEV-ENGY-002",
+    "name": "SVGA Value Energy Drink 250ml (24-pack)",
+    "description": "Caffeinated energy drink, 250ml x 24 pack, economy private-label line.",
+    "category": "Beverages",
+    "subcategory": "Energy Drinks",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 1200,
+    "sellingPrice": 1400,
+    "reorderLevel": 180,
+    "reorderQuantity": 700,
+    "supplierIds": [
+      "SUP-004"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-021",
+    "sku": "HH-LNDY-001",
+    "name": "Safi Laundry Detergent 1Kg",
+    "description": "Laundry washing powder, 1 kilogram pack, branded line.",
+    "category": "Household",
+    "subcategory": "Laundry Detergent",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 220,
+    "sellingPrice": 260,
+    "reorderLevel": 300,
+    "reorderQuantity": 1200,
+    "supplierIds": [
+      "SUP-005",
+      "SUP-006"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-022",
+    "sku": "HH-LNDY-002",
+    "name": "SVGA Value Laundry Detergent 1Kg",
+    "description": "Laundry washing powder, 1 kilogram pack, economy private-label line.",
+    "category": "Household",
+    "subcategory": "Laundry Detergent",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 180,
+    "sellingPrice": 215,
+    "reorderLevel": 350,
+    "reorderQuantity": 1400,
+    "supplierIds": [
+      "SUP-016",
+      "SUP-006"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-023",
+    "sku": "HH-DISH-001",
+    "name": "Safi Dishwashing Liquid 750ml",
+    "description": "Dishwashing liquid soap, 750ml bottle, branded line.",
+    "category": "Household",
+    "subcategory": "Dishwashing Liquid",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 140,
+    "sellingPrice": 170,
+    "reorderLevel": 280,
+    "reorderQuantity": 1000,
+    "supplierIds": [
+      "SUP-005"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-024",
+    "sku": "HH-DISH-002",
+    "name": "SVGA Value Dishwashing Liquid 750ml",
+    "description": "Dishwashing liquid soap, 750ml bottle, economy private-label line.",
+    "category": "Household",
+    "subcategory": "Dishwashing Liquid",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 115,
+    "sellingPrice": 140,
+    "reorderLevel": 320,
+    "reorderQuantity": 1200,
+    "supplierIds": [
+      "SUP-016"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-025",
+    "sku": "HH-TISS-001",
+    "name": "Safi Tissue Paper (10-roll pack)",
+    "description": "Soft tissue paper, 10-roll pack, branded line.",
+    "category": "Household",
+    "subcategory": "Tissue",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 320,
+    "sellingPrice": 380,
+    "reorderLevel": 250,
+    "reorderQuantity": 900,
+    "supplierIds": [
+      "SUP-005",
+      "SUP-006"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-026",
+    "sku": "HH-TISS-002",
+    "name": "SVGA Value Tissue Paper (10-roll pack)",
+    "description": "Soft tissue paper, 10-roll pack, economy private-label line.",
+    "category": "Household",
+    "subcategory": "Tissue",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 270,
+    "sellingPrice": 320,
+    "reorderLevel": 300,
+    "reorderQuantity": 1000,
+    "supplierIds": [
+      "SUP-016"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-027",
+    "sku": "HH-CLEAN-001",
+    "name": "Safi Multi-Surface Cleaner 750ml",
+    "description": "Multi-surface household cleaner, 750ml bottle, branded line.",
+    "category": "Household",
+    "subcategory": "Cleaning Products",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 160,
+    "sellingPrice": 195,
+    "reorderLevel": 260,
+    "reorderQuantity": 950,
+    "supplierIds": [
+      "SUP-006",
+      "SUP-005"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-028",
+    "sku": "HH-CLEAN-002",
+    "name": "SVGA Value Multi-Surface Cleaner 750ml",
+    "description": "Multi-surface household cleaner, 750ml bottle, economy private-label line.",
+    "category": "Household",
+    "subcategory": "Cleaning Products",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 130,
+    "sellingPrice": 160,
+    "reorderLevel": 300,
+    "reorderQuantity": 1100,
+    "supplierIds": [
+      "SUP-016"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-029",
+    "sku": "PC-SOAP-001",
+    "name": "Amani Bathing Soap (3-pack)",
+    "description": "Bathing soap bars, 3-pack, branded line.",
+    "category": "Personal Care",
+    "subcategory": "Soap",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 150,
+    "sellingPrice": 180,
+    "reorderLevel": 300,
+    "reorderQuantity": 1000,
+    "supplierIds": [
+      "SUP-007",
+      "SUP-008"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-030",
+    "sku": "PC-SOAP-002",
+    "name": "SVGA Value Bathing Soap (3-pack)",
+    "description": "Bathing soap bars, 3-pack, economy private-label line.",
+    "category": "Personal Care",
+    "subcategory": "Soap",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 120,
+    "sellingPrice": 145,
+    "reorderLevel": 350,
+    "reorderQuantity": 1200,
+    "supplierIds": [
+      "SUP-008"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-031",
+    "sku": "PC-SHMP-001",
+    "name": "Amani Shampoo 400ml",
+    "description": "Everyday moisturising shampoo, 400ml bottle, branded line.",
+    "category": "Personal Care",
+    "subcategory": "Shampoo",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 280,
+    "sellingPrice": 335,
+    "reorderLevel": 220,
+    "reorderQuantity": 800,
+    "supplierIds": [
+      "SUP-007"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-032",
+    "sku": "PC-SHMP-002",
+    "name": "SVGA Value Shampoo 400ml",
+    "description": "Everyday moisturising shampoo, 400ml bottle, economy private-label line.",
+    "category": "Personal Care",
+    "subcategory": "Shampoo",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 230,
+    "sellingPrice": 275,
+    "reorderLevel": 260,
+    "reorderQuantity": 900,
+    "supplierIds": [
+      "SUP-008",
+      "SUP-007"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-033",
+    "sku": "PC-TPST-001",
+    "name": "Amani Toothpaste 150g",
+    "description": "Fluoride toothpaste, 150 gram tube, branded line.",
+    "category": "Personal Care",
+    "subcategory": "Toothpaste",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 130,
+    "sellingPrice": 158,
+    "reorderLevel": 300,
+    "reorderQuantity": 1000,
+    "supplierIds": [
+      "SUP-007"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-034",
+    "sku": "PC-TPST-002",
+    "name": "SVGA Value Toothpaste 150g",
+    "description": "Fluoride toothpaste, 150 gram tube, economy private-label line.",
+    "category": "Personal Care",
+    "subcategory": "Toothpaste",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 105,
+    "sellingPrice": 128,
+    "reorderLevel": 350,
+    "reorderQuantity": 1200,
+    "supplierIds": [
+      "SUP-008"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-035",
+    "sku": "PC-DEOD-001",
+    "name": "Amani Deodorant Spray 150ml",
+    "description": "Body deodorant spray, 150ml can, branded line.",
+    "category": "Personal Care",
+    "subcategory": "Deodorant",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 210,
+    "sellingPrice": 252,
+    "reorderLevel": 220,
+    "reorderQuantity": 800,
+    "supplierIds": [
+      "SUP-007",
+      "SUP-008"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "ACTIVE"
+  },
+  {
+    "productId": "PRD-036",
+    "sku": "PC-DEOD-002",
+    "name": "SVGA Value Deodorant Spray 150ml",
+    "description": "Body deodorant spray, 150ml can, economy private-label line. Discontinued; superseded by a reformulated pack size.",
+    "category": "Personal Care",
+    "subcategory": "Deodorant",
+    "unitOfMeasure": "UNIT",
+    "unitCost": 175,
+    "sellingPrice": 210,
+    "reorderLevel": 250,
+    "reorderQuantity": 900,
+    "supplierIds": [
+      "SUP-008"
+    ],
+    "taxCategory": "STANDARD",
+    "status": "DISCONTINUED"
+  }
+]

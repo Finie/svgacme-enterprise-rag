@@ -1,0 +1,138 @@
+{
+  "id": "SCN-XD-001",
+  "category": "cross-domain",
+  "title": "Tracing a new Finance hire from HR onboarding through to live Dynamics 365 Finance access",
+  "description": "Caroline Nasimiyu Wafula joined Finance as a Finance Analyst. Confirming she is fully operational requires tracing five linked facts: her HR onboarding record, her department and role, the access profile that role entitles her to, and whether that access has actually been provisioned in Microsoft Dynamics 365 Finance.",
+  "businessContext": "This chain spans HR (onboarding), the canonical role/department register, IT access control, and the finance system itself - a genuinely multi-hop trace rather than a single-file lookup.",
+  "actors": [
+    {
+      "employeeId": "EMP-0033",
+      "name": "Caroline Nasimiyu Wafula",
+      "roleId": "ROLE-FIN-ANALYST",
+      "departmentId": "DEPT-FIN",
+      "role": "Finance Analyst"
+    },
+    {
+      "employeeId": "EMP-0012",
+      "name": "Faith Wambui Gitau",
+      "roleId": "ROLE-FIN-MGR",
+      "departmentId": "DEPT-FIN",
+      "role": "Finance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0033",
+      "name": "Caroline Nasimiyu Wafula"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0012",
+      "name": "Faith Wambui Gitau"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-FIN",
+      "name": "Finance"
+    },
+    {
+      "type": "role",
+      "id": "ROLE-FIN-ANALYST",
+      "name": "Finance Analyst"
+    },
+    {
+      "type": "system",
+      "id": "SYS-HR",
+      "name": "Employee Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-IAM",
+      "name": "Identity and Access Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "HR-POL-002",
+      "name": "Recruitment & Onboarding Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    }
+  ],
+  "systems": [
+    "Employee Management System",
+    "Identity and Access Management System",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "HR-POL-002",
+    "IT-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "HR completes the onboarding record for the new Finance Analyst."
+    },
+    {
+      "sequence": 2,
+      "event": "The canonical role register confirms the Finance Analyst access profile."
+    },
+    {
+      "sequence": 3,
+      "event": "IT provisions that profile through the Identity and Access Management System."
+    },
+    {
+      "sequence": 4,
+      "event": "The employee successfully accesses Microsoft Dynamics 365 Finance for the first time."
+    }
+  ],
+  "expectedOutcome": "Caroline Nasimiyu Wafula's access is correctly provisioned once all four links hold: a completed HR onboarding record, a canonical Finance Analyst role assignment in department DEPT-FIN, an IT-provisioned access profile matching that role under IT-POL-001, and confirmed working access in Microsoft Dynamics 365 Finance.",
+  "relevantFacts": [
+    "Caroline Nasimiyu Wafula (EMP-0033) holds role ROLE-FIN-ANALYST in department DEPT-FIN, reporting to Faith Wambui Gitau.",
+    "HR-POL-002 requires HR to supply IT with the start date, approved role, manager and required access profile before IT provisions access.",
+    "IT-POL-001 states a Finance Analyst receives the Microsoft Dynamics 365 Finance read/write transactional and reconciliation profile."
+  ],
+  "requiredReasoning": [
+    "Resolve the employee's canonical department and role.",
+    "Identify the HR-to-IT handoff required before provisioning.",
+    "Identify the specific system access profile that role entitles her to.",
+    "Confirm all four links (HR record, role, IT provisioning, system access) are satisfied."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0033",
+      "type": "reports_to",
+      "to": "EMP-0012"
+    },
+    {
+      "from": "EMP-0033",
+      "type": "belongs_to",
+      "to": "DEPT-FIN"
+    },
+    {
+      "from": "EMP-0033",
+      "type": "holds_role",
+      "to": "ROLE-FIN-ANALYST"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "workflow",
+    "policy_lookup"
+  ],
+  "tags": [
+    "cross-domain",
+    "onboarding",
+    "finance",
+    "it-access"
+  ]
+}

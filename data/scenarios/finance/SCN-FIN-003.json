@@ -1,0 +1,121 @@
+{
+  "id": "SCN-FIN-003",
+  "category": "finance",
+  "title": "A KES 150,000 warehouse consumables purchase needs approval while the Warehouse Manager is on leave",
+  "description": "Nancy Wairimu Ndungu (Warehouse Manager) is on approved annual leave for the week a KES 150,000 purchase requisition for warehouse consumables needs approval.",
+  "businessContext": "FIN-POL-002 permits delegated approval but requires it to be formally recorded with dates and scope, and delegation does not permit self-approval or bypassing segregation of duties.",
+  "actors": [
+    {
+      "employeeId": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu",
+      "roleId": "ROLE-WH-MGR",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Manager"
+    },
+    {
+      "employeeId": "EMP-0006",
+      "name": "Catherine Achieng Odongo",
+      "roleId": "ROLE-OPS-MGR",
+      "departmentId": "DEPT-OPS",
+      "role": "Operations Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0006",
+      "name": "Catherine Achieng Odongo"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-WH",
+      "name": "Warehouse"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    },
+    {
+      "type": "policy",
+      "id": "HR-POL-001",
+      "name": "Employee Leave & Time-Off Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance",
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "FIN-POL-002",
+    "HR-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Nancy Wairimu Ndungu is on approved annual leave under HR-POL-001."
+    },
+    {
+      "sequence": 2,
+      "event": "A KES 150,000 requisition for warehouse consumables requires approval during this period."
+    },
+    {
+      "sequence": 3,
+      "event": "Catherine Achieng Odongo (Operations Manager), who oversees the Warehouse function, is formally recorded as the delegated approver for the period."
+    },
+    {
+      "sequence": 4,
+      "event": "The delegated approval is recorded with its dates and scope."
+    }
+  ],
+  "expectedOutcome": "Catherine Achieng Odongo may approve the KES 150,000 requisition as the formally recorded delegate while Nancy Wairimu Ndungu is on leave, provided the delegation is documented with its dates and scope; delegation must not be used to let the traveling manager pre-approve their own request before departure or to bypass segregation of duties.",
+  "relevantFacts": [
+    "Nancy Wairimu Ndungu (EMP-0022) is the Warehouse Manager and is on approved leave.",
+    "Catherine Achieng Odongo (EMP-0006) is the Operations Manager, which oversees the Warehouse department.",
+    "The requisition amount is KES 150,000.",
+    "FIN-POL-002: 'A delegated approver must be formally recorded with dates and scope; delegation does not permit self-approval, approval of a conflict, or bypass of segregation of duties.'"
+  ],
+  "requiredReasoning": [
+    "Confirm the primary approver is unavailable and why.",
+    "Identify a suitable delegate given the reporting structure.",
+    "Confirm the delegation is formally recorded, not informal."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0022",
+      "type": "belongs_to",
+      "to": "DEPT-WH"
+    },
+    {
+      "from": "EMP-0006",
+      "type": "oversees",
+      "to": "DEPT-WH"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "workflow",
+    "policy_lookup",
+    "exception"
+  ],
+  "tags": [
+    "finance",
+    "delegation",
+    "warehouse"
+  ]
+}

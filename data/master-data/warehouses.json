@@ -1,0 +1,54 @@
+[
+  {
+    "warehouseId": "WH-NRB-001",
+    "code": "NRB-DC",
+    "name": "Nairobi Distribution Centre",
+    "locationId": "LOC-NRB-WH",
+    "city": "Nairobi",
+    "warehouseType": "DISTRIBUTION_CENTER",
+    "managerEmployeeId": "EMP-0022",
+    "capacityUnits": 120000,
+    "operatingHours": "Monday - Saturday, 06:00 - 20:00",
+    "temperatureControlled": false,
+    "status": "ACTIVE"
+  },
+  {
+    "warehouseId": "WH-MSA-001",
+    "code": "MSA-DC",
+    "name": "Mombasa Distribution Centre",
+    "locationId": "LOC-MSA-01",
+    "city": "Mombasa",
+    "warehouseType": "DISTRIBUTION_CENTER",
+    "managerEmployeeId": "EMP-0022",
+    "capacityUnits": 60000,
+    "operatingHours": "Monday - Saturday, 07:00 - 18:00",
+    "temperatureControlled": false,
+    "status": "ACTIVE"
+  },
+  {
+    "warehouseId": "WH-KSM-001",
+    "code": "KSM-DC",
+    "name": "Kisumu Distribution Centre",
+    "locationId": "LOC-KSM-01",
+    "city": "Kisumu",
+    "warehouseType": "DISTRIBUTION_CENTER",
+    "managerEmployeeId": "EMP-0022",
+    "capacityUnits": 40000,
+    "operatingHours": "Monday - Saturday, 07:00 - 18:00",
+    "temperatureControlled": false,
+    "status": "ACTIVE"
+  },
+  {
+    "warehouseId": "WH-NKR-001",
+    "code": "NKR-DC",
+    "name": "Nakuru Distribution Centre",
+    "locationId": "LOC-NKR-01",
+    "city": "Nakuru",
+    "warehouseType": "DISTRIBUTION_CENTER",
+    "managerEmployeeId": "EMP-0022",
+    "capacityUnits": 30000,
+    "operatingHours": "Monday - Saturday, 07:00 - 18:00",
+    "temperatureControlled": false,
+    "status": "ACTIVE"
+  }
+]

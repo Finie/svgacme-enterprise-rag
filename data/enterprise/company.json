@@ -1,0 +1,31 @@
+{
+  "companyId": "COMP-SVGA",
+  "legalName": "SVGA Enterprise Limited",
+  "tradingName": "SVGA Enterprise",
+  "industry": "FMCG Distribution, Supply Chain & Retail Trade",
+  "description": "SVGA Enterprise Ltd is a Kenyan-owned distribution and supply chain company that sources, warehouses and distributes fast-moving consumer goods (FMCG) and general trade supplies to retailers, wholesalers and institutional customers across Kenya and the wider East African region.",
+  "registrationNumber": "PVT-2004-118273",
+  "kraPin": "P051234567X",
+  "country": "Kenya",
+  "headquarters": {
+    "locationId": "LOC-NRB-HQ",
+    "address": "SVGA Plaza, 3rd Floor, Mombasa Road, Nairobi, Kenya"
+  },
+  "employeeCount": 428,
+  "employeeDatasetNote": "employees.json contains a representative sample of 39 employees spanning the full management hierarchy and key business processes. It is a curated subset, not an exhaustive list of all 428 employees at SVGA Enterprise Ltd.",
+  "yearEstablished": 2004,
+  "website": "https://www.svga-enterprise.co.ke",
+  "contact": {
+    "email": "info@svga-enterprise.co.ke",
+    "phone": "+254-20-2712345",
+    "postalAddress": "P.O. Box 45210-00100, Nairobi, Kenya"
+  },
+  "currency": "KES",
+  "timezone": "Africa/Nairobi",
+  "fiscalYear": {
+    "startMonth": "January",
+    "endMonth": "December",
+    "label": "FY (January - December)"
+  },
+  "status": "ACTIVE"
+}

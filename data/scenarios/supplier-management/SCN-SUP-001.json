@@ -1,0 +1,119 @@
+{
+  "id": "SCN-SUP-001",
+  "category": "supplier-management",
+  "title": "Economy Household Supplies is awaiting approval to join the approved supplier list",
+  "description": "Economy Household Supplies, a prospective household-goods supplier, has submitted a supplier profile and currently has approvalStatus \"PENDING_APPROVAL\" in the supplier register.",
+  "businessContext": "PROC-POL-002 requires Finance to validate payment and tax details, Compliance to perform proportionate due diligence, and the Procurement Manager to approve inclusion on the approved supplier list.",
+  "actors": [
+    {
+      "employeeId": "EMP-0004",
+      "name": "Esther Wanjiku Kamau",
+      "roleId": "ROLE-PROC-MGR",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Manager"
+    },
+    {
+      "employeeId": "EMP-0008",
+      "name": "Lucy Chebet Kiprono",
+      "roleId": "ROLE-COMP-MGR",
+      "departmentId": "DEPT-COMP",
+      "role": "Compliance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0004",
+      "name": "Esther Wanjiku Kamau"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0008",
+      "name": "Lucy Chebet Kiprono"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-016",
+      "name": "Economy Household Supplies"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-002",
+      "name": "Supplier & Vendor Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-001",
+      "name": "Data Protection & Privacy Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "PROC-POL-002",
+    "COMP-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Economy Household Supplies submits a completed supplier profile with legal identity, contacts, payment and tax information."
+    },
+    {
+      "sequence": 2,
+      "event": "Finance validates the payment and tax details."
+    },
+    {
+      "sequence": 3,
+      "event": "Lucy Chebet Kiprono (Compliance Manager) performs proportionate due diligence based on risk."
+    },
+    {
+      "sequence": 4,
+      "event": "Esther Wanjiku Kamau (Procurement Manager) reviews the outcome before approving inclusion."
+    }
+  ],
+  "expectedOutcome": "Economy Household Supplies cannot receive purchase orders while approvalStatus remains \"PENDING_APPROVAL\". Finance must validate payment and tax details, Compliance must complete proportionate due diligence, and only the Procurement Manager can approve inclusion on the approved supplier list.",
+  "relevantFacts": [
+    "Economy Household Supplies (SUP-016) has approvalStatus \"PENDING_APPROVAL\" and riskRating \"MEDIUM\" in data/master-data/suppliers.json.",
+    "PROC-POL-002: 'Procurement collects legal identity, contacts, ownership information, payment details, tax information, service category, references and the proposed risk classification. Finance validates payment and tax details; Compliance performs proportionate due diligence; the Procurement Manager approves inclusion on the approved supplier list.'"
+  ],
+  "requiredReasoning": [
+    "Check the supplier's current approvalStatus.",
+    "Identify the three parties who must each complete their part of onboarding.",
+    "Determine that purchase orders cannot be placed until approval is granted."
+  ],
+  "relationships": [
+    {
+      "from": "SUP-016",
+      "type": "reviewed_by",
+      "to": "EMP-0008"
+    },
+    {
+      "from": "SUP-016",
+      "type": "approved_by",
+      "to": "EMP-0004"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "fact_lookup",
+    "workflow",
+    "policy_lookup"
+  ],
+  "tags": [
+    "supplier-management",
+    "onboarding",
+    "procurement"
+  ]
+}

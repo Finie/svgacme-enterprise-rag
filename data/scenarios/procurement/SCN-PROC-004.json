@@ -1,0 +1,146 @@
+{
+  "id": "SCN-PROC-004",
+  "category": "procurement",
+  "title": "Emergency replenishment of SVGA Value Maize Flour 2Kg after it hits zero stock at the Nairobi hub",
+  "description": "SVGA Value Maize Flour 2Kg (PRD-004) has reached zero available stock at the Nairobi Distribution Centre, threatening committed dispatches. Nancy Wairimu Ndungu initiates an emergency purchase from Rift Valley Millers for KES 180,000 outside the normal purchase-order-first sequence.",
+  "businessContext": "PROC-POL-001 and FIN-POL-002 both allow emergency procurement, but only where delay creates material risk to people, stock, systems or continuity, and both require the action to be documented and retrospectively approved promptly.",
+  "actors": [
+    {
+      "employeeId": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu",
+      "roleId": "ROLE-WH-MGR",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu"
+    },
+    {
+      "type": "product",
+      "id": "PRD-004",
+      "name": "SVGA Value Maize Flour 2Kg"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0004",
+      "name": "PRD-004 @ WH-NRB-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-002",
+      "name": "Rift Valley Millers"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-WH",
+      "name": "Warehouse"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "PROC-POL-001",
+    "FIN-POL-002",
+    "INV-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Inventory confirms SVGA Value Maize Flour 2Kg is at zero available stock at WH-NRB-001."
+    },
+    {
+      "sequence": 2,
+      "event": "Nancy Wairimu Ndungu determines the delay in normal procurement would create a material risk to committed dispatches."
+    },
+    {
+      "sequence": 3,
+      "event": "An emergency order for KES 180,000 is placed with Rift Valley Millers without waiting for a purchase order to issue first."
+    },
+    {
+      "sequence": 4,
+      "event": "The responsible manager records the reason, supplier, amount and evidence in Microsoft Dynamics 365 Finance within one business day."
+    },
+    {
+      "sequence": 5,
+      "event": "A retrospective approver reviews and confirms the emergency action."
+    }
+  ],
+  "expectedOutcome": "The emergency procurement is permitted because it protects continuity of committed dispatches, but it is not exempt from control: the reason, supplier, amount and evidence must be recorded within one business day, Nancy Wairimu Ndungu (Warehouse Manager) must retrospectively confirm the decision under the FIN-POL-002 matrix for KES 180,000, and the emergency status does not waive conflict-disclosure, sanctions-screening or receipt-matching controls.",
+  "relevantFacts": [
+    "SVGA Value Maize Flour 2Kg (PRD-004) has quantityAvailable of 0 at warehouse WH-NRB-001 (inventory record INV-0004), reorderLevel 600.",
+    "Rift Valley Millers (SUP-002) is an approved supplier of this product.",
+    "KES 180,000 falls within the Department Head tier of the FIN-POL-002 matrix, which Nancy Wairimu Ndungu (Warehouse Manager) can retrospectively confirm.",
+    "PROC-POL-001: 'Emergency procurement is used only where delay creates a material risk to people, stock, service continuity or critical systems... Procurement reports emergency use, exceptions, supplier performance and policy breaches to the Procurement Manager and Compliance.'",
+    "FIN-POL-002: 'The responsible manager records the reason, supplier or payee, amount, evidence and retrospective approver in Microsoft Dynamics 365 Finance within one business day. Emergency status does not waive conflict disclosure, sanctions screening or receipt or invoice matching controls.'"
+  ],
+  "requiredReasoning": [
+    "Confirm the stock position justifies treating this as an emergency rather than routine replenishment.",
+    "Identify the documentation and timing requirements that still apply despite the emergency route.",
+    "Resolve which approver would retrospectively confirm this amount under the standard approval matrix."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-004",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    },
+    {
+      "from": "PRD-004",
+      "type": "supplied_by",
+      "to": "SUP-002"
+    },
+    {
+      "from": "EMP-0022",
+      "type": "belongs_to",
+      "to": "DEPT-WH"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "workflow",
+    "exception",
+    "policy_lookup"
+  ],
+  "tags": [
+    "procurement",
+    "emergency",
+    "warehouse",
+    "inventory"
+  ]
+}

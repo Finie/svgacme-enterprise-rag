@@ -1,0 +1,52 @@
+[
+  {
+    "locationId": "LOC-NRB-HQ",
+    "name": "SVGA Enterprise Head Office",
+    "type": "HEADQUARTERS",
+    "city": "Nairobi",
+    "county": "Nairobi",
+    "country": "Kenya",
+    "address": "SVGA Plaza, 3rd Floor, Mombasa Road, Nairobi",
+    "status": "ACTIVE"
+  },
+  {
+    "locationId": "LOC-NRB-WH",
+    "name": "Nairobi Distribution Warehouse",
+    "type": "WAREHOUSE",
+    "city": "Nairobi",
+    "county": "Nairobi",
+    "country": "Kenya",
+    "address": "Plot 14, Lunga Lunga Road, Industrial Area, Nairobi",
+    "status": "ACTIVE"
+  },
+  {
+    "locationId": "LOC-MSA-01",
+    "name": "Mombasa Regional Office",
+    "type": "BRANCH",
+    "city": "Mombasa",
+    "county": "Mombasa",
+    "country": "Kenya",
+    "address": "Nyerere Avenue, Mombasa",
+    "status": "ACTIVE"
+  },
+  {
+    "locationId": "LOC-KSM-01",
+    "name": "Kisumu Regional Office",
+    "type": "BRANCH",
+    "city": "Kisumu",
+    "county": "Kisumu",
+    "country": "Kenya",
+    "address": "Oginga Odinga Street, Kisumu",
+    "status": "ACTIVE"
+  },
+  {
+    "locationId": "LOC-NKR-01",
+    "name": "Nakuru Regional Office",
+    "type": "BRANCH",
+    "city": "Nakuru",
+    "county": "Nakuru",
+    "country": "Kenya",
+    "address": "Kenyatta Avenue, Nakuru",
+    "status": "ACTIVE"
+  }
+]

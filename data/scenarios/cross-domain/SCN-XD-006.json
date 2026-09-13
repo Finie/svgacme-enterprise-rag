@@ -1,0 +1,134 @@
+{
+  "id": "SCN-XD-006",
+  "category": "cross-domain",
+  "title": "An IT Support Officer's own credentials are used to access records outside his duties",
+  "description": "Felix Kiptoo Langat (IT Support Officer) reports that his own Enterprise Document Management System credentials were used to open compliance investigation files he has no business reason to access, from a location he was not working from.",
+  "businessContext": "This chain runs from the affected employee, to the system involved, into IT incident triage, then to access control and data protection, and finally to the records obligation that follows.",
+  "actors": [
+    {
+      "employeeId": "EMP-0023",
+      "name": "Felix Kiptoo Langat",
+      "roleId": "ROLE-IT-SUPPORT",
+      "departmentId": "DEPT-IT",
+      "role": "IT Support Officer"
+    },
+    {
+      "employeeId": "EMP-0007",
+      "name": "David Kiplagat Rotich",
+      "roleId": "ROLE-IT-MGR",
+      "departmentId": "DEPT-IT",
+      "role": "IT Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0023",
+      "name": "Felix Kiptoo Langat"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0007",
+      "name": "David Kiplagat Rotich"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-IAM",
+      "name": "Identity and Access Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-002",
+      "name": "IT Incident Management & Service Desk Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-001",
+      "name": "Data Protection & Privacy Policy"
+    },
+    {
+      "type": "policy",
+      "id": "GEN-POL-001",
+      "name": "Records Retention & Document Management Policy"
+    }
+  ],
+  "systems": [
+    "Enterprise Document Management System",
+    "Identity and Access Management System",
+    "IT Service Desk"
+  ],
+  "policies": [
+    "IT-POL-002",
+    "IT-POL-001",
+    "COMP-POL-001",
+    "GEN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Felix Kiptoo Langat notices document access he did not perform under his own account."
+    },
+    {
+      "sequence": 2,
+      "event": "He reports it immediately through the IT Service Desk rather than investigating it himself."
+    },
+    {
+      "sequence": 3,
+      "event": "David Kiplagat Rotich (IT Manager) treats this as a suspected compromised-credential incident."
+    },
+    {
+      "sequence": 4,
+      "event": "The account is suspended and Compliance is engaged given the files accessed were compliance investigation records."
+    },
+    {
+      "sequence": 5,
+      "event": "The incident record and access logs are preserved under GEN-POL-001."
+    }
+  ],
+  "expectedOutcome": "This is escalated as a suspected credential compromise, not dismissed as a self-reported error: IT-POL-002 governs the incident response, IT-POL-001 governs suspending and resetting the account, COMP-POL-001 governs the fact that compliance investigation records (likely containing personal data) were accessed without business need, and GEN-POL-001 requires the evidence to be preserved rather than the logs being cleared.",
+  "relevantFacts": [
+    "Felix Kiptoo Langat (EMP-0023) reported access to compliance investigation files he did not perform.",
+    "The access occurred from a location inconsistent with his normal work pattern.",
+    "COMP-POL-001: 'Employees report suspected loss, misdirection, unauthorised access, malware, disclosure or excessive access immediately through the IT Service Desk and to Compliance.'"
+  ],
+  "requiredReasoning": [
+    "Identify that self-reporting does not reduce this to a routine ticket.",
+    "Determine why the specific files accessed (compliance investigation records) matter to the response.",
+    "Identify the four policies each governing a different part of the response."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0023",
+      "type": "flagged_on",
+      "to": "SYS-DMS"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "compliance",
+    "exception"
+  ],
+  "tags": [
+    "cross-domain",
+    "incidents",
+    "compliance",
+    "it-access",
+    "negative"
+  ]
+}

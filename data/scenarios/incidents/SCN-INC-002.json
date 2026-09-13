@@ -1,0 +1,128 @@
+{
+  "id": "SCN-INC-002",
+  "category": "incidents",
+  "title": "Unusual login activity is detected on Winnie Adhiambo Ouma's account outside normal hours",
+  "description": "The Identity and Access Management System logs a successful login on Winnie Adhiambo Ouma's account at 02:40 local time, a time the employee was not scheduled to be working, followed by an attempt to access Enterprise Document Management System folders outside their normal duties.",
+  "businessContext": "IT-POL-002 treats a suspected loss of confidentiality or unauthorised access as an incident requiring immediate escalation; COMP-POL-001 governs any personal-data exposure risk.",
+  "actors": [
+    {
+      "employeeId": "EMP-0024",
+      "name": "Winnie Adhiambo Ouma",
+      "roleId": "ROLE-IT-SUPPORT",
+      "departmentId": "DEPT-IT",
+      "role": "IT Support Officer"
+    },
+    {
+      "employeeId": "EMP-0007",
+      "name": "David Kiplagat Rotich",
+      "roleId": "ROLE-IT-MGR",
+      "departmentId": "DEPT-IT",
+      "role": "IT Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0024",
+      "name": "Winnie Adhiambo Ouma"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0007",
+      "name": "David Kiplagat Rotich"
+    },
+    {
+      "type": "system",
+      "id": "SYS-IAM",
+      "name": "Identity and Access Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-002",
+      "name": "IT Incident Management & Service Desk Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-001",
+      "name": "Data Protection & Privacy Policy"
+    }
+  ],
+  "systems": [
+    "Identity and Access Management System",
+    "Enterprise Document Management System",
+    "IT Service Desk"
+  ],
+  "policies": [
+    "IT-POL-002",
+    "IT-POL-001",
+    "COMP-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "The Identity and Access Management System logs an out-of-hours login on the account."
+    },
+    {
+      "sequence": 2,
+      "event": "An attempt to access document folders outside the normal duties of the role follows."
+    },
+    {
+      "sequence": 3,
+      "event": "David Kiplagat Rotich (IT Manager) is notified immediately and coordinates the response."
+    },
+    {
+      "sequence": 4,
+      "event": "The account is suspended pending investigation."
+    },
+    {
+      "sequence": 5,
+      "event": "Compliance is engaged to assess data-exposure scope."
+    }
+  ],
+  "expectedOutcome": "This is treated as a P1 or P2 incident given the confirmed suspicious security pattern: the service desk escalates immediately per IT-POL-002, the account is suspended under IT-POL-001 pending investigation, and Compliance assesses scope, containment and notification under COMP-POL-001 rather than the matter being dismissed as routine activity.",
+  "relevantFacts": [
+    "Winnie Adhiambo Ouma (EMP-0024) holds role ROLE-IT-SUPPORT in department DEPT-IT.",
+    "The login occurred at 02:40 local time, outside the employee's normal working pattern, followed by access attempts outside the role's normal duties.",
+    "IT-POL-002: 'P1 Critical incidents threaten a critical system, widespread operations, safety or confirmed serious security exposure; the service desk acknowledges within 15 minutes and escalates immediately.'",
+    "COMP-POL-001: 'Employees report suspected loss, misdirection, unauthorised access, malware, disclosure or excessive access immediately through the IT Service Desk and to Compliance.'"
+  ],
+  "requiredReasoning": [
+    "Identify the anomalous signals: timing and access pattern outside role norms.",
+    "Classify the severity given the security exposure.",
+    "Identify the immediate containment action (account suspension) and the parties to notify."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0024",
+      "type": "flagged_on",
+      "to": "SYS-IAM"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "exception",
+    "compliance",
+    "multi_hop"
+  ],
+  "tags": [
+    "incidents",
+    "security",
+    "negative",
+    "compliance"
+  ]
+}

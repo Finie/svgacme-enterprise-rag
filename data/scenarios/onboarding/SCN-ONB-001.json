@@ -1,0 +1,143 @@
+{
+  "id": "SCN-ONB-001",
+  "category": "onboarding",
+  "title": "New Finance Analyst onboarding requires three system accounts",
+  "description": "Hassan Abdi Noor has joined the Finance department as a Finance Analyst on a contract basis. HR has completed the onboarding record in the Employee Management System, and the role requires access to the department's core systems before the employee can begin transactional work.",
+  "businessContext": "Finance Analysts process accounts payable and receivable transactions and require read/write access to the financial system of record, plus the systems used for HR self-service and policy documentation.",
+  "actors": [
+    {
+      "employeeId": "EMP-0034",
+      "name": "Hassan Abdi Noor",
+      "roleId": "ROLE-FIN-ANALYST",
+      "departmentId": "DEPT-FIN",
+      "role": "Finance Analyst"
+    },
+    {
+      "employeeId": "EMP-0012",
+      "name": "Faith Wambui Gitau",
+      "roleId": "ROLE-FIN-MGR",
+      "departmentId": "DEPT-FIN",
+      "role": "Finance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0034",
+      "name": "Hassan Abdi Noor"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0012",
+      "name": "Faith Wambui Gitau"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-FIN",
+      "name": "Finance"
+    },
+    {
+      "type": "role",
+      "id": "ROLE-FIN-ANALYST",
+      "name": "Finance Analyst"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-HR",
+      "name": "Employee Management System"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "HR-POL-002",
+      "name": "Recruitment & Onboarding Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance",
+    "Employee Management System",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "HR-POL-002",
+    "IT-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "HR completes the new-hire requisition and confirms the approved role, department and manager."
+    },
+    {
+      "sequence": 2,
+      "event": "HR creates the employee record in the Employee Management System using the canonical role and department data."
+    },
+    {
+      "sequence": 3,
+      "event": "HR supplies IT with the start date, approved role, manager and required access profile."
+    },
+    {
+      "sequence": 4,
+      "event": "IT provisions accounts through the Identity and Access Management System according to the Finance Analyst role profile."
+    },
+    {
+      "sequence": 5,
+      "event": "The employee completes induction, policy acknowledgement and equipment handover."
+    }
+  ],
+  "expectedOutcome": "The employee should receive a Finance Analyst access profile covering Microsoft Dynamics 365 Finance (read/write transactional and reconciliation access), the Employee Management System, and the Enterprise Document Management System - provisioned by IT from the HR onboarding record, not granted informally.",
+  "relevantFacts": [
+    "Hassan Abdi Noor (EMP-0034) holds role ROLE-FIN-ANALYST (Finance Analyst) in department DEPT-FIN.",
+    "Faith Wambui Gitau (EMP-0012) is the Finance Manager and Hassan Abdi Noor's manager.",
+    "HR-POL-002 requires HR to supply IT with the start date, approved role, manager and required access profile; IT provisions accounts through the Identity and Access Management System.",
+    "IT-POL-001 states that a Finance Analyst receives the Microsoft Dynamics 365 Finance read/write transactional and reconciliation profile, subject to segregation of duties, and does not receive Finance Manager approval rights by default."
+  ],
+  "requiredReasoning": [
+    "Resolve the employee's canonical role and department.",
+    "Identify the systems that role profile is entitled to under IT-POL-001.",
+    "Confirm the HR-to-IT handoff sequence required by HR-POL-002 before access is granted.",
+    "Distinguish the access this role is entitled to from Finance Manager-level rights, which are not included by default."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0034",
+      "type": "reports_to",
+      "to": "EMP-0012"
+    },
+    {
+      "from": "EMP-0034",
+      "type": "belongs_to",
+      "to": "DEPT-FIN"
+    },
+    {
+      "from": "EMP-0034",
+      "type": "holds_role",
+      "to": "ROLE-FIN-ANALYST"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "fact_lookup",
+    "policy_lookup",
+    "workflow"
+  ],
+  "tags": [
+    "onboarding",
+    "finance",
+    "it-access",
+    "hr"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "totalQuestions": 173,
+  "categories": {
+    "factual": 21,
+    "policy": 20,
+    "entity": 18,
+    "reasoning": 74,
+    "cross-domain": 20,
+    "negative": 10,
+    "abstention": 10
+  },
+  "difficulty": {
+    "easy": 46,
+    "expert": 11,
+    "hard": 54,
+    "medium": 62
+  },
+  "answerability": {
+    "answerable": 163,
+    "unanswerable": 10
+  },
+  "generatedAt": "2026-01-01",
+  "generatorVersion": "1.0.0",
+  "sourceCounts": {
+    "employees": 39,
+    "departments": 13,
+    "roles": 22,
+    "locations": 5,
+    "systems": 7,
+    "suppliers": 16,
+    "customers": 20,
+    "products": 36,
+    "warehouses": 4,
+    "inventory": 141,
+    "costCenters": 13,
+    "policies": 15,
+    "scenarios": 65
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "id": "SCN-SALES-004",
+  "category": "sales",
+  "title": "Serena Highlands Hotel returns a damaged delivery of Chemchemi Fruit Juice 1L",
+  "description": "Serena Highlands Hotel reports that part of a recent delivery of Chemchemi Fruit Juice 1L, dispatched from Nairobi Distribution Centre, arrived damaged and requests a return and credit.",
+  "businessContext": "SALES-POL-001 requires a return to state a reason, customer reference and condition assessment before stock is returned or a credit issued; damaged goods are then processed under INV-POL-001 and WH-POL-001.",
+  "actors": [
+    {
+      "employeeId": "EMP-0005",
+      "name": "Brian Wafula Simiyu",
+      "roleId": "ROLE-SALES-MGR",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0005",
+      "name": "Brian Wafula Simiyu"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-008",
+      "name": "Serena Highlands Hotel"
+    },
+    {
+      "type": "product",
+      "id": "PRD-017",
+      "name": "Chemchemi Fruit Juice 1L"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "WH-POL-001",
+      "name": "Warehouse Operations & Receiving Policy"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "WH-POL-001",
+    "INV-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Serena Highlands Hotel reports damaged units of Chemchemi Fruit Juice 1L from a recent delivery."
+    },
+    {
+      "sequence": 2,
+      "event": "Brian Wafula Simiyu logs the return with a reason and customer reference."
+    },
+    {
+      "sequence": 3,
+      "event": "Nairobi Distribution Centre receives the returned stock and assesses its condition."
+    },
+    {
+      "sequence": 4,
+      "event": "Damaged stock is segregated and held from sale pending disposition."
+    },
+    {
+      "sequence": 5,
+      "event": "Finance processes an approved credit once the return is confirmed."
+    }
+  ],
+  "expectedOutcome": "The return is not automatically credited: a reason, customer reference and condition assessment must be recorded and approved first. Once Warehouse confirms the goods are damaged, the stock is segregated under WH-POL-001 and INV-POL-001, and Finance issues the credit in Microsoft Dynamics 365 Finance under SALES-POL-001.",
+  "relevantFacts": [
+    "Serena Highlands Hotel (CUS-008) is managed by Brian Wafula Simiyu.",
+    "Chemchemi Fruit Juice 1L (PRD-017) was dispatched from Nairobi Distribution Centre (WH-NRB-001).",
+    "SALES-POL-001: 'Returns require a reason, customer reference, condition assessment and approval before stock is returned or a credit is issued... damaged, expired or disputed goods are isolated and processed under INV-POL-001 and WH-POL-001; Finance handles approved credits.'"
+  ],
+  "requiredReasoning": [
+    "Identify the information required before a return can be processed.",
+    "Identify which department assesses the condition of returned goods.",
+    "Determine which policy governs segregating damaged stock versus issuing the credit."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-008",
+      "type": "managed_by",
+      "to": "EMP-0005"
+    },
+    {
+      "from": "PRD-017",
+      "type": "dispatched_from",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "workflow",
+    "policy_lookup"
+  ],
+  "tags": [
+    "sales",
+    "returns",
+    "warehouse"
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "SCN-XD-008",
+  "category": "cross-domain",
+  "title": "A KES 45,000 write-off for water-damaged Safi Laundry Detergent 1Kg must pass through Inventory, Finance and Records",
+  "description": "Nakuru Distribution Centre identifies water-damaged cartons of Safi Laundry Detergent 1Kg valued at approximately KES 45,000. The stock is segregated, and the write-off must be approved and recorded before it leaves the books.",
+  "businessContext": "This chain runs from the physical warehouse finding, through the Inventory Manager's accounting treatment, to the financial approval matrix, and into the retained record.",
+  "actors": [
+    {
+      "employeeId": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu",
+      "roleId": "ROLE-WH-MGR",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Manager"
+    },
+    {
+      "employeeId": "EMP-0021",
+      "name": "Michael Odhiambo Owino",
+      "roleId": "ROLE-INV-MGR",
+      "departmentId": "DEPT-INV",
+      "role": "Inventory Manager"
+    },
+    {
+      "employeeId": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu",
+      "roleId": "ROLE-WH-MGR",
+      "departmentId": "DEPT-WH",
+      "role": "Warehouse Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0022",
+      "name": "Nancy Wairimu Ndungu"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0021",
+      "name": "Michael Odhiambo Owino"
+    },
+    {
+      "type": "product",
+      "id": "PRD-021",
+      "name": "Safi Laundry Detergent 1Kg"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NKR-001",
+      "name": "Nakuru Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "WH-POL-001",
+      "name": "Warehouse Operations & Receiving Policy"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    },
+    {
+      "type": "policy",
+      "id": "GEN-POL-001",
+      "name": "Records Retention & Document Management Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Supply Chain Management",
+    "Microsoft Dynamics 365 Finance",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "WH-POL-001",
+    "INV-POL-001",
+    "FIN-POL-002",
+    "GEN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Nakuru Distribution Centre identifies water-damaged cartons of Safi Laundry Detergent 1Kg valued at KES 45,000."
+    },
+    {
+      "sequence": 2,
+      "event": "The stock is segregated, labelled and held from sale."
+    },
+    {
+      "sequence": 3,
+      "event": "The Inventory Manager proposes a write-off for the damaged quantity."
+    },
+    {
+      "sequence": 4,
+      "event": "Nancy Wairimu Ndungu (Warehouse Manager) approves the write-off under FIN-POL-002."
+    },
+    {
+      "sequence": 5,
+      "event": "The count evidence, approval and adjustment are retained under GEN-POL-001."
+    }
+  ],
+  "expectedOutcome": "The KES 45,000 write-off requires the Inventory Manager's sign-off under INV-POL-001 plus Nancy Wairimu Ndungu (Warehouse Manager)'s approval under the FIN-POL-002 matrix for this amount; the warehouse cannot post the adjustment unilaterally, and the full evidence trail is retained under GEN-POL-001.",
+  "relevantFacts": [
+    "Safi Laundry Detergent 1Kg (PRD-021) at Nakuru Distribution Centre (WH-NKR-001) has an estimated damaged-stock value of KES 45,000.",
+    "WH-POL-001: 'The warehouse may not create an unexplained adjustment.'",
+    "INV-POL-001: 'Write-offs for damage, expiry, loss or obsolescence require the Inventory Manager and the approval level in FIN-POL-002.'"
+  ],
+  "requiredReasoning": [
+    "Identify the physical control step (segregation) versus the accounting step (write-off).",
+    "Resolve the FIN-POL-002 approver for this amount.",
+    "Identify what must be retained once the write-off is approved."
+  ],
+  "relationships": [
+    {
+      "from": "PRD-021",
+      "type": "stocked_at",
+      "to": "WH-NKR-001"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "multi_hop",
+    "calculation",
+    "workflow"
+  ],
+  "tags": [
+    "cross-domain",
+    "inventory",
+    "warehouse",
+    "finance",
+    "records"
+  ]
+}

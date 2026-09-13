@@ -1,0 +1,105 @@
+{
+  "id": "SCN-FIN-006",
+  "category": "finance",
+  "title": "A KES 7,000,000 capital investment exceeds even the CFO's own approval limit",
+  "description": "Catherine Achieng Odongo (Operations Manager) proposes a KES 7,000,000 investment in new warehouse racking and materials-handling equipment across all four distribution centres.",
+  "businessContext": "FIN-POL-002's CFO matrix tier runs up to KES 10,000,000, but the CFO's own canonical approval limit in roles.json is lower.",
+  "actors": [
+    {
+      "employeeId": "EMP-0006",
+      "name": "Catherine Achieng Odongo",
+      "roleId": "ROLE-OPS-MGR",
+      "departmentId": "DEPT-OPS",
+      "role": "Operations Manager"
+    },
+    {
+      "employeeId": "EMP-0001",
+      "name": "Samuel Kariuki",
+      "roleId": "ROLE-CEO",
+      "departmentId": "DEPT-EXEC",
+      "role": "Chief Executive Officer"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0006",
+      "name": "Catherine Achieng Odongo"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0001",
+      "name": "Samuel Kariuki"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-OPS",
+      "name": "Operations"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-FIN",
+      "name": "Microsoft Dynamics 365 Finance"
+    },
+    {
+      "type": "policy",
+      "id": "FIN-POL-002",
+      "name": "Financial Approval & Delegation Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Finance"
+  ],
+  "policies": [
+    "FIN-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Catherine Achieng Odongo proposes a KES 7,000,000 capital investment."
+    },
+    {
+      "sequence": 2,
+      "event": "The amount is checked against the FIN-POL-002 matrix band, which nominally names the CFO for this range."
+    },
+    {
+      "sequence": 3,
+      "event": "The CFO's own approval limit (KES 5,000,000) is found to be lower than the requested amount."
+    },
+    {
+      "sequence": 4,
+      "event": "The request escalates to the CEO."
+    }
+  ],
+  "expectedOutcome": "Although KES 7,000,000 falls within the matrix's stated CFO range (KES 2,000,001-10,000,000), the CFO's own canonical approval limit of KES 5,000,000 is lower than the requested amount. Approval escalates to Samuel Kariuki (Chief Executive Officer).",
+  "relevantFacts": [
+    "The request amount is KES 7,000,000.",
+    "FIN-POL-002 assigns the KES 2,000,001-10,000,000 band to the CFO tier.",
+    "The CFO's approvalLimitKes in data/enterprise/roles.json is KES 5,000,000, below the matrix band's own ceiling of KES 10,000,000.",
+    "FIN-POL-002: 'A role-specific authority may be lower and the lower limit applies... above KES 10,000,000, CEO or Executive Committee.'"
+  ],
+  "requiredReasoning": [
+    "Identify the nominal FIN-POL-002 matrix tier for this amount.",
+    "Cross-reference the CFO's actual canonical approval limit in roles.json.",
+    "Recognise the canonical limit is lower than the matrix band ceiling.",
+    "Conclude that CEO approval is required even though the amount is below the matrix's stated KES 10,000,000 CFO ceiling."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0006",
+      "type": "belongs_to",
+      "to": "DEPT-OPS"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "calculation",
+    "multi_hop",
+    "exception"
+  ],
+  "tags": [
+    "finance",
+    "approval-matrix",
+    "boundary"
+  ]
+}

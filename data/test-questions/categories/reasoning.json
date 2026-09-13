@@ -1,0 +1,4423 @@
+[
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 50,000. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Department Manager is the nominal approval tier; the resolved Department Manager role has KES 200,000 authority, which covers the KES 50,000 request.",
+    "acceptableAnswerPoints": [
+      "Department Manager",
+      "Department Manager",
+      "KES 200,000",
+      "sufficient"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-DEPT-MGR"
+      }
+    ],
+    "entities": [
+      "ROLE-DEPT-MGR"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-001"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 50,001. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Department Head is the nominal approval tier; the resolved Department Manager role has KES 200,000 authority, which covers the KES 50,001 request.",
+    "acceptableAnswerPoints": [
+      "Department Head",
+      "Department Manager",
+      "KES 200,000",
+      "sufficient"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-DEPT-MGR"
+      }
+    ],
+    "entities": [
+      "ROLE-DEPT-MGR"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-002"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 500,000. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Department Head is the nominal tier, but the resolved Department Manager role has KES 200,000 authority, which is insufficient; the request must escalate.",
+    "acceptableAnswerPoints": [
+      "Department Head",
+      "Department Manager",
+      "KES 200,000",
+      "escalate"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-DEPT-MGR"
+      }
+    ],
+    "entities": [
+      "ROLE-DEPT-MGR"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-003"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 500,001. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Finance Manager is the nominal approval tier; the resolved Finance Manager role has KES 1,000,000 authority, which covers the KES 500,001 request.",
+    "acceptableAnswerPoints": [
+      "Finance Manager",
+      "Finance Manager",
+      "KES 1,000,000",
+      "sufficient"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-FIN-MGR"
+      }
+    ],
+    "entities": [
+      "ROLE-FIN-MGR"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-004"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 2,000,000. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Finance Manager is the nominal tier, but the resolved Finance Manager role has KES 1,000,000 authority, which is insufficient; the request must escalate.",
+    "acceptableAnswerPoints": [
+      "Finance Manager",
+      "Finance Manager",
+      "KES 1,000,000",
+      "escalate"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-FIN-MGR"
+      }
+    ],
+    "entities": [
+      "ROLE-FIN-MGR"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-005"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 2,000,001. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "CFO is the nominal approval tier; the resolved Chief Financial Officer role has KES 5,000,000 authority, which covers the KES 2,000,001 request.",
+    "acceptableAnswerPoints": [
+      "CFO",
+      "Chief Financial Officer",
+      "KES 5,000,000",
+      "sufficient"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-CFO"
+      }
+    ],
+    "entities": [
+      "ROLE-CFO"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-006"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 10,000,000. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "CFO is the nominal tier, but the resolved Chief Financial Officer role has KES 5,000,000 authority, which is insufficient; the request must escalate.",
+    "acceptableAnswerPoints": [
+      "CFO",
+      "Chief Financial Officer",
+      "KES 5,000,000",
+      "escalate"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-CFO"
+      }
+    ],
+    "entities": [
+      "ROLE-CFO"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-007"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 10,000,001. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "CEO or Executive Committee is the nominal tier, but the resolved Chief Executive Officer role has no recorded limit authority, which is insufficient; the request must escalate.",
+    "acceptableAnswerPoints": [
+      "CEO or Executive Committee",
+      "Chief Executive Officer",
+      "no recorded limit",
+      "escalate"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-CEO"
+      }
+    ],
+    "entities": [
+      "ROLE-CEO"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-008"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 750,000. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "Finance Manager is the nominal approval tier; the resolved Finance Manager role has KES 1,000,000 authority, which covers the KES 750,000 request.",
+    "acceptableAnswerPoints": [
+      "Finance Manager",
+      "Finance Manager",
+      "KES 1,000,000",
+      "sufficient"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-FIN-MGR"
+      }
+    ],
+    "entities": [
+      "ROLE-FIN-MGR"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-009"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "A department wants to make a purchase of KES 1,500,000. Which approval path applies, and is the nominal approver's actual authority sufficient?",
+    "category": "reasoning",
+    "subcategory": "approval-boundary",
+    "difficulty": "expert",
+    "answerability": "answerable",
+    "expectedAnswer": "Finance Manager is the nominal tier, but the resolved Finance Manager role has KES 1,000,000 authority, which is insufficient; the request must escalate.",
+    "acceptableAnswerPoints": [
+      "Finance Manager",
+      "Finance Manager",
+      "KES 1,000,000",
+      "escalate"
+    ],
+    "requiredSources": [
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Approval Authority"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-FIN-MGR"
+      }
+    ],
+    "entities": [
+      "ROLE-FIN-MGR"
+    ],
+    "systems": [],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Identify the amount.",
+      "Locate the approval band in FIN-POL-002.",
+      "Resolve the representative canonical role and its approval limit.",
+      "Compare the actual limit with the requested amount."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "approval",
+      "boundary",
+      "multi-hop"
+    ],
+    "id": "Q-REASON-010"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should Tumaini Gold Cooking Oil 5L at Nairobi Distribution Centre be reviewed for replenishment, given 1140 available units and a reorder level of 300?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "1140 available units are above or equal to the reorder level, so replenishment is not triggered by the recorded threshold. The reorder quantity is 1000.",
+    "acceptableAnswerPoints": [
+      "1140",
+      "300",
+      "not triggered"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0001"
+      },
+      {
+        "type": "product",
+        "id": "PRD-001"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0001",
+      "PRD-001",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-011"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should SVGA Value Cooking Oil 5L at Nairobi Distribution Centre be reviewed for replenishment, given 409 available units and a reorder level of 350?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "409 available units are above or equal to the reorder level, so replenishment is not triggered by the recorded threshold. The reorder quantity is 1200.",
+    "acceptableAnswerPoints": [
+      "409",
+      "350",
+      "not triggered"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0002"
+      },
+      {
+        "type": "product",
+        "id": "PRD-002"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0002",
+      "PRD-002",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-012"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should Tumaini Maize Flour 2Kg at Nairobi Distribution Centre be reviewed for replenishment, given 255 available units and a reorder level of 500?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "255 available units are below the reorder level, so replenishment review is required. The reorder quantity is 2000.",
+    "acceptableAnswerPoints": [
+      "255",
+      "500",
+      "replenishment review"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0003"
+      },
+      {
+        "type": "product",
+        "id": "PRD-003"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0003",
+      "PRD-003",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-013"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should SVGA Value Maize Flour 2Kg at Nairobi Distribution Centre be reviewed for replenishment, given 0 available units and a reorder level of 600?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "0 available units are below the reorder level, so replenishment review is required. The reorder quantity is 2500.",
+    "acceptableAnswerPoints": [
+      "0",
+      "600",
+      "replenishment review"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0004"
+      },
+      {
+        "type": "product",
+        "id": "PRD-004"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0004",
+      "PRD-004",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-014"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should Tumaini Wheat Flour 2Kg at Nairobi Distribution Centre be reviewed for replenishment, given 810 available units and a reorder level of 450?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "810 available units are above or equal to the reorder level, so replenishment is not triggered by the recorded threshold. The reorder quantity is 1800.",
+    "acceptableAnswerPoints": [
+      "810",
+      "450",
+      "not triggered"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0005"
+      },
+      {
+        "type": "product",
+        "id": "PRD-005"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0005",
+      "PRD-005",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-015"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should SVGA Value Wheat Flour 2Kg at Nairobi Distribution Centre be reviewed for replenishment, given 2090 available units and a reorder level of 550?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "2090 available units are above or equal to the reorder level, so replenishment is not triggered by the recorded threshold. The reorder quantity is 2200.",
+    "acceptableAnswerPoints": [
+      "2090",
+      "550",
+      "not triggered"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0006"
+      },
+      {
+        "type": "product",
+        "id": "PRD-006"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0006",
+      "PRD-006",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-016"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should Tumaini Pishori Rice 5Kg at Nairobi Distribution Centre be reviewed for replenishment, given 351 available units and a reorder level of 300?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "351 available units are above or equal to the reorder level, so replenishment is not triggered by the recorded threshold. The reorder quantity is 1000.",
+    "acceptableAnswerPoints": [
+      "351",
+      "300",
+      "not triggered"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0007"
+      },
+      {
+        "type": "product",
+        "id": "PRD-007"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0007",
+      "PRD-007",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-017"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should SVGA Value Rice 5Kg at Nairobi Distribution Centre be reviewed for replenishment, given 178 available units and a reorder level of 350?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "178 available units are below the reorder level, so replenishment review is required. The reorder quantity is 1200.",
+    "acceptableAnswerPoints": [
+      "178",
+      "350",
+      "replenishment review"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0008"
+      },
+      {
+        "type": "product",
+        "id": "PRD-008"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0008",
+      "PRD-008",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-018"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should Tumaini White Sugar 2Kg at Nairobi Distribution Centre be reviewed for replenishment, given 0 available units and a reorder level of 400?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "0 available units are below the reorder level, so replenishment review is required. The reorder quantity is 1500.",
+    "acceptableAnswerPoints": [
+      "0",
+      "400",
+      "replenishment review"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0009"
+      },
+      {
+        "type": "product",
+        "id": "PRD-009"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0009",
+      "PRD-009",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-019"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "Should SVGA Value White Sugar 2Kg at Nairobi Distribution Centre be reviewed for replenishment, given 810 available units and a reorder level of 450?",
+    "category": "reasoning",
+    "subcategory": "inventory-threshold",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "810 available units are above or equal to the reorder level, so replenishment is not triggered by the recorded threshold. The reorder quantity is 1800.",
+    "acceptableAnswerPoints": [
+      "810",
+      "450",
+      "not triggered"
+    ],
+    "requiredSources": [
+      {
+        "type": "inventory",
+        "id": "INV-0010"
+      },
+      {
+        "type": "product",
+        "id": "PRD-010"
+      },
+      {
+        "type": "warehouse",
+        "id": "WH-NRB-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Procedures and Requirements"
+      }
+    ],
+    "entities": [
+      "INV-0010",
+      "PRD-010",
+      "WH-NRB-001"
+    ],
+    "systems": [],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [],
+    "reasoningSteps": [
+      "Read quantityAvailable and reorderLevel.",
+      "Compare available stock with the threshold.",
+      "Apply the inventory replenishment rule.",
+      "Read the canonical reorder quantity."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "inventory-availability",
+      "boundary"
+    ],
+    "id": "Q-REASON-020"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-COMP-001: Beatrice Wangari Kamau requests a copy of their own personal data held by HR?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The request should be logged with Compliance and coordinated with HR as the record owner; the employee is entitled to their own personal data absent an active legal hold, investigation or unresolved dispute, which would be identified and explained rather than silently withholding the data.",
+    "acceptableAnswerPoints": [
+      "The request should be logged with Compliance and coordinated with HR as the record owner; the employee is entitled to their own personal data absent an active legal hold, investigation or unresolved dispute, which would be identified and explained rather than silently withholding the data."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-COMP-001"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0038",
+      "EMP-0003",
+      "EMP-0008",
+      "DEPT-HR",
+      "SYS-HR",
+      "SYS-DMS",
+      "COMP-POL-001",
+      "GEN-POL-001"
+    ],
+    "systems": [
+      "Employee Management System",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-001",
+      "GEN-POL-001"
+    ],
+    "scenarios": [
+      "SCN-COMP-001"
+    ],
+    "reasoningSteps": [
+      "Identify who logs and coordinates a data subject request.",
+      "Identify the only grounds on which the data could be withheld."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "data-protection",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-021"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-COMP-002: Sharon Atieno Onyango accidentally emails a customer contact list to the wrong recipient?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "This is a reportable data incident: it must be reported immediately, not quietly corrected. Compliance assesses the scope of exposure, containment (such as requesting deletion by the recipient) and whether affected customers or authorities must be notified, following COMP-POL-001 and the IT-POL-002 incident process.",
+    "acceptableAnswerPoints": [
+      "This is a reportable data incident: it must be reported immediately, not quietly corrected. Compliance assesses the scope of exposure, containment (such as requesting deletion by the recipient) and whether affected customers or authorities must be notified, following COMP-POL-001 and the IT-POL-002 incident process."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-COMP-002"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0018",
+      "EMP-0008",
+      "DEPT-SALES",
+      "SYS-D365-SALES",
+      "SYS-SD",
+      "SYS-DMS",
+      "COMP-POL-001",
+      "IT-POL-002",
+      "GEN-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "IT Service Desk",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-001",
+      "GEN-POL-001",
+      "IT-POL-002"
+    ],
+    "scenarios": [
+      "SCN-COMP-002"
+    ],
+    "reasoningSteps": [
+      "Recognise that a misdirected email containing personal data is a reportable incident, not a minor mistake.",
+      "Identify the immediate reporting obligation and to whom.",
+      "Identify what Compliance must assess once notified."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "data-protection",
+      "negative",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-022"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-COMP-003: Compliance investigates whether the Procurement Manager has an undisclosed interest in Amani Personal Care?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Esther Wanjiku Kamau must be withdrawn from any decision involving Amani Personal Care while Compliance investigates; PROC-POL-002 approvals for that supplier require an alternative approver during this period, and the employee \"cooperate[s] and does not investigate a subject they are connected to\" per COMP-POL-002.",
+    "acceptableAnswerPoints": [
+      "Esther Wanjiku Kamau must be withdrawn from any decision involving Amani Personal Care while Compliance investigates; PROC-POL-002 approvals for that supplier require an alternative approver during this period, and the employee \"cooperate[s] and does not investigate a subject they are connected to\" per COMP-POL-002."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-COMP-003"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0004",
+      "EMP-0008",
+      "SUP-007",
+      "SYS-DMS",
+      "SYS-D365-SCM",
+      "COMP-POL-002",
+      "PROC-POL-002",
+      "GEN-POL-001"
+    ],
+    "systems": [
+      "Enterprise Document Management System",
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "COMP-POL-002",
+      "GEN-POL-001",
+      "PROC-POL-002"
+    ],
+    "scenarios": [
+      "SCN-COMP-003"
+    ],
+    "reasoningSteps": [
+      "Identify the conflict between the role that approves this supplier and the person under investigation.",
+      "Determine who takes over approval authority for this supplier during the investigation.",
+      "Identify the records-preservation obligation that applies regardless of outcome."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "conflict-of-interest",
+      "negative",
+      "procurement",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-023"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-COMP-004: East Africa Foods offers Michael Odhiambo Owino a gift valued at exactly the disclosure threshold?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "At exactly KES 5,000, the gift meets the \"KES 5,000 or more\" disclosure threshold and must be disclosed to the Compliance Manager before acceptance and recorded in the gifts register; it is not automatically prohibited, since it remains below the KES 20,000 prohibition threshold.",
+    "acceptableAnswerPoints": [
+      "At exactly KES 5,000, the gift meets the \"KES 5,000 or more\" disclosure threshold and must be disclosed to the Compliance Manager before acceptance and recorded in the gifts register; it is not automatically prohibited, since it remains below the KES 20,000 prohibition threshold."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-COMP-004"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0021",
+      "EMP-0008",
+      "SUP-001",
+      "SYS-DMS",
+      "COMP-POL-002"
+    ],
+    "systems": [
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-002"
+    ],
+    "scenarios": [
+      "SCN-COMP-004"
+    ],
+    "reasoningSteps": [
+      "Compare the exact gift value against the KES 5,000 disclosure threshold.",
+      "Compare it separately against the KES 20,000 prohibition threshold.",
+      "Conclude disclosure is required but the gift is not outright prohibited."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "boundary",
+      "compliance",
+      "gifts-and-hospitality",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-024"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-COMP-005: A Prime Pack contact suggests a \"facilitation fee\" would speed up a pending purchase order?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "The payment must not be made under any circumstances, and the suggestion itself must be reported to Compliance. COMP-POL-002 states \"facilitation payments are prohibited\" and \"a transaction cannot be made acceptable by labelling it a marketing cost or emergency\"; the employee cannot treat this as a minor accommodation to keep the order moving.",
+    "acceptableAnswerPoints": [
+      "The payment must not be made under any circumstances, and the suggestion itself must be reported to Compliance. COMP-POL-002 states \"facilitation payments are prohibited\" and \"a transaction cannot be made acceptable by labelling it a marketing cost or emergency\"; the employee cannot treat this as a minor accommodation to keep the order moving."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-COMP-005"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0015",
+      "EMP-0008",
+      "SUP-010",
+      "SYS-DMS",
+      "COMP-POL-002"
+    ],
+    "systems": [
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-002"
+    ],
+    "scenarios": [
+      "SCN-COMP-005"
+    ],
+    "reasoningSteps": [
+      "Identify that the suggested payment is a facilitation payment, not a legitimate fee.",
+      "Confirm facilitation payments are prohibited outright, independent of amount.",
+      "Identify the reporting obligation that follows."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "anti-bribery",
+      "compliance",
+      "negative",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-025"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-FIN-001: Timothy Mwendwa Musyoka submits a KES 8,500 local transport expense claim with a receipt?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "The claim is eligible for standard processing: KES 8,500 exceeds the KES 2,000 receipt threshold and a receipt is attached, so the claim proceeds to manager confirmation and Finance review without an exception.",
+    "acceptableAnswerPoints": [
+      "The claim is eligible for standard processing: KES 8,500 exceeds the KES 2,000 receipt threshold and a receipt is attached, so the claim proceeds to manager confirmation and Finance review without an exception."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-FIN-001"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0032",
+      "DEPT-FIN",
+      "SYS-D365-FIN",
+      "FIN-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-001"
+    ],
+    "scenarios": [
+      "SCN-FIN-001"
+    ],
+    "reasoningSteps": [
+      "Check whether the amount requires a receipt under the KES 2,000 threshold.",
+      "Confirm a receipt is attached.",
+      "Confirm no exception handling is triggered."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "expense-claim",
+      "finance",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-026"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-FIN-002: Collins Wekesa Masinde claims travel reimbursement for a Nairobi head-office visit?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The accommodation claim of KES 12,000 per night is exactly at the FIN-POL-001 cap and requires no exception; meal claims remain reimbursable up to KES 3,000 per person per meal. The travel itself was authorised under OPS-POL-001, with financial approval following the FIN-POL-002 matrix.",
+    "acceptableAnswerPoints": [
+      "The accommodation claim of KES 12,000 per night is exactly at the FIN-POL-001 cap and requires no exception; meal claims remain reimbursable up to KES 3,000 per person per meal. The travel itself was authorised under OPS-POL-001, with financial approval following the FIN-POL-002 matrix."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-FIN-002"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0019",
+      "DEPT-SALES",
+      "SYS-D365-FIN",
+      "SYS-DMS",
+      "OPS-POL-001",
+      "FIN-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "FIN-POL-001",
+      "FIN-POL-002",
+      "OPS-POL-001"
+    ],
+    "scenarios": [
+      "SCN-FIN-002"
+    ],
+    "reasoningSteps": [
+      "Compare the claimed accommodation rate against the FIN-POL-001/OPS-POL-001 cap.",
+      "Determine whether an exception is required at this rate.",
+      "Identify which policy governs the travel authorisation versus the expense claim itself."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "boundary",
+      "finance",
+      "scenario",
+      "travel",
+      "workflow"
+    ],
+    "id": "Q-REASON-027"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-FIN-003: A KES 150,000 warehouse consumables purchase needs approval while the Warehouse Manager is on leave?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Catherine Achieng Odongo may approve the KES 150,000 requisition as the formally recorded delegate while Nancy Wairimu Ndungu is on leave, provided the delegation is documented with its dates and scope; delegation must not be used to let the traveling manager pre-approve their own request before departure or to bypass segregation of duties.",
+    "acceptableAnswerPoints": [
+      "Catherine Achieng Odongo may approve the KES 150,000 requisition as the formally recorded delegate while Nancy Wairimu Ndungu is on leave, provided the delegation is documented with its dates and scope; delegation must not be used to let the traveling manager pre-approve their own request before departure or to bypass segregation of duties."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-FIN-003"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0022",
+      "EMP-0006",
+      "DEPT-WH",
+      "SYS-D365-FIN",
+      "SYS-D365-SCM",
+      "FIN-POL-002",
+      "HR-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance",
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "HR-POL-001"
+    ],
+    "scenarios": [
+      "SCN-FIN-003"
+    ],
+    "reasoningSteps": [
+      "Confirm the primary approver is unavailable and why.",
+      "Identify a suitable delegate given the reporting structure.",
+      "Confirm the delegation is formally recorded, not informal."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "delegation",
+      "finance",
+      "scenario",
+      "warehouse",
+      "workflow"
+    ],
+    "id": "Q-REASON-028"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-FIN-004: George Otieno Oduor asks whether \"an expense\" is reimbursable without saying what it is?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "There is not enough information to answer. FIN-POL-001 eligibility depends on the expense category (some categories, like alcohol or personal purchases, are never reimbursable) and the amount determines whether a receipt is mandatory. The correct response is to ask what the expense was, its amount, and whether a receipt exists - not to assume it is reimbursable.",
+    "acceptableAnswerPoints": [
+      "There is not enough information to answer. FIN-POL-001 eligibility depends on the expense category (some categories, like alcohol or personal purchases, are never reimbursable) and the amount determines whether a receipt is mandatory. The correct response is to ask what the expense was, its amount, and whether a receipt exists - not to assume it is reimbursable."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-FIN-004"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0028",
+      "DEPT-CS",
+      "SYS-D365-FIN",
+      "FIN-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-001"
+    ],
+    "scenarios": [
+      "SCN-FIN-004"
+    ],
+    "reasoningSteps": [
+      "Identify what information FIN-POL-001 requires to determine reimbursability.",
+      "Confirm that category and amount are both missing from the request.",
+      "Conclude that a definitive answer cannot be given without that information."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "abstention",
+      "finance",
+      "insufficient-information",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-029"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-FIN-005: A KES 1,500,000 contract commitment exceeds the Finance Manager's own approval limit?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Although KES 1,500,000 falls within the matrix's stated Finance Manager range (KES 500,001-2,000,000), the Finance Manager's own canonical approval limit of KES 1,000,000 is lower than the requested amount. Per FIN-POL-002's rule that \"a role-specific authority may be lower and the lower limit applies,\" approval escalates to Grace Njeri Mwangi (Chief Financial Officer).",
+    "acceptableAnswerPoints": [
+      "Although KES 1,500,000 falls within the matrix's stated Finance Manager range (KES 500,001-2,000,000), the Finance Manager's own canonical approval limit of KES 1,000,000 is lower than the requested amount. Per FIN-POL-002's rule that \"a role-specific authority may be lower and the lower limit applies,\" approval escalates to Grace Njeri Mwangi (Chief Financial Officer)."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-FIN-005"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0009",
+      "EMP-0002",
+      "DEPT-LEGAL",
+      "SYS-D365-FIN",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [
+      "SCN-FIN-005"
+    ],
+    "reasoningSteps": [
+      "Identify the nominal FIN-POL-002 matrix tier for this amount.",
+      "Cross-reference the named tier's actual canonical approval limit in roles.json, not just the matrix band's ceiling.",
+      "Recognise the canonical limit is lower than the matrix band ceiling.",
+      "Escalate to the next tier whose own limit is sufficient."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "approval-matrix",
+      "boundary",
+      "finance",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-030"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-FIN-006: A KES 7,000,000 capital investment exceeds even the CFO's own approval limit?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Although KES 7,000,000 falls within the matrix's stated CFO range (KES 2,000,001-10,000,000), the CFO's own canonical approval limit of KES 5,000,000 is lower than the requested amount. Approval escalates to Samuel Kariuki (Chief Executive Officer).",
+    "acceptableAnswerPoints": [
+      "Although KES 7,000,000 falls within the matrix's stated CFO range (KES 2,000,001-10,000,000), the CFO's own canonical approval limit of KES 5,000,000 is lower than the requested amount. Approval escalates to Samuel Kariuki (Chief Executive Officer)."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-FIN-006"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0006",
+      "EMP-0001",
+      "DEPT-OPS",
+      "SYS-D365-FIN",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002"
+    ],
+    "scenarios": [
+      "SCN-FIN-006"
+    ],
+    "reasoningSteps": [
+      "Identify the nominal FIN-POL-002 matrix tier for this amount.",
+      "Cross-reference the CFO's actual canonical approval limit in roles.json.",
+      "Recognise the canonical limit is lower than the matrix band ceiling.",
+      "Conclude that CEO approval is required even though the amount is below the matrix's stated KES 10,000,000 CFO ceiling."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "approval-matrix",
+      "boundary",
+      "finance",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-031"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INC-001: Caroline Nasimiyu Wafula cannot log in to Microsoft Dynamics 365 Finance?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "This is a P3 Medium incident under IT-POL-002 (\"P3 Medium incidents affect a limited service\") with a 240-minute response target, since it affects one user and one system rather than a critical system or widespread operations. The service desk triages, categorises and assigns it accordingly.",
+    "acceptableAnswerPoints": [
+      "This is a P3 Medium incident under IT-POL-002 (\"P3 Medium incidents affect a limited service\") with a 240-minute response target, since it affects one user and one system rather than a critical system or widespread operations. The service desk triages, categorises and assigns it accordingly."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INC-001"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0033",
+      "EMP-0007",
+      "SYS-D365-FIN",
+      "SYS-SD",
+      "IT-POL-002",
+      "IT-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance",
+      "IT Service Desk"
+    ],
+    "policies": [
+      "IT-POL-001",
+      "IT-POL-002"
+    ],
+    "scenarios": [
+      "SCN-INC-001"
+    ],
+    "reasoningSteps": [
+      "Assess the scope of impact: one user versus widespread operations.",
+      "Match that scope to the correct P1-P4 severity definition.",
+      "State the corresponding response target."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "incidents",
+      "it-access",
+      "scenario",
+      "severity",
+      "workflow"
+    ],
+    "id": "Q-REASON-032"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INC-002: Unusual login activity is detected on Winnie Adhiambo Ouma's account outside normal hours?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "This is treated as a P1 or P2 incident given the confirmed suspicious security pattern: the service desk escalates immediately per IT-POL-002, the account is suspended under IT-POL-001 pending investigation, and Compliance assesses scope, containment and notification under COMP-POL-001 rather than the matter being dismissed as routine activity.",
+    "acceptableAnswerPoints": [
+      "This is treated as a P1 or P2 incident given the confirmed suspicious security pattern: the service desk escalates immediately per IT-POL-002, the account is suspended under IT-POL-001 pending investigation, and Compliance assesses scope, containment and notification under COMP-POL-001 rather than the matter being dismissed as routine activity."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INC-002"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0024",
+      "EMP-0007",
+      "SYS-IAM",
+      "SYS-DMS",
+      "SYS-SD",
+      "IT-POL-002",
+      "IT-POL-001",
+      "COMP-POL-001"
+    ],
+    "systems": [
+      "Identity and Access Management System",
+      "Enterprise Document Management System",
+      "IT Service Desk"
+    ],
+    "policies": [
+      "COMP-POL-001",
+      "IT-POL-001",
+      "IT-POL-002"
+    ],
+    "scenarios": [
+      "SCN-INC-002"
+    ],
+    "reasoningSteps": [
+      "Identify the anomalous signals: timing and access pattern outside role norms.",
+      "Classify the severity given the security exposure.",
+      "Identify the immediate containment action (account suspension) and the parties to notify."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "incidents",
+      "negative",
+      "scenario",
+      "security",
+      "workflow"
+    ],
+    "id": "Q-REASON-033"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INC-003: Microsoft Dynamics 365 Sales is unavailable company-wide?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "This is a P1 Critical incident: it threatens a critical system and widespread operations. The service desk must acknowledge within 15 minutes and escalate immediately, the IT Manager coordinates the response and provides business updates, and a post-incident review with actions and owners follows restoration.",
+    "acceptableAnswerPoints": [
+      "This is a P1 Critical incident: it threatens a critical system and widespread operations. The service desk must acknowledge within 15 minutes and escalate immediately, the IT Manager coordinates the response and provides business updates, and a post-incident review with actions and owners follows restoration."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INC-003"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0007",
+      "EMP-0005",
+      "SYS-D365-SALES",
+      "DEPT-SALES",
+      "SYS-SD",
+      "IT-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "IT Service Desk"
+    ],
+    "policies": [
+      "IT-POL-002"
+    ],
+    "scenarios": [
+      "SCN-INC-003"
+    ],
+    "reasoningSteps": [
+      "Assess the scope of impact: company-wide versus a single user.",
+      "Match that scope to the P1 definition.",
+      "Identify the required acknowledgement time and follow-up review."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "incidents",
+      "p1",
+      "sales",
+      "scenario",
+      "system-outage",
+      "workflow"
+    ],
+    "id": "Q-REASON-034"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INC-004: George Otieno Oduor reports that \"something seems wrong\" without further detail?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The report cannot yet be classified as P1-P4 or routed to a resolver group: IT-POL-002 requires the affected system, symptoms, time, location and business impact to triage a ticket. The correct next step is for the service desk to gather these specifics from the employee, not to guess a severity level or close the ticket.",
+    "acceptableAnswerPoints": [
+      "The report cannot yet be classified as P1-P4 or routed to a resolver group: IT-POL-002 requires the affected system, symptoms, time, location and business impact to triage a ticket. The correct next step is for the service desk to gather these specifics from the employee, not to guess a severity level or close the ticket."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INC-004"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0028",
+      "SYS-SD",
+      "IT-POL-002"
+    ],
+    "systems": [
+      "IT Service Desk"
+    ],
+    "policies": [
+      "IT-POL-002"
+    ],
+    "scenarios": [
+      "SCN-INC-004"
+    ],
+    "reasoningSteps": [
+      "Identify the information IT-POL-002 requires to triage a ticket.",
+      "Confirm that information is missing from this report.",
+      "Conclude that severity cannot be classified yet, and clarification must be sought first."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "abstention",
+      "incidents",
+      "insufficient-information",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-035"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INC-005: A quarterly access review finds a departed employee's account still enabled?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "This is a control failure that must be logged and investigated, not just quietly corrected: the account should have been disabled at or near the termination date under HR-POL-002 and IT-POL-001, and a month-long gap discovered only by a scheduled review is treated as an incident requiring root-cause analysis, not a routine finding.",
+    "acceptableAnswerPoints": [
+      "This is a control failure that must be logged and investigated, not just quietly corrected: the account should have been disabled at or near the termination date under HR-POL-002 and IT-POL-001, and a month-long gap discovered only by a scheduled review is treated as an incident requiring root-cause analysis, not a routine finding."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INC-005"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0031",
+      "EMP-0011",
+      "EMP-0007",
+      "SYS-IAM",
+      "SYS-SD",
+      "IT-POL-001",
+      "HR-POL-002",
+      "IT-POL-002"
+    ],
+    "systems": [
+      "Identity and Access Management System",
+      "IT Service Desk"
+    ],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001",
+      "IT-POL-002"
+    ],
+    "scenarios": [
+      "SCN-INC-005"
+    ],
+    "reasoningSteps": [
+      "Determine how long the account remained active after the employment relationship ended.",
+      "Identify which policy required the account to be disabled promptly.",
+      "Determine whether discovery via a scheduled review, rather than the original handoff, indicates a control failure."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "incidents",
+      "it-access",
+      "negative",
+      "offboarding",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-036"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INV-001: Chemchemi Bottled Water 500ml (24-pack) at Nairobi Distribution Centre has fallen below its reorder level?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Per INV-POL-001, the Inventory Manager (Michael Odhiambo Owino) reviews demand, open purchase orders, stock in other warehouses and expected lead time before a purchase request or transfer is raised; reaching the reorder level is a review trigger, not an automatic purchase commitment, and the resulting request would still follow PROC-POL-001 and FIN-POL-002.",
+    "acceptableAnswerPoints": [
+      "Per INV-POL-001, the Inventory Manager (Michael Odhiambo Owino) reviews demand, open purchase orders, stock in other warehouses and expected lead time before a purchase request or transfer is raised; reaching the reorder level is a review trigger, not an automatic purchase commitment, and the resulting request would still follow PROC-POL-001 and FIN-POL-002."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INV-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0021",
+      "PRD-013",
+      "INV-0013",
+      "WH-NRB-001",
+      "SYS-D365-SCM",
+      "INV-POL-001",
+      "PROC-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001",
+      "PROC-POL-001"
+    ],
+    "scenarios": [
+      "SCN-INV-001"
+    ],
+    "reasoningSteps": [
+      "Compare quantityAvailable against reorderLevel.",
+      "Identify who is responsible for the replenishment review.",
+      "Recognise that crossing the reorder level does not itself authorise a purchase."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "reorder",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-037"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INV-002: Tumaini White Sugar 2Kg is completely out of stock at Nairobi Distribution Centre?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Tumaini White Sugar 2Kg cannot be sold from Nairobi Distribution Centre until stock is replenished or transferred in; quantityAvailable is exactly 0 (quantityOnHand 0 minus quantityReserved 0). Sales must check other warehouses or trigger a reorder through Inventory before promising this product to a customer from this site.",
+    "acceptableAnswerPoints": [
+      "Tumaini White Sugar 2Kg cannot be sold from Nairobi Distribution Centre until stock is replenished or transferred in; quantityAvailable is exactly 0 (quantityOnHand 0 minus quantityReserved 0). Sales must check other warehouses or trigger a reorder through Inventory before promising this product to a customer from this site."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INV-002"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0021",
+      "PRD-009",
+      "INV-0009",
+      "WH-NRB-001",
+      "SYS-D365-SCM",
+      "INV-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [
+      "SCN-INV-002"
+    ],
+    "reasoningSteps": [
+      "Confirm quantityAvailable is zero by subtracting quantityReserved from quantityOnHand.",
+      "Determine that no reservation against a new order is possible at this site.",
+      "Identify the next step: check other warehouses or trigger replenishment."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "out-of-stock",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-038"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INV-003: A large share of Tumaini Wheat Flour 2Kg stock at Nairobi Distribution Centre is already reserved?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Only 810 units of Tumaini Wheat Flour 2Kg are actually available to promise to a new customer at Nairobi Distribution Centre, even though 1350 units are physically on hand, because 540 units are already committed to approved demand under INV-POL-001.",
+    "acceptableAnswerPoints": [
+      "Only 810 units of Tumaini Wheat Flour 2Kg are actually available to promise to a new customer at Nairobi Distribution Centre, even though 1350 units are physically on hand, because 540 units are already committed to approved demand under INV-POL-001."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INV-003"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0021",
+      "PRD-005",
+      "INV-0005",
+      "WH-NRB-001",
+      "SYS-D365-SCM",
+      "INV-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [
+      "SCN-INV-003"
+    ],
+    "reasoningSteps": [
+      "Distinguish quantityOnHand from quantityAvailable.",
+      "Calculate quantityAvailable as quantityOnHand minus quantityReserved.",
+      "Recognise that physical stock alone overstates what can be sold."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "reserved-stock",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-039"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INV-004: A cycle count of SVGA Value Wheat Flour 2Kg at Nairobi Distribution Centre finds a variance against the system balance?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "The variance of 50 units must not be silently corrected. INV-POL-001 requires the count evidence (location, product, expected and counted balance, variance) to be recorded, an independent review of the adjustment, and - since this may be a write-off for loss - approval at the level set by FIN-POL-002 in addition to the Inventory Manager's sign-off. No employee may erase the transaction to hide the discrepancy.",
+    "acceptableAnswerPoints": [
+      "The variance of 50 units must not be silently corrected. INV-POL-001 requires the count evidence (location, product, expected and counted balance, variance) to be recorded, an independent review of the adjustment, and - since this may be a write-off for loss - approval at the level set by FIN-POL-002 in addition to the Inventory Manager's sign-off. No employee may erase the transaction to hide the discrepancy."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INV-004"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0021",
+      "EMP-0022",
+      "PRD-006",
+      "INV-0006",
+      "WH-NRB-001",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "INV-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "INV-POL-001"
+    ],
+    "scenarios": [
+      "SCN-INV-004"
+    ],
+    "reasoningSteps": [
+      "Calculate the variance between the system balance and the physical count.",
+      "Identify the records required to document the count.",
+      "Identify who must independently review the adjustment before it is posted.",
+      "Determine whether an additional financial approval level applies to the resulting write-off."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "cycle-count",
+      "discrepancy",
+      "inventory",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-040"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INV-005: Erick Kiprotich Maiyo finds water-damaged cartons of Safi Tissue Paper (10-roll pack) at Kisumu Distribution Centre?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The damaged cartons must be segregated, labelled and held from sale immediately, and reported to both the Warehouse Manager and Inventory Manager before any disposition decision. The warehouse may not create an unexplained adjustment; Inventory approves the accounting treatment under INV-POL-001 and Procurement resolves any supplier claim.",
+    "acceptableAnswerPoints": [
+      "The damaged cartons must be segregated, labelled and held from sale immediately, and reported to both the Warehouse Manager and Inventory Manager before any disposition decision. The warehouse may not create an unexplained adjustment; Inventory approves the accounting treatment under INV-POL-001 and Procurement resolves any supplier claim."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INV-005"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "WH-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0037",
+      "EMP-0022",
+      "EMP-0021",
+      "PRD-025",
+      "WH-KSM-001",
+      "SYS-D365-SCM",
+      "WH-POL-001",
+      "INV-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001",
+      "WH-POL-001"
+    ],
+    "scenarios": [
+      "SCN-INV-005"
+    ],
+    "reasoningSteps": [
+      "Identify the immediate physical control required for damaged stock.",
+      "Identify who must be notified before any disposition decision.",
+      "Recognise that the warehouse cannot unilaterally write off the stock."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "damaged-stock",
+      "inventory",
+      "scenario",
+      "warehouse",
+      "workflow"
+    ],
+    "id": "Q-REASON-041"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INV-006: SVGA Value Soft Drink 300ml (24-pack) at Nairobi Distribution Centre is well stocked with no reorder concern?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "No action is required: quantityAvailable (988) is comfortably above reorderLevel (260) for SVGA Value Soft Drink 300ml (24-pack) at Nairobi Distribution Centre.",
+    "acceptableAnswerPoints": [
+      "No action is required: quantityAvailable (988) is comfortably above reorderLevel (260) for SVGA Value Soft Drink 300ml (24-pack) at Nairobi Distribution Centre."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INV-006"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0021",
+      "PRD-016",
+      "INV-0016",
+      "WH-NRB-001",
+      "SYS-D365-SCM",
+      "INV-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [
+      "SCN-INV-006"
+    ],
+    "reasoningSteps": [
+      "Compare quantityAvailable against reorderLevel.",
+      "Confirm no replenishment trigger applies."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "baseline",
+      "inventory",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-042"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-INV-007: Tumaini Gold Cooking Oil 5L shows very different stock positions across SVGA's four distribution centres?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Fulfilment of a new order for Tumaini Gold Cooking Oil 5L should be routed to the warehouse with the strongest available position, and replenishment should be prioritised at any site where quantityAvailable is at or below reorderLevel. Specifically: Nairobi Distribution Centre: quantityAvailable 1140, reorderLevel 300, status IN_STOCK; Mombasa Distribution Centre: quantityAvailable 211, reorderLevel 180, status IN_STOCK; Kisumu Distribution Centre: quantityAvailable 71, reorderLevel 140, status REORDER_REQUIRED; Nakuru Distribution Centre: quantityAvailable 0, reorderLevel 110, status OUT_OF_STOCK.",
+    "acceptableAnswerPoints": [
+      "Fulfilment of a new order for Tumaini Gold Cooking Oil 5L should be routed to the warehouse with the strongest available position, and replenishment should be prioritised at any site where quantityAvailable is at or below reorderLevel. Specifically: Nairobi Distribution Centre: quantityAvailable 1140, reorderLevel 300, status IN_STOCK; Mombasa Distribution Centre: quantityAvailable 211, reorderLevel 180, status IN_STOCK; Kisumu Distribution Centre: quantityAvailable 71, reorderLevel 140, status REORDER_REQUIRED; Nakuru Distribution Centre: quantityAvailable 0, reorderLevel 110, status OUT_OF_STOCK."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-INV-007"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0021",
+      "PRD-001",
+      "INV-0001",
+      "INV-0036",
+      "INV-0071",
+      "INV-0106",
+      "WH-NRB-001",
+      "WH-MSA-001",
+      "WH-KSM-001",
+      "WH-NKR-001",
+      "SYS-D365-SCM",
+      "INV-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001"
+    ],
+    "scenarios": [
+      "SCN-INV-007"
+    ],
+    "reasoningSteps": [
+      "Retrieve the inventory position for this product at every warehouse.",
+      "Compare quantityAvailable against reorderLevel at each site.",
+      "Rank the warehouses by stock health.",
+      "Recommend a fulfilment source and flag any site needing replenishment."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "comparison",
+      "cross-warehouse",
+      "inventory",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-043"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-ONB-001: New Finance Analyst onboarding requires three system accounts?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "The employee should receive a Finance Analyst access profile covering Microsoft Dynamics 365 Finance (read/write transactional and reconciliation access), the Employee Management System, and the Enterprise Document Management System - provisioned by IT from the HR onboarding record, not granted informally.",
+    "acceptableAnswerPoints": [
+      "The employee should receive a Finance Analyst access profile covering Microsoft Dynamics 365 Finance (read/write transactional and reconciliation access), the Employee Management System, and the Enterprise Document Management System - provisioned by IT from the HR onboarding record, not granted informally."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-ONB-001"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0034",
+      "EMP-0012",
+      "DEPT-FIN",
+      "ROLE-FIN-ANALYST",
+      "SYS-D365-FIN",
+      "SYS-HR",
+      "SYS-DMS",
+      "HR-POL-002",
+      "IT-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance",
+      "Employee Management System",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001"
+    ],
+    "scenarios": [
+      "SCN-ONB-001"
+    ],
+    "reasoningSteps": [
+      "Resolve the employee's canonical role and department.",
+      "Identify the systems that role profile is entitled to under IT-POL-001.",
+      "Confirm the HR-to-IT handoff sequence required by HR-POL-002 before access is granted.",
+      "Distinguish the access this role is entitled to from Finance Manager-level rights, which are not included by default."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "hr",
+      "it-access",
+      "onboarding",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-044"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-ONB-002: Sales Representative completed onboarding but cannot log in to Dynamics 365 Sales?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "This is a provisioning gap, not a new access request: per HR-POL-002, the service desk verifies the HR onboarding record and routes an access correction under IT-POL-001 so the existing Sales Representative profile is applied without requiring fresh manager approval.",
+    "acceptableAnswerPoints": [
+      "This is a provisioning gap, not a new access request: per HR-POL-002, the service desk verifies the HR onboarding record and routes an access correction under IT-POL-001 so the existing Sales Representative profile is applied without requiring fresh manager approval."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-ONB-002"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0020",
+      "EMP-0005",
+      "DEPT-SALES",
+      "SYS-D365-SALES",
+      "SYS-SD",
+      "SYS-IAM",
+      "HR-POL-002",
+      "IT-POL-001",
+      "IT-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "IT Service Desk",
+      "Identity and Access Management System"
+    ],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001",
+      "IT-POL-002"
+    ],
+    "scenarios": [
+      "SCN-ONB-002"
+    ],
+    "reasoningSteps": [
+      "Confirm the HR onboarding record for this employee is complete.",
+      "Determine whether this is a new access request or a provisioning gap for an already-approved role.",
+      "Identify which policy governs the service desk ticket and which policy governs the underlying access correction."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it-access",
+      "negative",
+      "onboarding",
+      "sales",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-045"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-ONB-003: A separated employee is found to still have active system access?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "This is a control failure, not a routine ticket: HR-POL-002 required IT to be notified before the effective end date and IT-POL-001 required prompt disablement. The account must be disabled immediately, the gap window investigated as a possible unauthorised-access exposure under COMP-POL-001, and the failure logged for root-cause review rather than silently closed.",
+    "acceptableAnswerPoints": [
+      "This is a control failure, not a routine ticket: HR-POL-002 required IT to be notified before the effective end date and IT-POL-001 required prompt disablement. The account must be disabled immediately, the gap window investigated as a possible unauthorised-access exposure under COMP-POL-001, and the failure logged for root-cause review rather than silently closed."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-ONB-003"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0030",
+      "EMP-0011",
+      "DEPT-ADMIN",
+      "SYS-IAM",
+      "SYS-DMS",
+      "SYS-SD",
+      "HR-POL-002",
+      "IT-POL-001",
+      "IT-POL-002",
+      "COMP-POL-001"
+    ],
+    "systems": [
+      "Identity and Access Management System",
+      "Enterprise Document Management System",
+      "IT Service Desk"
+    ],
+    "policies": [
+      "COMP-POL-001",
+      "HR-POL-002",
+      "IT-POL-001",
+      "IT-POL-002"
+    ],
+    "scenarios": [
+      "SCN-ONB-003"
+    ],
+    "reasoningSteps": [
+      "Identify which policy obligates HR to notify IT of a separation, and by when.",
+      "Identify which policy obligates IT to act on that notification.",
+      "Determine whether continued access after notification represents normal processing time or a control failure.",
+      "Identify the escalation path for a suspected unauthorised-access exposure."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "it-access",
+      "negative",
+      "offboarding",
+      "onboarding",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-046"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-ONB-004: Kisumu Distribution Centre onboarding requires a handheld scanner and WMS access?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "Equipment procurement for onboarding follows the standard IT Service Desk request path; system access follows the Warehouse Officer role profile under IT-POL-001. Both must be confirmed working before the employee is relied upon for goods-receipt transactions.",
+    "acceptableAnswerPoints": [
+      "Equipment procurement for onboarding follows the standard IT Service Desk request path; system access follows the Warehouse Officer role profile under IT-POL-001. Both must be confirmed working before the employee is relied upon for goods-receipt transactions."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-ONB-004"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0037",
+      "EMP-0022",
+      "DEPT-WH",
+      "WH-KSM-001",
+      "SYS-D365-SCM",
+      "SYS-SD",
+      "SYS-IAM",
+      "HR-POL-002",
+      "IT-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "IT Service Desk",
+      "Identity and Access Management System"
+    ],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001"
+    ],
+    "scenarios": [
+      "SCN-ONB-004"
+    ],
+    "reasoningSteps": [
+      "Identify the employee's warehouse and role.",
+      "Separate the equipment-provisioning step from the system-access step.",
+      "Confirm both are prerequisites before the employee can process transactions independently."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "equipment",
+      "it-access",
+      "onboarding",
+      "scenario",
+      "warehouse",
+      "workflow"
+    ],
+    "id": "Q-REASON-047"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-ONB-005: IT Manager requests elevated Finance approval rights for an IT Support Officer without justification?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The request should be rejected as submitted. IT-POL-001 maps access to canonical role duties on a least-privilege basis; an IT Support Officer's role profile does not include Finance approval rights, and a manager's informal request is explicitly insufficient grounds to grant them. A formal role change and Finance Manager sign-off would be required first.",
+    "acceptableAnswerPoints": [
+      "The request should be rejected as submitted. IT-POL-001 maps access to canonical role duties on a least-privilege basis; an IT Support Officer's role profile does not include Finance approval rights, and a manager's informal request is explicitly insufficient grounds to grant them. A formal role change and Finance Manager sign-off would be required first."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-ONB-005"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0007",
+      "EMP-0024",
+      "DEPT-IT",
+      "SYS-IAM",
+      "SYS-D365-FIN",
+      "IT-POL-001"
+    ],
+    "systems": [
+      "Identity and Access Management System",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "IT-POL-001"
+    ],
+    "scenarios": [
+      "SCN-ONB-005"
+    ],
+    "reasoningSteps": [
+      "Compare the requested access against the employee's canonical role profile.",
+      "Determine whether an informal request from a manager, without a role change, satisfies the access-control policy.",
+      "Identify what would be required to legitimately grant the requested access."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "it-access",
+      "least-privilege",
+      "negative",
+      "onboarding",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-048"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-ONB-006: Procurement Officer onboarding must respect segregation of duties from day one?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The access profile granted to the Procurement Officer role must exclude approval and goods-receipt permissions, since PROC-POL-001 requires the requester, approver and receiver of a purchase to be separated. Approval remains with the Procurement Manager or the Finance approval matrix, and receiving remains with Warehouse.",
+    "acceptableAnswerPoints": [
+      "The access profile granted to the Procurement Officer role must exclude approval and goods-receipt permissions, since PROC-POL-001 requires the requester, approver and receiver of a purchase to be separated. Approval remains with the Procurement Manager or the Finance approval matrix, and receiving remains with Warehouse."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-ONB-006"
+      },
+      {
+        "type": "policy",
+        "id": "HR-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "IT-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0015",
+      "EMP-0004",
+      "DEPT-PROC",
+      "SYS-D365-SCM",
+      "SYS-HR",
+      "SYS-IAM",
+      "HR-POL-002",
+      "IT-POL-001",
+      "PROC-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Employee Management System",
+      "Identity and Access Management System"
+    ],
+    "policies": [
+      "HR-POL-002",
+      "IT-POL-001",
+      "PROC-POL-001"
+    ],
+    "scenarios": [
+      "SCN-ONB-006"
+    ],
+    "reasoningSteps": [
+      "Identify the Procurement Officer role's canonical system access profile.",
+      "Identify the segregation-of-duties requirement in PROC-POL-001.",
+      "Determine which permissions must be excluded from this role to satisfy that requirement."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "onboarding",
+      "procurement",
+      "scenario",
+      "segregation-of-duties",
+      "workflow"
+    ],
+    "id": "Q-REASON-049"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-PROC-001: Routine office-supplies purchase of KES 25,000 from an approved supplier?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "At KES 25,000, the amount falls within the Department Manager tier of the FIN-POL-002 matrix (up to and including KES 50,000). Department Manager (Joseph Mutiso Kyalo) can approve this request within their own approval limit of KES 200,000 without escalation.",
+    "acceptableAnswerPoints": [
+      "At KES 25,000, the amount falls within the Department Manager tier of the FIN-POL-002 matrix (up to and including KES 50,000). Department Manager (Joseph Mutiso Kyalo) can approve this request within their own approval limit of KES 200,000 without escalation."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-PROC-001"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0011",
+      "DEPT-ADMIN",
+      "CC-ADMIN",
+      "SUP-011",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "SYS-DMS",
+      "PROC-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "PROC-POL-001"
+    ],
+    "scenarios": [
+      "SCN-PROC-001"
+    ],
+    "reasoningSteps": [
+      "Confirm the supplier is on the approved supplier list.",
+      "Determine which FIN-POL-002 matrix tier the amount falls into.",
+      "Compare that tier's matrix ceiling against the department head's own canonical approval limit.",
+      "Conclude whether escalation beyond the department head is required."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "administration",
+      "approval-matrix",
+      "boundary",
+      "procurement",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-050"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-PROC-002: IT hardware procurement of KES 750,000 tests the Finance Manager approval tier?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "KES 750,000 exceeds the KES 500,000 ceiling of the Department Head tier, placing it in the Finance Manager tier (KES 500,001-2,000,000). Faith Wambui Gitau (Finance Manager), whose own approval limit is KES 1,000,000, is the required approver. PROC-POL-001 additionally requires Finance review before the purchase order is released, since the amount exceeds KES 500,000.',",
+    "acceptableAnswerPoints": [
+      "KES 750,000 exceeds the KES 500,000 ceiling of the Department Head tier, placing it in the Finance Manager tier (KES 500,001-2,000,000). Faith Wambui Gitau (Finance Manager), whose own approval limit is KES 1,000,000, is the required approver. PROC-POL-001 additionally requires Finance review before the purchase order is released, since the amount exceeds KES 500,000.',"
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-PROC-002"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0007",
+      "DEPT-IT",
+      "CC-IT",
+      "SUP-012",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "PROC-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "PROC-POL-001"
+    ],
+    "scenarios": [
+      "SCN-PROC-002"
+    ],
+    "reasoningSteps": [
+      "Determine the FIN-POL-002 matrix tier for KES 750,000.",
+      "Recognise that this exceeds the Department Head ceiling regardless of which department requested it.",
+      "Confirm the Finance Manager's own approval limit covers this amount.",
+      "Identify the additional Finance-review requirement from PROC-POL-001 for amounts above KES 500,000."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "approval-matrix",
+      "boundary",
+      "it",
+      "procurement",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-051"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-PROC-003: A KES 3,000,000 logistics contract with a high-risk supplier escalates past Finance Manager?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "KES 3,000,000 falls in the matrix's CFO tier (KES 2,000,001-10,000,000) because it already exceeds the Finance Manager's own approval limit of KES 1,000,000. Grace Njeri Mwangi (Chief Financial Officer) is the required approver, and the supplier's elevated risk rating requires additional PROC-POL-002 due diligence alongside the financial approval.",
+    "acceptableAnswerPoints": [
+      "KES 3,000,000 falls in the matrix's CFO tier (KES 2,000,001-10,000,000) because it already exceeds the Finance Manager's own approval limit of KES 1,000,000. Grace Njeri Mwangi (Chief Financial Officer) is the required approver, and the supplier's elevated risk rating requires additional PROC-POL-002 due diligence alongside the financial approval."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-PROC-003"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0006",
+      "DEPT-OPS",
+      "CC-OPS",
+      "SUP-013",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "SYS-DMS",
+      "PROC-POL-001",
+      "PROC-POL-002",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "PROC-POL-001",
+      "PROC-POL-002"
+    ],
+    "scenarios": [
+      "SCN-PROC-003"
+    ],
+    "reasoningSteps": [
+      "Determine why KES 3,000,000 exceeds the Finance Manager's own approval limit, not just the matrix band's nominal range.",
+      "Identify CFO as the next sufficient tier.",
+      "Separately evaluate the supplier's risk rating against PROC-POL-002 due-diligence requirements.",
+      "Combine both conclusions into a single procurement decision."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "approval-matrix",
+      "boundary",
+      "operations",
+      "procurement",
+      "scenario",
+      "supplier-risk",
+      "workflow"
+    ],
+    "id": "Q-REASON-052"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-PROC-004: Emergency replenishment of SVGA Value Maize Flour 2Kg after it hits zero stock at the Nairobi hub?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The emergency procurement is permitted because it protects continuity of committed dispatches, but it is not exempt from control: the reason, supplier, amount and evidence must be recorded within one business day, Nancy Wairimu Ndungu (Warehouse Manager) must retrospectively confirm the decision under the FIN-POL-002 matrix for KES 180,000, and the emergency status does not waive conflict-disclosure, sanctions-screening or receipt-matching controls.",
+    "acceptableAnswerPoints": [
+      "The emergency procurement is permitted because it protects continuity of committed dispatches, but it is not exempt from control: the reason, supplier, amount and evidence must be recorded within one business day, Nancy Wairimu Ndungu (Warehouse Manager) must retrospectively confirm the decision under the FIN-POL-002 matrix for KES 180,000, and the emergency status does not waive conflict-disclosure, sanctions-screening or receipt-matching controls."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-PROC-004"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0022",
+      "PRD-004",
+      "INV-0004",
+      "WH-NRB-001",
+      "SUP-002",
+      "DEPT-WH",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "PROC-POL-001",
+      "FIN-POL-002",
+      "INV-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "INV-POL-001",
+      "PROC-POL-001"
+    ],
+    "scenarios": [
+      "SCN-PROC-004"
+    ],
+    "reasoningSteps": [
+      "Confirm the stock position justifies treating this as an emergency rather than routine replenishment.",
+      "Identify the documentation and timing requirements that still apply despite the emergency route.",
+      "Resolve which approver would retrospectively confirm this amount under the standard approval matrix."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "emergency",
+      "inventory",
+      "procurement",
+      "scenario",
+      "warehouse",
+      "workflow"
+    ],
+    "id": "Q-REASON-053"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-PROC-005: A requester wants to use a supplier that is not on the approved supplier list?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The purchase order cannot be issued to the prospective vendor. PROC-POL-002 requires a completed supplier profile, Finance validation of payment and tax details, proportionate Compliance due diligence, and Procurement Manager approval before inclusion on the approved supplier list - a lower quoted price is not a substitute for this process.",
+    "acceptableAnswerPoints": [
+      "The purchase order cannot be issued to the prospective vendor. PROC-POL-002 requires a completed supplier profile, Finance validation of payment and tax details, proportionate Compliance due diligence, and Procurement Manager approval before inclusion on the approved supplier list - a lower quoted price is not a substitute for this process."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-PROC-005"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0016",
+      "EMP-0004",
+      "DEPT-PROC",
+      "SYS-D365-SCM",
+      "SYS-DMS",
+      "PROC-POL-002",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "PROC-POL-002"
+    ],
+    "scenarios": [
+      "SCN-PROC-005"
+    ],
+    "reasoningSteps": [
+      "Check whether the proposed vendor exists in the canonical supplier register.",
+      "Identify the onboarding and due-diligence steps required before a new supplier can be used.",
+      "Conclude that price alone does not justify bypassing the approved supplier list."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "negative",
+      "procurement",
+      "scenario",
+      "supplier-management",
+      "workflow"
+    ],
+    "id": "Q-REASON-054"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-PROC-006: Goods receipt at Mombasa Distribution Centre records fewer units than the KES 50,000 purchase order?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The delivery is not accepted as if it were complete: WH-POL-001 requires the receiving officer to record the accepted and short quantities exactly, the Warehouse Manager resolves the discrepancy, Procurement follows up with the supplier, and Finance holds payment until the purchase order, goods receipt and invoice reconcile under PROC-POL-001.",
+    "acceptableAnswerPoints": [
+      "The delivery is not accepted as if it were complete: WH-POL-001 requires the receiving officer to record the accepted and short quantities exactly, the Warehouse Manager resolves the discrepancy, Procurement follows up with the supplier, and Finance holds payment until the purchase order, goods receipt and invoice reconcile under PROC-POL-001."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-PROC-006"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "WH-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0036",
+      "EMP-0022",
+      "PRD-013",
+      "SUP-003",
+      "WH-MSA-001",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "WH-POL-001",
+      "PROC-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "PROC-POL-001",
+      "WH-POL-001"
+    ],
+    "scenarios": [
+      "SCN-PROC-006"
+    ],
+    "reasoningSteps": [
+      "Identify who is responsible for recording the discrepancy at receipt.",
+      "Determine what happens to the invoice when quantities do not match.",
+      "Identify who resolves the discrepancy versus who is merely notified of it."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "procurement",
+      "scenario",
+      "three-way-match",
+      "warehouse",
+      "workflow"
+    ],
+    "id": "Q-REASON-055"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-PROC-007: A Procurement Officer attempts to approve their own KES 50,001 purchase request?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The approval is invalid and must be reversed. The Procurement Officer role carries no approval authority at all (approvalLimitKes is null in roles.json), and both FIN-POL-002 (\"No employee may approve their own request\") and PROC-POL-001 (\"The requester must not select, receive and approve the same purchase\") prohibit self-approval regardless of amount. The request must be routed to an authorised approver.",
+    "acceptableAnswerPoints": [
+      "The approval is invalid and must be reversed. The Procurement Officer role carries no approval authority at all (approvalLimitKes is null in roles.json), and both FIN-POL-002 (\"No employee may approve their own request\") and PROC-POL-001 (\"The requester must not select, receive and approve the same purchase\") prohibit self-approval regardless of amount. The request must be routed to an authorised approver."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-PROC-007"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0015",
+      "DEPT-PROC",
+      "ROLE-PROC-OFF",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "PROC-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "PROC-POL-001"
+    ],
+    "scenarios": [
+      "SCN-PROC-007"
+    ],
+    "reasoningSteps": [
+      "Check the Procurement Officer role's approval authority in the canonical role register.",
+      "Identify that self-approval is prohibited independent of the amount involved.",
+      "Determine the corrective action required."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "negative",
+      "procurement",
+      "scenario",
+      "segregation-of-duties",
+      "workflow"
+    ],
+    "id": "Q-REASON-056"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-PROC-008: Two KES 300,000 purchase orders to the same supplier total KES 600,000?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "This is prohibited order-splitting. FIN-POL-002 states amounts are evaluated on the total expected commitment \"rather than being split to avoid a higher approval level,\" and PROC-POL-001 states \"a purchase order may not be split.\" The two orders must be treated as a single KES 600,000 commitment, placing it in the Finance Manager tier, not the Department Head tier.",
+    "acceptableAnswerPoints": [
+      "This is prohibited order-splitting. FIN-POL-002 states amounts are evaluated on the total expected commitment \"rather than being split to avoid a higher approval level,\" and PROC-POL-001 states \"a purchase order may not be split.\" The two orders must be treated as a single KES 600,000 commitment, placing it in the Finance Manager tier, not the Department Head tier."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-PROC-008"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0005",
+      "SUP-010",
+      "DEPT-SALES",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "FIN-POL-002",
+      "PROC-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "PROC-POL-001"
+    ],
+    "scenarios": [
+      "SCN-PROC-008"
+    ],
+    "reasoningSteps": [
+      "Recognise that the two orders serve one underlying business need.",
+      "Sum the total expected commitment rather than evaluating each order in isolation.",
+      "Re-determine the correct FIN-POL-002 tier using the combined total.",
+      "Identify this pattern as a policy violation, not a coincidence."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "approval-matrix",
+      "boundary",
+      "negative",
+      "procurement",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-057"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SALES-001: Nairobi Retail Holdings orders 200 units of Tumaini Gold Cooking Oil 5L with ample stock available?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "The order can be confirmed: quantityAvailable (1140) at Nairobi Distribution Centre comfortably exceeds the requested quantity (200) and remains above the reorder level (300) after reservation.",
+    "acceptableAnswerPoints": [
+      "The order can be confirmed: quantityAvailable (1140) at Nairobi Distribution Centre comfortably exceeds the requested quantity (200) and remains above the reorder level (300) after reservation."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SALES-001"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0017",
+      "CUS-001",
+      "PRD-001",
+      "INV-0001",
+      "WH-NRB-001",
+      "SYS-D365-SALES",
+      "SYS-D365-SCM",
+      "SALES-POL-001",
+      "INV-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001",
+      "SALES-POL-001"
+    ],
+    "scenarios": [
+      "SCN-SALES-001"
+    ],
+    "reasoningSteps": [
+      "Resolve the customer to its account manager.",
+      "Resolve the requested product and its inventory position at the relevant warehouse.",
+      "Compare the requested quantity with quantityAvailable.",
+      "Confirm the order can be fulfilled without breaching the reorder level."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "fulfilment",
+      "inventory",
+      "sales",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-058"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SALES-002: Kilimo Wholesalers requests 1255 units of Tumaini Maize Flour 2Kg, more than is available?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "The full order cannot be confirmed: 1255 exceeds quantityAvailable of 255 at Nairobi Distribution Centre. Per SALES-POL-001, Sales does not promise unavailable stock; the account manager may propose a partial delivery, an approved back-order, or an alternative product, while Inventory determines replenishment and Procurement follows PROC-POL-001.",
+    "acceptableAnswerPoints": [
+      "The full order cannot be confirmed: 1255 exceeds quantityAvailable of 255 at Nairobi Distribution Centre. Per SALES-POL-001, Sales does not promise unavailable stock; the account manager may propose a partial delivery, an approved back-order, or an alternative product, while Inventory determines replenishment and Procurement follows PROC-POL-001."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SALES-002"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0005",
+      "CUS-013",
+      "PRD-003",
+      "INV-0003",
+      "WH-NRB-001",
+      "SYS-D365-SALES",
+      "SYS-D365-SCM",
+      "SALES-POL-001",
+      "INV-POL-001",
+      "PROC-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001",
+      "PROC-POL-001",
+      "SALES-POL-001"
+    ],
+    "scenarios": [
+      "SCN-SALES-002"
+    ],
+    "reasoningSteps": [
+      "Resolve quantityOnHand, quantityReserved and quantityAvailable for the requested product and warehouse.",
+      "Compare the requested quantity with quantityAvailable.",
+      "Determine that the request cannot be fulfilled in full.",
+      "Identify the Sales, Inventory and Procurement policies that govern the response."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "negative",
+      "sales",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-059"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SALES-003: Lakeview Supermarkets requests SVGA Value Rice 5Kg, already below its reorder level?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The order for 100 units can be fulfilled since it is within quantityAvailable of 178, but the underlying reorder condition (available already below reorderLevel of 350) is unaffected by fulfilling it and independently requires the Inventory Manager's replenishment review under INV-POL-001, which may trigger PROC-POL-001.",
+    "acceptableAnswerPoints": [
+      "The order for 100 units can be fulfilled since it is within quantityAvailable of 178, but the underlying reorder condition (available already below reorderLevel of 350) is unaffected by fulfilling it and independently requires the Inventory Manager's replenishment review under INV-POL-001, which may trigger PROC-POL-001."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SALES-003"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0019",
+      "CUS-003",
+      "PRD-008",
+      "INV-0008",
+      "WH-NRB-001",
+      "SYS-D365-SALES",
+      "SYS-D365-SCM",
+      "SALES-POL-001",
+      "INV-POL-001",
+      "PROC-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "Microsoft Dynamics 365 Supply Chain Management"
+    ],
+    "policies": [
+      "INV-POL-001",
+      "PROC-POL-001",
+      "SALES-POL-001"
+    ],
+    "scenarios": [
+      "SCN-SALES-003"
+    ],
+    "reasoningSteps": [
+      "Determine whether the requested quantity alone can be fulfilled from quantityAvailable.",
+      "Separately determine whether the current stock position already breaches the reorder level.",
+      "Identify that fulfilling the order does not resolve the reorder condition.",
+      "Connect Sales, Inventory and the reorder rule to the possible next step in Procurement."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "inventory",
+      "reorder",
+      "sales",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-060"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SALES-004: Serena Highlands Hotel returns a damaged delivery of Chemchemi Fruit Juice 1L?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The return is not automatically credited: a reason, customer reference and condition assessment must be recorded and approved first. Once Warehouse confirms the goods are damaged, the stock is segregated under WH-POL-001 and INV-POL-001, and Finance issues the credit in Microsoft Dynamics 365 Finance under SALES-POL-001.",
+    "acceptableAnswerPoints": [
+      "The return is not automatically credited: a reason, customer reference and condition assessment must be recorded and approved first. Once Warehouse confirms the goods are damaged, the stock is segregated under WH-POL-001 and INV-POL-001, and Finance issues the credit in Microsoft Dynamics 365 Finance under SALES-POL-001."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SALES-004"
+      },
+      {
+        "type": "policy",
+        "id": "INV-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "WH-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0005",
+      "CUS-008",
+      "PRD-017",
+      "WH-NRB-001",
+      "SYS-D365-SALES",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "SALES-POL-001",
+      "WH-POL-001",
+      "INV-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "INV-POL-001",
+      "SALES-POL-001",
+      "WH-POL-001"
+    ],
+    "scenarios": [
+      "SCN-SALES-004"
+    ],
+    "reasoningSteps": [
+      "Identify the information required before a return can be processed.",
+      "Identify which department assesses the condition of returned goods.",
+      "Determine which policy governs segregating damaged stock versus issuing the credit."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "returns",
+      "sales",
+      "scenario",
+      "warehouse",
+      "workflow"
+    ],
+    "id": "Q-REASON-061"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SALES-005: Furaha Provision Store requests a credit limit increase to KES 350,000?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Given the customer's \"HIGH\" risk rating, the increase requires renewed verification rather than routine approval: Finance must complete its credit checks and the Sales Manager must confirm the new limit is within their approval authority before it is applied in Microsoft Dynamics 365 Sales.",
+    "acceptableAnswerPoints": [
+      "Given the customer's \"HIGH\" risk rating, the increase requires renewed verification rather than routine approval: Finance must complete its credit checks and the Sales Manager must confirm the new limit is within their approval authority before it is applied in Microsoft Dynamics 365 Sales."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SALES-005"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0019",
+      "EMP-0005",
+      "CUS-007",
+      "SYS-D365-SALES",
+      "SYS-D365-FIN",
+      "SALES-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "SALES-POL-001"
+    ],
+    "scenarios": [
+      "SCN-SALES-005"
+    ],
+    "reasoningSteps": [
+      "Compare the current and requested credit limits against the customer's risk rating.",
+      "Identify who approves credit terms and who performs credit checks.",
+      "Determine that a higher-risk customer requesting a large increase warrants closer verification, not automatic approval."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "credit-control",
+      "customer-verification",
+      "sales",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-062"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SALES-006: Zawadi Corporate Services places a new order while its account is suspended?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The order must not be confirmed while the account is suspended, regardless of stock availability. Zawadi Corporate Services's account status of \"SUSPENDED\" must be resolved by the Sales Manager and Finance before any new order is accepted; stock availability is irrelevant to this decision.",
+    "acceptableAnswerPoints": [
+      "The order must not be confirmed while the account is suspended, regardless of stock availability. Zawadi Corporate Services's account status of \"SUSPENDED\" must be resolved by the Sales Manager and Finance before any new order is accepted; stock availability is irrelevant to this decision."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SALES-006"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0005",
+      "CUS-020",
+      "PRD-011",
+      "SYS-D365-SALES",
+      "SYS-D365-FIN",
+      "SALES-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales",
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "SALES-POL-001"
+    ],
+    "scenarios": [
+      "SCN-SALES-006"
+    ],
+    "reasoningSteps": [
+      "Check the customer's account status before considering stock.",
+      "Recognise that stock availability does not override an account-level control.",
+      "Determine that the order must be escalated, not confirmed."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "credit-control",
+      "negative",
+      "sales",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-063"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SALES-007: Sharon Atieno Onyango asks which approval level applies to a customer discount, without stating the amount?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "There is not enough information to answer: the FIN-POL-002 approval tier depends entirely on the amount of the commitment, which has not been stated. The correct response is to request the discount amount or resulting order value before determining an approver, not to guess a tier.",
+    "acceptableAnswerPoints": [
+      "There is not enough information to answer: the FIN-POL-002 approval tier depends entirely on the amount of the commitment, which has not been stated. The correct response is to request the discount amount or resulting order value before determining an approver, not to guess a tier."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SALES-007"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "SALES-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0018",
+      "CUS-002",
+      "SYS-D365-SALES",
+      "SALES-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Sales"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "SALES-POL-001"
+    ],
+    "scenarios": [
+      "SCN-SALES-007"
+    ],
+    "reasoningSteps": [
+      "Identify what information the approval matrix requires as its input.",
+      "Confirm that this input (the amount) is missing from the request.",
+      "Conclude that a specific approver cannot be named without it."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "abstention",
+      "insufficient-information",
+      "sales",
+      "scenario",
+      "workflow"
+    ],
+    "id": "Q-REASON-064"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SUP-001: Economy Household Supplies is awaiting approval to join the approved supplier list?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Economy Household Supplies cannot receive purchase orders while approvalStatus remains \"PENDING_APPROVAL\". Finance must validate payment and tax details, Compliance must complete proportionate due diligence, and only the Procurement Manager can approve inclusion on the approved supplier list.",
+    "acceptableAnswerPoints": [
+      "Economy Household Supplies cannot receive purchase orders while approvalStatus remains \"PENDING_APPROVAL\". Finance must validate payment and tax details, Compliance must complete proportionate due diligence, and only the Procurement Manager can approve inclusion on the approved supplier list."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SUP-001"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0004",
+      "EMP-0008",
+      "SUP-016",
+      "SYS-D365-SCM",
+      "SYS-DMS",
+      "PROC-POL-002",
+      "COMP-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-001",
+      "PROC-POL-002"
+    ],
+    "scenarios": [
+      "SCN-SUP-001"
+    ],
+    "reasoningSteps": [
+      "Check the supplier's current approvalStatus.",
+      "Identify the three parties who must each complete their part of onboarding.",
+      "Determine that purchase orders cannot be placed until approval is granted."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "onboarding",
+      "procurement",
+      "scenario",
+      "supplier-management",
+      "workflow"
+    ],
+    "id": "Q-REASON-065"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SUP-002: Swift Freight Logistics's delivery performance has deteriorated over three consecutive months?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "A material failure has been identified for Swift Freight Logistics, which already carries a \"HIGH\" risk rating. PROC-POL-002 requires a corrective action plan with an owner and due date; continued non-performance after that plan would support suspension, which blocks new purchase orders until the Procurement Manager records reinstatement or termination.",
+    "acceptableAnswerPoints": [
+      "A material failure has been identified for Swift Freight Logistics, which already carries a \"HIGH\" risk rating. PROC-POL-002 requires a corrective action plan with an owner and due date; continued non-performance after that plan would support suspension, which blocks new purchase orders until the Procurement Manager records reinstatement or termination."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SUP-002"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0004",
+      "SUP-013",
+      "SYS-D365-SCM",
+      "SYS-DMS",
+      "PROC-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "PROC-POL-002"
+    ],
+    "scenarios": [
+      "SCN-SUP-002"
+    ],
+    "reasoningSteps": [
+      "Assess whether repeated missed deliveries constitute a material failure under the policy.",
+      "Identify the required response (corrective action plan) versus an immediate suspension.",
+      "Identify what would escalate this from a corrective action plan to suspension."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "performance",
+      "scenario",
+      "supplier-management",
+      "workflow"
+    ],
+    "id": "Q-REASON-066"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SUP-003: A Procurement Officer's family member works at a supplier they are currently evaluating?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Susan Chepkoech Bett must disclose the relationship to their manager and the Compliance Manager and withdraw from evaluating or approving this supplier. Undisclosed, this is a conflict-of-interest breach under COMP-POL-002; PROC-POL-002 separately requires evaluators with an undisclosed relationship to be removed from the process.",
+    "acceptableAnswerPoints": [
+      "Susan Chepkoech Bett must disclose the relationship to their manager and the Compliance Manager and withdraw from evaluating or approving this supplier. Undisclosed, this is a conflict-of-interest breach under COMP-POL-002; PROC-POL-002 separately requires evaluators with an undisclosed relationship to be removed from the process."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SUP-003"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0016",
+      "SUP-006",
+      "SYS-D365-SCM",
+      "SYS-DMS",
+      "COMP-POL-002",
+      "PROC-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-002",
+      "PROC-POL-002"
+    ],
+    "scenarios": [
+      "SCN-SUP-003"
+    ],
+    "reasoningSteps": [
+      "Identify that a family relationship with a supplier contact exists.",
+      "Determine that this relationship was not disclosed as required.",
+      "Identify the required corrective action: disclosure and withdrawal from evaluation."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "compliance",
+      "conflict-of-interest",
+      "negative",
+      "scenario",
+      "supplier-management",
+      "workflow"
+    ],
+    "id": "Q-REASON-067"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SUP-004: Highland Bottlers is suspended after a quality failure is confirmed?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "Highland Bottlers is suspended: no new purchase orders may be issued to them until the Procurement Manager records reinstatement or termination. Existing open commitments are reviewed separately; the suspension itself does not retroactively cancel confirmed deliveries already in transit.",
+    "acceptableAnswerPoints": [
+      "Highland Bottlers is suspended: no new purchase orders may be issued to them until the Procurement Manager records reinstatement or termination. Existing open commitments are reviewed separately; the suspension itself does not retroactively cancel confirmed deliveries already in transit."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SUP-004"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "WH-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0004",
+      "SUP-004",
+      "SYS-D365-SCM",
+      "SYS-DMS",
+      "PROC-POL-002",
+      "WH-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "PROC-POL-002",
+      "WH-POL-001"
+    ],
+    "scenarios": [
+      "SCN-SUP-004"
+    ],
+    "reasoningSteps": [
+      "Determine whether a recurring quality failure meets the suspension criteria.",
+      "Identify who has authority to record a supplier suspension.",
+      "Identify what a suspension does and does not affect."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "negative",
+      "scenario",
+      "supplier-management",
+      "suspension",
+      "workflow"
+    ],
+    "id": "Q-REASON-068"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-SUP-005: Savannah Home Care requests updated payment terms and bank details?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "The change is not applied on the strength of the request alone: Finance must independently verify the new bank details (a common fraud vector), the update is recorded as a new version with an approver and effective date under GEN-POL-001, and the supplier's contact information remains protected under COMP-POL-001.",
+    "acceptableAnswerPoints": [
+      "The change is not applied on the strength of the request alone: Finance must independently verify the new bank details (a common fraud vector), the update is recorded as a new version with an approver and effective date under GEN-POL-001, and the supplier's contact information remains protected under COMP-POL-001."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-SUP-005"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "GEN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "PROC-POL-002",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0004",
+      "SUP-005",
+      "SYS-D365-SCM",
+      "SYS-D365-FIN",
+      "SYS-DMS",
+      "PROC-POL-002",
+      "GEN-POL-001",
+      "COMP-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Supply Chain Management",
+      "Microsoft Dynamics 365 Finance",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-001",
+      "GEN-POL-001",
+      "PROC-POL-002"
+    ],
+    "scenarios": [
+      "SCN-SUP-005"
+    ],
+    "reasoningSteps": [
+      "Identify the fraud risk associated with an unverified bank-details change.",
+      "Identify the independent verification step required before applying it.",
+      "Identify the records/versioning requirement for the change itself."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "records",
+      "scenario",
+      "supplier-management",
+      "workflow"
+    ],
+    "id": "Q-REASON-069"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-TRV-001: Dennis Omondi Owuor requests domestic travel from Nairobi to Kisumu for a customer visit?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "easy",
+    "answerability": "answerable",
+    "expectedAnswer": "The trip can proceed once the line manager confirms business need and budget and the estimated cost is approved under FIN-POL-002; OPS-POL-001 requires this documentation to exist before booking, not after.",
+    "acceptableAnswerPoints": [
+      "The trip can proceed once the line manager confirms business need and budget and the estimated cost is approved under FIN-POL-002; OPS-POL-001 requires this documentation to exist before booking, not after."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-TRV-001"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0017",
+      "EMP-0005",
+      "DEPT-SALES",
+      "SYS-D365-FIN",
+      "SYS-DMS",
+      "OPS-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance",
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "OPS-POL-001"
+    ],
+    "scenarios": [
+      "SCN-TRV-001"
+    ],
+    "reasoningSteps": [
+      "Identify the information that must be documented before booking.",
+      "Identify who confirms business need versus who approves the cost."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "sales",
+      "scenario",
+      "travel",
+      "workflow"
+    ],
+    "id": "Q-REASON-070"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-TRV-002: A 3-night Mombasa trip mixes standard-rate and above-cap accommodation nights?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The first two nights at KES 12,000 require no exception, since they sit exactly at the OPS-POL-001 cap. The third night at KES 15,000 exceeds the cap and requires a documented exception approved before the booking is committed, not claimed afterward.",
+    "acceptableAnswerPoints": [
+      "The first two nights at KES 12,000 require no exception, since they sit exactly at the OPS-POL-001 cap. The third night at KES 15,000 exceeds the cap and requires a documented exception approved before the booking is committed, not claimed afterward."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-TRV-002"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0004",
+      "DEPT-PROC",
+      "SYS-D365-FIN",
+      "OPS-POL-001",
+      "FIN-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-001",
+      "OPS-POL-001"
+    ],
+    "scenarios": [
+      "SCN-TRV-002"
+    ],
+    "reasoningSteps": [
+      "Compare each night's rate against the KES 12,000 cap individually.",
+      "Identify that only the night above the cap requires an exception.",
+      "Confirm the exception must be approved before commitment, not after the fact."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "boundary",
+      "procurement",
+      "scenario",
+      "travel",
+      "workflow"
+    ],
+    "id": "Q-REASON-071"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-TRV-003: Anthony Njoroge Kariithi claims mileage and meals for a personal-vehicle business trip?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The mileage claim totals KES 9,900 (220 km at KES 45 per km), fully reimbursable with route evidence. The KES 3,000 meal claim is exactly at the KES 3,000 per-person cap and requires no exception.",
+    "acceptableAnswerPoints": [
+      "The mileage claim totals KES 9,900 (220 km at KES 45 per km), fully reimbursable with route evidence. The KES 3,000 meal claim is exactly at the KES 3,000 per-person cap and requires no exception."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-TRV-003"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-001",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0009",
+      "DEPT-LEGAL",
+      "SYS-D365-FIN",
+      "OPS-POL-001",
+      "FIN-POL-001"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance"
+    ],
+    "policies": [
+      "FIN-POL-001",
+      "OPS-POL-001"
+    ],
+    "scenarios": [
+      "SCN-TRV-003"
+    ],
+    "reasoningSteps": [
+      "Calculate the mileage reimbursement from distance and rate.",
+      "Compare the meal claim against the per-person cap.",
+      "Confirm both are within policy without requiring an exception."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "expense-claim",
+      "legal",
+      "scenario",
+      "travel",
+      "workflow"
+    ],
+    "id": "Q-REASON-072"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-TRV-004: David Kiplagat Rotich is dispatched to Mombasa on short notice to resolve a critical system issue?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "The same-day travel is permitted as an emergency trip under OPS-POL-001, but it is not exempt from records: the purpose, dates and cost must still be documented as soon as practicable and the trip regularised and approved retrospectively under the FIN-POL-002 matrix.",
+    "acceptableAnswerPoints": [
+      "The same-day travel is permitted as an emergency trip under OPS-POL-001, but it is not exempt from records: the purpose, dates and cost must still be documented as soon as practicable and the trip regularised and approved retrospectively under the FIN-POL-002 matrix."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-TRV-004"
+      },
+      {
+        "type": "policy",
+        "id": "FIN-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0007",
+      "DEPT-IT",
+      "WH-MSA-001",
+      "SYS-D365-FIN",
+      "SYS-SD",
+      "OPS-POL-001",
+      "FIN-POL-002"
+    ],
+    "systems": [
+      "Microsoft Dynamics 365 Finance",
+      "IT Service Desk"
+    ],
+    "policies": [
+      "FIN-POL-002",
+      "OPS-POL-001"
+    ],
+    "scenarios": [
+      "SCN-TRV-004"
+    ],
+    "reasoningSteps": [
+      "Confirm the urgency justifies bypassing the standard advance-booking sequence.",
+      "Identify what documentation is still required despite the emergency.",
+      "Identify when and how retrospective approval occurs."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "emergency",
+      "it",
+      "scenario",
+      "travel",
+      "workflow"
+    ],
+    "id": "Q-REASON-073"
+  },
+  {
+    "prefix": "Q-REASON-",
+    "question": "What should happen in SCN-TRV-005: Rift Valley Millers offers escalating hospitality during a site-visit trip?",
+    "category": "reasoning",
+    "subcategory": "scenario-workflow",
+    "difficulty": "hard",
+    "answerability": "answerable",
+    "expectedAnswer": "The KES 15,000 dinner is above the KES 5,000 disclosure threshold and must be disclosed to the Compliance Manager before acceptance and recorded in the gifts register, but is not automatically prohibited. The KES 22,000 weekend package is at or above the KES 20,000 threshold and must be declined outright, regardless of disclosure.",
+    "acceptableAnswerPoints": [
+      "The KES 15,000 dinner is above the KES 5,000 disclosure threshold and must be disclosed to the Compliance Manager before acceptance and recorded in the gifts register, but is not automatically prohibited. The KES 22,000 weekend package is at or above the KES 20,000 threshold and must be declined outright, regardless of disclosure."
+    ],
+    "requiredSources": [
+      {
+        "type": "scenario",
+        "id": "SCN-TRV-005"
+      },
+      {
+        "type": "policy",
+        "id": "COMP-POL-002",
+        "section": "Scenario business context"
+      },
+      {
+        "type": "policy",
+        "id": "OPS-POL-001",
+        "section": "Scenario business context"
+      }
+    ],
+    "entities": [
+      "EMP-0016",
+      "SUP-002",
+      "SYS-DMS",
+      "COMP-POL-002",
+      "OPS-POL-001"
+    ],
+    "systems": [
+      "Enterprise Document Management System"
+    ],
+    "policies": [
+      "COMP-POL-002",
+      "OPS-POL-001"
+    ],
+    "scenarios": [
+      "SCN-TRV-005"
+    ],
+    "reasoningSteps": [
+      "Compare each offer against the KES 5,000 disclosure threshold and the KES 20,000 prohibition threshold separately.",
+      "Determine that the two offers fall on different sides of the prohibition line.",
+      "Identify the correct action for each: disclose-and-may-accept versus decline outright."
+    ],
+    "expectedBehavior": "answer",
+    "tags": [
+      "boundary",
+      "compliance",
+      "gifts-and-hospitality",
+      "negative",
+      "scenario",
+      "travel",
+      "workflow"
+    ],
+    "id": "Q-REASON-074"
+  }
+]

@@ -1,0 +1,743 @@
+[
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Samuel Kariuki (EMP-0001)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Samuel Kariuki belongs to Executive Office and holds the Chief Executive Officer role.",
+    "acceptableAnswerPoints": [
+      "Executive Office",
+      "Chief Executive Officer"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0001"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-EXEC"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-CEO"
+      }
+    ],
+    "entities": [
+      "EMP-0001",
+      "DEPT-EXEC",
+      "ROLE-CEO"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-001"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Grace Njeri Mwangi (EMP-0002)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Grace Njeri Mwangi belongs to Finance and holds the Chief Financial Officer role.",
+    "acceptableAnswerPoints": [
+      "Finance",
+      "Chief Financial Officer"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0002"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-FIN"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-CFO"
+      }
+    ],
+    "entities": [
+      "EMP-0002",
+      "DEPT-FIN",
+      "ROLE-CFO"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-002"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Peter Otieno Ochieng (EMP-0003)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Peter Otieno Ochieng belongs to Human Resources and holds the HR Manager role.",
+    "acceptableAnswerPoints": [
+      "Human Resources",
+      "HR Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0003"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-HR"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-HR-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0003",
+      "DEPT-HR",
+      "ROLE-HR-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-003"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Esther Wanjiku Kamau (EMP-0004)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Esther Wanjiku Kamau belongs to Procurement and holds the Procurement Manager role.",
+    "acceptableAnswerPoints": [
+      "Procurement",
+      "Procurement Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0004"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-PROC"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-PROC-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0004",
+      "DEPT-PROC",
+      "ROLE-PROC-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-004"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Brian Wafula Simiyu (EMP-0005)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Brian Wafula Simiyu belongs to Sales and holds the Sales Manager role.",
+    "acceptableAnswerPoints": [
+      "Sales",
+      "Sales Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0005"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-SALES"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-SALES-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0005",
+      "DEPT-SALES",
+      "ROLE-SALES-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-005"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Catherine Achieng Odongo (EMP-0006)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Catherine Achieng Odongo belongs to Operations and holds the Operations Manager role.",
+    "acceptableAnswerPoints": [
+      "Operations",
+      "Operations Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0006"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-OPS"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-OPS-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0006",
+      "DEPT-OPS",
+      "ROLE-OPS-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-006"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for David Kiplagat Rotich (EMP-0007)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "David Kiplagat Rotich belongs to Information Technology and holds the IT Manager role.",
+    "acceptableAnswerPoints": [
+      "Information Technology",
+      "IT Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0007"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-IT"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-IT-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0007",
+      "DEPT-IT",
+      "ROLE-IT-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-007"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Lucy Chebet Kiprono (EMP-0008)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Lucy Chebet Kiprono belongs to Compliance and holds the Compliance Manager role.",
+    "acceptableAnswerPoints": [
+      "Compliance",
+      "Compliance Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0008"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-COMP"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-COMP-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0008",
+      "DEPT-COMP",
+      "ROLE-COMP-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-008"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Anthony Njoroge Kariithi (EMP-0009)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Anthony Njoroge Kariithi belongs to Legal and holds the Legal Manager role.",
+    "acceptableAnswerPoints": [
+      "Legal",
+      "Legal Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0009"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-LEGAL"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-LEGAL-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0009",
+      "DEPT-LEGAL",
+      "ROLE-LEGAL-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-009"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Mercy Nekesa Wanyama (EMP-0010)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Mercy Nekesa Wanyama belongs to Customer Service and holds the Customer Service Manager role.",
+    "acceptableAnswerPoints": [
+      "Customer Service",
+      "Customer Service Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0010"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-CS"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-CS-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0010",
+      "DEPT-CS",
+      "ROLE-CS-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-010"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Joseph Mutiso Kyalo (EMP-0011)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Joseph Mutiso Kyalo belongs to Administration and holds the Department Manager role.",
+    "acceptableAnswerPoints": [
+      "Administration",
+      "Department Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0011"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-ADMIN"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-DEPT-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0011",
+      "DEPT-ADMIN",
+      "ROLE-DEPT-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-011"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Faith Wambui Gitau (EMP-0012)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Faith Wambui Gitau belongs to Finance and holds the Finance Manager role.",
+    "acceptableAnswerPoints": [
+      "Finance",
+      "Finance Manager"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0012"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-FIN"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-FIN-MGR"
+      }
+    ],
+    "entities": [
+      "EMP-0012",
+      "DEPT-FIN",
+      "ROLE-FIN-MGR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-012"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Kevin Barasa Wekesa (EMP-0013)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Kevin Barasa Wekesa belongs to Human Resources and holds the HR Officer role.",
+    "acceptableAnswerPoints": [
+      "Human Resources",
+      "HR Officer"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0013"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-HR"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-HR-OFF"
+      }
+    ],
+    "entities": [
+      "EMP-0013",
+      "DEPT-HR",
+      "ROLE-HR-OFF"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-013"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Diana Auma Owino (EMP-0014)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Diana Auma Owino belongs to Human Resources and holds the HR Officer role.",
+    "acceptableAnswerPoints": [
+      "Human Resources",
+      "HR Officer"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0014"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-HR"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-HR-OFF"
+      }
+    ],
+    "entities": [
+      "EMP-0014",
+      "DEPT-HR",
+      "ROLE-HR-OFF"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-014"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which department and role are recorded for Martin Njue Kariuki (EMP-0015)?",
+    "category": "entity",
+    "subcategory": "employee-resolution",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "Martin Njue Kariuki belongs to Procurement and holds the Procurement Officer role.",
+    "acceptableAnswerPoints": [
+      "Procurement",
+      "Procurement Officer"
+    ],
+    "requiredSources": [
+      {
+        "type": "employee",
+        "id": "EMP-0015"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-PROC"
+      },
+      {
+        "type": "role",
+        "id": "ROLE-PROC-OFF"
+      }
+    ],
+    "entities": [
+      "EMP-0015",
+      "DEPT-PROC",
+      "ROLE-PROC-OFF"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "hr",
+      "entity-resolution"
+    ],
+    "id": "Q-ENT-015"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which cost center belongs to Executive Office?",
+    "category": "entity",
+    "subcategory": "cost-center",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "CC-100 (CC-EXEC) belongs to Executive Office.",
+    "acceptableAnswerPoints": [
+      "CC-100",
+      "CC-EXEC"
+    ],
+    "requiredSources": [
+      {
+        "type": "cost-center",
+        "id": "CC-EXEC"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-EXEC"
+      }
+    ],
+    "entities": [
+      "CC-EXEC",
+      "DEPT-EXEC"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "cost-center"
+    ],
+    "id": "Q-ENT-016"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which cost center belongs to Finance?",
+    "category": "entity",
+    "subcategory": "cost-center",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "CC-110 (CC-FIN) belongs to Finance.",
+    "acceptableAnswerPoints": [
+      "CC-110",
+      "CC-FIN"
+    ],
+    "requiredSources": [
+      {
+        "type": "cost-center",
+        "id": "CC-FIN"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-FIN"
+      }
+    ],
+    "entities": [
+      "CC-FIN",
+      "DEPT-FIN"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "cost-center"
+    ],
+    "id": "Q-ENT-017"
+  },
+  {
+    "prefix": "Q-ENT-",
+    "question": "Which cost center belongs to Human Resources?",
+    "category": "entity",
+    "subcategory": "cost-center",
+    "difficulty": "medium",
+    "answerability": "answerable",
+    "expectedAnswer": "CC-120 (CC-HR) belongs to Human Resources.",
+    "acceptableAnswerPoints": [
+      "CC-120",
+      "CC-HR"
+    ],
+    "requiredSources": [
+      {
+        "type": "cost-center",
+        "id": "CC-HR"
+      },
+      {
+        "type": "department",
+        "id": "DEPT-HR"
+      }
+    ],
+    "entities": [
+      "CC-HR",
+      "DEPT-HR"
+    ],
+    "systems": [],
+    "policies": [],
+    "scenarios": [],
+    "reasoningSteps": [],
+    "expectedBehavior": "answer",
+    "tags": [
+      "finance",
+      "cost-center"
+    ],
+    "id": "Q-ENT-018"
+  }
+]

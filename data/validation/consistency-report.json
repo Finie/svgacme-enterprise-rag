@@ -1,0 +1,110 @@
+{
+  "status": "PASS",
+  "generatedAt": "2026-09-13T06:06:52.085Z",
+  "summary": {
+    "errors": 0,
+    "warnings": 8,
+    "info": 6
+  },
+  "counts": {
+    "companies": 1,
+    "departments": 13,
+    "roles": 22,
+    "employees": 39,
+    "locations": 5,
+    "systems": 7,
+    "suppliers": 16,
+    "customers": 20,
+    "products": 36,
+    "warehouses": 4,
+    "inventoryRecords": 141,
+    "costCenters": 13,
+    "policies": 15
+  },
+  "issues": [
+    {
+      "severity": "INFO",
+      "code": "INVENTORY_GRAPH",
+      "message": "Inventory connects 36 products across 4 warehouses"
+    },
+    {
+      "severity": "WARNING",
+      "code": "ORPHAN_SUPPLIER",
+      "message": "Supplier SUP-010 has no product relationships",
+      "entityType": "Supplier",
+      "entityId": "SUP-010"
+    },
+    {
+      "severity": "WARNING",
+      "code": "ORPHAN_SUPPLIER",
+      "message": "Supplier SUP-011 has no product relationships",
+      "entityType": "Supplier",
+      "entityId": "SUP-011"
+    },
+    {
+      "severity": "WARNING",
+      "code": "ORPHAN_SUPPLIER",
+      "message": "Supplier SUP-012 has no product relationships",
+      "entityType": "Supplier",
+      "entityId": "SUP-012"
+    },
+    {
+      "severity": "WARNING",
+      "code": "ORPHAN_SUPPLIER",
+      "message": "Supplier SUP-013 has no product relationships",
+      "entityType": "Supplier",
+      "entityId": "SUP-013"
+    },
+    {
+      "severity": "WARNING",
+      "code": "ORPHAN_SUPPLIER",
+      "message": "Supplier SUP-014 has no product relationships",
+      "entityType": "Supplier",
+      "entityId": "SUP-014"
+    },
+    {
+      "severity": "WARNING",
+      "code": "ORPHAN_SUPPLIER",
+      "message": "Supplier SUP-015 has no product relationships",
+      "entityType": "Supplier",
+      "entityId": "SUP-015"
+    },
+    {
+      "severity": "WARNING",
+      "code": "RULE_REVIEW",
+      "message": "FIN-POL-001.md does not state the shared KES 500,000 finance threshold",
+      "file": "FIN-POL-001.md"
+    },
+    {
+      "severity": "WARNING",
+      "code": "RULE_REVIEW",
+      "message": "OPS-POL-001.md does not state the shared KES 500,000 finance threshold",
+      "file": "OPS-POL-001.md"
+    },
+    {
+      "severity": "INFO",
+      "code": "RULE_REGISTRY",
+      "message": "Canonical leave, approval, procurement and incident rules were checked"
+    },
+    {
+      "severity": "INFO",
+      "code": "CROSS_DOMAIN_CHAIN",
+      "message": "Procurement chain has Department, Cost Center, Supplier, Product, Warehouse and Inventory layers"
+    },
+    {
+      "severity": "INFO",
+      "code": "CROSS_DOMAIN_CHAIN",
+      "message": "Sales chain connects Customer, Sales Employee, Product, Inventory and policy layers"
+    },
+    {
+      "severity": "INFO",
+      "code": "CROSS_DOMAIN_CHAIN",
+      "message": "Employee onboarding chain connects Employee, Role, IT policy and Systems"
+    },
+    {
+      "severity": "INFO",
+      "code": "CROSS_DOMAIN_CHAIN",
+      "message": "Incident chain connects Employee, System, Incident policy, Service Desk and Data Protection"
+    }
+  ]
+}

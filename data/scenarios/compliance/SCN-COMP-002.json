@@ -1,0 +1,126 @@
+{
+  "id": "SCN-COMP-002",
+  "category": "compliance",
+  "title": "Sharon Atieno Onyango accidentally emails a customer contact list to the wrong recipient",
+  "description": "Sharon Atieno Onyango (Sales Representative) exports a customer contact list from Microsoft Dynamics 365 Sales and accidentally emails it to an external address instead of the intended internal recipient.",
+  "businessContext": "COMP-POL-001 requires suspected loss, misdirection or unauthorised disclosure to be reported immediately through the IT Service Desk and to Compliance; IT-POL-002 governs the incident triage.",
+  "actors": [
+    {
+      "employeeId": "EMP-0018",
+      "name": "Sharon Atieno Onyango",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    },
+    {
+      "employeeId": "EMP-0008",
+      "name": "Lucy Chebet Kiprono",
+      "roleId": "ROLE-COMP-MGR",
+      "departmentId": "DEPT-COMP",
+      "role": "Compliance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0018",
+      "name": "Sharon Atieno Onyango"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0008",
+      "name": "Lucy Chebet Kiprono"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-SALES",
+      "name": "Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-001",
+      "name": "Data Protection & Privacy Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-002",
+      "name": "IT Incident Management & Service Desk Policy"
+    },
+    {
+      "type": "policy",
+      "id": "GEN-POL-001",
+      "name": "Records Retention & Document Management Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "IT Service Desk",
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "COMP-POL-001",
+    "IT-POL-002",
+    "GEN-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Sharon Atieno Onyango realises the customer contact list was sent to the wrong, external recipient."
+    },
+    {
+      "sequence": 2,
+      "event": "The employee reports the misdirection immediately through the IT Service Desk and to Compliance."
+    },
+    {
+      "sequence": 3,
+      "event": "The first response preserves evidence rather than forwarding the data further."
+    },
+    {
+      "sequence": 4,
+      "event": "Lucy Chebet Kiprono (Compliance Manager) assesses scope, containment and notification needs."
+    }
+  ],
+  "expectedOutcome": "This is a reportable data incident: it must be reported immediately, not quietly corrected. Compliance assesses the scope of exposure, containment (such as requesting deletion by the recipient) and whether affected customers or authorities must be notified, following COMP-POL-001 and the IT-POL-002 incident process.",
+  "relevantFacts": [
+    "Sharon Atieno Onyango (EMP-0018) sent a customer contact list to an external, unintended recipient.",
+    "COMP-POL-001: 'Employees report suspected loss, misdirection, unauthorised access, malware, disclosure or excessive access immediately through the IT Service Desk and to Compliance... The first response preserves evidence and avoids forwarding sensitive data unnecessarily.'"
+  ],
+  "requiredReasoning": [
+    "Recognise that a misdirected email containing personal data is a reportable incident, not a minor mistake.",
+    "Identify the immediate reporting obligation and to whom.",
+    "Identify what Compliance must assess once notified."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0018",
+      "type": "belongs_to",
+      "to": "DEPT-SALES"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "exception",
+    "compliance",
+    "workflow"
+  ],
+  "tags": [
+    "compliance",
+    "data-protection",
+    "negative"
+  ]
+}

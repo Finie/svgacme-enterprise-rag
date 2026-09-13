@@ -1,0 +1,124 @@
+{
+  "id": "SCN-SALES-001",
+  "category": "sales",
+  "title": "Nairobi Retail Holdings orders 200 units of Tumaini Gold Cooking Oil 5L with ample stock available",
+  "description": "Nairobi Retail Holdings requests 200 units of Tumaini Gold Cooking Oil 5L. The account manager, Dennis Omondi Owuor, checks availability at Nairobi Distribution Centre before confirming the order.",
+  "businessContext": "SALES-POL-001 requires a sales order to pass stock availability and credit controls before it becomes a warehouse instruction.",
+  "actors": [
+    {
+      "employeeId": "EMP-0017",
+      "name": "Dennis Omondi Owuor",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0017",
+      "name": "Dennis Omondi Owuor"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-001",
+      "name": "Nairobi Retail Holdings"
+    },
+    {
+      "type": "product",
+      "id": "PRD-001",
+      "name": "Tumaini Gold Cooking Oil 5L"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0001",
+      "name": "PRD-001 @ WH-NRB-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "INV-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Nairobi Retail Holdings requests 200 units of Tumaini Gold Cooking Oil 5L."
+    },
+    {
+      "sequence": 2,
+      "event": "Dennis Omondi Owuor creates a quotation in Microsoft Dynamics 365 Sales."
+    },
+    {
+      "sequence": 3,
+      "event": "Microsoft Dynamics 365 Supply Chain Management confirms stock availability at the fulfilling warehouse."
+    },
+    {
+      "sequence": 4,
+      "event": "The order is confirmed and reserved against inventory."
+    }
+  ],
+  "expectedOutcome": "The order can be confirmed: quantityAvailable (1140) at Nairobi Distribution Centre comfortably exceeds the requested quantity (200) and remains above the reorder level (300) after reservation.",
+  "relevantFacts": [
+    "Nairobi Retail Holdings (CUS-001) is managed by Dennis Omondi Owuor (EMP-0017).",
+    "Tumaini Gold Cooking Oil 5L (PRD-001) at Nairobi Distribution Centre (WH-NRB-001) has quantityOnHand 1200, quantityReserved 60, quantityAvailable 1140, reorderLevel 300 (inventory record INV-0001).",
+    "The customer requested 200 units."
+  ],
+  "requiredReasoning": [
+    "Resolve the customer to its account manager.",
+    "Resolve the requested product and its inventory position at the relevant warehouse.",
+    "Compare the requested quantity with quantityAvailable.",
+    "Confirm the order can be fulfilled without breaching the reorder level."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-001",
+      "type": "managed_by",
+      "to": "EMP-0017"
+    },
+    {
+      "from": "PRD-001",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "easy",
+  "questionTypes": [
+    "fact_lookup",
+    "comparison",
+    "workflow"
+  ],
+  "tags": [
+    "sales",
+    "inventory",
+    "fulfilment"
+  ]
+}

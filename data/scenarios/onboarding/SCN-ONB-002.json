@@ -1,0 +1,137 @@
+{
+  "id": "SCN-ONB-002",
+  "category": "onboarding",
+  "title": "Sales Representative completed onboarding but cannot log in to Dynamics 365 Sales",
+  "description": "Purity Jepkorir Rono is a Sales Representative based at the Nakuru Regional Office. HR onboarding was completed and induction is finished, but the employee reports being unable to access Microsoft Dynamics 365 Sales and cannot create quotations for customers.",
+  "businessContext": "Sales Representatives use Microsoft Dynamics 365 Sales daily to manage leads, opportunities and sales orders. A missing account blocks day-one productivity for a customer-facing role.",
+  "actors": [
+    {
+      "employeeId": "EMP-0020",
+      "name": "Purity Jepkorir Rono",
+      "roleId": "ROLE-SALES-REP",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Representative"
+    },
+    {
+      "employeeId": "EMP-0005",
+      "name": "Brian Wafula Simiyu",
+      "roleId": "ROLE-SALES-MGR",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0020",
+      "name": "Purity Jepkorir Rono"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0005",
+      "name": "Brian Wafula Simiyu"
+    },
+    {
+      "type": "department",
+      "id": "DEPT-SALES",
+      "name": "Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-SD",
+      "name": "IT Service Desk"
+    },
+    {
+      "type": "system",
+      "id": "SYS-IAM",
+      "name": "Identity and Access Management System"
+    },
+    {
+      "type": "policy",
+      "id": "HR-POL-002",
+      "name": "Recruitment & Onboarding Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-001",
+      "name": "IT Acceptable Use & Access Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "IT-POL-002",
+      "name": "IT Incident Management & Service Desk Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "IT Service Desk",
+    "Identity and Access Management System"
+  ],
+  "policies": [
+    "HR-POL-002",
+    "IT-POL-001",
+    "IT-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "HR confirms the employee's onboarding record is complete in the Employee Management System."
+    },
+    {
+      "sequence": 2,
+      "event": "The employee attempts to log in to Microsoft Dynamics 365 Sales and is denied access."
+    },
+    {
+      "sequence": 3,
+      "event": "The employee raises a ticket in the IT Service Desk describing the affected system and impact."
+    },
+    {
+      "sequence": 4,
+      "event": "The service desk verifies the HR onboarding record before routing an access correction."
+    },
+    {
+      "sequence": 5,
+      "event": "IT-POL-001 determines the access correction is handled as a role-based provisioning gap, not a new request."
+    }
+  ],
+  "expectedOutcome": "This is a provisioning gap, not a new access request: per HR-POL-002, the service desk verifies the HR onboarding record and routes an access correction under IT-POL-001 so the existing Sales Representative profile is applied without requiring fresh manager approval.",
+  "relevantFacts": [
+    "Purity Jepkorir Rono (EMP-0020) holds role ROLE-SALES-REP in department DEPT-SALES, reporting to Brian Wafula Simiyu.",
+    "HR-POL-002 states that a new employee who cannot access an assigned system must raise a ticket in the IT Service Desk, which verifies the HR onboarding record and routes an access correction under IT-POL-001.",
+    "IT-POL-001 states that Sales access follows the role profile and business need already present in the enterprise data - it is not granted informally."
+  ],
+  "requiredReasoning": [
+    "Confirm the HR onboarding record for this employee is complete.",
+    "Determine whether this is a new access request or a provisioning gap for an already-approved role.",
+    "Identify which policy governs the service desk ticket and which policy governs the underlying access correction."
+  ],
+  "relationships": [
+    {
+      "from": "EMP-0020",
+      "type": "reports_to",
+      "to": "EMP-0005"
+    },
+    {
+      "from": "EMP-0020",
+      "type": "belongs_to",
+      "to": "DEPT-SALES"
+    }
+  ],
+  "difficulty": "medium",
+  "questionTypes": [
+    "workflow",
+    "policy_lookup",
+    "exception"
+  ],
+  "tags": [
+    "onboarding",
+    "sales",
+    "it-access",
+    "negative"
+  ]
+}

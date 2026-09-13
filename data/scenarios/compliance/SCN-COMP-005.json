@@ -1,0 +1,103 @@
+{
+  "id": "SCN-COMP-005",
+  "category": "compliance",
+  "title": "A Prime Pack contact suggests a \"facilitation fee\" would speed up a pending purchase order",
+  "description": "A contact at Prime Pack tells Martin Njue Kariuki (Procurement Officer) that a small \"facilitation fee\" paid directly to them would help expedite a delayed purchase order.",
+  "businessContext": "COMP-POL-002 explicitly prohibits facilitation payments and requires the concern to be reported to Compliance rather than acted on or ignored.",
+  "actors": [
+    {
+      "employeeId": "EMP-0015",
+      "name": "Martin Njue Kariuki",
+      "roleId": "ROLE-PROC-OFF",
+      "departmentId": "DEPT-PROC",
+      "role": "Procurement Officer"
+    },
+    {
+      "employeeId": "EMP-0008",
+      "name": "Lucy Chebet Kiprono",
+      "roleId": "ROLE-COMP-MGR",
+      "departmentId": "DEPT-COMP",
+      "role": "Compliance Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0015",
+      "name": "Martin Njue Kariuki"
+    },
+    {
+      "type": "employee",
+      "id": "EMP-0008",
+      "name": "Lucy Chebet Kiprono"
+    },
+    {
+      "type": "supplier",
+      "id": "SUP-010",
+      "name": "Prime Pack"
+    },
+    {
+      "type": "system",
+      "id": "SYS-DMS",
+      "name": "Enterprise Document Management System"
+    },
+    {
+      "type": "policy",
+      "id": "COMP-POL-002",
+      "name": "Anti-Bribery & Conflict of Interest Policy"
+    }
+  ],
+  "systems": [
+    "Enterprise Document Management System"
+  ],
+  "policies": [
+    "COMP-POL-002"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "A contact at Prime Pack suggests a facilitation fee to expedite processing."
+    },
+    {
+      "sequence": 2,
+      "event": "Martin Njue Kariuki declines and does not make the payment."
+    },
+    {
+      "sequence": 3,
+      "event": "The suggestion is reported to Compliance rather than handled informally."
+    },
+    {
+      "sequence": 4,
+      "event": "Lucy Chebet Kiprono (Compliance Manager) determines whether further investigation of the supplier relationship is warranted."
+    }
+  ],
+  "expectedOutcome": "The payment must not be made under any circumstances, and the suggestion itself must be reported to Compliance. COMP-POL-002 states \"facilitation payments are prohibited\" and \"a transaction cannot be made acceptable by labelling it a marketing cost or emergency\"; the employee cannot treat this as a minor accommodation to keep the order moving.",
+  "relevantFacts": [
+    "A contact at Prime Pack (SUP-010) suggested a facilitation fee to Martin Njue Kariuki (EMP-0015).",
+    "COMP-POL-002: 'Bribery includes offering, promising, giving, requesting or accepting anything of value to improperly influence a decision... Facilitation payments are prohibited.'",
+    "COMP-POL-002: 'Concerns may be reported to Compliance or through the approved reporting channel.'"
+  ],
+  "requiredReasoning": [
+    "Identify that the suggested payment is a facilitation payment, not a legitimate fee.",
+    "Confirm facilitation payments are prohibited outright, independent of amount.",
+    "Identify the reporting obligation that follows."
+  ],
+  "relationships": [
+    {
+      "from": "SUP-010",
+      "type": "suggested_payment_to",
+      "to": "EMP-0015"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "compliance",
+    "exception",
+    "policy_lookup"
+  ],
+  "tags": [
+    "compliance",
+    "anti-bribery",
+    "negative"
+  ]
+}

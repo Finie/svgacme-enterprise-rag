@@ -1,0 +1,131 @@
+{
+  "id": "SCN-SALES-002",
+  "category": "sales",
+  "title": "Kilimo Wholesalers requests 1255 units of Tumaini Maize Flour 2Kg, more than is available",
+  "description": "Kilimo Wholesalers, a wholesaler, requests 1255 units of Tumaini Maize Flour 2Kg from Nairobi Distribution Centre. Available stock is well short of the request.",
+  "businessContext": "SALES-POL-001 requires Sales to check availability before confirming; unavailable stock cannot be promised outright.",
+  "actors": [
+    {
+      "employeeId": "EMP-0005",
+      "name": "Brian Wafula Simiyu",
+      "roleId": "ROLE-SALES-MGR",
+      "departmentId": "DEPT-SALES",
+      "role": "Sales Manager"
+    }
+  ],
+  "entities": [
+    {
+      "type": "employee",
+      "id": "EMP-0005",
+      "name": "Brian Wafula Simiyu"
+    },
+    {
+      "type": "customer",
+      "id": "CUS-013",
+      "name": "Kilimo Wholesalers"
+    },
+    {
+      "type": "product",
+      "id": "PRD-003",
+      "name": "Tumaini Maize Flour 2Kg"
+    },
+    {
+      "type": "inventory",
+      "id": "INV-0003",
+      "name": "PRD-003 @ WH-NRB-001"
+    },
+    {
+      "type": "warehouse",
+      "id": "WH-NRB-001",
+      "name": "Nairobi Distribution Centre"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SALES",
+      "name": "Microsoft Dynamics 365 Sales"
+    },
+    {
+      "type": "system",
+      "id": "SYS-D365-SCM",
+      "name": "Microsoft Dynamics 365 Supply Chain Management"
+    },
+    {
+      "type": "policy",
+      "id": "SALES-POL-001",
+      "name": "Sales Order & Customer Management Policy"
+    },
+    {
+      "type": "policy",
+      "id": "INV-POL-001",
+      "name": "Inventory Management & Stock Control Policy"
+    },
+    {
+      "type": "policy",
+      "id": "PROC-POL-001",
+      "name": "Procurement & Purchasing Policy"
+    }
+  ],
+  "systems": [
+    "Microsoft Dynamics 365 Sales",
+    "Microsoft Dynamics 365 Supply Chain Management"
+  ],
+  "policies": [
+    "SALES-POL-001",
+    "INV-POL-001",
+    "PROC-POL-001"
+  ],
+  "events": [
+    {
+      "sequence": 1,
+      "event": "Kilimo Wholesalers requests 1255 units of Tumaini Maize Flour 2Kg."
+    },
+    {
+      "sequence": 2,
+      "event": "Microsoft Dynamics 365 Supply Chain Management reports quantityAvailable of 255 at Nairobi Distribution Centre."
+    },
+    {
+      "sequence": 3,
+      "event": "Sales confirms the requested quantity exceeds quantityAvailable."
+    },
+    {
+      "sequence": 4,
+      "event": "The account manager proposes options rather than confirming the full quantity."
+    }
+  ],
+  "expectedOutcome": "The full order cannot be confirmed: 1255 exceeds quantityAvailable of 255 at Nairobi Distribution Centre. Per SALES-POL-001, Sales does not promise unavailable stock; the account manager may propose a partial delivery, an approved back-order, or an alternative product, while Inventory determines replenishment and Procurement follows PROC-POL-001.",
+  "relevantFacts": [
+    "Kilimo Wholesalers (CUS-013) is managed by Brian Wafula Simiyu.",
+    "Tumaini Maize Flour 2Kg (PRD-003) at Nairobi Distribution Centre has quantityOnHand 300, quantityReserved 45, quantityAvailable 255 (inventory record INV-0003), already below its reorderLevel of 500.",
+    "The customer requested 1255 units.",
+    "SALES-POL-001: 'If requested quantity exceeds quantityAvailable, Sales does not promise unavailable stock. The account manager may propose a partial delivery, an approved back-order or an alternative product, while Inventory determines replenishment and Procurement follows PROC-POL-001.'"
+  ],
+  "requiredReasoning": [
+    "Resolve quantityOnHand, quantityReserved and quantityAvailable for the requested product and warehouse.",
+    "Compare the requested quantity with quantityAvailable.",
+    "Determine that the request cannot be fulfilled in full.",
+    "Identify the Sales, Inventory and Procurement policies that govern the response."
+  ],
+  "relationships": [
+    {
+      "from": "CUS-013",
+      "type": "managed_by",
+      "to": "EMP-0005"
+    },
+    {
+      "from": "PRD-003",
+      "type": "stocked_at",
+      "to": "WH-NRB-001"
+    }
+  ],
+  "difficulty": "hard",
+  "questionTypes": [
+    "calculation",
+    "multi_hop",
+    "recommendation"
+  ],
+  "tags": [
+    "sales",
+    "inventory",
+    "negative"
+  ]
+}
