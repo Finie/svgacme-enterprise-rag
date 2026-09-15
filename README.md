@@ -1,131 +1,167 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# SVGA Enterprise Intelligence
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+An agentic enterprise intelligence system being built to answer user questions using a company's own data: policies, organizational structure, business records, and operational context.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+The goal is to combine **retrieval-augmented generation (RAG)**, **vector search**, and **large language models (LLMs)** so users can ask questions in everyday language and receive answers grounded in company evidence. An agent will select the appropriate tools, retrieve relevant documents or query structured records, and use an LLM to explain the findings with source references.
 
-## Description
+For example, “Who can approve this purchase?” may require both the procurement policy and the employee's role and approval limits. The intended system will combine document evidence with exact database lookups to produce a contextual answer.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Current implementation and direction
 
-## Project setup
+The repository currently implements the **data and retrieval foundation** for that system. It uses a generated, synthetic SVGA company corpus for development and evaluation; live company-system integrations are future work.
 
-```bash
-$ npm install
+| Capability | Status |
+| --- | --- |
+| Generate company records, policies, scenarios, and evaluation questions | Implemented |
+| Validate and import source data into PostgreSQL using Prisma | Implemented |
+| Split policy sections into traceable knowledge chunks | Implemented |
+| Generate and store embeddings with provider/model metadata | Implemented |
+| Search knowledge by meaning using pgvector | Implemented through terminal commands and services |
+| Evaluate retrieval quality and benchmark search speed | Implemented |
+| Generate natural-language answers with an LLM and citations | Planned |
+| Agent orchestration, tool selection, and structured-data question answering | Planned |
+| User-facing chat interface and question-answering API | Planned |
+| Privately served open-source models | Planned integration option |
+
+The NestJS application currently provides the server scaffold. The knowledge and search workflows run through CLI scripts; the application does not yet expose an agent or chat endpoint.
+
+## How the system works
+
+### Data preparation — implemented
+
+```text
+Generated company corpus in data/
+    ↓ validate and import with Prisma
+PostgreSQL: company records, policies, scenarios, evaluation data
+    ↓ extract policy sections and split into chunks
+knowledge_chunks: source text, metadata, source references, content hashes
+    ↓ embedding provider converts text into numeric vectors
+knowledge_chunk_embeddings: vectors stored in PostgreSQL with pgvector
+    ↓ embed a user query and compare vectors
+Relevant source chunks returned by semantic search
 ```
 
-## Compile and run the project
+Embeddings represent text as lists of numbers so search can find related meaning even when a question uses different words from the policy. The current search compares vectors using cosine distance.
+
+Company records such as employees, inventory, and approval limits remain relational data for precise queries. Policy prose becomes searchable knowledge. Evaluation answers are excluded from the retrieval corpus; synthetic scenario narratives require explicit selection and are excluded from embeddings.
+
+### Question answering — planned
+
+The agent will interpret a user's question, choose document retrieval and/or structured database tools, and pass the resulting evidence to an LLM. The LLM will compose a response grounded in that evidence, with references users can inspect. This is the generation layer of RAG; today's semantic search returns evidence chunks rather than a generated answer.
+
+## Gemini and private model hosting
+
+**The current default is Google's Gemini embedding model, `gemini-embedding-001`, configured for 1536-dimensional vectors.** It embeds policy chunks and search queries. Gemini is currently used for embeddings; an LLM answer-generation step has not yet been implemented.
+
+An alternative OpenAI embedding adapter is also implemented. Provider selection is configured in `.env`, and search and storage use a shared embedding-provider interface.
+
+The intended architecture also allows for **open-source LLMs served privately** on company-controlled infrastructure. A private deployment would need an answer-generation adapter and, if company text must remain entirely within that infrastructure, a privately hosted embedding model as well. These integrations are planned and are not currently available through an environment-variable switch.
+
+With the current hosted embedding adapters, policy chunk text and search queries are sent to the configured provider. Switching embedding models requires rebuilding embeddings in the new model's space; changing vector dimensions also requires a database schema change.
+
+See [provider configuration](docs/embeddings/provider.md) for implemented adapters and model settings.
+
+## Technology
+
+- **TypeScript and NestJS:** application structure and services.
+- **PostgreSQL and Prisma:** relational storage, schema migrations, and data imports.
+- **pgvector:** embedding storage and semantic similarity search.
+- **Gemini API:** default embedding provider.
+- **Docker Compose:** local PostgreSQL and application services.
+- **Vitest:** unit and integration tests.
+
+## Get started
+
+Requirements: Node.js **24.15.0**, npm, Docker, and embedding-provider credentials for live embedding and search calls.
+
+From the repository root:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+nvm use
+# Only if .env does not already exist:
+cp .env.example .env
+npm install
 ```
 
-### Optional Observe telemetry
+Edit `.env`: set `POSTGRES_PASSWORD` and the matching `DATABASE_URL`, then set `EMBEDDING_API_KEY` for your chosen provider. Do not commit credentials.
 
-The start commands load `.env` using Node.js 24 (see `.nvmrc`). To enable
-telemetry, copy `.env.example` to `.env` and set `OBSERVE_APP_KEY` and
-`OBSERVE_APP_SECRET` to a matching credential pair from NestJS Observe.
-Exported environment variables take precedence over `.env`.
-
-Without both credentials, the app runs with Observe disabled. A telemetry 401
-means the collector rejected authentication; check or replace the credential
-pair, then restart the app. Changes to `.env` require a manual restart.
-
-## Database
-
-This repository also includes the SVGA Enterprise PostgreSQL database (schema, migrations,
-seed/import pipeline for the generated dataset under `data/`). See
-[docs/database/README.md](docs/database/README.md) to get started.
-
-## Run tests
+### Generate the corpus and prepare the database
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm run generate:data && \
+npm run db:up -- --wait postgres && \
+npm run db:generate && \
+npm run db:migrate && \
+npm run db:seed && \
+npm run db:validate
 ```
 
-## Deployment
+`generate:data` writes the source files and runs consistency and data-model validation. `db:migrate` creates or updates tables; **`db:seed` loads the source files into those tables**. The command above starts only PostgreSQL so NestJS can run locally.
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### Build searchable knowledge
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+npm run knowledge:setup
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+This builds and validates chunks, tests the embedding provider, builds embeddings, and verifies completeness. The provider test and embedding build make real API calls and may incur charges.
 
-## Observability
+### Search and inspect
 
-In production applications, observability is essential for understanding how your system behaves, detecting issues early, and maintaining reliable performance.
+```bash
+npm run search:semantic -- "Who can approve a purchase?"
+npm run db:studio
+```
 
-[NestJS Observe](https://observe.nestjs.com) automatically instruments your NestJS application, giving you deep visibility into your system with minimal setup:
+Search returns relevant chunks and timing information. Studio opens a database browser and keeps running until you stop it.
 
-- **Distributed tracing:** Follow requests across services and understand how they flow through your system.
-- **Waterfall analysis:** Visualize request execution and identify slow operations, bottlenecks, and unexpected delays.
-- **Performance analysis:** Analyze application performance in real time and quickly pinpoint areas that need optimization.
-- **Metrics:** Track key application and infrastructure metrics to understand system health and performance trends.
-- **Logging:** Centralize and correlate logs with traces and other telemetry to make debugging easier.
-- **Error tracking:** Detect errors quickly and investigate their root causes with the surrounding context.
-- **SLA monitoring:** Track service-level objectives and identify when your application is approaching or exceeding defined thresholds.
-- **Alarms and alerts:** Set up alerts for critical errors, performance degradation, SLA violations, and other anomalies so your team can react quickly.
+### Run the server
 
-## Resources
+In a separate terminal:
 
-Check out a few resources that may come in handy when working with NestJS:
+```bash
+nvm use
+npm run start:dev
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Auto-instrument your application with [NestJS Observer](https://observer.nestjs.com). Distributed tracing, metrics, and logging made easy. Error tracking and performance monitoring for your NestJS applications.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+This starts the NestJS scaffold with automatic rebuilds. Search currently runs through the CLI shown above.
 
-## Support
+## Useful commands
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+| Command | Purpose |
+| --- | --- |
+| `npm run generate:data` | Generate all source data and validate it |
+| `npm run validate:data` | Validate existing source data |
+| `npm run db:setup` | Start Docker services, generate Prisma client, migrate, seed, validate, and open Studio |
+| `npm run knowledge:setup` | Build and validate knowledge chunks and embeddings |
+| `npm run embeddings:build -- --dry-run` | Preview pending embedding work without provider calls |
+| `npm run evaluate:retrieval` | Measure retrieval quality against evaluation questions |
+| `npm run search:benchmark` | Measure query embedding and database search latency |
+| `npm run db:down` | Stop Docker services while preserving the database volume |
+| `npm run db:reset` | Erase and recreate database tables, then reload source data |
 
-## Stay in touch
+`db:setup` starts both configured Docker services and ends in Studio, so it should not precede other commands in an unattended command chain. After a database reset, run `knowledge:setup` to rebuild derived knowledge and embeddings. Evaluation and benchmarking require complete embeddings and make real provider calls.
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Validation and tests
 
-## License
+```bash
+npm run build
+npm test
+npm run test:e2e
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Unit tests use mocked providers. Database integration tests require a running, migrated PostgreSQL database; embedding integration tests use fake vectors rather than paid provider calls.
+
+## Optional telemetry
+
+Set both `OBSERVE_APP_KEY` and `OBSERVE_APP_SECRET` in `.env` to enable NestJS Observe. Without both credentials, telemetry stays disabled. Restart the server after changing `.env`.
+
+## Documentation
+
+- [Data model](docs/data-model/README.md)
+- [Database and seeding](docs/database/README.md)
+- [Knowledge ingestion and chunking](docs/knowledge/README.md)
+- [Embeddings and semantic retrieval](docs/embeddings/README.md)
+- [Retrieval evaluation](docs/embeddings/evaluation.md)
+
+Some detailed documents describe earlier implementation phases. The status table above summarizes the current system boundary.
