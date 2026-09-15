@@ -1,0 +1,713 @@
+// SVGA Enterprise physical schema.
+// Source of truth: docs/data-model/*. Do not add columns/tables not documented there
+// without updating the logical model first.
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../apps/src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================================================
+// Core enterprise (docs/data-model/entities.md §companies..role_system_access)
+// ============================================================================
+
+model Company {
+  companyId              String @id @map("company_id")
+  legalName              String @map("legal_name")
+  tradingName            String @map("trading_name")
+  industry               String
+  description            String
+  registrationNumber     String @unique @map("registration_number")
+  kraPin                 String @unique @map("kra_pin")
+  country                String
+  headquartersLocationId String @map("headquarters_location_id")
+  headquartersAddress    String @map("headquarters_address")
+  employeeCount          Int    @map("employee_count")
+  employeeDatasetNote    String @map("employee_dataset_note")
+  yearEstablished        Int    @map("year_established")
+  website                String
+  contact                Json
+  currency               String
+  timezone               String
+  fiscalYear             Json   @map("fiscal_year")
+  status                 String
+
+  headquartersLocation      Location                   @relation(fields: [headquartersLocationId], references: [locationId], onDelete: Restrict)
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@map("companies")
+}
+
+model Location {
+  locationId String @id @map("location_id")
+  name       String
+  type       String
+  city       String
+  county     String
+  country    String
+  address    String
+  status     String
+
+  companies                 Company[]
+  employees                 Employee[]
+  costCenters               CostCenter[]
+  warehouses                Warehouse[]
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@map("locations")
+}
+
+model Department {
+  departmentId         String @id @map("department_id")
+  name                 String @unique
+  description          String
+  departmentHeadRoleId String @map("department_head_role_id")
+  costCenterId         String @unique @map("cost_center_id")
+  status               String
+
+  // Cyclic with roles/cost_centers: FKs are DEFERRABLE INITIALLY DEFERRED
+  // (see prisma/migrations/*/migration.sql and docs/database/architecture.md).
+  headRole          Role       @relation("DepartmentHeadRole", fields: [departmentHeadRoleId], references: [roleId], onDelete: Restrict)
+  defaultCostCenter CostCenter @relation("DepartmentDefaultCostCenter", fields: [costCenterId], references: [costCenterId], onDelete: Restrict)
+
+  roles                     Role[]                     @relation("DepartmentRoles")
+  employees                 Employee[]
+  systems                   System[]
+  costCenters               CostCenter[]               @relation("DepartmentCostCenters")
+  policies                  Policy[]
+  scenarioActors            ScenarioActor[]
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@index([departmentHeadRoleId])
+  @@map("departments")
+}
+
+model Role {
+  roleId           String @id @map("role_id")
+  title            String
+  departmentId     String @map("department_id")
+  level            String
+  description      String
+  responsibilities Json
+
+  department Department @relation("DepartmentRoles", fields: [departmentId], references: [departmentId], onDelete: Restrict)
+
+  headOfDepartment          Department[]               @relation("DepartmentHeadRole")
+  employees                 Employee[]
+  roleSystemAccess          RoleSystemAccess[]
+  approvalAuthority         RoleApprovalAuthority?
+  ownedPolicies             Policy[]
+  scenarioActors            ScenarioActor[]
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@index([departmentId])
+  @@map("roles")
+}
+
+model Employee {
+  employeeId        String   @id @map("employee_id")
+  employeeNumber    String   @unique @map("employee_number")
+  firstName         String   @map("first_name")
+  lastName          String   @map("last_name")
+  email             String   @unique
+  phone             String
+  roleId            String   @map("role_id")
+  departmentId      String   @map("department_id")
+  managerEmployeeId String?  @map("manager_employee_id")
+  locationId        String   @map("location_id")
+  employmentType    String   @map("employment_type")
+  employmentStatus  String   @map("employment_status")
+  hireDate          DateTime @map("hire_date") @db.Date
+  businessProcesses Json     @map("business_processes")
+
+  role       Role       @relation(fields: [roleId], references: [roleId], onDelete: Restrict)
+  department Department @relation(fields: [departmentId], references: [departmentId], onDelete: Restrict)
+  manager    Employee?  @relation("EmployeeManager", fields: [managerEmployeeId], references: [employeeId], onDelete: Restrict)
+  reports    Employee[] @relation("EmployeeManager")
+  location   Location   @relation(fields: [locationId], references: [locationId], onDelete: Restrict)
+
+  managedCostCenters        CostCenter[]               @relation("CostCenterManager")
+  managedWarehouses         Warehouse[]                @relation("WarehouseManager")
+  ownedSuppliers            Supplier[]                 @relation("SupplierRelationshipOwner")
+  managedCustomers          Customer[]                 @relation("CustomerAccountManager")
+  scenarioActors            ScenarioActor[]
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@index([roleId])
+  @@index([departmentId])
+  @@index([managerEmployeeId])
+  @@index([locationId])
+  @@map("employees")
+}
+
+model System {
+  systemId           String @id @map("system_id")
+  name               String @unique
+  vendor             String
+  category           String
+  description        String
+  owningDepartmentId String @map("owning_department_id")
+  criticality        String
+  environment        String
+  status             String
+
+  owningDepartment Department @relation(fields: [owningDepartmentId], references: [departmentId], onDelete: Restrict)
+
+  roleSystemAccess          RoleSystemAccess[]
+  policySystems             PolicySystem[]
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@index([owningDepartmentId])
+  @@map("systems")
+}
+
+model RoleSystemAccess {
+  roleId        String @map("role_id")
+  systemId      String @map("system_id")
+  accessProfile String @map("access_profile")
+
+  role   Role   @relation(fields: [roleId], references: [roleId], onDelete: Restrict)
+  system System @relation(fields: [systemId], references: [systemId], onDelete: Restrict)
+
+  @@id([roleId, systemId])
+  @@map("role_system_access")
+}
+
+// ============================================================================
+// Master data (docs/data-model/entities.md §cost_centers..inventory)
+// ============================================================================
+
+model CostCenter {
+  costCenterId      String @id @map("cost_center_id")
+  code              String @unique
+  name              String
+  departmentId      String @map("department_id")
+  managerEmployeeId String @map("manager_employee_id")
+  locationId        String @map("location_id")
+  status            String
+
+  department Department @relation("DepartmentCostCenters", fields: [departmentId], references: [departmentId], onDelete: Restrict)
+  manager    Employee   @relation("CostCenterManager", fields: [managerEmployeeId], references: [employeeId], onDelete: Restrict)
+  location   Location   @relation(fields: [locationId], references: [locationId], onDelete: Restrict)
+
+  defaultForDepartment      Department[]               @relation("DepartmentDefaultCostCenter")
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@index([departmentId])
+  @@index([managerEmployeeId])
+  @@index([locationId])
+  @@map("cost_centers")
+}
+
+model Warehouse {
+  warehouseId           String  @id @map("warehouse_id")
+  code                  String  @unique
+  name                  String
+  locationId            String  @map("location_id")
+  city                  String
+  warehouseType         String  @map("warehouse_type")
+  managerEmployeeId     String  @map("manager_employee_id")
+  capacityUnits         Int     @map("capacity_units")
+  operatingHours        String  @map("operating_hours")
+  temperatureControlled Boolean @map("temperature_controlled")
+  status                String
+
+  location Location @relation(fields: [locationId], references: [locationId], onDelete: Restrict)
+  manager  Employee @relation("WarehouseManager", fields: [managerEmployeeId], references: [employeeId], onDelete: Restrict)
+
+  inventory                 Inventory[]
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@index([locationId])
+  @@index([managerEmployeeId])
+  @@map("warehouses")
+}
+
+model Supplier {
+  supplierId                  String  @id @map("supplier_id")
+  supplierCode                String  @unique @map("supplier_code")
+  legalName                   String  @map("legal_name")
+  tradingName                 String  @map("trading_name")
+  supplierCategory            String  @map("supplier_category")
+  contactEmail                String  @map("contact_email")
+  contactPhone                String  @map("contact_phone")
+  country                     String
+  city                        String
+  paymentTerms                String  @map("payment_terms")
+  currency                    String
+  taxRegistrationStatus       String  @map("tax_registration_status")
+  approvalStatus              String  @map("approval_status")
+  riskRating                  String  @map("risk_rating")
+  procurementCategory         String  @map("procurement_category")
+  primaryContactName          String  @map("primary_contact_name")
+  relationshipOwnerEmployeeId String  @map("relationship_owner_employee_id")
+  active                      Boolean
+
+  relationshipOwner Employee @relation("SupplierRelationshipOwner", fields: [relationshipOwnerEmployeeId], references: [employeeId], onDelete: Restrict)
+
+  productSuppliers          ProductSupplier[]
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@index([relationshipOwnerEmployeeId])
+  @@map("suppliers")
+}
+
+model Product {
+  productId       String  @id @map("product_id")
+  sku             String  @unique
+  name            String
+  description     String
+  category        String
+  subcategory     String
+  unitOfMeasure   String  @map("unit_of_measure")
+  unitCost        Decimal @map("unit_cost") @db.Decimal(14, 2)
+  sellingPrice    Decimal @map("selling_price") @db.Decimal(14, 2)
+  reorderLevel    Int     @map("reorder_level")
+  reorderQuantity Int     @map("reorder_quantity")
+  taxCategory     String  @map("tax_category")
+  status          String
+
+  productSuppliers          ProductSupplier[]
+  inventory                 Inventory[]
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@map("products")
+}
+
+model ProductSupplier {
+  productId  String @map("product_id")
+  supplierId String @map("supplier_id")
+
+  product  Product  @relation(fields: [productId], references: [productId], onDelete: Restrict)
+  supplier Supplier @relation(fields: [supplierId], references: [supplierId], onDelete: Restrict)
+
+  @@id([productId, supplierId])
+  @@map("product_suppliers")
+}
+
+model Customer {
+  customerId               String  @id @map("customer_id")
+  customerCode             String  @unique @map("customer_code")
+  legalName                String  @map("legal_name")
+  tradingName              String  @map("trading_name")
+  customerType             String  @map("customer_type")
+  industry                 String
+  city                     String
+  county                   String
+  country                  String
+  creditLimit              Decimal @map("credit_limit") @db.Decimal(14, 2)
+  paymentTerms             String  @map("payment_terms")
+  accountManagerEmployeeId String  @map("account_manager_employee_id")
+  customerStatus           String  @map("customer_status")
+  riskRating               String  @map("risk_rating")
+
+  accountManager Employee @relation("CustomerAccountManager", fields: [accountManagerEmployeeId], references: [employeeId], onDelete: Restrict)
+
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@index([accountManagerEmployeeId])
+  @@map("customers")
+}
+
+// quantity_available is enforced by a CHECK constraint (not a generated column):
+// Prisma has no declarative support for PostgreSQL GENERATED ALWAYS AS ... STORED
+// columns, and hand-maintaining one in the migration would fight future
+// `prisma migrate dev` diffs. See docs/database/architecture.md.
+model Inventory {
+  inventoryId        String   @id @map("inventory_id")
+  productId          String   @map("product_id")
+  warehouseId        String   @map("warehouse_id")
+  quantityOnHand     Int      @map("quantity_on_hand")
+  quantityReserved   Int      @map("quantity_reserved")
+  quantityAvailable  Int      @map("quantity_available")
+  reorderLevel       Int      @map("reorder_level")
+  reorderQuantity    Int      @map("reorder_quantity")
+  inventoryStatus    String   @map("inventory_status")
+  lastStockCountDate DateTime @map("last_stock_count_date") @db.Date
+
+  product   Product   @relation(fields: [productId], references: [productId], onDelete: Restrict)
+  warehouse Warehouse @relation(fields: [warehouseId], references: [warehouseId], onDelete: Restrict)
+
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@unique([productId, warehouseId])
+  @@index([warehouseId])
+  @@map("inventory")
+}
+
+// ============================================================================
+// Approval authority (docs/data-model/entities.md §approval_policy_sets..)
+// ============================================================================
+
+model ApprovalPolicySet {
+  approvalPolicySetId String @id @map("approval_policy_set_id")
+  policyId            String @map("policy_id")
+  scope               String
+
+  policy Policy         @relation(fields: [policyId], references: [policyId], onDelete: Restrict)
+  tiers  ApprovalTier[]
+
+  @@map("approval_policy_sets")
+}
+
+model ApprovalTier {
+  approvalPolicySetId String   @map("approval_policy_set_id")
+  tierOrdinal         Int      @map("tier_ordinal")
+  lowerBoundKes       Decimal? @map("lower_bound_kes") @db.Decimal(14, 2)
+  upperBoundKes       Decimal? @map("upper_bound_kes") @db.Decimal(14, 2)
+  lowerInclusive      Boolean  @map("lower_inclusive")
+  upperInclusive      Boolean  @map("upper_inclusive")
+  approverLabel       String   @map("approver_label")
+  sourceRuleText      String   @map("source_rule_text")
+
+  approvalPolicySet ApprovalPolicySet @relation(fields: [approvalPolicySetId], references: [approvalPolicySetId], onDelete: Restrict)
+
+  @@id([approvalPolicySetId, tierOrdinal])
+  @@map("approval_tiers")
+}
+
+model RoleApprovalAuthority {
+  roleId           String   @id @map("role_id")
+  description      String
+  approvalLimitKes Decimal? @map("approval_limit_kes") @db.Decimal(14, 2)
+
+  role Role @relation(fields: [roleId], references: [roleId], onDelete: Restrict)
+
+  @@map("role_approval_authorities")
+}
+
+// ============================================================================
+// Knowledge / policies (docs/data-model/entities.md §policies..policy_systems)
+// ============================================================================
+
+model Policy {
+  knowledgeChunks KnowledgeChunk[]
+  policyId       String   @id @map("policy_id")
+  title          String
+  version        String
+  effectiveDate  DateTime @map("effective_date") @db.Date
+  reviewDate     DateTime @map("review_date") @db.Date
+  ownerRoleId    String   @map("owner_role_id")
+  departmentId   String   @map("department_id")
+  status         String
+  classification String
+  country        String
+  businessUnit   String   @map("business_unit")
+  documentType   String   @map("document_type")
+
+  ownerRole  Role       @relation(fields: [ownerRoleId], references: [roleId], onDelete: Restrict)
+  department Department @relation(fields: [departmentId], references: [departmentId], onDelete: Restrict)
+
+  sections                  PolicySection[]
+  relatedFrom               PolicyRelationship[]       @relation("PolicyRelationshipSource")
+  relatedTo                 PolicyRelationship[]       @relation("PolicyRelationshipTarget")
+  policySystems             PolicySystem[]
+  approvalPolicySets        ApprovalPolicySet[]
+  scenarioEntities          ScenarioEntity[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@map("policies")
+}
+
+model PolicySection {
+  knowledgeChunks KnowledgeChunk[]
+  policyId       String @map("policy_id")
+  sectionOrdinal Int    @map("section_ordinal")
+  heading        String
+  sourceHeading  String @map("source_heading")
+  bodyMarkdown   String @map("body_markdown")
+
+  policy Policy @relation(fields: [policyId], references: [policyId], onDelete: Restrict)
+
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@id([policyId, sectionOrdinal])
+  @@map("policy_sections")
+}
+
+model PolicyRelationship {
+  policyId        String @map("policy_id")
+  relatedPolicyId String @map("related_policy_id")
+  ordinal         Int
+
+  policy        Policy @relation("PolicyRelationshipSource", fields: [policyId], references: [policyId], onDelete: Restrict)
+  relatedPolicy Policy @relation("PolicyRelationshipTarget", fields: [relatedPolicyId], references: [policyId], onDelete: Restrict)
+
+  @@id([policyId, relatedPolicyId])
+  @@unique([policyId, ordinal])
+  @@map("policy_relationships")
+}
+
+model PolicySystem {
+  policyId String @map("policy_id")
+  systemId String @map("system_id")
+  ordinal  Int
+
+  policy Policy @relation(fields: [policyId], references: [policyId], onDelete: Restrict)
+  system System @relation(fields: [systemId], references: [systemId], onDelete: Restrict)
+
+  @@id([policyId, systemId])
+  @@unique([policyId, ordinal])
+  @@map("policy_systems")
+}
+
+// ============================================================================
+// Scenarios (docs/data-model/evaluation-model.md — synthetic, not production data)
+// ============================================================================
+
+model Scenario {
+  knowledgeChunks KnowledgeChunk[]
+  scenarioId        String @id @map("scenario_id")
+  category          String
+  title             String
+  description       String
+  businessContext   String @map("business_context")
+  expectedOutcome   String @map("expected_outcome")
+  difficulty        String
+  questionTypes     Json   @map("question_types")
+  tags              Json
+  relevantFacts     Json   @map("relevant_facts")
+  requiredReasoning Json   @map("required_reasoning")
+
+  actors                    ScenarioActor[]
+  entities                  ScenarioEntity[]
+  events                    ScenarioEvent[]
+  relationships             ScenarioRelationship[]
+  evaluationQuestionSources EvaluationQuestionSource[]
+
+  @@map("scenarios")
+}
+
+model ScenarioActor {
+  scenarioId   String @map("scenario_id")
+  actorOrdinal Int    @map("actor_ordinal")
+  employeeId   String @map("employee_id")
+  roleId       String @map("role_id")
+  departmentId String @map("department_id")
+  name         String
+  roleTitle    String @map("role_title")
+
+  scenario   Scenario   @relation(fields: [scenarioId], references: [scenarioId], onDelete: Restrict)
+  employee   Employee   @relation(fields: [employeeId], references: [employeeId], onDelete: Restrict)
+  role       Role       @relation(fields: [roleId], references: [roleId], onDelete: Restrict)
+  department Department @relation(fields: [departmentId], references: [departmentId], onDelete: Restrict)
+
+  @@id([scenarioId, actorOrdinal])
+  @@index([employeeId])
+  @@map("scenario_actors")
+}
+
+// Exactly one of the typed target columns is non-null; enforced by a CHECK
+// constraint added by raw SQL (Prisma has no multi-column CHECK DSL). See
+// docs/data-model/evaluation-model.md and business-rules.md.
+model ScenarioEntity {
+  scenarioId    String @map("scenario_id")
+  entityOrdinal Int    @map("entity_ordinal")
+  sourceType    String @map("source_type")
+  sourceId      String @map("source_id")
+  name          String
+  origin        String
+  sourceOrdinal Int?   @map("source_ordinal")
+
+  companyId    String? @map("company_id")
+  departmentId String? @map("department_id")
+  roleId       String? @map("role_id")
+  employeeId   String? @map("employee_id")
+  locationId   String? @map("location_id")
+  systemId     String? @map("system_id")
+  costCenterId String? @map("cost_center_id")
+  warehouseId  String? @map("warehouse_id")
+  supplierId   String? @map("supplier_id")
+  productId    String? @map("product_id")
+  customerId   String? @map("customer_id")
+  inventoryId  String? @map("inventory_id")
+  policyId     String? @map("policy_id")
+
+  scenario Scenario @relation(fields: [scenarioId], references: [scenarioId], onDelete: Restrict)
+
+  company    Company?    @relation(fields: [companyId], references: [companyId], onDelete: Restrict)
+  department Department? @relation(fields: [departmentId], references: [departmentId], onDelete: Restrict)
+  role       Role?       @relation(fields: [roleId], references: [roleId], onDelete: Restrict)
+  employee   Employee?   @relation(fields: [employeeId], references: [employeeId], onDelete: Restrict)
+  location   Location?   @relation(fields: [locationId], references: [locationId], onDelete: Restrict)
+  system     System?     @relation(fields: [systemId], references: [systemId], onDelete: Restrict)
+  costCenter CostCenter? @relation(fields: [costCenterId], references: [costCenterId], onDelete: Restrict)
+  warehouse  Warehouse?  @relation(fields: [warehouseId], references: [warehouseId], onDelete: Restrict)
+  supplier   Supplier?   @relation(fields: [supplierId], references: [supplierId], onDelete: Restrict)
+  product    Product?    @relation(fields: [productId], references: [productId], onDelete: Restrict)
+  customer   Customer?   @relation(fields: [customerId], references: [customerId], onDelete: Restrict)
+  inventory  Inventory?  @relation(fields: [inventoryId], references: [inventoryId], onDelete: Restrict)
+  policy     Policy?     @relation(fields: [policyId], references: [policyId], onDelete: Restrict)
+
+  relationshipsFrom ScenarioRelationship[] @relation("ScenarioRelationshipFrom")
+  relationshipsTo   ScenarioRelationship[] @relation("ScenarioRelationshipTo")
+
+  @@id([scenarioId, entityOrdinal])
+  @@index([sourceType, sourceId])
+  @@map("scenario_entities")
+}
+
+model ScenarioEvent {
+  scenarioId String @map("scenario_id")
+  sequence   Int
+  event      String
+
+  scenario Scenario @relation(fields: [scenarioId], references: [scenarioId], onDelete: Restrict)
+
+  @@id([scenarioId, sequence])
+  @@map("scenario_events")
+}
+
+model ScenarioRelationship {
+  scenarioId          String @map("scenario_id")
+  relationshipOrdinal Int    @map("relationship_ordinal")
+  fromEntityOrdinal   Int    @map("from_entity_ordinal")
+  toEntityOrdinal     Int    @map("to_entity_ordinal")
+  type                String
+  fromSourceId        String @map("from_source_id")
+  toSourceId          String @map("to_source_id")
+
+  scenario   Scenario       @relation(fields: [scenarioId], references: [scenarioId], onDelete: Restrict)
+  fromEntity ScenarioEntity @relation("ScenarioRelationshipFrom", fields: [scenarioId, fromEntityOrdinal], references: [scenarioId, entityOrdinal], onDelete: Restrict)
+  toEntity   ScenarioEntity @relation("ScenarioRelationshipTo", fields: [scenarioId, toEntityOrdinal], references: [scenarioId, entityOrdinal], onDelete: Restrict)
+
+  @@id([scenarioId, relationshipOrdinal])
+  @@map("scenario_relationships")
+}
+
+// ============================================================================
+// Evaluation corpus (docs/data-model/evaluation-model.md — never enters RAG)
+// ============================================================================
+
+model EvaluationQuestion {
+  questionId             String @id @map("question_id")
+  prefix                 String
+  question               String @unique
+  category               String
+  subcategory            String
+  difficulty             String
+  answerability          String
+  expectedAnswer         String @map("expected_answer")
+  expectedBehavior       String @map("expected_behavior")
+  acceptableAnswerPoints Json   @map("acceptable_answer_points")
+  reasoningSteps         Json   @map("reasoning_steps")
+  tags                   Json
+
+  sources EvaluationQuestionSource[]
+
+  @@map("evaluation_questions")
+}
+
+// Exactly one of the 14 typed target columns is non-null; enforced by a CHECK
+// constraint added by raw SQL. policySectionOrdinal is an additional, optional
+// composite FK into policy_sections alongside the typed policyId column, only
+// populated where evaluation-model.md documents an exact heading match.
+model EvaluationQuestionSource {
+  questionId    String  @map("question_id")
+  referenceKind String  @map("reference_kind")
+  sourceOrdinal Int     @map("source_ordinal")
+  type          String
+  sourceId      String  @map("source_id")
+  section       String?
+
+  policySectionOrdinal Int? @map("policy_section_ordinal")
+
+  companyId    String? @map("company_id")
+  departmentId String? @map("department_id")
+  roleId       String? @map("role_id")
+  employeeId   String? @map("employee_id")
+  locationId   String? @map("location_id")
+  systemId     String? @map("system_id")
+  costCenterId String? @map("cost_center_id")
+  warehouseId  String? @map("warehouse_id")
+  supplierId   String? @map("supplier_id")
+  productId    String? @map("product_id")
+  customerId   String? @map("customer_id")
+  inventoryId  String? @map("inventory_id")
+  policyId     String? @map("policy_id")
+  scenarioId   String? @map("scenario_id")
+
+  question EvaluationQuestion @relation(fields: [questionId], references: [questionId], onDelete: Restrict)
+
+  company    Company?    @relation(fields: [companyId], references: [companyId], onDelete: Restrict)
+  department Department? @relation(fields: [departmentId], references: [departmentId], onDelete: Restrict)
+  role       Role?       @relation(fields: [roleId], references: [roleId], onDelete: Restrict)
+  employee   Employee?   @relation(fields: [employeeId], references: [employeeId], onDelete: Restrict)
+  location   Location?   @relation(fields: [locationId], references: [locationId], onDelete: Restrict)
+  system     System?     @relation(fields: [systemId], references: [systemId], onDelete: Restrict)
+  costCenter CostCenter? @relation(fields: [costCenterId], references: [costCenterId], onDelete: Restrict)
+  warehouse  Warehouse?  @relation(fields: [warehouseId], references: [warehouseId], onDelete: Restrict)
+  supplier   Supplier?   @relation(fields: [supplierId], references: [supplierId], onDelete: Restrict)
+  product    Product?    @relation(fields: [productId], references: [productId], onDelete: Restrict)
+  customer   Customer?   @relation(fields: [customerId], references: [customerId], onDelete: Restrict)
+  inventory  Inventory?  @relation(fields: [inventoryId], references: [inventoryId], onDelete: Restrict)
+  policy     Policy?     @relation(fields: [policyId], references: [policyId], onDelete: Restrict)
+  scenario   Scenario?   @relation(fields: [scenarioId], references: [scenarioId], onDelete: Restrict)
+
+  policySection PolicySection? @relation(fields: [policyId, policySectionOrdinal], references: [policyId, sectionOrdinal], onDelete: Restrict)
+
+  @@id([questionId, referenceKind, sourceOrdinal])
+  @@map("evaluation_question_sources")
+}
+
+// Derived projection: docs/data-model/knowledge-model.md.
+model KnowledgeChunk {
+  embeddings KnowledgeChunkEmbedding[]
+  id                   String   @id
+  documentType         String   @map("document_type")
+  sourceId             String   @map("source_id")
+  policyId             String?  @map("policy_id")
+  policySectionOrdinal Int?     @map("policy_section_ordinal")
+  scenarioId           String?  @map("scenario_id")
+  chunkIndex           Int      @map("chunk_index")
+  content              String
+  metadata             Json
+  contentHash          String   @map("content_hash")
+  chunkingVersion      String   @map("chunking_version")
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+
+  policy        Policy?        @relation(fields: [policyId], references: [policyId], onDelete: Cascade)
+  policySection PolicySection? @relation(fields: [policyId, policySectionOrdinal], references: [policyId, sectionOrdinal], onDelete: Cascade)
+  scenario      Scenario?      @relation(fields: [scenarioId], references: [scenarioId], onDelete: Cascade)
+
+  @@unique([documentType, sourceId, chunkIndex])
+  @@index([policyId])
+  @@index([policyId, policySectionOrdinal])
+  @@index([scenarioId])
+  @@index([contentHash])
+  @@map("knowledge_chunks")
+}
+
+model KnowledgeChunkEmbedding {
+  chunkId                    String   @map("chunk_id")
+  embeddingProvider          String   @map("embedding_provider")
+  embeddingModel             String   @map("embedding_model")
+  embeddingVersion           String   @map("embedding_version")
+  embeddingDimensions        Int      @map("embedding_dimensions")
+  embedding                  Unsupported("vector(1536)")
+  embeddedAt                 DateTime @default(now()) @map("embedded_at")
+  contentHashAtEmbedding     String   @map("content_hash_at_embedding")
+  chunkingVersionAtEmbedding String   @map("chunking_version_at_embedding")
+  chunk                      KnowledgeChunk @relation(fields: [chunkId], references: [id], onDelete: Cascade)
+
+  @@id([chunkId, embeddingProvider, embeddingModel, embeddingVersion])
+  @@index([embeddingProvider, embeddingModel, embeddingVersion, embeddingDimensions], map: "knowledge_embeddings_space_idx")
+  @@map("knowledge_chunk_embeddings")
+}

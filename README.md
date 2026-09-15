@@ -44,6 +44,23 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+### Optional Observe telemetry
+
+The start commands load `.env` using Node.js 24 (see `.nvmrc`). To enable
+telemetry, copy `.env.example` to `.env` and set `OBSERVE_APP_KEY` and
+`OBSERVE_APP_SECRET` to a matching credential pair from NestJS Observe.
+Exported environment variables take precedence over `.env`.
+
+Without both credentials, the app runs with Observe disabled. A telemetry 401
+means the collector rejected authentication; check or replace the credential
+pair, then restart the app. Changes to `.env` require a manual restart.
+
+## Database
+
+This repository also includes the SVGA Enterprise PostgreSQL database (schema, migrations,
+seed/import pipeline for the generated dataset under `data/`). See
+[docs/database/README.md](docs/database/README.md) to get started.
+
 ## Run tests
 
 ```bash
