@@ -18,40 +18,67 @@ The repository currently implements the **data and retrieval foundation** for th
 | Generate and store embeddings with provider/model metadata | Implemented |
 | Search knowledge by meaning using pgvector | Implemented through terminal commands and services |
 | Evaluate retrieval quality and benchmark search speed | Implemented |
-| Generate natural-language answers with an LLM and citations | Planned |
+| Generate policy-grounded answers with Gemini and source references | Implemented; generated citations are not independently verified |
 | Agent orchestration, tool selection, and structured-data question answering | Planned |
-| User-facing chat interface and question-answering API | Planned |
+| Question-answering, search, policy, and health HTTP APIs | Implemented; chat UI planned |
 | Privately served open-source models | Planned integration option |
 
-The NestJS application currently provides the server scaffold. The knowledge and search workflows run through CLI scripts; the application does not yet expose an agent or chat endpoint.
+The NestJS application exposes policy lookup, semantic search, database health, and a first RAG question-answering endpoint. See the [HTTP API and Postman collection](docs/api/README.md). Ingestion workflows remain CLI commands.
 
 ## How the system works
 
 ### Data preparation — implemented
 
-```text
-Generated company corpus in data/
-    ↓ validate and import with Prisma
-PostgreSQL: company records, policies, scenarios, evaluation data
-    ↓ extract policy sections and split into chunks
-knowledge_chunks: source text, metadata, source references, content hashes
-    ↓ embedding provider converts text into numeric vectors
-knowledge_chunk_embeddings: vectors stored in PostgreSQL with pgvector
-    ↓ embed a user query and compare vectors
-Relevant source chunks returned by semantic search
+```mermaid
+flowchart TD
+    corpus["Generated company corpus<br/>data/"] --> db[("PostgreSQL<br/>company records, policies, scenarios, evaluation data")]
+    db -->|"extract sections, split into chunks"| chunks["knowledge_chunks<br/>text, metadata, source refs, content hash"]
+    chunks -->|"embedding provider"| vectors[("knowledge_chunk_embeddings<br/>pgvector")]
+    vectors -->|"embed query, compare vectors"| results["Relevant source chunks"]
 ```
 
 Embeddings represent text as lists of numbers so search can find related meaning even when a question uses different words from the policy. The current search compares vectors using cosine distance.
 
 Company records such as employees, inventory, and approval limits remain relational data for precise queries. Policy prose becomes searchable knowledge. Evaluation answers are excluded from the retrieval corpus; synthetic scenario narratives require explicit selection and are excluded from embeddings.
 
-### Question answering — planned
+### Question answering — initial RAG endpoint implemented
 
-The agent will interpret a user's question, choose document retrieval and/or structured database tools, and pass the resulting evidence to an LLM. The LLM will compose a response grounded in that evidence, with references users can inspect. This is the generation layer of RAG; today's semantic search returns evidence chunks rather than a generated answer.
+`POST /questions` retrieves policy chunks and sends the evidence to Gemini to compose an answer with numbered source references. `POST /search` returns evidence directly. Agent tool selection and structured operational queries remain planned.
+
+```mermaid
+flowchart LR
+    client(["HTTP client<br/>Postman / curl"])
+
+    subgraph api["NestJS HTTP API — apps/src/"]
+        health["HealthModule<br/>GET /health"]
+        policies["PoliciesModule<br/>GET /policies/:id"]
+        search["SearchModule<br/>POST /search"]
+        questions["QuestionsModule<br/>POST /questions"]
+    end
+
+    embeddings["EmbeddingsModule<br/>provider + pgvector queries"]
+    database[("DatabaseModule<br/>PrismaService")]
+    postgres[("PostgreSQL + pgvector")]
+    gemini(["Gemini API<br/>generateContent"])
+
+    client --> health
+    client --> policies
+    client --> search
+    client --> questions
+    health --> database
+    policies --> database
+    search --> embeddings
+    questions -->|retrieve| search
+    questions -->|generate| gemini
+    embeddings --> database
+    database --> postgres
+```
+
+`QuestionsModule` composes `SearchModule` for retrieval and calls Gemini directly for generation; it does not yet query structured tables (roles, approval limits, inventory) alongside policy evidence.
 
 ## Gemini and private model hosting
 
-**The current default is Google's Gemini embedding model, `gemini-embedding-001`, configured for 1536-dimensional vectors.** It embeds policy chunks and search queries. Gemini is currently used for embeddings; an LLM answer-generation step has not yet been implemented.
+**The current default is Google's Gemini embedding model, `gemini-embedding-001`, configured for 1536-dimensional vectors.** It embeds policy chunks and search queries. Gemini also supplies answer generation through a separately configured `GEMINI_GENERATION_MODEL` and `GEMINI_API_KEY`.
 
 An alternative OpenAI embedding adapter is also implemented. Provider selection is configured in `.env`, and search and storage use a shared embedding-provider interface.
 
@@ -124,7 +151,7 @@ nvm use
 npm run start:dev
 ```
 
-This starts the NestJS scaffold with automatic rebuilds. Search currently runs through the CLI shown above.
+This starts the HTTP API with automatic rebuilds and requires PostgreSQL. Search is available through both the CLI and `POST /search`. See [Postman setup](docs/api/README.md).
 
 ## Useful commands
 
