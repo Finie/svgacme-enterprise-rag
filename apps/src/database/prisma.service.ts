@@ -5,8 +5,7 @@ import { PrismaClient } from '@/generated/prisma/client.js';
 /**
  * Thin NestJS lifecycle wrapper around the generated Prisma client. This is
  * only a connection boundary: no query, retrieval or business logic lives
- * here. Not imported by AppModule yet (see docs/database/README.md) so that
- * `npm run build` / `npm test` keep working without a running database.
+ * here. Imported by HTTP feature modules; server startup connects to PostgreSQL.
  */
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit, OnModuleDestroy {

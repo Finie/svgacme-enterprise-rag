@@ -1,0 +1,74 @@
+{
+  "info": {
+    "name": "SVGA Enterprise API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Read policy",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{baseUrl}}/policies/HR-POL-001"
+      }
+    },
+    {
+      "name": "Search",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/search",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"What are the annual leave rules?\",\n  \"topK\": 5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Ask a question",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": "{{baseUrl}}/questions",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What are the annual leave rules?\",\n  \"topK\": 5\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
