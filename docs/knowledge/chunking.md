@@ -1,0 +1,13 @@
+# Deterministic chunking
+
+CHUNK_SIZE defaults to 1600 characters (not tokens); CHUNK_OVERLAP defaults to 200 characters. Size must be an integer >=32; overlap must be an integer >=0 and less than half size. Values are validated at the configuration boundary and recorded on chunks.
+
+Normalize CRLF/CR to LF, collapse horizontal whitespace, trim each line, collapse three or more newlines to two, and trim the whole section. Markdown paragraph/list structure remains, but code indentation is intentionally not preserved. Offsets refer to this normalized body in JavaScript UTF-16 code units.
+
+Never cross a policy section or scenario narrative block. Small sections stay whole. For large sections, prefer the last paragraph/list-item boundary in the latter half of the target window, then sentence-ending punctuation followed by whitespace, then word whitespace. An unbroken oversized word uses a character fallback. This is a deterministic heuristic, not a language parser; abbreviations may be interpreted as sentence endings. A final tail smaller than 15% of the target is absorbed, so size is a soft target (up to approximately 115%). Small source sections are kept, not dropped.
+
+Overlap reuses a suffix beginning at a paragraph/item, sentence or word boundary within the maximum budget; it can be smaller than configured or zero. It never crosses sections and always advances. Normalized start/end offsets permit coverage validation without double-counting overlap.
+
+IDs are SHA-256 of document type, source identity, section/block key and local chunk ordinal. Global zero-based chunk_index orders the document. A changed earlier section can shift global indexes while later IDs remain stable. content_hash is SHA-256 of type, source, section/block key, title, heading and canonical chunk content; unchanged textual evidence retains its hash. chunking_version is section-aware-v1 and must change when algorithm/normalization semantics change. Configuration is recorded separately: future processing should compare content_hash, chunking_version and configuration, not assume hash alone captures every processing change.
+
+Builders serialize through a database lock and hold source-table SHARE locks during generation to prevent concurrent source imports. Reconciliation deletes only removed IDs and updates changed rows in place in one transaction. A deferred logical-position uniqueness check permits atomic reordering. Unchanged rows are untouched; metadata-only changes preserve child embeddings. Content/version changes are detected by the embedding freshness predicates. This table is exclusively owned by this full-corpus builder, not an incremental streaming ingestion API. See [embedding lifecycle](../embeddings/lifecycle.md).
