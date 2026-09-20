@@ -13,13 +13,13 @@ For `/questions`, set `GEMINI_API_KEY` and `GEMINI_GENERATION_MODEL` in `.env`. 
 | `GET /health` | None | Server and database status; 503 if database probe fails |
 | `GET /policies/:id` | Policy ID in URL | Policy record with ordered sections; 404 if missing |
 | `POST /search` | `{"query":"Annual leave rules?","topK":5}` | Query and ranked evidence chunks |
-| `POST /questions` | `{"question":"Annual leave rules?","topK":5}` | Question, generated answer, numbered source chunks |
+| `POST /questions` | `{"question":"Annual leave rules?","topK":5}` | Explicit status, answer, validated citations, grounding, request ID and pipeline metadata |
 
-Send POST bodies as raw JSON with `Content-Type: application/json`. Text must contain 1–4000 characters; optional `topK` defaults to 5 and must be an integer from 1 to 20. Invalid inputs return 400. Search requires complete, current embeddings and returns 503 for unavailable dependencies. Questions return 503 for missing generation settings and 502 for generation-provider failures or incomplete responses.
+Send POST bodies as raw JSON with `Content-Type: application/json`. Text must contain 1–4000 characters; optional `topK` defaults to 5 and must be an integer from 1 to 20. `/search` invalid inputs return 400; it requires complete, current embeddings and returns 503 for unavailable dependencies. `/questions` returns HTTP 200 with an explicit `answered`, `out_of_scope`, `rejected`, `insufficient_evidence`, or `unavailable` status. Malformed questions are `rejected`; missing generation settings and provider failures are `unavailable`.
 
-`/questions` implements one retrieval-and-generation pass over policies. It instructs Gemini to cite sources as `[1]`, `[2]`, etc. and to acknowledge insufficient evidence. Source references are returned for inspection; generated claims and citation correctness are not independently verified. It does not yet perform autonomous tool selection or structured operational queries. Empty retrieval results skip generation.
+`/questions` uses three explicit gates around fixed structured/semantic retrieval and Gemini generation. Input scope and security checks happen first; insufficient or conflicting evidence skips generation entirely. The backend assigns `[E1]` identifiers and validates citations and basic numeric grounding before returning an answer. Invalid citations allow one retry; unsupported answers are discarded. `citations` and the compatibility `sources` field contain server-owned citation metadata rather than raw evidence. See [guardrail architecture, configuration, evaluation, and limitations](../guardrails.md).
 
-Search and questions make real embedding calls; questions also send retrieved policy text to Gemini for generation. These calls may incur charges. The health endpoint checks the database only, not provider availability or embedding readiness.
+Semantic search and scope detection make real embedding calls. Questions that pass evidence sufficiency send selected policy/structured evidence to Gemini for generation. These calls may incur charges. The health endpoint checks the database only, not provider availability or embedding readiness.
 
 The API is currently for local development, without authentication or per-user authorization. It binds to `127.0.0.1` by default. Docker binds within the container and publishes on host loopback. Add access controls before exposing company data to other users.
 

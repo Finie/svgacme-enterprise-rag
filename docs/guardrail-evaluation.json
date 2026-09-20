@@ -1,0 +1,1432 @@
+{
+  "population": 173,
+  "embeddingSpace": {
+    "provider": "google",
+    "model": "gemini-embedding-001",
+    "dimensions": 1536,
+    "version": "content-v1"
+  },
+  "metric": "cosine similarity (1 - pgvector cosine distance)",
+  "scope": "domain versus out-of-domain embedding prototypes; zero relative margin",
+  "distributions": {
+    "answerable": {
+      "count": 163,
+      "min": 0.5758975744247437,
+      "p25": 0.6455762039241305,
+      "median": 0.6765556528237084,
+      "p75": 0.7028247117996416,
+      "max": 0.7850844369904225
+    },
+    "unanswerable": {
+      "count": 10,
+      "min": 0.5708355137456823,
+      "p25": 0.5777588234996105,
+      "median": 0.6003961324927897,
+      "p75": 0.6086636600296623,
+      "max": 0.713225024150322
+    }
+  },
+  "selected": {
+    "threshold": 0.594082320089203,
+    "falsePositives": 0,
+    "falseNegatives": 103,
+    "scoreOnlyFalsePositives": 5,
+    "scoreOnlyFalseNegatives": 9
+  },
+  "selectionRule": "Minimize complete-gate false positives first, then false negatives, then prefer the highest threshold; calibration population is not a held-out test set",
+  "gate1": {
+    "allowed": 167,
+    "falseRejections": 0
+  },
+  "gate2": {
+    "falsePasses": 0,
+    "falseAbstentions": 103
+  },
+  "generationCalls": 0,
+  "results": [
+    {
+      "id": "Q-ABS-001",
+      "answerable": false,
+      "inputDecision": "UNSAFE",
+      "route": "SEMANTIC",
+      "bestScore": 0.5865237497900077,
+      "evidenceDecision": "NOT_RUN"
+    },
+    {
+      "id": "Q-ABS-002",
+      "answerable": false,
+      "inputDecision": "UNSAFE",
+      "route": "SEMANTIC",
+      "bestScore": 0.6131490286246365,
+      "evidenceDecision": "NOT_RUN"
+    },
+    {
+      "id": "Q-ABS-003",
+      "answerable": false,
+      "inputDecision": "UNSAFE",
+      "route": "SEMANTIC",
+      "bestScore": 0.6042938232421875,
+      "evidenceDecision": "NOT_RUN"
+    },
+    {
+      "id": "Q-ABS-004",
+      "answerable": false,
+      "inputDecision": "UNSAFE",
+      "route": "SEMANTIC",
+      "bestScore": 0.713225024150322,
+      "evidenceDecision": "NOT_RUN"
+    },
+    {
+      "id": "Q-ABS-005",
+      "answerable": false,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.5745444982700952,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-ABS-006",
+      "answerable": false,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6086636600296623,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-ABS-007",
+      "answerable": false,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.5708355137456823,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-ABS-008",
+      "answerable": false,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.5904614221499697,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-ABS-009",
+      "answerable": false,
+      "inputDecision": "UNSAFE",
+      "route": "SEMANTIC",
+      "bestScore": 0.6003961324927897,
+      "evidenceDecision": "NOT_RUN"
+    },
+    {
+      "id": "Q-ABS-010",
+      "answerable": false,
+      "inputDecision": "OUT_OF_SCOPE",
+      "route": "SEMANTIC",
+      "bestScore": 0.5777588234996105,
+      "evidenceDecision": "NOT_RUN"
+    },
+    {
+      "id": "Q-ENT-001",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6305581331253052,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-002",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6092275614006791,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-003",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6133324456214135,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-004",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.596164297600309,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-005",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.599643385389054,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-006",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5915700793266296,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-007",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.594082320089203,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-008",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5968322638473239,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-009",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5959815268538604,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-010",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5822025960027525,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-011",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5923517522916723,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-012",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5986676394542351,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-013",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6090242215118631,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-014",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5965707302093506,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-015",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6034320705952528,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-016",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.611962098239723,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-017",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6580329710343441,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-ENT-018",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.639314732592421,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-001",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.7395983934402466,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-002",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5816464597477456,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-003",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6475786356674915,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-004",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6587457649778516,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-005",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6835711613510125,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-006",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6987365843371698,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-007",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6455762039241305,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-008",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6556132445681411,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-009",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6625262700005621,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-010",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5934755802154541,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-011",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5858937501907349,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-012",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5854968428611755,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-013",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5758975744247437,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-014",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6198328590592358,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-015",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6646760505824076,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-016",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6160316467285156,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-017",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.645062292799403,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-018",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6169031858444214,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-019",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6489880503430353,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-020",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6007893085479736,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-FACT-021",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.5996346712330191,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-NEG-001",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.593707991771462,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-NEG-002",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6819163154413524,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-NEG-003",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.6707346039572606,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-NEG-004",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7154635190963745,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-NEG-005",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6945683385045834,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-NEG-006",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6841671059032032,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-NEG-007",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.7376907936887527,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-NEG-008",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6722737751088674,
+      "evidenceDecision": "NO_EVIDENCE"
+    },
+    {
+      "id": "Q-NEG-009",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6438898231917526,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-NEG-010",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6443194919013417,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-001",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7063942726615617,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-002",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6890260351865298,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-003",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.7094865344730711,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-004",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6893402769178568,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-POL-005",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6927076601422749,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-POL-006",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6205145901595003,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-007",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.7086815101923812,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-008",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.7098133140913669,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-POL-009",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6697641015052795,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-010",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.7404461878405187,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-POL-011",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6826104739440246,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-012",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7126763421884549,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-013",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7081993396163393,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-014",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7589394593871084,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-015",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.703141352627939,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-016",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6447477493654038,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-POL-017",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6585277515211034,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-POL-018",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6873468961521061,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-POL-019",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.7359078526496887,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-POL-020",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.7251712739059272,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-001",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7487301080662196,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-002",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7430748206839299,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-003",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7424668294926615,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-004",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7439456429449226,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-005",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7438459258355048,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-006",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.743108354303498,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-007",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7480619254038423,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-008",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7425056713806035,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-009",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7434232387886515,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-010",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7398769104407494,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-011",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6820787380886842,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-012",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6911199873018284,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-013",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6824146915921397,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-014",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6713073653761974,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-015",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6672662497639017,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-016",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6736043107994266,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-017",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6822668313980103,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-018",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6907866597175598,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-019",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6671011050283262,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-020",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6654849251815733,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-021",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6808826327323914,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-022",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6664104858881537,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-023",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6440878914568482,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-024",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6815192496323836,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-025",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6666659911473394,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-026",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7043301950288297,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-027",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7195153879686076,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-028",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7333263913794535,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-029",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6951016758291665,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-030",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.7047788080704935,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-031",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.6951754689216663,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-032",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6982684258774696,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-033",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6295288050736466,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-034",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6587471976136223,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-035",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6574895986178949,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-036",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6930037530361515,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-037",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7001277208328247,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-038",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6509664862771948,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-039",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7059471431939104,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-040",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6971371977668168,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-041",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6462159156799316,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-042",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6928151249885559,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-043",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7042141766611989,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-044",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7244387217367919,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-045",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6521807312965578,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-046",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6936007324695163,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-047",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6531887467874636,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-048",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.6836083312501561,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-049",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6780212531704858,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-050",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.7523023338498089,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-051",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.6924118445656132,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-052",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7032689805902316,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-053",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6630010209679007,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-054",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.676368434645628,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-055",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7014161766419529,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-056",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "HYBRID",
+      "bestScore": 0.6815148591995239,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-057",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6944914642279479,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-058",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7066672480106877,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-059",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6751799583435106,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-060",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6727352944296997,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-061",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6605297124701579,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-062",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6452423103514779,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-063",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.635881418445365,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-064",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6460578578883089,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-065",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6765556528237084,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-066",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6734654696624911,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-067",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6643815832593133,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-068",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6515764788263059,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-069",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6313688598431516,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-070",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7057886123657227,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-071",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.683330573638614,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-072",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7034103307196822,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-073",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6623948611256409,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-REASON-074",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6622300140077007,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-001",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.7850844369904225,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-002",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6618765584009798,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-003",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6941582585118672,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-004",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.692506904749829,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-005",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6369361064992116,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-006",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6990585714859349,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-007",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.7064521908760071,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-008",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6981396703248924,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-009",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6684454881882199,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-010",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6643990678311505,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-011",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6675370733462032,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-012",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7408693741715753,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-013",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6353104114532471,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-014",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6831720297294975,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-015",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.6681603590202251,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-016",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "SEMANTIC",
+      "bestScore": 0.6833678076644071,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-017",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.6908356363079343,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-018",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "POLICY",
+      "bestScore": 0.7564752778239827,
+      "evidenceDecision": "INSUFFICIENT"
+    },
+    {
+      "id": "Q-XD-019",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "CROSS_DOMAIN",
+      "bestScore": 0.7028247117996416,
+      "evidenceDecision": "SUFFICIENT"
+    },
+    {
+      "id": "Q-XD-020",
+      "answerable": true,
+      "inputDecision": "ALLOW",
+      "route": "STRUCTURED",
+      "bestScore": 0.6997796297073364,
+      "evidenceDecision": "SUFFICIENT"
+    }
+  ]
+}
