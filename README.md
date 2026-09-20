@@ -1,14 +1,14 @@
 # SVGA Enterprise Intelligence
 
-An agentic enterprise intelligence system being built to answer user questions using a company's own data: policies, organizational structure, business records, and operational context.
+An enterprise knowledge system built to answer user questions using a company's own data: policies, organizational structure, business records, and operational context.
 
-The goal is to combine **retrieval-augmented generation (RAG)**, **vector search**, and **large language models (LLMs)** so users can ask questions in everyday language and receive answers grounded in company evidence. An agent will select the appropriate tools, retrieve relevant documents or query structured records, and use an LLM to explain the findings with source references.
+The goal is to combine **retrieval-augmented generation (RAG)**, **vector search**, and **large language models (LLMs)** so users can ask questions in everyday language and receive answers grounded in company evidence. The application selects a retrieval route, checks the evidence, and uses an LLM to explain supported findings with validated source references. Autonomous agents remain future work.
 
-For example, “Who can approve this purchase?” may require both the procurement policy and the employee's role and approval limits. The intended system will combine document evidence with exact database lookups to produce a contextual answer.
+For example, “Who can approve this purchase?” may require both the procurement policy and the employee's role and approval limits. The implemented hybrid route combines policy evidence with bounded database lookups before permitting generation.
 
 ## Current implementation and direction
 
-The repository currently implements the **data and retrieval foundation** for that system. It uses a generated, synthetic SVGA company corpus for development and evaluation; live company-system integrations are future work.
+The repository implements the **data, retrieval, and three-gate question-answering pipeline** for that system. It uses a generated, synthetic SVGA company corpus for development and evaluation; live company-system integrations are future work.
 
 | Capability | Status |
 | --- | --- |
@@ -18,8 +18,9 @@ The repository currently implements the **data and retrieval foundation** for th
 | Generate and store embeddings with provider/model metadata | Implemented |
 | Search knowledge by meaning using pgvector | Implemented through terminal commands and services |
 | Evaluate retrieval quality and benchmark search speed | Implemented |
-| Generate policy-grounded answers with Gemini and source references | Implemented; generated citations are not independently verified |
-| Agent orchestration, tool selection, and structured-data question answering | Planned |
+| Generate evidence-grounded answers with Gemini and validated citations | Implemented with three application guardrail gates |
+| Structured-data question answering | Implemented with bounded Prisma templates |
+| Autonomous agent orchestration and tool selection | Planned; outside Phase 7 |
 | Question-answering, search, policy, and health HTTP APIs | Implemented; chat UI planned |
 | Privately served open-source models | Planned integration option |
 
@@ -41,9 +42,9 @@ Embeddings represent text as lists of numbers so search can find related meaning
 
 Company records such as employees, inventory, and approval limits remain relational data for precise queries. Policy prose becomes searchable knowledge. Evaluation answers are excluded from the retrieval corpus; synthetic scenario narratives require explicit selection and are excluded from embeddings.
 
-### Question answering — initial RAG endpoint implemented
+### Question answering — Phase 7 guardrails implemented
 
-`POST /questions` retrieves policy chunks and sends the evidence to Gemini to compose an answer with numbered source references. `POST /search` returns evidence directly. Agent tool selection and structured operational queries remain planned.
+`POST /questions` checks input scope/security, routes fixed structured queries and semantic policy retrieval, establishes evidence sufficiency, then calls Gemini and validates its citations and numeric grounding. Failed gates return explicit rejection or abstention outcomes. `POST /search` returns evidence directly. See [Phase 7 guardrails, calibration, and limitations](docs/guardrails.md).
 
 ```mermaid
 flowchart LR
@@ -69,12 +70,33 @@ flowchart LR
     policies --> database
     search --> embeddings
     questions -->|retrieve| search
-    questions -->|generate| gemini
+    questions -->|fixed structured queries| database
+    questions -->|after evidence gate| gemini
     embeddings --> database
     database --> postgres
 ```
 
-`QuestionsModule` composes `SearchModule` for retrieval and calls Gemini directly for generation; it does not yet query structured tables (roles, approval limits, inventory) alongside policy evidence.
+`QuestionsModule` combines `SearchModule` with bounded structured queries and separate input, evidence, and output gates. Generation runs only after sufficient evidence is established. The detailed pipeline and measured evaluation results are in the [guardrail report](docs/guardrails.md).
+
+## Phase 7 verification and limitations
+
+```text
+User → Input gate → Router → Structured / Semantic / Hybrid retrieval
+     → Evidence gate → Reranking → Context builder → Gemini
+     → Output grounding gate → Answer + validated citations
+```
+
+The input gate validates requests and checks scope, prompt injection, and secret requests. The evidence gate checks source authority, relevance, coverage, and basic conflicts. The output gate validates application-assigned citations and basic numeric grounding; invalid citations allow one retry. Requests rejected before generation never call Gemini.
+
+The recorded calibration uses all **173 evaluation questions** with `gemini-embedding-001` (1536 dimensions, cosine similarity), selecting an initial threshold of **0.5940823**. The complete pipeline permits **60 of 163 answerable questions** and **0 of 10 unanswerable questions**. The remaining **103 false abstentions are a substantial limitation**, reflecting conservative coverage checks, bounded query templates, and excluded synthetic scenario context. These are calibration-set measurements, not held-out accuracy.
+
+Verification recorded on **2026-09-18**: **120 unit tests and 44 integration tests passed**, along with the build and TypeScript checks. Mock-provider tests prove zero generation calls for out-of-scope, injection, unsafe, empty-evidence, insufficient-evidence, and conflicting-evidence requests. Live retrieval smoke checks passed the evidence gate for policy, structured, hybrid, and policy-based cross-domain examples, but **live Gemini synthesis was not verified** because generation credentials and the model were unset during that run.
+
+Citation and numeric checks are a first grounding implementation, not a complete hallucination detector. Review the [full guardrail report](docs/guardrails.md), [per-question evaluation](docs/guardrail-evaluation.json), and [live dependency smoke results](docs/guardrail-live-smoke.json) for measured behavior and limitations.
+
+- `npm run evaluate:guardrails` reruns retrieval and calibration against the current database without generation; it updates the evaluation report and model-bound default threshold.
+- `npm run guardrails:smoke` checks eight representative requests against live dependencies and may call Gemini when configured and permitted by the gates.
+- Set `GEMINI_API_KEY` and `GEMINI_GENERATION_MODEL` locally to enable generation. See `.env.example` for guardrail configuration; keep credentials out of Git.
 
 ## Gemini and private model hosting
 
@@ -163,6 +185,8 @@ This starts the HTTP API with automatic rebuilds and requires PostgreSQL. Search
 | `npm run knowledge:setup` | Build and validate knowledge chunks and embeddings |
 | `npm run embeddings:build -- --dry-run` | Preview pending embedding work without provider calls |
 | `npm run evaluate:retrieval` | Measure retrieval quality against evaluation questions |
+| `npm run evaluate:guardrails` | Calibrate and evaluate all 173 questions without generation |
+| `npm run guardrails:smoke` | Check eight representative requests against live dependencies |
 | `npm run search:benchmark` | Measure query embedding and database search latency |
 | `npm run db:down` | Stop Docker services while preserving the database volume |
 | `npm run db:reset` | Erase and recreate database tables, then reload source data |

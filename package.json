@@ -50,7 +50,9 @@
     "search:semantic": "tsx scripts/embeddings/search-semantic.ts",
     "evaluate:retrieval": "tsx scripts/evaluation/evaluate-retrieval.ts",
     "search:benchmark": "tsx scripts/embeddings/benchmark.ts",
-    "test:embeddings:integration": "vitest run --config vitest.config.e2e.ts test/embeddings.e2e-spec.ts"
+    "test:embeddings:integration": "vitest run --config vitest.config.e2e.ts test/embeddings.e2e-spec.ts",
+    "evaluate:guardrails": "tsx scripts/evaluation/evaluate-guardrails.ts",
+    "guardrails:smoke": "tsx scripts/evaluation/smoke-guardrails.ts"
   },
   "dependencies": {
     "@nestjs/common": "^12.0.1",
